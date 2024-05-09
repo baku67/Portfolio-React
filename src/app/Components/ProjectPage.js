@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import { CarrousselProject } from "./CarrousselProject";
 import { IframeProject } from "./IframeProject";
+import { ProjectsNav } from "./ProjectsNav";
 
 
 export function ProjectPage() {
@@ -12,6 +13,7 @@ export function ProjectPage() {
         {
             id: 1,
             name: "SquadForge",
+            primaryColor: "orange",
             slogan: "",
             description: "",
             skills: ["HTML/CSS", "Twig", "PHP", "Javascript", "Symfony", "BDD"],
@@ -53,30 +55,37 @@ export function ProjectPage() {
                     alt: "Slide 5",
                 },
             ],
-        }
+        },
+        {},
+        {},
+        {},
     ];
 
-    const [actualProject, setActualProject] = useState(0);
+    const [actualProjectIndex, setActualProjectIndex] = useState(0);
 
 
     return (
-        <div>
+        <>
 
-            <div>
+            <h2 className="titleSection">Mes Projets</h2>
 
-                <IframeProject actualProject={projects[actualProject]} />
+            <ProjectsNav nbrProjects={projects.length} actualProjectIndex={actualProjectIndex} changeActualProject={setActualProjectIndex} />
+
+
+
+            <div className="projectPageWrapper">
+
+                <IframeProject actualProject={projects[actualProjectIndex]} />
                 
                 <div>
 
+                    <h2>{projects[actualProjectIndex].name}</h2>
 
-
-                    <CarrousselProject actualProject={projects[actualProject]} />
+                    <CarrousselProject actualProject={projects[actualProjectIndex]} />
 
                 </div>
             </div>
 
-            
-
-        </div>
+        </>
     )
 }
