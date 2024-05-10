@@ -1,6 +1,8 @@
 
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import WebFont from 'webfontloader';
 
 import { CarrousselProject } from "./CarrousselProject";
 import { IframeProject } from "./IframeProject";
@@ -9,13 +11,24 @@ import { ProjectsNav } from "./ProjectsNav";
 
 export function ProjectPage() {
 
+    // Fonts
+    useEffect(() => {
+        WebFont.load({
+          google: {
+            families: ['Julius Sans One', 'Chilanka']
+          }
+        });
+       }, []);
+
+
     const projects = [
         {
             id: 1,
             name: "SquadForge",
-            primaryColor: "rgba(255,165,0,1)",
+            fontFamily: "Julius Sans One",
+            primaryColor: "#ffa012",
             slogan: "",
-            description: "",
+            description: "Plateforme communautaire \"Gaming\"",
             skills: ["HTML/CSS", "Twig", "PHP", "Javascript", "Symfony", "BDD"],
             primarySkill : ["PHP", "Symfony"],
             github_link : "https://github.com/baku67/ELAN_Projet_SquadForge",
@@ -77,13 +90,30 @@ export function ProjectPage() {
 
                 <IframeProject actualProject={projects[actualProjectIndex]} />
                 
-                <div>
+                <div className="projectInfosDiv">
 
-                    <h2>{projects[actualProjectIndex].name}</h2>
+                    <span>Projet n°{actualProjectIndex +1}</span>
+
+                    <h2 style={{fontFamily: projects[actualProjectIndex].fontFamily, color: projects[actualProjectIndex].primaryColor}} className="projectName">{projects[actualProjectIndex].name}</h2>
+
+                    <p>{projects[actualProjectIndex].description}</p>
+
+                    <ul className="projectSkillList">
+                        {projects[actualProjectIndex].skills.map( (skill) => (
+                            <li key={skill} style={{backgroundColor: projects[actualProjectIndex].primaryColor}}>{skill}</li>
+                        ))}
+                    </ul>
+
+                    <ul className="projectFuncList">
+                        {projects[actualProjectIndex].fonctionalities.map( (func) => (
+                            <li key={func} >{func}</li>
+                        ))}
+                    </ul>
 
                     <CarrousselProject actualProject={projects[actualProjectIndex]} />
 
                 </div>
+
             </div>
 
         </>

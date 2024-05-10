@@ -8,7 +8,6 @@ import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 
 export function CarrousselProject({ actualProject }) {
 
-    console.log({actualProject});
 
     return (
         <Splide hasTrack={false} aria-label="..." className="splide">

@@ -76,7 +76,7 @@ main {
   display: inline-flex;
   flex-direction: column;
 
-  background-color: rgb(51, 51, 149);
+  background-color: rgb(37 37 38);
 }
 .projectPageWrapper {
   width: 100%;
@@ -95,14 +95,16 @@ main {
 }
 
 .splide {
-  width: 200px;
+  width: 250px;
   visibility: visible !important;
+  margin: 25px auto 10px auto;
 }
 .splide__pagination {
   display: inline-flex !important;
 }
 .carrousselImg {
-  width: 200px;
+  width: 250px;
+  border-radius: 8px;
 }
 
 .projectsNav-list {
@@ -139,10 +141,10 @@ main {
 }
 .btnMockup1 {
   position: absolute;
-  height: 80px;
+  height: 102px;
   width: 4px;
   right: -5px;
-  top: 43px;
+  top: 34px;
 }
 .btnShutDown {
   cursor: pointer;
@@ -150,7 +152,7 @@ main {
   height: 40px;
   width: 4px;
   right: -5px;
-  top: 143px;
+  top: 160px;
 
   transition: all 0.3s;
 }
@@ -195,7 +197,65 @@ main {
   transition: all 0.3s;
 }
 
+.projectGitBtn {
+  cursor: pointer;
+  position: absolute;
+  right: -60px;
+  top: 35px;
+  border: 2px solid;
+  padding: 5px;
+  display: inline-flex;
+  border-radius: 3px;
+  background-color: #191919;
 
+  transition: all 0.3s;
+}
+.projectGitIcon {
+  font-size: 2em;
+  transition: all 0.3s;
+}
+.projectSiteBtn {
+  cursor: pointer;
+  position: absolute;
+  right: -60px;
+  top: 90px;
+  border: 2px solid;
+  padding: 5px;
+  display: inline-flex;
+  border-radius: 3px;
+  background-color: #191919;
+
+  transition: all 0.3s;
+}
+.projectSiteIcon {
+  font-size: 2em;
+  transition: all 0.3s;
+}
+
+.projectSkillList {
+  display: inline-flex;
+  gap: 10px;
+}
+.projectSkillList li {
+  padding: 3px 7px;
+  border-radius: 20px;
+  color: black;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.projectInfosDiv {
+  text-align: center;
+}
+.projectName {
+  font-size: 2em;
+}
+.projectFuncList {
+  text-align: left;
+  list-style-type: disc;
+
+  max-width: 70%;
+  margin: 25px auto 10px auto;
+}
 
 
 
