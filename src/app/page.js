@@ -1,14 +1,81 @@
-
+"use client";
+import { useEffect } from "react";
 import { Header } from "./Components/Header";
 import { ProjectPage } from "./Components/ProjectPage";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 export default function Home() {
+
+  useEffect(() => {
+
+    // AOS initialization
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+    });
+
+    // Intersection Observer
+    const sections = document.querySelectorAll('.section');
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.5,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                sections.forEach((section) => {
+                    section.classList.remove('active');
+                });
+                entry.target.classList.add('active');
+            }
+        });
+    }, options);
+
+    sections.forEach((section) => {
+        observer.observe(section);
+    });
+
+    // Custom scrolling behavior
+    const handleWheel = (e) => {
+        e.preventDefault();
+        const delta = e.wheelDelta || -e.deltaY || -e.detail;
+        const activeSection = document.querySelector('.section.active');
+        let targetSection;
+
+        if (activeSection) {
+            if (delta < 0) {
+                targetSection = activeSection.nextElementSibling;
+            } else {
+                targetSection = activeSection.previousElementSibling;
+            }
+
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    };
+
+    document.addEventListener('wheel', handleWheel, { passive: false });
+
+    return () => {
+        document.removeEventListener('wheel', handleWheel);
+        observer.disconnect();
+    };
+}, []); 
+
+
+
   return (
+
     <main className="main">
       
       {/* Page 1: Présentation */}
-      <section className="page1">
+      <section className="section page1">
 
         {/* Photo, intro + compétences, navigation, alerte recherche d'alternance */}
         {/* Poissons que ici */}
@@ -22,7 +89,7 @@ export default function Home() {
 
 
       {/* Page 2: Parcours */}
-      <section className="page2">
+      <section className="section page2">
 
 
         {/* Composant sideNav */}
@@ -31,7 +98,7 @@ export default function Home() {
 
 
       {/* Page 3: Projets */}
-      <section className="page3">
+      <section className="section page3">
 
         {/* Composants iframes */}
         <ProjectPage />
@@ -42,7 +109,7 @@ export default function Home() {
 
 
       {/* Page 4: Photographie, animations */}
-      <section className="page4">
+      <section className="section page4">
 
 
         {/* Composant sideNav */}

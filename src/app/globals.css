@@ -46,7 +46,12 @@ main {
   height: 100vh;
 
   background-color: rgb(51, 51, 149);
+
+  opacity: 0;
+  transition: 0.5s;
 }
+
+
 
 .photoImg {
   width: 50px;
@@ -58,7 +63,11 @@ main {
   height: 100vh;
 
   background-color: red;
+
+  opacity: 0;
+  transition: 0.5s;
 }
+
 
 
 
@@ -80,6 +89,9 @@ main {
   flex-direction: column;
 
   background-color: rgb(37 37 38);
+
+  opacity: 0;
+  transition: 0.5s;
 }
 
 .projectPageHeader {
@@ -379,4 +391,13 @@ main {
   height: 100vh;
 
   background-color: purple;
+
+  opacity: 0;
+  transition: 0.5s;
+}
+
+
+/* Attention il faut que la classe soit déclarée après les section  */
+.active {
+  opacity: 1;
 }
