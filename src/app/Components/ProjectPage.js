@@ -27,6 +27,7 @@ export function ProjectPage() {
             name: "SquadForge",
             fontFamily: "Julius Sans One",
             primaryColor: "#ffa012",
+            logo: "./projects/logoSquadForge.png",
             slogan: "",
             description: "Plateforme communautaire \"Gaming\"",
             skills: ["HTML/CSS", "Twig", "PHP", "Javascript", "Symfony", "BDD"],
@@ -78,11 +79,20 @@ export function ProjectPage() {
 
 
     return (
-        <>
+        <div style={{zIndex:5}}>
 
-            <h2 className="titleSection">Mes Projets</h2>
+            {/* Shapes */}
+            <div className="shapeProject1" style={{backgroundColor: projects[actualProjectIndex].primaryColor}}></div>
+            <div className="shapeProject2" style={{backgroundColor: projects[actualProjectIndex].primaryColor}}></div>
 
-            <ProjectsNav nbrProjects={projects.length} actualProjectIndex={actualProjectIndex} changeActualProject={setActualProjectIndex} />
+            {/* Logo haut-droite */}
+            <img src={projects[actualProjectIndex].logo} className="projectLogo" />
+
+            {/* Header ("Mes Projets" + nav) */}
+            <div className="projectPageHeader">
+                <h2 className="titleSection">Mes Projets</h2>
+                <ProjectsNav nbrProjects={projects.length} actualProjectIndex={actualProjectIndex} changeActualProject={setActualProjectIndex} />
+            </div>
 
 
 
@@ -92,11 +102,11 @@ export function ProjectPage() {
                 
                 <div className="projectInfosDiv">
 
-                    <span>Projet n°{actualProjectIndex +1}</span>
+                    <span style={{opacity:0.7}}>Projet n°{actualProjectIndex +1}</span>
 
                     <h2 style={{fontFamily: projects[actualProjectIndex].fontFamily, color: projects[actualProjectIndex].primaryColor}} className="projectName">{projects[actualProjectIndex].name}</h2>
 
-                    <p>{projects[actualProjectIndex].description}</p>
+                    <p className="projectDescription">{projects[actualProjectIndex].description}</p>
 
                     <ul className="projectSkillList">
                         {projects[actualProjectIndex].skills.map( (skill) => (
@@ -116,6 +126,6 @@ export function ProjectPage() {
 
             </div>
 
-        </>
+        </div>
     )
 }

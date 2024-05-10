@@ -73,11 +73,88 @@ main {
   width: 100%;
   height: 100vh;
 
+  position: relative;
+  overflow: hidden;
+
   display: inline-flex;
   flex-direction: column;
 
   background-color: rgb(37 37 38);
 }
+
+.projectPageHeader {
+  margin-top: 15px;
+}
+
+.testezLe-div {
+  position: absolute;
+  bottom: 26px;
+  right: -196px;
+
+  animation: testezLe-div 3s 0s ease infinite;
+}
+@keyframes testezLe-div {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.testezLe-div p {
+  font-size: 1.5em;
+}
+.testezLe-div svg {
+  position: absolute;
+    left: -62px;
+    top: -19px;
+    width: 100px;
+    height: 100px;
+    transform: rotate(154deg);
+}
+
+.shapeProject1 {
+  position: absolute;
+  bottom: -40%;
+  left: -40%;
+  width: 50%;
+  height: 100%;
+  transform: rotate(323deg);
+
+  animation: shapeProjet1 0.7s 0s ease forwards;
+}
+@keyframes shapeProjet1 {
+  from {
+    left: -70%;
+  }
+  to {
+    left: -40%;
+  }
+}
+
+
+.shapeProject2 {
+  position: absolute;
+  top: -50%;
+  right: -35%;
+  width: 50%;
+  height: 100%;
+  transform: rotate(312deg);
+
+  animation: shapeProjet2 0.7s 0s ease forwards
+}
+@keyframes shapeProjet2 {
+  from {
+    right: -70%;
+  }
+  to {
+    right: -35%;
+  }
+}
+
 .projectPageWrapper {
   width: 100%;
   height: 100%;
@@ -241,13 +318,14 @@ main {
   border-radius: 20px;
   color: black;
   font-size: 0.9em;
-  font-weight: bold;
+  font-weight: 500;
+  margin: 10px auto;
 }
 .projectInfosDiv {
   text-align: center;
 }
 .projectName {
-  font-size: 2em;
+  font-size: 2.4em;
 }
 .projectFuncList {
   text-align: left;
@@ -255,6 +333,21 @@ main {
 
   max-width: 70%;
   margin: 25px auto 10px auto;
+}
+
+.projectDescription {
+  font-size: 1.3em;
+}
+
+.projectLogo {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+
+  width: 160px;
+
+  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.7));
+
 }
 
 
