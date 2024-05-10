@@ -10,16 +10,22 @@ export function CarrousselProject({ actualProject }) {
 
 
     return (
-        <Splide hasTrack={false} aria-label="..." className="splide">
+        <Splide 
+            hasTrack={false} 
+            aria-label="captures d'écran" 
+            className="splide"
+            options={{
+                rewind: true,
+                gap   : '1rem',
+                type   : 'loop',
+                autoplay: "true",
+            }}
+        >
             <div className="custom-wrapper">
                 <button className="splide__toggle" type="button">
                     <span className="splide__toggle__play">Play</span>
                     <span className="splide__toggle__pause">Pause</span>
                 </button>
-
-                <div className="splide__progress">
-                    <div className="splide__progress__bar" />
-                </div>
 
                 <SplideTrack>
                     {actualProject.carroussel_imgs.map((slide, index) => (
@@ -28,6 +34,11 @@ export function CarrousselProject({ actualProject }) {
                         </SplideSlide>
                     ))}
                 </SplideTrack>
+
+                <div className="splide__progress">
+                    <div className="splide__progress__bar" style={{backgroundColor: actualProject.primaryColor}} />
+                </div>
+
             </div>
         </Splide>
     );

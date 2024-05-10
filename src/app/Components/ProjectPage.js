@@ -30,7 +30,7 @@ export function ProjectPage() {
             logo: "./projects/logoSquadForge.png",
             slogan: "",
             description: "Plateforme communautaire \"Gaming\"",
-            skills: ["HTML/CSS", "Twig", "PHP", "Javascript", "Symfony", "BDD"],
+            skills: ["HTML/CSS", "Javascript", "PHP", "Symfony", "BDD", "Twig", "DQL"],
             primarySkill : ["PHP", "Symfony"],
             github_link : "https://github.com/baku67/ELAN_Projet_SquadForge",
             site_link: "https://squadforge.ovh",
@@ -79,11 +79,13 @@ export function ProjectPage() {
 
 
     return (
-        <div style={{zIndex:5}}>
+
+        <div style={{zIndex:5, height:"100%"}}>
 
             {/* Shapes */}
             <div className="shapeProject1" style={{backgroundColor: projects[actualProjectIndex].primaryColor}}></div>
             <div className="shapeProject2" style={{backgroundColor: projects[actualProjectIndex].primaryColor}}></div>
+
 
             {/* Logo haut-droite */}
             <img src={projects[actualProjectIndex].logo} className="projectLogo" />
@@ -91,7 +93,12 @@ export function ProjectPage() {
             {/* Header ("Mes Projets" + nav) */}
             <div className="projectPageHeader">
                 <h2 className="titleSection">Mes Projets</h2>
-                <ProjectsNav nbrProjects={projects.length} actualProjectIndex={actualProjectIndex} changeActualProject={setActualProjectIndex} />
+                <ProjectsNav 
+                    nbrProjects={projects.length} 
+                    actualProjectIndex={actualProjectIndex} 
+                    actualProjectColor={projects[actualProjectIndex].primaryColor}
+                    changeActualProject={setActualProjectIndex} 
+                />
             </div>
 
 
@@ -110,7 +117,16 @@ export function ProjectPage() {
 
                     <ul className="projectSkillList">
                         {projects[actualProjectIndex].skills.map( (skill) => (
-                            <li key={skill} style={{backgroundColor: projects[actualProjectIndex].primaryColor}}>{skill}</li>
+                            <li 
+                                key={skill} 
+                                style={{
+                                    backgroundColor: projects[actualProjectIndex].primaryColor,
+                                    border: projects[actualProjectIndex].primarySkill.includes(skill) ? "2px solid #0cedc8" : "2px solid transparent",
+                                    boxShadow: projects[actualProjectIndex].primarySkill.includes(skill) ? "0 0 30px -4px #0ff" : "0 0 30px -4px rgba(0,0,0,0)"
+                                }}
+                            >
+                                {skill}
+                            </li>
                         ))}
                     </ul>
 
@@ -127,5 +143,6 @@ export function ProjectPage() {
             </div>
 
         </div>
+
     )
 }

@@ -106,6 +106,7 @@ main {
 }
 .testezLe-div p {
   font-size: 1.5em;
+  transform: rotate(8deg);
 }
 .testezLe-div svg {
   position: absolute;
@@ -138,10 +139,10 @@ main {
 
 .shapeProject2 {
   position: absolute;
-  top: -50%;
+  top: -60%;
   right: -35%;
   width: 50%;
-  height: 100%;
+  height: 125%;
   transform: rotate(312deg);
 
   animation: shapeProjet2 0.7s 0s ease forwards
@@ -160,9 +161,13 @@ main {
   height: 100%;
   display: inline-flex;
   justify-content: space-evenly;
-  align-items: center;
+
+  /* align-items: center; */
+  align-items: flex-start;
 
   flex: auto;
+
+  margin-top: 25px;
 }
 
 .titleSection {
@@ -179,6 +184,19 @@ main {
 .splide__pagination {
   display: inline-flex !important;
 }
+.splide__progress__bar {
+  margin: 5px auto;
+  height: 2px !important;
+}
+.splide__pagination {
+  bottom: -1.5em !important;
+}
+.splide__arrow--next {
+  right: -3em !important;
+}
+.splide__arrow--prev {
+  left: -3em !important;
+}
 .carrousselImg {
   width: 250px;
   border-radius: 8px;
@@ -190,9 +208,13 @@ main {
   justify-content: center;
   gap: 10px;
 }
-.projectsNavActive {
-  background-color: black;
+.projectsNav-list li {
+  padding: 3px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
 }
+
 
 .iframeContainer {
   position: relative;

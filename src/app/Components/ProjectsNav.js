@@ -1,5 +1,5 @@
 
-export function ProjectsNav({ nbrProjects, actualProjectIndex, changeActualProject }) {
+export function ProjectsNav({ nbrProjects, actualProjectIndex, actualProjectColor, changeActualProject }) {
 
     const projectIndices = [...Array(nbrProjects).keys()];
 
@@ -15,7 +15,7 @@ export function ProjectsNav({ nbrProjects, actualProjectIndex, changeActualProje
 
                 <li 
                     key={index + 1} 
-                    className={index === actualProjectIndex ? 'projectsNavActive' : ''} 
+                    style={{backgroundColor: index === actualProjectIndex ? actualProjectColor : "black", color: index === actualProjectIndex ? "black" : "white"}}
                     onClick={() => handleClick(index)}
                 >
                     {index + 1}
