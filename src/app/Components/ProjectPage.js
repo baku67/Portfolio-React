@@ -13,7 +13,7 @@ export function ProjectPage() {
         {
             id: 1,
             name: "SquadForge",
-            primaryColor: "orange",
+            primaryColor: "rgba(255,165,0,1)",
             slogan: "",
             description: "",
             skills: ["HTML/CSS", "Twig", "PHP", "Javascript", "Symfony", "BDD"],

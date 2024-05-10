@@ -114,13 +114,86 @@ main {
 .projectsNavActive {
   background-color: black;
 }
+
+.iframeContainer {
+  position: relative;
+  padding: 15px 5px 30px 5px;
+  background-color: #191919;
+  border: 3px solid;
+  border-radius: 22px;
+}
 .iframe {
   height: 600px;
   width: 350px;
+  border-radius: 7px;
 }
 
+.btnMockup0 {
+  position: absolute;
+  height: 6px;
+  width: 6px;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}
+.btnMockup1 {
+  position: absolute;
+  height: 80px;
+  width: 4px;
+  right: -5px;
+  top: 43px;
+}
+.btnShutDown {
+  cursor: pointer;
+  position: absolute;
+  height: 40px;
+  width: 4px;
+  right: -5px;
+  top: 143px;
 
+  transition: all 0.3s;
+}
+.btnRefresh {
+  cursor: pointer;
+  position: absolute;
+  height: 21px;
+  width: 22px;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
 
+  border: 3px solid;
+
+  transition: all 0.3s;
+}
+
+.shutDownIcon {
+    opacity: 0;
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    transition: all 0.3s;
+}
+
+.refreshInfoBtn {
+  opacity: 0;
+  position: absolute;
+  color: black;
+  bottom: -44px;
+  /* bottom: 0px; */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3px 7px;
+  border-radius: 3px;
+  /* border: 1px solid black; */
+
+  transition: all 0.3s;
+}
 
 
 
