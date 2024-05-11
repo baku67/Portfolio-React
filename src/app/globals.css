@@ -423,6 +423,54 @@ main {
   }
 }
 
+.NbrCommits {
+  display: block;
+  text-align: right;
+
+  color: #8b9c9a;
+  font-size: 0.8em;
+}
+
+
+.projectCard_primSkills {
+  display: inline-flex;
+  gap: 5px;
+}
+.projectCard_primSkills li {
+  /* background-color: orange; */
+  padding: 0px 5px 0px 5px;
+  align-items: center;
+  display: flex;
+  border-radius: 16px;
+  color: black;
+  font-weight: 600;
+  font-size: 0.8em;
+}
+
+.projectCard_thumbnail {
+  height: 40vh;
+  margin: 0 auto;
+  border: 1px solid transparent;
+
+  padding: 12px 4px 25px 4px;
+  background-color: black;
+  border-radius: 10px;
+
+  transition: all 0.3s;
+}
+
+.projectCard_infos {
+  margin: 10px auto;
+  text-align: center;
+}
+
+.projectCard_title {
+  font-size: 1.4em;
+}
+.projectCard_description {
+
+}
+
 .projectName {
   font-size: 2.4em;
 }
@@ -466,7 +514,7 @@ main {
   margin: 0 auto;
   padding: 10px 20px;
   border: 1px solid transparent;
-  background-color: #363636;
+  background-color: transparent;
   border-radius: 15px;
 
   transition: all 0.3s;
@@ -489,7 +537,11 @@ main {
 
 .projectCard {
   cursor: pointer;
-  border: 1px solid red;
+  /* border: 1px solid red; */
+
+  background-color: rgb(54, 54, 54);
+  padding: 15px;
+  border-radius: 14px;
 
   transition: all 0.3s;
 }

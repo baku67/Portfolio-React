@@ -31,19 +31,24 @@ export function GithubRepoStats({ token, owner, repo }) {
   
     useEffect(() => {
       fetchCommitActivity();
-    }, []);
+    }, [owner, repo, token]);
+    // Reload/resend que lorsque un de ces props change
   
     if (loading) {
       return <div>Loading...</div>;
     }
   
     if (error) {
-      return <div>Error: {error.message}</div>;
+      console.log("Error: " + error.message);
     }
   
     return (
       <div>
-        <span>Commits: {commitActivity}</span>
+          {error ? 
+            <span>Commits: <span style={{fontSize:"0.8em", color:"#f65353"}}>Erreur API exceeds (voir console)</span></span>
+           : 
+            <span className="NbrCommits">{commitActivity} Commits</span>
+          }
       </div>
     );
   }

@@ -51,6 +51,7 @@ export function ProjectPage() {
             fontFamily: "Julius Sans One",
             primaryColor: "#ffa012",
             logo: "./projects/logoSquadForge.png",
+            thumbnail: "./projects/cards_thumbnails/squadforge.png",
             slogan: "",
             description: "Plateforme communautaire \"Gaming\"",
             skills: ["HTML/CSS", "Javascript", "PHP", "Symfony", "BDD", "Twig", "DQL"],
@@ -93,9 +94,72 @@ export function ProjectPage() {
                 },
             ],
         },
-        {},
-        {},
-        {},
+        {
+            id: 1,
+            name: "",
+            // Nom en minuscule pour API
+            repo_name: "",
+            fontFamily: "",
+            primaryColor: "",
+            logo: "",
+            thumbnail: "",
+            slogan: "",
+            description: "",
+            skills: [],
+            primarySkill : [],
+            github_link : "",
+            site_link: "",
+
+            fonctionalities: [
+            ],
+
+            carroussel_imgs: [
+            ],
+        },
+        {
+            id: 2,
+            name: "",
+            // Nom en minuscule pour API
+            repo_name: "",
+            fontFamily: "",
+            primaryColor: "",
+            logo: "",
+            thumbnail: "",
+            slogan: "",
+            description: "",
+            skills: [],
+            primarySkill : [],
+            github_link : "",
+            site_link: "",
+
+            fonctionalities: [
+            ],
+
+            carroussel_imgs: [
+            ],
+        },
+        {
+            id: 3,
+            name: "",
+            // Nom en minuscule pour API
+            repo_name: "",
+            fontFamily: "",
+            primaryColor: "",
+            logo: "",
+            thumbnail: "",
+            slogan: "",
+            description: "",
+            skills: [],
+            primarySkill : [],
+            github_link : "",
+            site_link: "",
+
+            fonctionalities: [
+            ],
+
+            carroussel_imgs: [
+            ],
+        },
         // Ajouter le portfolio v2
     ];
 
