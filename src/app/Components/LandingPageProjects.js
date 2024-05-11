@@ -54,7 +54,7 @@ export function LandingPageProjects({projects, selectProject}) {
             </div>
 
 
-            {/* CARDS projets sous forme de mockup clicables (img pas iframes) ? */}
+            {/* CARDS projets */}
             <ul className="projectCardsList">
                 {projects.map( (project, index) => (
                     <li 
@@ -62,7 +62,10 @@ export function LandingPageProjects({projects, selectProject}) {
                         className="projectCard"
                         onMouseEnter={() => handleMouseEnterLi(index)}
                         onMouseLeave={handleMouseLeaveLi}
-                        style={{ backgroundColor: hoveredIndex === index ? "#434242" : "#363636", }}
+                        style={{ 
+                            backgroundColor: hoveredIndex === index ? "#434242" : "#363636",
+                            animationDelay: `${1 + index * 0.15}s`, // Global delay + individual delay
+                        }}
                         onClick={() => handleClickProject(project.id)}
                     >
                         <ProjectThumbnail project={project} isHovered={hoveredIndex === index ? true : false} />
