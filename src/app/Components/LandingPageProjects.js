@@ -5,9 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 
 import GitHubCalendar from 'react-github-calendar';
+import { GithubRepoStats } from "./GithubRepoStats";
 
 
 export function LandingPageProjects({projects, selectProject}) {
+
+    // API github
+    const token = process.env.REACT_APP_GITHUB_TOKEN;
 
     const [githubCardHovered, setGithubCardHovered] = useState(false);
 
@@ -50,7 +54,8 @@ export function LandingPageProjects({projects, selectProject}) {
                     >
                         <h3>{project.name}</h3>
                         <p>{project.description}</p>
-                        <span>Commits: API</span>
+
+                        <GithubRepoStats token={token} owner="baku67" repo={project.repo_name} />
                     </li>
                 ))}
             </ul>
@@ -61,11 +66,11 @@ export function LandingPageProjects({projects, selectProject}) {
                 href="https://github.com/baku67" 
                 className="githubCalendarLink" 
                 target="_blank"
-                onMouseEnter={githubCardEnter}
-                onMouseLeave={githubCardLeave}
             >
                 <div 
                     className="githubCalendarDiv"
+                    onMouseEnter={githubCardEnter}
+                    onMouseLeave={githubCardLeave}
                     style={{
                         backgroundColor: githubCardHovered ? "#434242" : "#363636",
                         borderColor: githubCardHovered ? "lightgrey" : "transparent",

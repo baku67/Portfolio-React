@@ -46,6 +46,7 @@ export function ProjectPage() {
         {
             id: 0,
             name: "SquadForge",
+            // Nom en minuscule pour API
             repo_name: "ELAN_Projet_SquadForge",
             fontFamily: "Julius Sans One",
             primaryColor: "#ffa012",

@@ -1,9 +1,8 @@
-// *** DÉSACTIVÉ
 
 import { Octokit } from "@octokit/core";
 import { useState, useEffect } from "react";
 
-export function GithubStats({ token, owner, repo }) {
+export function GithubRepoStats({ token, owner, repo }) {
 
     const octokit = new Octokit({ auth: token });
     const [commitActivity, setCommitActivity] = useState(null);
@@ -12,7 +11,7 @@ export function GithubStats({ token, owner, repo }) {
   
     async function fetchCommitActivity() {
       try {
-        const response = await octokit.request('GET /repos/{owner}/{repo}/stats/commit_activity', {
+        const response = await octokit.request('GET /repos/{owner}/{repo}/stats/contributors', {
           owner,
           repo,
           headers: {
@@ -20,7 +19,7 @@ export function GithubStats({ token, owner, repo }) {
           }
         });
 
-        setCommitActivity(response.data);
+        setCommitActivity(response.data[0].total);
         console.log(response.data);
 
       } catch (error) {
@@ -44,9 +43,7 @@ export function GithubStats({ token, owner, repo }) {
   
     return (
       <div>
-        {/* Render commit activity data here */}
-
-        
+        <span>Commits: {commitActivity}</span>
       </div>
     );
   }

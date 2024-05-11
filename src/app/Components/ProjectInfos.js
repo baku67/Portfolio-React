@@ -37,9 +37,6 @@ export function ProjectInfos({actualProject, actualProjectIndex}) {
 
             <CarrousselProject actualProject={actualProject} />
 
-            {/* <GithubStats token="..." owner="baku67" repo={actualProject.repo_name} /> */}
-            {/* <GitHubCalendar username="baku67" /> */}
-
         </div>
     )
 }
