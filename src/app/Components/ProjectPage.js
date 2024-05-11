@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 
 import WebFont from 'webfontloader';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 import { IframeProject } from "./IframeProject";
 import { ProjectsNav } from "./ProjectsNav";
@@ -10,24 +12,39 @@ import { ProjectInfos } from "./ProjectInfos";
 import { LandingPageProjects } from "./LandingPageProjects";
 
 
+
 export function ProjectPage() {
 
-    // Fonts
+    // Fonts:
     useEffect(() => {
+
         WebFont.load({
             google: {
                 families: ['Julius Sans One', 'Chilanka']
             }
         });
+
+
     }, []);
 
 
-    const [isProjectSelected, setIsProjectSelected] = useState(false);
+    // Bouton retour vers landingPage projets:
+    const [isBackBtnHovered, setIsBackBtnHovered] = useState(false);
+    const backBtnEnter = () => {
+        setIsBackBtnHovered(true);
+    }
+    const backBtnLeave = () => {
+        setIsBackBtnHovered(false);
+    }
+    const handleBackBtn = () => {
+        setActualProjectIndex(null);
+    }
 
 
+    // Projets DATA:
     const projects = [
         {
-            id: 1,
+            id: 0,
             name: "SquadForge",
             repo_name: "ELAN_Projet_SquadForge",
             fontFamily: "Julius Sans One",
@@ -81,14 +98,19 @@ export function ProjectPage() {
         // Ajouter le portfolio v2
     ];
 
-    const [actualProjectIndex, setActualProjectIndex] = useState(0);
+
+    // null ? landingPage : projet n°X
+    const [actualProjectIndex, setActualProjectIndex] = useState(null);
+
+    
+
 
 
     return (
 
         <>
 
-            {isProjectSelected ? (
+            {actualProjectIndex !== null ? (
                 
                 <div style={{zIndex:5, height:"100%"}}>
 
@@ -103,6 +125,15 @@ export function ProjectPage() {
 
                     {/* Header ("Mes Projets" + nav) */}
                     <div className="projectPageHeader">
+
+                        <FontAwesomeIcon 
+                            icon={faArrowLeft} 
+                            className="backToProjectsBtn" 
+                            onMouseEnter={backBtnEnter}
+                            onMouseLeave={backBtnLeave}
+                            onClick={handleBackBtn}
+                            style={{opacity: isBackBtnHovered ? 0.5 : 1}}
+                        />
 
                         <h2 className="titleSection">Mes Projets</h2>
 
@@ -129,7 +160,7 @@ export function ProjectPage() {
 
             ) : (
 
-                <LandingPageProjects projects={projects} />
+                <LandingPageProjects projects={projects} selectProject={setActualProjectIndex} />
 
             )}
 

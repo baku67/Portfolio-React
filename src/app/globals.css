@@ -36,6 +36,25 @@ body {
 
 
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+
 main {
 
 }
@@ -95,7 +114,22 @@ main {
 }
 
 .projectPageHeader {
+  opacity: 0;
+  transform: translateY(-100px);
+
   margin-top: 15px;
+
+  animation: projectPageHeader 1s 0s ease forwards;
+}
+@keyframes projectPageHeader {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }
 
 .testezLe-div {
@@ -234,7 +268,23 @@ main {
   background-color: #191919;
   border: 3px solid;
   border-radius: 22px;
+
+  opacity: 0;
+  transform: rotateY(83deg);
+  animation: iframeContainer 1.5s 0.5s ease forwards;
 }
+@keyframes iframeContainer {
+  from {
+    opacity: 0;
+    transform: rotateY(83deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0deg);
+  }
+}
+
+
 .iframe {
   height: 600px;
   width: 350px;
@@ -357,7 +407,22 @@ main {
 }
 .projectInfosDiv {
   text-align: center;
+
+  opacity: 0;
+  transform: translateX(200px);
+  animation: projectInfosDiv 1s 0.5s ease forwards;
 }
+@keyframes projectInfosDiv {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 .projectName {
   font-size: 2.4em;
 }
@@ -381,6 +446,9 @@ main {
   width: 160px;
 
   filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.7));
+
+  opacity: 0;
+  animation: fadeIn 1.5s 0.5s ease forwards;
 }
 
 .headerSubTitle {
@@ -403,6 +471,35 @@ main {
 .githubCalendarTitle {
   text-align: center;
   margin: 5px auto 15px auto;
+}
+
+.projectCardsList {
+  display: inline-flex;
+  gap: 10px;
+  justify-content: center;
+  width: 90%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 10px auto;
+}
+
+.projectCard {
+  cursor: pointer;
+  border: 1px solid red;
+
+  transition: all 0.3s;
+}
+
+.backToProjectsBtn {
+  cursor: pointer;
+  position: absolute;
+  padding: 15px;
+  font-size: 2.3em;
+  margin-left: 15px;
+  opacity: 1;
+
+  transition: all 0.3s;
 }
 
 
