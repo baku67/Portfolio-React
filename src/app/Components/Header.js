@@ -1,11 +1,11 @@
-import { Photo } from "./Photo";
-import { HeaderText } from "./HeaderText";
 
 export function Header() {
+
     return (
+
         <div>
-            <Photo />
-            <HeaderText />
+            {/* Photo */}
+            {/* "Basile Kuntz" + vagues /n "> Développeur web" */}
         </div>
     )
 }

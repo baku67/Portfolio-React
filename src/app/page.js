@@ -102,6 +102,7 @@ export default function Home() {
 
     <main className="main">
       
+
       {/* Page 1: Présentation */}
       <section className="section page1">
 
@@ -110,10 +111,11 @@ export default function Home() {
 
         {/* Header (Photo + HeaderText) */}
         <Header />
-
-        {/* Composant sideNav */}
         
       </section>
+
+
+
 
 
       {/* Page 2: Parcours */}
@@ -125,30 +127,30 @@ export default function Home() {
         {/* Composant Formations (gros bloc) */}
 
         {/* Composant Loisirs et Outils (petits blocs) */}
-
-        {/* Composant sideNav */}
         
       </section>
+
+
+
 
 
       {/* Page 3: Projets */}
       <section className="section page3">
 
-        {/* Composants iframes */}
         <ProjectPage />
 
-        {/* Composant sideNav */}
-      
       </section>
+
+
+
 
 
       {/* Page 4: Photographie, animations */}
       <section className="section page4">
 
-
-        {/* Composant sideNav */}
       
       </section>
+
 
 
 
@@ -177,8 +179,6 @@ export default function Home() {
           <ContactForm />
           <Socials />
         </div>
-
-        {/* Composant sideNav */}
 
         <Footer />
       

@@ -1,5 +1,9 @@
 // Email encodé pour empêcher Bots scrapping
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faAt } from "@fortawesome/free-solid-svg-icons";
+
+
 function encodeEmail(email) {
     let encoded = '';
     for (let i = 0; i < email.length; i++) {
@@ -31,7 +35,16 @@ function EmailEncryption() {
     };
 
     return (
-        <p><span onClick={handleEmailClick} alt={"Email encodé"} className="emailContact" style={{ cursor: 'pointer' }} dangerouslySetInnerHTML={{ __html: encodedEmail }} /></p>
+        <p className="iconAndText">
+            <FontAwesomeIcon icon={faAt} className='faIcon' />
+            <span 
+                onClick={handleEmailClick} 
+                alt={"Email encodé"} 
+                className="emailContact" 
+                style={{ cursor: 'pointer' }} 
+                dangerouslySetInnerHTML={{ __html: encodedEmail }} 
+            />
+        </p>
     );
 }
 
