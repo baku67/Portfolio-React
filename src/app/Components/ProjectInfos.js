@@ -21,8 +21,8 @@ export function ProjectInfos({actualProject, actualProjectIndex}) {
                         key={skill} 
                         style={{
                             backgroundColor: actualProject.primaryColor,
-                            border: actualProject.primarySkill.includes(skill) ? "2px solid #0cedc8" : "2px solid transparent",
-                            boxShadow: actualProject.primarySkill.includes(skill) ? "0 0 30px -4px #0ff" : "0 0 30px -4px rgba(0,0,0,0)"
+                            border: actualProject.primarySkill.includes(skill) ? "2px solid var(--primary-cyan)" : "2px solid transparent",
+                            boxShadow: actualProject.primarySkill.includes(skill) ? "0 0 19px -4px var(--primary-cyan)" : "0 0 30px -4px rgba(0,0,0,0)"
                         }}
                     >
                         {skill}

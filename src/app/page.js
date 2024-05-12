@@ -3,6 +3,7 @@ import { useEffect } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 import { Socials } from "./Components/Socials";
 import { ContactForm } from './Components/ContactForm';
@@ -150,10 +151,17 @@ export default function Home() {
       </section>
 
 
-      {/* Page 5: Contact, Github, Linkedin, mail */}
+
+
+      {/* Page 5: Contact */}
       <section className="section page5">
 
-        {/* <h2 className="titleSection" style={{marginTop:"15px"}}>Contact</h2> */}
+        {/* Shapes */}
+        <div className="shapeProject1" style={{backgroundColor: "var(--primary-cyan)"}}></div>
+        <div className="shapeProject2" style={{backgroundColor: "var(--primary-cyan)"}}></div>
+
+        {/* Icone Page (top-right) */}
+        <FontAwesomeIcon icon={faEnvelope} className="contactPage-icon" />
 
         {/* Header */}
         <div className="projectPageHeader">

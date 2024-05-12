@@ -4,9 +4,19 @@ export function ProjectThumbnail({project, isHovered}) {
 
     return (
         <>
-            <img src={project.thumbnail} className="projectCard_thumbnail" style={{borderColor: project.primaryColor, transform: isHovered ? "scale(1.05)" : "scale(1)"}} />
+            <img 
+                src={project.thumbnail} 
+                className="projectCard_thumbnail" 
+                style={{
+                    borderColor: project.primaryColor, 
+                    transform: isHovered ? "scale(1.03)" : "scale(1)"
+                }} 
+            />
 
-            <div className="projectCard_infos">
+            <div 
+                className="projectCard_infos"
+                style={{transform: isHovered ? "translateY(7px)" : "translateY(0px)"}}
+            >
 
                 <h2 className="projectCard_title" style={{fontFamily: project.fontFamily, color: project.primaryColor}}>{project.name}</h2>
 

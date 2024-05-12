@@ -49,7 +49,7 @@ export function GithubRepoStats({ token, owner, repo }) {
           {error ? 
             <span>Commits: <span style={{fontSize:"0.8em", color:"#f65353"}}>Erreur API exceeds (voir console)</span></span>
            : 
-            <span className="NbrCommits">{commitActivity} Commits</span>
+            <span className="NbrCommits"><span style={{color:"var(--primary-cyan)", fontWeight:"bold"}}>{commitActivity}</span> Commits</span>
           }
       </div>
     );

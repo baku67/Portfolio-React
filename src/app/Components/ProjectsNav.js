@@ -16,7 +16,11 @@ export function ProjectsNav({ nbrProjects, actualProjectIndex, actualProjectColo
 
                 <li 
                     key={index + 1} 
-                    style={{backgroundColor: index === actualProjectIndex ? actualProjectColor : "black", color: index === actualProjectIndex ? "black" : "white"}}
+                    style={{
+                        backgroundColor: index === actualProjectIndex ? actualProjectColor : "var(--secondary-cyan)", 
+                        color: index === actualProjectIndex ? "black" : "white",
+                        fontWeight: index === actualProjectIndex ? "bold" : "normal",
+                    }}
                     onClick={() => handleClick(index)}
                 >
                     {index + 1}

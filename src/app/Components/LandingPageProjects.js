@@ -4,6 +4,7 @@ import { useState } from "react"
 import Tooltip from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo, faChevronLeft, faChevronRight, faChartLine } from "@fortawesome/free-solid-svg-icons";
+import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 
 import { ProjectThumbnail } from "./ProjectThumbnail";
 import GitHubCalendar from 'react-github-calendar';
@@ -42,8 +43,24 @@ export function LandingPageProjects({projects, selectProject}) {
     }
 
 
+    // Custom Colors of githubCalendar:
+    const explicitTheme = {
+        light: ['#1d1d24', 'rgba(28,142,198,0.4)', 'rgba(28,142,198,0.6)', 'rgba(28,142,198,0.8)', 'rgba(28,142,198,1)'],
+        dark: ['#1d1d24', 'rgba(28,142,198,0.4)', 'rgba(28,142,198,0.6)', 'rgba(28,142,198,0.8)', 'rgba(28,142,198,1)'],
+      };
+
+
+
     return (
         <div>
+
+            {/* Icone Page (top-right) */}
+            <FontAwesomeIcon icon={faLightbulb} className="contactPage-icon" />
+
+            {/* Shapes */}
+            <div className="shapeProject1" style={{backgroundColor: "var(--primary-cyan)"}}></div>
+            <div className="shapeProject2" style={{backgroundColor: "var(--primary-cyan)"}}></div>
+
 
             {/* Header */}
             <div className="projectPageHeader">
@@ -69,7 +86,9 @@ export function LandingPageProjects({projects, selectProject}) {
                         onMouseEnter={() => handleMouseEnterLi(index)}
                         onMouseLeave={handleMouseLeaveLi}
                         style={{ 
-                            backgroundColor: hoveredIndex === index ? "#434242" : "#363636",
+                            transform: hoveredIndex === index ? "translateY(-10px)" : "translateY(0px)",
+                            boxShadow: hoveredIndex === index ? "0px 6px 10px #00000070" : "0px 0px 0px #00000000",
+                            backgroundColor: hoveredIndex === index ? "#10394d" : "var(--secondary-cyan)",
                             animationDelay: `${1 + index * 0.15}s`, // Global delay + individual delay
                         }}
                         onClick={() => handleClickProject(project.id)}
@@ -93,7 +112,7 @@ export function LandingPageProjects({projects, selectProject}) {
                     onMouseEnter={githubCardEnter}
                     onMouseLeave={githubCardLeave}
                     style={{
-                        backgroundColor: githubCardHovered ? "#434242" : "transparent",
+                        backgroundColor: githubCardHovered ? "var(--secondary-cyan)" : "transparent",
                         borderColor: githubCardHovered ? "transparent" : "transparent",
                     }}
                 >
@@ -102,7 +121,7 @@ export function LandingPageProjects({projects, selectProject}) {
                         <h3 className="githubCalendarTitle">Activité :</h3>
                     </div>
                     {/* Props light/dark par exemple: https://grubersjoe.github.io/react-github-calendar/#/?user=baku67 */}
-                    <GitHubCalendar username="baku67" />
+                    <GitHubCalendar username="baku67" theme={explicitTheme} />
                 </div>
             </a>
             
