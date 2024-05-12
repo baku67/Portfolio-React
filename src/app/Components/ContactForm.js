@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+
 // Bootstrap Components & CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Form from 'react-bootstrap/Form';
@@ -9,6 +13,7 @@ import Button from 'react-bootstrap/Button';
 export function ContactForm() {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [isSubmited, setIsSubmited] = useState(false);
     const [stateMessage, setStateMessage] = useState(null);
 
     // API email.js
@@ -29,11 +34,8 @@ export function ContactForm() {
         )
         .then(
           (result) => {
-            setStateMessage('Message envoyé avec succès, merci !');
             setIsSubmitting(false);
-            setTimeout(() => {
-              setStateMessage(null);
-            }, 5000); // hide message after 5 seconds
+            setIsSubmited(true);
           },
           (error) => {
             setStateMessage('Il y a eu une erreur, veuillez réessayer plus tard ou utiliser une autre méthode de contact.');
@@ -52,37 +54,61 @@ export function ContactForm() {
 
     return (
 
-        <div>
 
-            <h2>Contactez-moi :</h2>
+        <div className="contact-section1">
 
-            <Form onSubmit={sendEmail}>
-                <Form.Group className="mb-3" controlId="formBasicName">
-                    <Form.Label>Nom</Form.Label>
-                    <Form.Control type="text" name="user_name" placeholder="Entrez votre nom" />
-                </Form.Group>
+        {!isSubmited ? (
 
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name="from_name" placeholder="Entrez votre email" />
-                    <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
+            <div>
+                <h3 style={{color:"var(--primary-cyan)"}}>Envoyez-moi un message :</h3>
+                <Form onSubmit={sendEmail}>
+                    <Form.Group className="mb-3" controlId="formBasicName">
+                        <Form.Label>Nom</Form.Label>
+                        <Form.Control type="text" name="user_name" placeholder="Entrez votre nom" />
+                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicMessage">
-                    <Form.Label>Message</Form.Label>
-                    <Form.Control as="textarea" name="message" placeholder="Entrez votre message" />
-                </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email</Form.Label>
+                        <Form.Control type="email" name="from_name" placeholder="Entrez votre email" />
+                        <Form.Text className="text-mutedd">
+                        Dans le seul but de vous recontacter.
+                        </Form.Text>
+                    </Form.Group>
 
-                <Button variant="primary" type="submit" disabled={isSubmitting}>
-                    Envoyer
-                </Button>
+                    <Form.Group className="mb-3" controlId="formBasicMessage">
+                        <Form.Label>Message</Form.Label>
+                        <Form.Control as="textarea" name="message" placeholder="Entrez votre message" />
+                    </Form.Group>
 
-                {stateMessage && <p>{stateMessage}</p>}
-            </Form>
+                    <div style={{display:"inline-flex"}}>
+                        <Button variant="primary" type="submit" disabled={isSubmitting}>
+                            Envoyer
+                        </Button>
+
+                        {stateMessage && <p>{stateMessage}</p>}
+
+                        {isSubmitting && 
+                            <div className="iconAndText">
+                                <FontAwesomeIcon icon={faSpinner} className="faIcon faSpinner" />
+                                <span>Envoi en cours</span>
+                            </div>
+                        }
+                    </div>
+
+                </Form>
+            </div>
+
+        ) : (
+
+            <div className="iconAndText">
+                <FontAwesomeIcon icon={faCircleCheck} className="faIcon" />
+                <span>Votre message a bien été envoyé, <span style={{fontWeight:"bold", color:"var(--primary-cyan)"}}>merci</span> !</span>
+            </div>
+
+        )}
 
         </div>
+
     );
 };
 

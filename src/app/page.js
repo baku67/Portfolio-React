@@ -1,8 +1,12 @@
 "use client";
 import { useEffect } from "react";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+
 import { Socials } from "./Components/Socials";
 import { ContactForm } from './Components/ContactForm';
+import { Footer } from "./Components/Footer";
 import { Header } from "./Components/Header";
 import { ProjectPage } from "./Components/ProjectPage";
 import AOS from 'aos';
@@ -100,8 +104,8 @@ export default function Home() {
       {/* Page 1: Présentation */}
       <section className="section page1">
 
-        {/* Photo, intro + compétences, navigation, alerte recherche d'alternance */}
-        {/* Poissons que ici */}
+        {/* Photo, intro + Langages (FA couleurs ?), navigation, alerte recherche d'alternance */}
+        {/* Poissons que ici ? juste raie ? */}
 
         {/* Header (Photo + HeaderText) */}
         <Header />
@@ -114,6 +118,12 @@ export default function Home() {
       {/* Page 2: Parcours */}
       <section className="section page2">
 
+        {/* Composant dl CV (FA) */}
+
+        {/* Composant Expériences (gros bloc) */}
+        {/* Composant Formations (gros bloc) */}
+
+        {/* Composant Loisirs et Outils (petits blocs) */}
 
         {/* Composant sideNav */}
         
@@ -143,11 +153,26 @@ export default function Home() {
       {/* Page 5: Contact, Github, Linkedin, mail */}
       <section className="section page5">
 
-        <ContactForm />
+        {/* <h2 className="titleSection" style={{marginTop:"15px"}}>Contact</h2> */}
 
-        <Socials />
+        {/* Header */}
+        <div className="projectPageHeader">
+            <h2 className="titleSection" style={{marginBottom:"0.4em"}}>
+                <FontAwesomeIcon icon={faChevronLeft} className="faIcon-chevron" /> 
+                <span style={{margin:"0px 15px"}}>Contact</span>
+                <span className="slash">/</span>
+                <FontAwesomeIcon icon={faChevronRight} className="faIcon-chevron" /> 
+            </h2>
+        </div>
+
+        <div className="contactMain">
+          <ContactForm />
+          <Socials />
+        </div>
 
         {/* Composant sideNav */}
+
+        <Footer />
       
       </section>
 

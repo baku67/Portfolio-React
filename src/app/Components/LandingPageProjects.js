@@ -3,7 +3,7 @@ import { useState } from "react"
 
 import Tooltip from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
+import { faCircleInfo, faChevronLeft, faChevronRight, faChartLine } from "@fortawesome/free-solid-svg-icons";
 
 import { ProjectThumbnail } from "./ProjectThumbnail";
 import GitHubCalendar from 'react-github-calendar';
@@ -47,9 +47,14 @@ export function LandingPageProjects({projects, selectProject}) {
 
             {/* Header */}
             <div className="projectPageHeader">
-                <h2 className="titleSection"><span>&#x2039; </span>Mes Projets<span> /&#x203A;</span></h2>
+                <h2 className="titleSection" style={{marginBottom:"0.4em"}}>
+                    <FontAwesomeIcon icon={faChevronLeft} className="faIcon-chevron" /> 
+                    <span style={{margin:"0px 15px"}}>Mes Projets</span>
+                    <span className="slash">/</span>
+                    <FontAwesomeIcon icon={faChevronRight} className="faIcon-chevron" /> 
+                </h2>
                 <div className="headerSubTitle">
-                    <FontAwesomeIcon icon={faCircleInfo} />
+                    <FontAwesomeIcon icon={faCircleInfo} className="faIcon" />
                     <span> Cliquez sur un projet pour voir sa démo, sa description, etc...</span>
                 </div>
             </div>
@@ -92,7 +97,10 @@ export function LandingPageProjects({projects, selectProject}) {
                         borderColor: githubCardHovered ? "transparent" : "transparent",
                     }}
                 >
-                    <h2 className="githubCalendarTitle">Activité :</h2>
+                    <div className="iconAndText" style={{marginBottom: "0.5em"}}>
+                        <FontAwesomeIcon icon={faChartLine} className="faIcon" />
+                        <h3 className="githubCalendarTitle">Activité :</h3>
+                    </div>
                     {/* Props light/dark par exemple: https://grubersjoe.github.io/react-github-calendar/#/?user=baku67 */}
                     <GitHubCalendar username="baku67" />
                 </div>

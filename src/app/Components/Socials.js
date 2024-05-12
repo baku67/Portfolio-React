@@ -2,11 +2,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Button from 'react-bootstrap/Button';
 
+import EmailEncryption from './EmailEncryption';
+
 export function Socials() {
 
     return (
 
-        <div>
+        <div className="contact-section2">
 
             {/* WIP style btn */}
             <a href="www.linkedin.com/in/basile-kuntz-719278267" target='_blank'>
@@ -21,6 +23,9 @@ export function Socials() {
                     <img src={"./github-mark-white.png"} /><span>&nbsp;Visitez mon Github</span>
                 </Button>
             </a>
+
+            
+            <EmailEncryption />
 
         </div>
     )

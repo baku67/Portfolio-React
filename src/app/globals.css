@@ -8,6 +8,9 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  --primary-cyan: #1c8ec6 !important;
+  --background-color: #1d1d24;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,11 +22,17 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb)); */
+  color: #efefef !important;
 
   background: linear-gradient(56deg, rgba(23,25,35,1) 0%, rgba(29,36,47,1) 41%, rgba(34,46,58,1) 50%, rgba(23,25,35,0.9943339884782038) 75%, rgba(23,25,35,0.9943339884782038) 99%);
 
   font-family: 'Nunito' !important;
+}
+
+a {
+  text-decoration: none !important;
+  color: #efefef !important;
 }
 
 @layer utilities {
@@ -62,7 +71,7 @@ main {
   width: 100%;
   height: 100vh;
 
-  background-color: rgb(29 29 36);
+  background-color: var(--background-color);
 
   opacity: 0;
   transition: 0.5s;
@@ -79,7 +88,7 @@ main {
   width: 100%;
   height: 100vh;
 
-  background-color: rgb(29 29 36);
+  background-color: var(--background-color);
 
   opacity: 0;
   transition: 0.5s;
@@ -105,13 +114,19 @@ main {
   display: inline-flex;
   flex-direction: column;
 
-  background-color: rgb(29 29 36);
+  background-color: var(--background-color);
 
   opacity: 0;
   transition: 0.5s;
 }
 
+.styles-module_container__GBNxC {
+  transform: scale(0.8);
+}
+
 .projectPageHeader {
+  /* height: 10vh; */
+
   opacity: 0;
   transform: translateY(-100px);
 
@@ -396,11 +411,11 @@ main {
   gap: 10px;
 }
 .projectSkillList li {
-  padding: 3px 7px;
+  padding: 3px 7px 0px 7px;
   border-radius: 20px;
   color: black;
   font-size: 0.9em;
-  font-weight: 500;
+  font-weight: 600;
   margin: 10px auto;
 }
 .projectInfosDiv {
@@ -433,6 +448,7 @@ main {
 .projectCard_primSkills {
   display: inline-flex;
   gap: 5px;
+  padding-left: 0em;
 }
 .projectCard_primSkills li {
   /* background-color: orange; */
@@ -446,7 +462,7 @@ main {
 }
 
 .projectCard_thumbnail {
-  height: 40vh;
+  height: 35vh;
   margin: 0 auto;
   border: 1px solid transparent;
 
@@ -464,9 +480,11 @@ main {
 
 .projectCard_title {
   font-size: 1.4em;
+
+  margin-bottom: 0.1em;
 }
 .projectCard_description {
-
+  margin-bottom: 0.1em;
 }
 
 .projectName {
@@ -499,11 +517,23 @@ main {
 
 .headerSubTitle {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* background-color: #ffffff0a; */
+  background: rgba(255,255,255,0.09505977684042366);
+  background: linear-gradient(90deg, rgba(29,29,36,1) 20%, rgba(255,255,255,0.0474407292213761) 40%, rgba(255,255,255,0.05024184966955536) 60%, rgba(29,29,36,1) 80%);
+  padding: 3px;
 }
 
 .githubCalendarLink {
-  height: auto;
-  display: block;
+  /* height: 40vh; */
+  align-items: center;
+  display: flex;
+
+  /* height: auto;
+  display: block; */
   width: fit-content;
   margin: 10px auto;
 
@@ -534,11 +564,20 @@ main {
   transition: all 0.3s;
 }
 .githubCalendarTitle {
-  text-align: center;
-  margin: 5px auto 15px auto;
+  /* text-align: center;
+  margin: 5px auto 15px auto; */
+  margin-bottom: 0;
+}
+
+.iconAndText {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
 }
 
 .projectCardsList {
+  /* height: 50vh; */
+
   display: inline-flex;
   gap: 10px;
   justify-content: center;
@@ -546,7 +585,7 @@ main {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  margin: 10px auto;
+  margin: 30px auto;
 }
 
 .projectCard {
@@ -579,7 +618,7 @@ main {
   width: 100%;
   height: 100vh;
 
-  background-color: rgb(29 29 36);
+  background-color: var(--background-color);
 
   opacity: 0;
   transition: 0.5s;
@@ -591,16 +630,96 @@ main {
   width: 100%;
   height: 100vh;
 
-  background-color: rgb(29 29 36);
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--background-color);
 
   opacity: 0;
   transition: 0.5s;
 }
 
+.contactMain {
+  display: inline-flex;
+  width: 80%;
+  margin: 0 auto;
+  gap: 10%;
+  justify-content: space-evenly;
+  align-items: center;
+
+  flex:1;
+}
+
+.contact-section1 {
+  width: 50%;
+  padding: 25px;
+  background-color: #28282f;
+  border-radius: 13px;
+
+  box-shadow: 0px 0px 15px #00d7ff;
+}
+.contact-section2 {
+  width: 50%;
+  text-align: center;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.text-mutedd {
+  color: #adadad !important;
+}
+
+.emailContact {
+  text-decoration: underline;
+  color: #9494ff;
+  text-underline-offset: 5px;
+}
+
 .btnLinkedIn {
   width: 85px;
   height: 37px;
-  border: 2px solid #0d6efd;
+  border: 2px solid var(--primary-cyan);
+}
+
+.faIcon {
+  font-size: 2em;
+  color: var(--primary-cyan);
+  margin: 0 15px;
+}
+.faIcon-chevron {
+  font-size: 1em;
+  color: var(--primary-cyan);
+  margin: 0px 0px;
+}
+.slash {
+  color: var(--primary-cyan);
+  font-size: 1.5em;
+  line-height: 0;
+  position: relative;
+  top: 3px;
+}
+
+.faSpinner {
+  animation: faSpinner 1.5s 0s ease infinite;
+}
+@keyframes faSpinner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.footer {
+  height: 10vh;
+  background-color: #19191e;
+  /* text-align: center; */
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: center;
 }
 
 
