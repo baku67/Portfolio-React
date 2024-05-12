@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import WebFont from "webfontloader";
+
 import { Header } from "./Components/Header";
 import { ProjectPage } from "./Components/ProjectPage";
 import AOS from 'aos';
@@ -9,23 +9,23 @@ import 'aos/dist/aos.css';
 
 export default function Home() {
 
-  // Fonts:
+  
   useEffect(() => {
-    WebFont.load({
+
+    // Fonts:
+    // Dynamic import for webfontloader (fix pb SSR)
+    import('webfontloader').then((WebFontLoader) => {
+      WebFontLoader.load({
         google: {
-            families: ['Julius Sans One', 'Nunito']
+          families: ['Julius Sans One', 'Nunito']
         }
+      });
     });
-  }, []);
 
 
-
-  // Scroll sections smooth
-  useEffect(() => {
-
+    // Scroll sections smooth AOS (check no SSR)
     if (typeof window !== 'undefined') {
 
-      // AOS initialization
       AOS.init({
           duration: 800,
           easing: 'ease-in-out',
