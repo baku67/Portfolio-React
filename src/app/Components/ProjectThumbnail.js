@@ -1,8 +1,6 @@
-
+"use client";
 
 export function ProjectThumbnail({project, isHovered}) {
-
-    console.log("isHoevered: " + isHovered)
 
     return (
         <>

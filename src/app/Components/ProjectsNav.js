@@ -1,3 +1,4 @@
+"use client";
 
 export function ProjectsNav({ nbrProjects, actualProjectIndex, actualProjectColor, changeActualProject }) {
 

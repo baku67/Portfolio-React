@@ -2,7 +2,6 @@
 "use client";
 import { useState, useEffect } from "react";
 
-import WebFont from 'webfontloader';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
@@ -14,18 +13,6 @@ import { LandingPageProjects } from "./LandingPageProjects";
 
 
 export function ProjectPage() {
-
-    // Fonts:
-    useEffect(() => {
-
-        WebFont.load({
-            google: {
-                families: ['Julius Sans One', 'Chilanka']
-            }
-        });
-
-
-    }, []);
 
 
     // Bouton retour vers landingPage projets:

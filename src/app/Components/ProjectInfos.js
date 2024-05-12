@@ -1,3 +1,4 @@
+"use client";
 import { CarrousselProject } from "./CarrousselProject";
 
 

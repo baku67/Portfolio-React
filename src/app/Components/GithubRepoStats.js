@@ -1,3 +1,4 @@
+"use client";
 
 import { Octokit } from "@octokit/core";
 import { useState, useEffect } from "react";
@@ -20,7 +21,7 @@ export function GithubRepoStats({ token, owner, repo }) {
         });
 
         setCommitActivity(response.data[0].total);
-        console.log(response.data);
+        // console.log(response.data);
 
       } catch (error) {
         setError(error);
@@ -31,6 +32,7 @@ export function GithubRepoStats({ token, owner, repo }) {
   
     useEffect(() => {
       fetchCommitActivity();
+      console.log("REFETCH API GITHUB");
     }, [owner, repo, token]);
     // Reload/resend que lorsque un de ces props change
   
