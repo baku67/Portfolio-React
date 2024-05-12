@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from "react";
 
+import { ContactForm } from './Components/ContactForm';
 import { Header } from "./Components/Header";
 import { ProjectPage } from "./Components/ProjectPage";
 import AOS from 'aos';
@@ -132,6 +133,17 @@ export default function Home() {
       {/* Page 4: Photographie, animations */}
       <section className="section page4">
 
+
+        {/* Composant sideNav */}
+      
+      </section>
+
+
+      {/* Page 5: Contact, Github, Linkedin, mail */}
+      <section className="section page5">
+
+        <h2>Contactez-moi :</h2>
+        <ContactForm />
 
         {/* Composant sideNav */}
       

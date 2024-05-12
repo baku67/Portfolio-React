@@ -20,12 +20,8 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+  background: linear-gradient(56deg, rgba(23,25,35,1) 0%, rgba(29,36,47,1) 41%, rgba(34,46,58,1) 50%, rgba(23,25,35,0.9943339884782038) 75%, rgba(23,25,35,0.9943339884782038) 99%);
 
   font-family: 'Nunito' !important;
 }
@@ -66,7 +62,7 @@ main {
   width: 100%;
   height: 100vh;
 
-  background-color: rgb(51, 51, 149);
+  background-color: rgb(29 29 36);
 
   opacity: 0;
   transition: 0.5s;
@@ -83,7 +79,7 @@ main {
   width: 100%;
   height: 100vh;
 
-  background-color: red;
+  background-color: rgb(29 29 36);
 
   opacity: 0;
   transition: 0.5s;
@@ -109,7 +105,7 @@ main {
   display: inline-flex;
   flex-direction: column;
 
-  background-color: rgb(37 37 38);
+  background-color: rgb(29 29 36);
 
   opacity: 0;
   transition: 0.5s;
@@ -583,7 +579,19 @@ main {
   width: 100%;
   height: 100vh;
 
-  background-color: purple;
+  background-color: rgb(29 29 36);
+
+  opacity: 0;
+  transition: 0.5s;
+}
+
+
+
+.page5 {
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgb(29 29 36);
 
   opacity: 0;
   transition: 0.5s;
