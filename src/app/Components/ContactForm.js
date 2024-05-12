@@ -1,6 +1,11 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
+// Bootstrap Components & CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+
 export function ContactForm() {
 
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,14 +29,14 @@ export function ContactForm() {
         )
         .then(
           (result) => {
-            setStateMessage('Message sent!');
+            setStateMessage('Message envoyé avec succès, merci !');
             setIsSubmitting(false);
             setTimeout(() => {
               setStateMessage(null);
             }, 5000); // hide message after 5 seconds
           },
           (error) => {
-            setStateMessage('Something went wrong, please try again later');
+            setStateMessage('Il y a eu une erreur, veuillez réessayer plus tard ou utiliser une autre méthode de contact.');
             setIsSubmitting(false);
             setTimeout(() => {
               setStateMessage(null);
@@ -46,16 +51,38 @@ export function ContactForm() {
 
 
     return (
-      <form onSubmit={sendEmail}>
-        <label>Nom</label>
-        <input type="text" name="user_name" />
-        <label>Email</label>
-        <input type="email" name="user_email" />
-        <label>Message</label>
-        <textarea name="message" />
-        <input type="submit" value="Envoyer" disabled={isSubmitting} />
-        {stateMessage && <p>{stateMessage}</p>}
-      </form>
+
+        <div>
+
+            <h2>Contactez-moi :</h2>
+
+            <Form onSubmit={sendEmail}>
+                <Form.Group className="mb-3" controlId="formBasicName">
+                    <Form.Label>Nom</Form.Label>
+                    <Form.Control type="text" name="user_name" placeholder="Entrez votre nom" />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="email" name="from_name" placeholder="Entrez votre email" />
+                    <Form.Text className="text-muted">
+                    We'll never share your email with anyone else.
+                    </Form.Text>
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicMessage">
+                    <Form.Label>Message</Form.Label>
+                    <Form.Control as="textarea" name="message" placeholder="Entrez votre message" />
+                </Form.Group>
+
+                <Button variant="primary" type="submit" disabled={isSubmitting}>
+                    Envoyer
+                </Button>
+
+                {stateMessage && <p>{stateMessage}</p>}
+            </Form>
+
+        </div>
     );
 };
 

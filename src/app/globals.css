@@ -597,6 +597,12 @@ main {
   transition: 0.5s;
 }
 
+.btnLinkedIn {
+  width: 85px;
+  height: 37px;
+  border: 2px solid #0d6efd;
+}
+
 
 /* Attention il faut que la classe soit déclarée après les section  */
 .active {

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect } from "react";
 
+import { Socials } from "./Components/Socials";
 import { ContactForm } from './Components/ContactForm';
 import { Header } from "./Components/Header";
 import { ProjectPage } from "./Components/ProjectPage";
@@ -142,8 +143,9 @@ export default function Home() {
       {/* Page 5: Contact, Github, Linkedin, mail */}
       <section className="section page5">
 
-        <h2>Contactez-moi :</h2>
         <ContactForm />
+
+        <Socials />
 
         {/* Composant sideNav */}
       
