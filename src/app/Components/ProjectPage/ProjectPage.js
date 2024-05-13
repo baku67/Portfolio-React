@@ -132,24 +132,53 @@ export function ProjectPage() {
         },
         {
             id: 2,
-            name: "",
+            name: "Les 100 ciels",
             // Nom en minuscule pour API
-            repo_name: "",
-            fontFamily: "",
-            primaryColor: "",
-            logo: "",
-            thumbnail: "",
+            repo_name: "les100ciels-js-",
+            fontFamily: "Montserrat Alternates",
+            primaryColor: "#e8ca7d",
+            logo: "./projects/logoLes100ciels.png",
+            thumbnail: "./projects/cards_thumbnails/les100ciels.png",
             slogan: "",
-            description: "",
-            skills: [],
-            primarySkill : [],
-            github_link : "",
-            site_link: "",
+            description: "Site vitrine d'artiste",
+            skills: ["HTML", "CSS", "Javascript", "PHP"],
+            primarySkill : ["CSS", "Javascript"],
+            github_link : "https://github.com/baku67/les100ciels-js-",
+            site_link: "https://les100ciels.art",
 
             fonctionalities: [
+                "Galleries, modals et navigation",
+                "Librairie SplideJS",
+                "Animations CSS",
+                "Responsiv Design",
+                "Formulaire de contact",
             ],
 
             carroussel_imgs: [
+                {
+                    src: "./projects/les100ciels1.png",
+                    alt: "Slide 1",
+                },
+                {
+                    src: "./projects/les100ciels2.png",
+                    alt: "Slide 2",
+                },
+                {
+                    src: "./projects/les100ciels3.png",
+                    alt: "Slide 3",
+                },
+                {
+                    src: "./projects/les100ciels4.png",
+                    alt: "Slide 4",
+                },
+                {
+                    src: "./projects/les100ciels5.png",
+                    alt: "Slide 5",
+                },
+                {
+                    src: "./projects/les100ciels6.png",
+                    alt: "Slide 6",
+                },
             ],
         },
         {

@@ -64,9 +64,15 @@ export function ProjectCardInfos({ project, isHovered, token, owner, repo }) {
           </ul>
 
           {error ? 
-            <span>Commits: <span style={{fontSize:"0.8em", color:"#f65353"}}>API</span></span>
+            <span className="NbrCommits">
+              <span>Commits: </span>
+              <span style={{fontSize:"0.8em", color:"#f65353"}}>API</span>
+            </span>
           : 
-            <span className="NbrCommits"><span style={{color:"var(--primary-cyan)", fontWeight:"bold"}}>{commitActivity}</span> Commits</span>
+            <span className="NbrCommits">
+              <span style={{color:"var(--primary-cyan)", fontWeight:"bold"}}>{commitActivity}</span>
+              <span>Commits</span>
+            </span>
           }
 
       </div>

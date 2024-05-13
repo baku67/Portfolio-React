@@ -478,6 +478,13 @@ main {
   display: block;
   text-align: right;
 
+  display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    position: relative;
+    top: 2px;
+
   color: #8b9c9a;
   /* color: var(--primary-cyan); */
   font-size: 0.8em;
@@ -667,8 +674,9 @@ main {
   width: 21%;
 
   background-color: var(--secondary-cyan);
-  padding: 25px 15px 15px 15px;
+  padding: 25px 15px 12px 15px;
   border-radius: 14px;
+  
 
   border-bottom: 5px solid var(--primary-cyan);
 
@@ -691,6 +699,26 @@ main {
 
   transition: all 0.3s;
 }
+
+
+
+.disclaimerFirefox {
+  position: absolute;
+  bottom: 100%;
+  width: 100%;
+  text-align: center;
+  color: #ff6d6d;
+  gap: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 10px;
+  background-color: #00000045;
+  border-radius: 5px;
+  padding: 5px;
+}
+
 
 
 

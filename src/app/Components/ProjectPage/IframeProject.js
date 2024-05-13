@@ -2,18 +2,18 @@
 
 import { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPowerOff, faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { faPowerOff, faGlobe, faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 
 export function IframeProject({ actualProject }) {
 
     const [iframeKey, setIframeKey] = useState(0);
-
     const [homeBtnHovered, setHomeBtnHovered] = useState(false);
     const [shutDownBtnHovered, setShutDownBtnHovered] = useState(false);
-
     const [iframeState, setIframeState] = useState(true);
+
+    const isFirefox = navigator.userAgent.toLowerCase().indexOf('firefox') > -1;
 
     const projectColor = actualProject.primaryColor;
 
@@ -64,6 +64,16 @@ export function IframeProject({ actualProject }) {
     return (
 
         <div className="iframeContainer" style={{borderColor: projectColor, boxShadow: "0 0 89px -11px " + projectColor}}>
+
+
+            {/* Disclaimer IF firefox + IF projet2 */}
+            {actualProject.repo_name == "blackjackjo-projet" && 
+                isFirefox && 
+                    <div className="disclaimerFirefox">
+                        <FontAwesomeIcon icon={faTriangleExclamation} />
+                        <span>Projet non supporté sur Firefox</span>
+                    </div>
+            }
 
             {/* "Testez-le" */}
             <div className="testezLe-div">
