@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
-import { Socials } from "./Components/Socials";
-import { ContactForm } from './Components/ContactForm';
-import { Footer } from "./Components/Footer";
+import { Socials } from "./Components/ContactPage/Socials";
+import { ContactForm } from './Components/ContactPage/ContactForm';
+import { Footer } from "./Components/ContactPage/Footer";
 import { Header } from "./Components/Header";
-import { ProjectPage } from "./Components/ProjectPage";
+import { ProjectPage } from "./Components/ProjectPage/ProjectPage";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 

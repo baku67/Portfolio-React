@@ -258,9 +258,20 @@ main {
 }
 .splide__arrow--next {
   right: -3em !important;
+  background: #ccc0 !important;
 }
 .splide__arrow--prev {
   left: -3em !important;
+  background: #ccc0 !important;
+}
+.splide__arrow svg {
+  fill: var(--primary-cyan) !important;
+  height: 2.5em !important;
+  width: 2.5em !important;
+  stroke-linejoin: "round";
+}
+.splide__arrow svg path { 
+  stroke-linejoin: "round";
 }
 .carrousselImg {
   width: 250px;
@@ -382,10 +393,11 @@ main {
   position: absolute;
   right: -60px;
   top: 35px;
-  border: 2px solid;
+  border: 3px solid;
   padding: 5px;
   display: inline-flex;
-  border-radius: 3px;
+  border-radius: 7px;
+  border-top-right-radius: 21px;
   background-color: #191919;
 
   transition: all 0.3s;
@@ -399,10 +411,11 @@ main {
   position: absolute;
   right: -60px;
   top: 90px;
-  border: 2px solid;
+  border: 3px solid;
   padding: 5px;
   display: inline-flex;
-  border-radius: 3px;
+  border-radius: 7px;
+  border-bottom-right-radius: 21px;
   background-color: #191919;
 
   transition: all 0.3s;
@@ -524,15 +537,24 @@ main {
 
 .projectLogo {
   position: absolute;
+  z-index: 999;
   top: 10px;
   right: 10px;
 
   width: 160px;
 
-  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.7));
+  filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.7));
 
   opacity: 0;
-  animation: fadeIn 1.5s 0.5s ease forwards;
+  animation: fadeInLogoProject 1.5s 0.5s ease forwards;
+}
+@keyframes fadeInLogoProject {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.8;
+  }
 }
 
 .headerSubTitle {
@@ -788,8 +810,22 @@ main {
   top: 10px;
   font-size: 8.5em;
 
+
+
   /* color: var(--background-color); */
   color: var(--secondary-cyan);
+
+  opacity: 0;
+  animation: fadeInLogoProject 1.5s 0.5s ease forwards;
+}
+
+@keyframes fadeInIconePage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.7;
+  }
 }
 
 .footer {
