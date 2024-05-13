@@ -8,7 +8,7 @@ import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 
 import { ProjectThumbnail } from "./ProjectThumbnail";
 import GitHubCalendar from 'react-github-calendar';
-import { GithubRepoStats } from "./GithubRepoStats";
+import { ProjectCardInfos } from "./ProjectCardInfos";
 
 
 export function LandingPageProjects({projects, selectProject}) {
@@ -95,7 +95,7 @@ export function LandingPageProjects({projects, selectProject}) {
                     >
                         <ProjectThumbnail project={project} isHovered={hoveredIndex === index ? true : false} />
 
-                        <GithubRepoStats token={token} owner="baku67" repo={project.repo_name} />
+                        <ProjectCardInfos project={project} isHovered={hoveredIndex === index ? true : false} token={token} owner="baku67" repo={project.repo_name} />
                     </li>
                 ))}
             </ul>

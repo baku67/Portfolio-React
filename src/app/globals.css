@@ -457,6 +457,23 @@ main {
   }
 }
 
+
+.projectCard-footer {
+  display: inline-flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  flex:1;
+}
+
+.projectCard_footerBottom {
+  display: inline-flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
 .NbrCommits {
   display: block;
   text-align: right;
@@ -643,6 +660,11 @@ main {
 
 .projectCard {
   cursor: pointer;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 21%;
 
   background-color: var(--secondary-cyan);
   padding: 25px 15px 15px 15px;
