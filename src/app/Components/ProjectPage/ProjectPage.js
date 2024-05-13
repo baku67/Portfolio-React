@@ -47,8 +47,8 @@ export function ProjectPage() {
             site_link: "https://squadforge.ovh",
 
             fonctionalities: [
-                "Autentification et rôles",
-                "Système de modération (validation des publications, censure, signalements, sanctions)",
+                "Authentification et rôles",
+                "Système de modération \n (validation des publications, censure, signalements, sanctions)",
                 "Signalements à la modération",
                 "Publication de Topics, Médias, Commentaires",
                 "Upvotes et likes/dislikes",
@@ -83,24 +83,51 @@ export function ProjectPage() {
         },
         {
             id: 1,
-            name: "",
+            name: "BlackJack Jo'",
             // Nom en minuscule pour API
-            repo_name: "",
-            fontFamily: "",
-            primaryColor: "",
-            logo: "",
-            thumbnail: "",
+            repo_name: "blackjackjo-projet",
+            fontFamily: "Kavoon",
+            primaryColor: "#00ffea",
+            logo: "./projects/logoBlackjackjo.png",
+            thumbnail: "./projects/cards_thumbnails/blackjackjo.png",
             slogan: "",
-            description: "",
-            skills: [],
-            primarySkill : [],
-            github_link : "",
-            site_link: "",
+            description: "Application web de Blackjack",
+            skills: ["HTML/CSS", "Javascript", "PHP"],
+            primarySkill : ["Javascript"],
+            github_link : "https://github.com/baku67/BLACKJACKJO-projet",
+            site_link: "https://www.blackjackjo.com",
 
             fonctionalities: [
+                "Système de compte et sauvegarde",
+                "Crédits quotidiens à la connexion",
+                "Mode \"Invité\" sans compte",
+                "Système de progression (expérience et niveaux)",
+                "Système de \"Win-streak\"",
+                "Classement et TOP3 sur l'accueil",
+                "Historique des parties et stats personnelles",
+                "Espace administrateur (logs, listes)",
+                "Mode light/dark",
+                "Mode \"turbo\" (distribution plus rapide)",
             ],
 
             carroussel_imgs: [
+                {
+                    src: "./projects/blackjackjo1-min.png",
+                    alt: "Slide 1",
+                },
+                {
+                    src: "./projects/blackjackjo2-min.png",
+                    alt: "Slide 2",
+                },
+                {
+                    src: "./projects/blackjackjo3-min.png",
+                    alt: "Slide 3",
+                },
+                {
+                    src: "./projects/blackjackjo4-min.png",
+                    alt: "Slide 4",
+                },
+
             ],
         },
         {

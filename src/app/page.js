@@ -24,7 +24,7 @@ export default function Home() {
     import('webfontloader').then((WebFontLoader) => {
       WebFontLoader.load({
         google: {
-          families: ['Julius Sans One', 'Nunito']
+          families: ['Julius Sans One', 'Nunito', 'Kavoon']
         }
       });
     });
