@@ -1,4 +1,6 @@
 "use client";
+import { useState } from "react";
+
 
 export function ProjectsNav({ nbrProjects, actualProjectIndex, actualProjectColor, changeActualProject }) {
 
@@ -8,6 +10,20 @@ export function ProjectsNav({ nbrProjects, actualProjectIndex, actualProjectColo
         changeActualProject(index); 
     };
 
+    // Hover des boutons de pagination projets
+    const [hoveredIndex, setHoveredIndex] = useState(null);
+    const handleMouseEnterLi = (index) => {
+      setHoveredIndex(index);
+    };
+    const handleMouseLeaveLi = () => {
+      setHoveredIndex(null);
+    };
+
+
+    function backgroundLi(index) {
+
+    }
+
 
     return (
 
@@ -16,8 +32,13 @@ export function ProjectsNav({ nbrProjects, actualProjectIndex, actualProjectColo
 
                 <li 
                     key={index + 1} 
+                    onMouseEnter={() => handleMouseEnterLi(index)}
+                    onMouseLeave={handleMouseLeaveLi}
                     style={{
-                        backgroundColor: index === actualProjectIndex ? actualProjectColor : "var(--secondary-cyan)", 
+                        // backgroundColor: index === actualProjectIndex ? actualProjectColor : "var(--secondary-cyan)", 
+                        backgroundColor: index === actualProjectIndex 
+                            ? actualProjectColor 
+                            : (index === hoveredIndex ? "var(--primary-cyan)" : "var(--secondary-cyan"), 
                         color: index === actualProjectIndex ? "black" : "white",
                         fontWeight: index === actualProjectIndex ? "bold" : "normal",
                     }}

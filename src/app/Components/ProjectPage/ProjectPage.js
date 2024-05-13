@@ -38,10 +38,11 @@ export function ProjectPage() {
             fontFamily: "Julius Sans One",
             primaryColor: "#ffa012",
             logo: "./projects/logoSquadForge.png",
+            shadowLogo: true,
             thumbnail: "./projects/cards_thumbnails/squadforge.png",
             slogan: "",
             description: "Plateforme communautaire \"Gaming\"",
-            skills: ["HTML/CSS", "Javascript", "PHP", "Symfony", "BDD", "Twig", "DQL"],
+            skills: ["HTML / CSS", "Javascript", "PHP", "Symfony", "BDD", "Twig", "DQL"],
             primarySkill : ["PHP", "Symfony"],
             github_link : "https://github.com/baku67/ELAN_Projet_SquadForge",
             site_link: "https://squadforge.ovh",
@@ -88,11 +89,12 @@ export function ProjectPage() {
             repo_name: "blackjackjo-projet",
             fontFamily: "Kavoon",
             primaryColor: "#00ffea",
-            logo: "./projects/logoBlackjackjo.png",
+            logo: "./projects/logoBlackjackjo3.png",
+            shadowLogo: false,
             thumbnail: "./projects/cards_thumbnails/blackjackjo.png",
             slogan: "",
             description: "Application web de Blackjack",
-            skills: ["HTML/CSS", "Javascript", "PHP"],
+            skills: ["HTML / CSS", "Javascript", "PHP"],
             primarySkill : ["Javascript"],
             github_link : "https://github.com/baku67/BLACKJACKJO-projet",
             site_link: "https://www.blackjackjo.com",
@@ -138,6 +140,7 @@ export function ProjectPage() {
             fontFamily: "Montserrat Alternates",
             primaryColor: "#e8ca7d",
             logo: "./projects/logoLes100ciels.png",
+            shadowLogo: false,
             thumbnail: "./projects/cards_thumbnails/les100ciels.png",
             slogan: "",
             description: "Site vitrine d'artiste",
@@ -156,27 +159,27 @@ export function ProjectPage() {
 
             carroussel_imgs: [
                 {
-                    src: "./projects/les100ciels1.png",
+                    src: "./projects/les100ciels1-min.png",
                     alt: "Slide 1",
                 },
                 {
-                    src: "./projects/les100ciels2.png",
+                    src: "./projects/les100ciels2-min.png",
                     alt: "Slide 2",
                 },
                 {
-                    src: "./projects/les100ciels3.png",
+                    src: "./projects/les100ciels3-min.png",
                     alt: "Slide 3",
                 },
                 {
-                    src: "./projects/les100ciels4.png",
+                    src: "./projects/les100ciels4-min.png",
                     alt: "Slide 4",
                 },
                 {
-                    src: "./projects/les100ciels5.png",
+                    src: "./projects/les100ciels5-min.png",
                     alt: "Slide 5",
                 },
                 {
-                    src: "./projects/les100ciels6.png",
+                    src: "./projects/les100ciels6-min.png",
                     alt: "Slide 6",
                 },
             ],
@@ -189,6 +192,7 @@ export function ProjectPage() {
             fontFamily: "",
             primaryColor: "",
             logo: "",
+            shadowLogo: false,
             thumbnail: "",
             slogan: "",
             description: "",
@@ -228,7 +232,11 @@ export function ProjectPage() {
 
 
                     {/* Logo haut-droite */}
-                    <img src={projects[actualProjectIndex].logo} className="projectLogo" />
+                    <img 
+                        src={projects[actualProjectIndex].logo} 
+                        style={{filter: projects[actualProjectIndex].shadowLogo ? "drop-shadow(0px 0px 1px rgba(0,0,0,0.7))" : "none"}}
+                        className="projectLogo" 
+                    />
 
 
                     {/* Header ("Mes Projets" + nav) */}

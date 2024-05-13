@@ -31,6 +31,10 @@ body {
   font-family: 'Nunito' !important;
 }
 
+ul {
+  padding-left: 0rem !important;
+}
+
 a {
   text-decoration: none !important;
   color: #efefef !important;
@@ -248,13 +252,45 @@ main {
 }
 .splide__pagination {
   display: inline-flex !important;
+  padding: 0 !important;
+}
+.splide__progress {
+  position: relative;
+  bottom: 19px;
+
+  width: 94%;
+  margin: 0 auto;
 }
 .splide__progress__bar {
   margin: 5px auto;
-  height: 2px !important;
+  height: 5px !important;
+  border-radius: 5px;
 }
 .splide__pagination {
   bottom: -1.5em !important;
+}
+
+.splide__toggle {
+  position: absolute;
+  bottom: 4px;
+  right: 50%;
+  transform: translateX(50%);
+  font-size: 1.5em;
+  line-height: 1.2em;
+    z-index: 99;
+    padding: 0px 7px;
+    background-color: var(--secondary-cyan);
+    border-radius: 30px;
+}
+.splide__toggle__pause {
+  position: relative;
+  top: 2px;
+  font-size: 1.1em;
+}
+.splide__toggle__play {
+  position: relative;
+  top: 2px;
+  font-size: 0.9em;
 }
 .splide__arrow--next {
   right: -3em !important;
@@ -285,7 +321,7 @@ main {
   gap: 10px;
 }
 .projectsNav-list li {
-  padding: 3px 12px;
+  padding: 3px 11px;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s;
@@ -295,7 +331,7 @@ main {
 .iframeContainer {
   position: relative;
   padding: 15px 5px 30px 5px;
-  background-color: #191919;
+  background-color: #060606;
   border: 3px solid;
   border-radius: 22px;
 
@@ -351,7 +387,7 @@ main {
   cursor: pointer;
   position: absolute;
   height: 21px;
-  width: 22px;
+  width: 21px;
   bottom: 4px;
   left: 50%;
   transform: translateX(-50%);
@@ -394,7 +430,7 @@ main {
   right: -60px;
   top: 35px;
   border: 3px solid;
-  padding: 5px;
+  padding: 6px 6px 4px 4px;
   display: inline-flex;
   border-radius: 7px;
   border-top-right-radius: 21px;
@@ -412,7 +448,7 @@ main {
   right: -60px;
   top: 90px;
   border: 3px solid;
-  padding: 5px;
+  padding: 4px 6px 6px 4px;
   display: inline-flex;
   border-radius: 7px;
   border-bottom-right-radius: 21px;
@@ -524,7 +560,7 @@ main {
   border: 1px solid transparent;
 
   padding: 12px 4px 25px 4px;
-  background-color: black;
+  background-color: #060606;
   border-radius: 10px;
 
   transition: all 0.3s;
@@ -552,12 +588,13 @@ main {
 .projectFuncList {
   text-align: left;
   list-style-type: disc;
-
-  max-width: 100%;
   margin: 25px auto 10px auto;
-
   /* Pour saut de ligne projet 1 */
   white-space: pre-wrap;
+
+  width: fit-content;
+  min-width: 55%;
+  max-width: 100%;
 }
 
 .projectDescription {
@@ -572,7 +609,7 @@ main {
 
   width: 160px;
 
-  filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.7));
+  /* filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.7)); */
 
   opacity: 0;
   animation: fadeInLogoProject 1.5s 0.5s ease forwards;

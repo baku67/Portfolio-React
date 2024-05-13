@@ -90,6 +90,7 @@ export function LandingPageProjects({projects, selectProject}) {
                             boxShadow: hoveredIndex === index ? "0px 6px 10px #00000070" : "0px 0px 0px #00000000",
                             backgroundColor: hoveredIndex === index ? "#10394d" : "var(--secondary-cyan)",
                             animationDelay: `${1 + index * 0.15}s`, // Global delay + individual delay
+                            // borderColor: project.primaryColor,
                         }}
                         onClick={() => handleClickProject(project.id)}
                     >
