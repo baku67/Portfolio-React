@@ -81,7 +81,7 @@ export function ContactForm() {
                     </Form.Group>
 
                     <div style={{display:"inline-flex"}}>
-                        <Button variant="primary" type="submit" disabled={isSubmitting}>
+                        <Button variant="primary" type="submit" disabled={isSubmitting} className="testMobiel" >
                             Envoyer
                         </Button>
 

@@ -1007,7 +1007,8 @@ main {
 }
 
 .contactFormHeader {
-  color: var(--primary-cyan);
+  /* color: var(--primary-cyan); */
+  color: #00ceff;
 }
 
 
