@@ -84,6 +84,11 @@ main {
 }
 
 
+.splide__slide img {
+  filter: drop-shadow(0px 0px 5px white);
+}
+
+
 .page1 {
   width: 100%;
   height: 100vh;
@@ -102,6 +107,8 @@ main {
 
 
 .page2 {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100vh;
 
@@ -115,6 +122,10 @@ main {
 .skills-list {
   display: inline-flex;
   gap: 5px;
+}
+.tools-list {
+  display: inline-flex;
+  gap: 4px;
 }
 .skill-Fa-Icon {
   font-size: 2em;
@@ -154,7 +165,7 @@ main {
   opacity: 0;
   transform: translateY(-100px);
 
-  margin-top: 15px;
+  margin-top: 22px;
 
   animation: projectPageHeader 1s 0s ease forwards;
 }
@@ -269,9 +280,13 @@ main {
 }
 
 .titleSection {
-  font-size: 2em;
+  font-size: 2.4em;
   width: 100%;
   text-align: center;
+  align-items: center;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
 }
 
 .splide {
@@ -966,7 +981,8 @@ main {
   font-size: 1.5em;
   line-height: 0;
   position: relative;
-  top: 3px;
+  top: 0px;
+  right: 4px;
 }
 
 .faSpinner {
@@ -981,7 +997,7 @@ main {
   }
 }
 
-.contactPage-icon {
+.pageIcon {
   position: absolute;
   z-index: 999;
   right: 15px;
@@ -1004,6 +1020,17 @@ main {
   to {
     opacity: 0.7;
   }
+}
+
+
+
+.skill-li svg {
+  width: 3.5rem !important;
+  height: 3.5rem !important;
+}
+.tool-li svg {
+  width: 2.5rem !important;
+  height: 2.5rem !important;
 }
 
 .contactFormHeader {

@@ -57,7 +57,7 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
         <div>
 
             {/* Icone Page (top-right) */}
-            <FontAwesomeIcon icon={faLightbulb} className="contactPage-icon" />
+            <FontAwesomeIcon icon={faLightbulb} className="pageIcon" />
 
             {/* Shapes neutres(cyan) */}
             <Shape1 />

@@ -2,12 +2,17 @@
 import { useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faPersonRunning } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 import { Shape1 } from "./Components/Shapes/Shape1";
 import { Shape2 } from "./Components/Shapes/Shape2";
+import { DownloadCvBtn } from "./Components/CvPage/DownloadCvBtn";
+import { Experiences } from "./Components/CvPage/Experiences";
+import { Formations } from "./Components/CvPage/Formations";
 import { Skills } from "./Components/CvPage/Skills";
+import { Tools } from "./Components/CvPage/Tools";
+import { Hobbies } from "./Components/CvPage/Hobbies";
 import { Socials } from "./Components/ContactPage/Socials";
 import { ContactForm } from './Components/ContactPage/ContactForm';
 import { Footer } from "./Components/ContactPage/Footer";
@@ -17,12 +22,13 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
-
-
 // Define isMobileDevice function outside of the component
 const isMobileDevice = () => {
   return window.matchMedia("(max-width: 767px)").matches;
 };
+
+
+
 
 
 
@@ -141,16 +147,41 @@ export default function Home() {
       {/* Page 2: Parcours */}
       <section className="section page2">
 
+        {/* Icone Page (top-right) */}
+        <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" />
+
+        {/* Shapes neutres(cyan) */}
+        <Shape1 />
+        <Shape2 />
+
+        {/* Header */}
+        <div className="projectPageHeader">
+            <h2 className="titleSection" style={{marginBottom:"0.4em"}}>
+                <FontAwesomeIcon icon={faChevronLeft} className="faIcon-chevron" /> 
+                <span style={{margin:"0px 15px"}}>Mon parcours</span>
+                <span className="slash">/</span>
+                <FontAwesomeIcon icon={faChevronRight} className="faIcon-chevron" /> 
+            </h2>
+        </div>
+
+
+        {/* GRIIIIIIIIIIIID */}
+        <Experiences />
+        <Formations />
+
         <Skills />
+        <Tools />
 
-        {/* Composant dl CV (FA) */}
+        {/* Symboles plutot que text? */}
+        <Hobbies />
+        {/* FIN GRIIIIIIID */}
 
-        {/* Composant Expériences (gros bloc) */}
-        {/* Composant Formations (gros bloc) */}
 
-        {/* Composant Loisirs et Outils (petits blocs) */}
+        <DownloadCvBtn />
         
       </section>
+
+
 
 
 
@@ -167,11 +198,14 @@ export default function Home() {
 
 
 
+
+
+
       {/* Page 4: Photographie, animations */}
       <section className="section page4">
 
-      
       </section>
+
 
 
 
@@ -180,12 +214,12 @@ export default function Home() {
       {/* Page 5: Contact */}
       <section className="section page5">
 
+        {/* Icone Page (top-right) */}
+        <FontAwesomeIcon icon={faEnvelope} className="pageIcon" />
+
         {/* Shapes neutres(cyan) */}
         <Shape1 />
         <Shape2 />
-
-        {/* Icone Page (top-right) */}
-        <FontAwesomeIcon icon={faEnvelope} className="contactPage-icon" />
 
         {/* Header */}
         <div className="projectPageHeader">
@@ -205,6 +239,11 @@ export default function Home() {
         <Footer />
       
       </section>
+
+
+
+
+
 
     </main>
   );

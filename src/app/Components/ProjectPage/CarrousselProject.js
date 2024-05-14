@@ -37,7 +37,7 @@ export function CarrousselProject({ actualProject }) {
                 <SplideTrack>
                     {actualProject.carroussel_imgs.map((slide, index) => (
                         <SplideSlide key={index}>
-                            <img src={slide.src} alt={slide.alt} className="carrousselImg" />
+                            <img src={slide.src} alt={slide.alt} className="carrousselImg" style={{filter: "drop-shadow(0px 0px 1px " + actualProject.primaryColor + ")"}} />
                         </SplideSlide>
                     ))}
                 </SplideTrack>
