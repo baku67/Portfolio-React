@@ -13,9 +13,9 @@ export default function PhoneNumberEncryption() {
 
 
     return (
-        <p className='iconAndText iconAndTextSocials'>
+        <span className='iconAndText iconAndTextSocials'>
             <FontAwesomeIcon icon={faPhone} className="faIcon faIconTel" />
             <span className="localisationTxt">{phoneNumber}</span>
-        </p>
+        </span>
     );
 }

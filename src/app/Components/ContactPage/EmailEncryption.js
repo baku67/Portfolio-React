@@ -35,7 +35,7 @@ function EmailEncryption() {
     };
 
     return (
-        <p className="iconAndText emailLine">
+        <span className="iconAndText emailLine">
             <FontAwesomeIcon icon={faAt} className='faIcon' />
             <span 
                 onClick={handleEmailClick} 
@@ -44,7 +44,7 @@ function EmailEncryption() {
                 style={{ cursor: 'pointer' }} 
                 dangerouslySetInnerHTML={{ __html: encodedEmail }} 
             />
-        </p>
+        </span>
     );
 }
 

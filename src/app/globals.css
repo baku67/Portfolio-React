@@ -204,9 +204,9 @@ main {
   position: absolute;
   bottom: -40%;
   left: -40%;
-  width: 50%;
+  width: 55%;
   height: 100%;
-  transform: rotate(323deg);
+  transform: rotate(325deg);
 
   box-shadow: 0px 0px 25px black;
 
@@ -222,14 +222,24 @@ main {
 }
 
 
+.contactBoutons-wrapper {
+  flex-direction: column;
+    display: inline-flex;
+    gap: 20px;
+}
+
+.faIcon-localisation {
+  width: 34px;
+}
+
 .shapeProject2 {
   position: absolute;
   z-index: 9;
   top: -60%;
   right: -35%;
-  width: 50%;
+  width: 39%;
   height: 125%;
-  transform: rotate(312deg);
+  transform: rotate(301deg);
 
   box-shadow: 0px 0px 25px black;
 
@@ -511,6 +521,7 @@ main {
   text-align: center;
 
   width: 35%;
+  margin-top: 22px;
 
   opacity: 0;
   transform: translateX(200px);
@@ -574,12 +585,12 @@ main {
 
 .projectCard_primSkills {
   display: inline-flex;
-  gap: 5px;
+  gap: 8px;
   padding-left: 0em;
 }
 .projectCard_primSkills li {
   /* background-color: orange; */
-  padding: 0px 5px 0px 5px;
+  padding: 1px 8px 1px 8px;
   align-items: center;
   display: flex;
   border-radius: 16px;
@@ -665,7 +676,7 @@ main {
   top: 10px;
   right: 10px;
 
-  width: 160px;
+  width: 110px;
 
   /* filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.7)); */
 
@@ -753,6 +764,11 @@ main {
   border-left: 3px solid var(--primary-cyan);
     margin-left: 25px;
     margin-top: 25px;
+
+    
+    display: inline-flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .localisationTxt {
@@ -780,8 +796,8 @@ main {
   width: 21%;
 
   background-color: var(--secondary-cyan);
-  padding: 25px 15px 12px 15px;
-  border-radius: 14px;
+  padding: 19px 15px 12px 15px;
+  border-radius: 11px;
   
 
   border-bottom: 5px solid var(--primary-cyan);
@@ -857,6 +873,7 @@ main {
 
 .contactMain {
   display: inline-flex;
+  z-index: 99;
   width: 60%;
   margin: 0 auto;
   gap: 3%;
@@ -868,7 +885,7 @@ main {
 
 .contact-section1 {
   width: 50%;
-  padding: 25px;
+  padding: 16px 23px 20px 20px;
   /* background-color: #28282f; */
   background-color: var(--secondary-cyan);
   border-radius: 13px;
@@ -882,7 +899,7 @@ main {
   display: inline-flex;
   flex-direction: column;
 
-  gap: 23px;
+  gap: 35px;
 }
 
 
@@ -969,7 +986,7 @@ main {
   z-index: 999;
   right: 15px;
   top: 15px;
-  font-size: 8.5em;
+  font-size: 6.5em;
 
 
 

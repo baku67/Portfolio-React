@@ -15,6 +15,7 @@
 
 
     .faIcon {
+        font-size: 1.2em;
         margin: 0px 7px;
     }
 
@@ -31,10 +32,22 @@
 
 
 
+    .shapeProject1 {
+        bottom: -54%;
+        left: -40%;
+        width: 72%;
+        height: 120%;
+        transform: rotate(340deg);
 
+        box-shadow: 0px 0px 10px black;
+    }
 
     .shapeProject2 {
         top: -66%;
+        width: 57%;
+
+        transform: rotate(314deg);
+        box-shadow: 0px 0px 10px black;
     }
 
     .titleSection {
@@ -43,9 +56,11 @@
 
 
     .contactPage-icon {
-        right: 8px;
-        top: 8px;
+        right: 13px;
+        top: 14px;
         font-size: 2em;
+
+
     }
     .projectCardsList {
         flex-direction: column !important;
@@ -62,17 +77,47 @@
     }
     .projectCard{
         width: 100% !important;
-        padding: 6px 7px 5px 7px;
-        border-bottom: 2px solid var(--primary-cyan);
+        padding: 2px 2px 6px 2px;
+        border-bottom: 1px solid var(--primary-cyan);
 
+        box-shadow: 0px 0px 5px #000000;
+    }
 
+    .projectPageWrapper {
+        flex-direction: column;
+    }
+
+    .projectCard_primSkills {
+        gap: 4px;
+    }
+
+    .projectLogo {
+        top: 0px;
+        right: 0px;
+
+        width: 50px;
+    }
+
+    .projectCard_footerBottom {
+        width: 95%;
+    }
+
+    .projectCard_primSkills li {
+        padding: 1px 7px 0px 7px;
+        font-weight: 500;
+    }
+
+    .NbrCommits {
+        gap:2px;
     }
 
     .projectCard_thumbnail {
         height: 12vh;
-        padding: 1px 1px 1px 1px;
+        padding: 0px 0px 0px 0px;
 
         border-radius: 8px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
 
         border-width: 0px !important;
     }
@@ -97,6 +142,9 @@
     }
 
 
+    .projectInfosDiv {
+        margin-top: 0px;
+    }
 
 
 
@@ -112,24 +160,38 @@
 
     /* Page Contact */
 
+    .contactBoutons-wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
     .btnSocial-wrapper {
-        width: 180px;
+        width: 50px;
+        padding: 0px;
+        border-width: 0px;
     }
     .btnSocial {
-        width: 180px;
+        display:grid;
+        width: 60px;
         padding: 7px 0px;
     }
     .btnSocial-icon {
-        width: 25px;
-        height: 25px;
+        width: 33px;
+        height: 33px;
     }
 
     .socialsContactsDiv {
-        margin-top: 10px;
-        margin-bottom: 20px;
+        margin: 0;
+
+        gap: 10px;
 
         border-width: 0px;
     }
+
+    .faIcon-localisation {
+        width: 20px !important;
+      }
 
 
     .emailLine {
@@ -141,9 +203,20 @@
     }
 
 
+    .iconAndTextSocials {
+        /* margin-bottom: 0.3em; */
+    }
+
+    .emailContact {
+        font-size: 1em;
+    }
+    .localisationTxt {
+        font-size: 1em;
+    }
+
     .contactMain {
         flex-direction: column-reverse !important;
-       margin: 20px auto;
+       margin: 27px auto 12px auto;
     }
 
     .contactMain {
@@ -157,6 +230,13 @@
     }
     .contact-section2 {
         width: 100%;
+
+        display: inline-flex;
+        flex-direction: row;
+
+        justify-content: center;
+
+        gap: 20px;
     }
 
     .contactFormHeader {
@@ -175,5 +255,9 @@
     }
 
 
+
+    .btnSocial-txt {
+        font-size: 1em;
+    }
 
 }

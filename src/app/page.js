@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
+import { Shape1 } from "./Components/Shapes/Shape1";
+import { Shape2 } from "./Components/Shapes/Shape2";
 import { Skills } from "./Components/CvPage/Skills";
 import { Socials } from "./Components/ContactPage/Socials";
 import { ContactForm } from './Components/ContactPage/ContactForm';
@@ -178,9 +180,9 @@ export default function Home() {
       {/* Page 5: Contact */}
       <section className="section page5">
 
-        {/* Shapes */}
-        <div className="shapeProject1" style={{backgroundColor: "var(--primary-cyan)"}}></div>
-        <div className="shapeProject2" style={{backgroundColor: "var(--primary-cyan)"}}></div>
+        {/* Shapes neutres(cyan) */}
+        <Shape1 />
+        <Shape2 />
 
         {/* Icone Page (top-right) */}
         <FontAwesomeIcon icon={faEnvelope} className="contactPage-icon" />
@@ -197,7 +199,7 @@ export default function Home() {
 
         <div className="contactMain">
           <ContactForm />
-          <Socials />
+          <Socials isMobile={isMobile} />
         </div>
 
         <Footer />

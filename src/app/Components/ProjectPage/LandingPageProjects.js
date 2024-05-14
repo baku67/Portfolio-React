@@ -6,6 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo, faChevronLeft, faChevronRight, faChartLine } from "@fortawesome/free-solid-svg-icons";
 import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 
+import { Shape1 } from "../Shapes/Shape1";
+import { Shape2 } from "../Shapes/Shape2";
 import { ProjectThumbnail } from "./ProjectThumbnail";
 import GitHubCalendar from 'react-github-calendar';
 import { ProjectCardInfos } from "./ProjectCardInfos";
@@ -57,10 +59,10 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
             {/* Icone Page (top-right) */}
             <FontAwesomeIcon icon={faLightbulb} className="contactPage-icon" />
 
-            {/* Shapes */}
-            <div className="shapeProject1" style={{backgroundColor: "var(--primary-cyan)"}}></div>
-            <div className="shapeProject2" style={{backgroundColor: "var(--primary-cyan)"}}></div>
-
+            {/* Shapes neutres(cyan) */}
+            <Shape1 />
+            <Shape2 />
+            
 
             {/* Header */}
             <div className="projectPageHeader">

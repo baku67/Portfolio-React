@@ -8,16 +8,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
 
 
-export function Socials() {
+export function Socials({isMobile}) {
 
 
     return (
 
         <div className="contact-section2">
 
-            <BoutonSocials href={"www.linkedin.com/in/basile-kuntz-719278267"} iconSrcNormal={"./linkedin-tiny.png"} iconSrcHovered={"./linkedin-tiny-dark.png"} btnTxt={"Mon LinkedIn"} />
+            <div className="contactBoutons-wrapper">
 
-            <BoutonSocials href={"https://github.com/baku67"} iconSrcNormal={"./github-mark-white.png"} iconSrcHovered={"./github-mark-dark.png"} btnTxt={"Mon Github"} />
+                <BoutonSocials href={"www.linkedin.com/in/basile-kuntz-719278267"} iconSrcNormal={"./linkedin-tiny.png"} iconSrcHovered={"./linkedin-tiny-dark.png"} btnTxt={isMobile ? "" : "Mon LinkedIn"} />
+
+                <BoutonSocials href={"https://github.com/baku67"} iconSrcNormal={"./github-mark-white.png"} iconSrcHovered={"./github-mark-dark.png"} btnTxt={isMobile ? "" : "Mon Github"} />
+
+            </div>
 
 
             <div className="socialsContactsDiv">
@@ -26,10 +30,10 @@ export function Socials() {
 
                 <PhoneNumberEncryption />
 
-                <p className='iconAndText iconAndTextSocials' style={{marginBottom:"0px"}}>
-                    <FontAwesomeIcon icon={faLocationDot} className="faIcon" style={{width:"34px"}} />
+                <span className='iconAndText iconAndTextSocials' style={{marginBottom:"0px"}}>
+                    <FontAwesomeIcon icon={faLocationDot} className="faIcon faIcon-localisation" />
                     <span className="localisationTxt">Strasbourg</span>
-                </p>
+                </span>
 
             </div>
 

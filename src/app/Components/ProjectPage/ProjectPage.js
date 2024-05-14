@@ -5,6 +5,9 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
+
+import { Shape1 } from "../Shapes/Shape1";
+import { Shape2 } from "../Shapes/Shape2";
 import { IframeProject } from "./IframeProject";
 import { ProjectsNav } from "./ProjectsNav";
 import { ProjectInfos } from "./ProjectInfos";
@@ -298,9 +301,10 @@ export function ProjectPage({isMobile}) {
                 
                 <div style={{zIndex:5, height:"100%"}}>
 
-                    {/* Shapes */}
-                    <div className="shapeProject1" style={{backgroundColor: projects[actualProjectIndex].primaryColor}}></div>
-                    <div className="shapeProject2" style={{backgroundColor: projects[actualProjectIndex].primaryColor}}></div>
+
+                    {/* Shapes adaptées*/}
+                    <Shape1 projectColor={projects[actualProjectIndex].primaryColor} />
+                    <Shape2 projectColor={projects[actualProjectIndex].primaryColor} />
 
 
                     {/* Logo haut-droite */}
