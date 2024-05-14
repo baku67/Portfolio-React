@@ -330,7 +330,7 @@ main {
 
 .iframeContainer {
   position: relative;
-  padding: 15px 5px 30px 5px;
+  padding: 18px 5px 36px 5px;
   background-color: #060606;
   border: 3px solid;
   border-radius: 22px;
@@ -361,7 +361,7 @@ main {
   position: absolute;
   height: 6px;
   width: 6px;
-  top: 4px;
+  top: 6px;
   left: 50%;
   transform: translateX(-50%);
   border-radius: 10px;
@@ -386,12 +386,12 @@ main {
 .btnRefresh {
   cursor: pointer;
   position: absolute;
-  height: 21px;
-  width: 21px;
-  bottom: 4px;
+  height: 25px;
+  width: 25px;
+  bottom: 6px;
   left: 50%;
   transform: translateX(-50%);
-  border-radius: 10px;
+  border-radius: 15px;
 
   border: 3px solid;
 
@@ -555,15 +555,29 @@ main {
 }
 
 .projectCard_thumbnail {
-  height: 35vh;
+  position: relative;
+  height: 30vh;
   margin: 0 auto;
   border: 1px solid transparent;
 
-  padding: 12px 4px 25px 4px;
+  padding: 10px 4px 20px 4px;
   background-color: #060606;
   border-radius: 10px;
 
   transition: all 0.3s;
+}
+
+.projectCard_thumbnail_homeShape {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5px;
+  border-radius: 10px;
+  height: 10px;
+  width: 10px;
+  border: 1px solid;
+
+  opacity: 0.5;
 }
 
 .projectCard_infos {
@@ -686,20 +700,31 @@ main {
   justify-content: center; 
   align-items: center;
 }
+.iconAndTextSocials {
+  justify-content: flex-start !important;
+}
+
+
+.socialsContactsDiv {
+  border-left: 3px solid var(--primary-cyan);
+    margin-left: 25px;
+    margin-top: 25px;
+}
+
+.localisationTxt {
+  font-size: 1.2em;
+}
 
 .projectCardsList {
-  /* height: 50vh; */
-
   z-index: 99;
-
   display: inline-flex;
-  gap: 30px;
+  gap: 15px;
   justify-content: center;
   width: 90%;
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  margin: 30px auto;
+  margin: 50px auto 30px auto;
 }
 
 .projectCard {
@@ -808,7 +833,7 @@ main {
   box-shadow: 0px 0px 15px #00d7ff;
 }
 .contact-section2 {
-  width: 50%;
+  width: fit-content;
   text-align: center;
   display: inline-flex;
   flex-direction: column;

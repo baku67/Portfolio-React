@@ -3,7 +3,8 @@
 export function ProjectThumbnail({project, isHovered}) {
 
     return (
-        <>
+        <div style={{position:"relative"}}>
+
             <img 
                 src={project.thumbnail} 
                 className="projectCard_thumbnail" 
@@ -13,7 +14,9 @@ export function ProjectThumbnail({project, isHovered}) {
                 }} 
             />
 
-        </>
+            <div className="projectCard_thumbnail_homeShape" style={{borderColor: project.primaryColor}}></div>
+
+        </div>
 
     )
 }

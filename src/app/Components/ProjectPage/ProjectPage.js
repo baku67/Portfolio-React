@@ -37,7 +37,7 @@ export function ProjectPage() {
             repo_name: "ELAN_Projet_SquadForge",
             fontFamily: "Julius Sans One",
             primaryColor: "#ffa012",
-            logo: "./projects/logoSquadForge.png",
+            logo: "./projects/projects_logos/logoSquadForge_dark.png",
             shadowLogo: true,
             thumbnail: "./projects/cards_thumbnails/squadforge.png",
             slogan: "",
@@ -89,7 +89,7 @@ export function ProjectPage() {
             repo_name: "blackjackjo-projet",
             fontFamily: "Kavoon",
             primaryColor: "#00ffea",
-            logo: "./projects/logoBlackjackjo3.png",
+            logo: "./projects/projects_logos/logoBlackjackjo3_dark.png",
             shadowLogo: false,
             thumbnail: "./projects/cards_thumbnails/blackjackjo.png",
             slogan: "",
@@ -139,7 +139,7 @@ export function ProjectPage() {
             repo_name: "les100ciels-js-",
             fontFamily: "Montserrat Alternates",
             primaryColor: "#e8ca7d",
-            logo: "./projects/logoLes100ciels.png",
+            logo: "./projects/projects_logos/logoLes100ciels_dark.png",
             shadowLogo: false,
             thumbnail: "./projects/cards_thumbnails/les100ciels.png",
             slogan: "",
@@ -186,28 +186,99 @@ export function ProjectPage() {
         },
         {
             id: 3,
-            name: "",
+            name: "Portfolio v1",
             // Nom en minuscule pour API
-            repo_name: "",
-            fontFamily: "",
-            primaryColor: "",
-            logo: "",
+            repo_name: "Portfolio-v2",
+            fontFamily: "Nunito",
+            primaryColor: "#ef3b2d",
+            logo: "./projects/projects_logos/portfolioV1.png",
             shadowLogo: false,
-            thumbnail: "",
+            thumbnail: "./projects/cards_thumbnails/portfolioV2.png",
             slogan: "",
-            description: "",
-            skills: [],
-            primarySkill : [],
-            github_link : "",
-            site_link: "",
+            description: "Portfolio \"from scratch\"",
+            skills: ["HTML", "CSS", "Javascript"],
+            primarySkill : ["CSS", "Javascript"],
+            github_link : "https://github.com/baku67/Portfolio-v2",
+            site_link: "https://bk-dev.fr/cv.html",
 
             fonctionalities: [
+                "Multi-pages et navigation",
+                "Animation CSS orchestrées avec Javascript",
+                "Tracé de SVG \"fait-main\"",
+                "Projets utilisables directement sur le site",
             ],
 
             carroussel_imgs: [
+                {
+                    src: "./projects/terrine1-min.png",
+                    alt: "Slide 1",
+                },
+                {
+                    src: "./projects/terrine2-min.png",
+                    alt: "Slide 2",
+                },
+                {
+                    src: "./projects/terrine3-min.png",
+                    alt: "Slide 3",
+                },
+                {
+                    src: "./projects/terrine4-min.png",
+                    alt: "Slide 4",
+                },
+                {
+                    src: "./projects/terrine5-min.png",
+                    alt: "Slide 5",
+                },
             ],
         },
-        // Ajouter le portfolio v2
+        {
+            id: 4,
+            name: "Terrine",
+            // Nom en minuscule pour API
+            repo_name: "ELAN_MVC_cinema",
+            fontFamily: "Righteous",
+            primaryColor: "#fecc02",
+            logo: "",
+            shadowLogo: false,
+            thumbnail: "./projects/cards_thumbnails/terrine.png",
+            slogan: "",
+            description: "Plateforme cinématographique",
+            skills: ["HTML : CSS", "Javascript", "PHP", "MVC"],
+            primarySkill : ["MVC"],
+            github_link : "https://github.com/baku67/ELAN_MVC_cinema",
+            site_link: "https://eneffet.basilek.ovh",
+
+            fonctionalities: [
+                "Pages de listings \n (Acteurs, Réalisateurs, Films)",
+                "Casting des films",
+                "Pages détaillées et liens/connections",
+                "Formulaire d'ajout",
+            ],
+
+            carroussel_imgs: [
+                {
+                    src: "./projects/terrine1-min.png",
+                    alt: "Slide 1",
+                },
+                {
+                    src: "./projects/terrine2-min.png",
+                    alt: "Slide 2",
+                },
+                {
+                    src: "./projects/terrine3-min.png",
+                    alt: "Slide 3",
+                },
+                {
+                    src: "./projects/terrine4-min.png",
+                    alt: "Slide 4",
+                },
+                {
+                    src: "./projects/terrine5-min.png",
+                    alt: "Slide 5",
+                },
+            ],
+        },
+
     ];
 
 
