@@ -35,7 +35,7 @@ function EmailEncryption() {
     };
 
     return (
-        <p className="iconAndText">
+        <p className="iconAndText emailLine">
             <FontAwesomeIcon icon={faAt} className='faIcon' />
             <span 
                 onClick={handleEmailClick} 

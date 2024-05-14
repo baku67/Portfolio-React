@@ -11,7 +11,7 @@ import GitHubCalendar from 'react-github-calendar';
 import { ProjectCardInfos } from "./ProjectCardInfos";
 
 
-export function LandingPageProjects({projects, selectProject}) {
+export function LandingPageProjects({projects, selectProject, isMobile}) {
 
     // API github
     const token = process.env.REACT_APP_GITHUB_TOKEN;
@@ -47,7 +47,7 @@ export function LandingPageProjects({projects, selectProject}) {
     const explicitTheme = {
         light: ['#1d1d24', 'rgba(28,142,198,0.4)', 'rgba(28,142,198,0.6)', 'rgba(28,142,198,0.8)', 'rgba(28,142,198,1)'],
         dark: ['#1d1d24', 'rgba(28,142,198,0.4)', 'rgba(28,142,198,0.6)', 'rgba(28,142,198,0.8)', 'rgba(28,142,198,1)'],
-      };
+    };
 
 
 
@@ -70,7 +70,7 @@ export function LandingPageProjects({projects, selectProject}) {
                     <span className="slash">/</span>
                     <FontAwesomeIcon icon={faChevronRight} className="faIcon-chevron" /> 
                 </h2>
-                <div className="headerSubTitle">
+                <div className="headerSubTitle isDesktop">
                     <FontAwesomeIcon icon={faCircleInfo} className="faIcon" />
                     <span> Cliquez sur un projet pour voir sa démo, sa description, etc...</span>
                 </div>
@@ -107,7 +107,7 @@ export function LandingPageProjects({projects, selectProject}) {
                     </div> */}
 
 
-                        <ProjectThumbnail project={project} isHovered={hoveredIndex === index ? true : false} />
+                        <ProjectThumbnail project={project} isHovered={hoveredIndex === index ? true : false} isMobile={isMobile} />
 
                         <ProjectCardInfos project={project} isHovered={hoveredIndex === index ? true : false} token={token} owner="baku67" repo={project.repo_name} />
                     </li>

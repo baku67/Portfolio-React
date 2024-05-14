@@ -60,7 +60,7 @@ export function ContactForm() {
         {!isSubmited ? (
 
             <div>
-                <h3 style={{color:"var(--primary-cyan)"}}>Envoyez-moi un message :</h3>
+                <h3 className="contactFormHeader">Envoyez-moi un message :</h3>
                 <Form onSubmit={sendEmail}>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Nom</Form.Label>

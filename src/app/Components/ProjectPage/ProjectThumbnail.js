@@ -1,12 +1,15 @@
 "use client";
 
-export function ProjectThumbnail({project, isHovered}) {
+export function ProjectThumbnail({project, isHovered, isMobile}) {
+
+
+
 
     return (
         <div style={{position:"relative"}}>
 
             <img 
-                src={project.thumbnail} 
+                src={ isMobile ? project.thumbnail_isDesktop : project.thumbnail_isMobile } 
                 className="projectCard_thumbnail" 
                 style={{
                     borderColor: project.primaryColor, 
@@ -14,7 +17,7 @@ export function ProjectThumbnail({project, isHovered}) {
                 }} 
             />
 
-            <div className="projectCard_thumbnail_homeShape" style={{borderColor: project.primaryColor}}></div>
+            <div className="projectCard_thumbnail_homeShape isDesktop" style={{borderColor: project.primaryColor}}></div>
 
         </div>
 

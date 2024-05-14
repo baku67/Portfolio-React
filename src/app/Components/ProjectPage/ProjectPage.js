@@ -12,7 +12,7 @@ import { LandingPageProjects } from "./LandingPageProjects";
 
 
 
-export function ProjectPage() {
+export function ProjectPage({isMobile}) {
 
 
     // Bouton retour vers landingPage projets:
@@ -39,7 +39,8 @@ export function ProjectPage() {
             primaryColor: "#ffa012",
             logo: "./projects/projects_logos/logoSquadForge_dark.png",
             shadowLogo: true,
-            thumbnail: "./projects/cards_thumbnails/squadforge.png",
+            thumbnail_isMobile: "./projects/cards_thumbnails/squadforge.png",
+            thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/squadforge-min.png",
             slogan: "",
             description: "Plateforme communautaire \"Gaming\"",
             skills: ["HTML / CSS", "Javascript", "PHP", "Symfony", "BDD", "Twig", "DQL"],
@@ -56,7 +57,7 @@ export function ProjectPage() {
                 "Création et candidatures de Teams",
                 "Planifications de sessions de jeu",
                 "Page d'accueil filtrée selon favoris",
-                "Page de jeux personalisées",
+                "Page de jeux personalisées \n",
             ],
 
             carroussel_imgs: [
@@ -91,7 +92,8 @@ export function ProjectPage() {
             primaryColor: "#00ffea",
             logo: "./projects/projects_logos/logoBlackjackjo3_dark.png",
             shadowLogo: false,
-            thumbnail: "./projects/cards_thumbnails/blackjackjo.png",
+            thumbnail_isMobile: "./projects/cards_thumbnails/blackjackjo.png",
+            thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/blackjackjo2-min.png",
             slogan: "",
             description: "Application web de Blackjack",
             skills: ["HTML / CSS", "Javascript", "PHP"],
@@ -141,7 +143,8 @@ export function ProjectPage() {
             primaryColor: "#e8ca7d",
             logo: "./projects/projects_logos/logoLes100ciels_dark.png",
             shadowLogo: false,
-            thumbnail: "./projects/cards_thumbnails/les100ciels.png",
+            thumbnail_isMobile: "./projects/cards_thumbnails/les100ciels.png",
+            thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/les100ciels-min.png",
             slogan: "",
             description: "Site vitrine d'artiste",
             skills: ["HTML", "CSS", "Javascript", "PHP"],
@@ -154,7 +157,7 @@ export function ProjectPage() {
                 "Librairie SplideJS",
                 "Animations CSS",
                 "Responsiv Design",
-                "Formulaire de contact",
+                "Formulaire de contact \n\n\n\n\n",
             ],
 
             carroussel_imgs: [
@@ -193,7 +196,8 @@ export function ProjectPage() {
             primaryColor: "#ef3b2d",
             logo: "./projects/projects_logos/portfolioV1.png",
             shadowLogo: false,
-            thumbnail: "./projects/cards_thumbnails/portfolioV2.png",
+            thumbnail_isMobile: "./projects/cards_thumbnails/portfolioV2.png",
+            thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/portfolio1-min.png",
             slogan: "",
             description: "Portfolio \"from scratch\"",
             skills: ["HTML", "CSS", "Javascript"],
@@ -205,7 +209,7 @@ export function ProjectPage() {
                 "Multi-pages et navigation",
                 "Animation CSS orchestrées avec Javascript",
                 "Tracé de SVG \"fait-main\"",
-                "Projets utilisables directement sur le site",
+                "Projets utilisables directement sur le site \n\n\n\n\n\n",
             ],
 
             carroussel_imgs: [
@@ -236,7 +240,8 @@ export function ProjectPage() {
             primaryColor: "#fecc02",
             logo: "./projects/projects_logos/terrine4.png",
             shadowLogo: false,
-            thumbnail: "./projects/cards_thumbnails/terrine.png",
+            thumbnail_isMobile: "./projects/cards_thumbnails/terrine.png",
+            thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/terrine.png",
             slogan: "",
             description: "Plateforme cinématographique",
             skills: ["HTML : CSS", "Javascript", "PHP", "MVC"],
@@ -248,7 +253,7 @@ export function ProjectPage() {
                 "Pages de listings \n (Acteurs, Réalisateurs, Films)",
                 "Casting des films",
                 "Pages détaillées et liens/connections",
-                "Formulaire d'ajout",
+                "Formulaire d'ajout \n\n\n\n\n",
             ],
 
             carroussel_imgs: [
@@ -343,7 +348,7 @@ export function ProjectPage() {
 
             ) : (
 
-                <LandingPageProjects projects={projects} selectProject={setActualProjectIndex} />
+                <LandingPageProjects projects={projects} selectProject={setActualProjectIndex} isMobile={isMobile} />
 
             )}
 

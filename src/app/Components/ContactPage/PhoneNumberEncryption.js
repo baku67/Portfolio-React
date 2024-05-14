@@ -11,9 +11,10 @@ export default function PhoneNumberEncryption() {
         setPhoneNumber(obfuscatedNumber);
     }, []);
 
+
     return (
         <p className='iconAndText iconAndTextSocials'>
-            <FontAwesomeIcon icon={faPhone} className="faIcon" style={{width:"28px", position:"relative", left:"3px", margin:"0px 16px"}} />
+            <FontAwesomeIcon icon={faPhone} className="faIcon faIconTel" />
             <span className="localisationTxt">{phoneNumber}</span>
         </p>
     );

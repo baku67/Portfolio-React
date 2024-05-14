@@ -1,23 +1,39 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
+import { Skills } from "./Components/CvPage/Skills";
 import { Socials } from "./Components/ContactPage/Socials";
 import { ContactForm } from './Components/ContactPage/ContactForm';
 import { Footer } from "./Components/ContactPage/Footer";
-import { Header } from "./Components/Header";
+import { Header } from "./Components/HomePage/Header";
 import { ProjectPage } from "./Components/ProjectPage/ProjectPage";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 
+
+
+// Define isMobileDevice function outside of the component
+const isMobileDevice = () => {
+  return window.matchMedia("(max-width: 767px)").matches;
+};
+
+
+
 export default function Home() {
+
+  const [isMobile, setIsMobile] = useState(false); // Initialize state with false
+
 
   
   useEffect(() => {
+
+    setIsMobile(isMobileDevice()); // Set initial state when component mounts
+
 
     // Fonts:
     // Dynamic import for webfontloader (fix pb SSR)
@@ -28,6 +44,8 @@ export default function Home() {
         }
       });
     });
+
+
 
 
     // Scroll sections smooth AOS (check no SSR)
@@ -121,6 +139,8 @@ export default function Home() {
       {/* Page 2: Parcours */}
       <section className="section page2">
 
+        <Skills />
+
         {/* Composant dl CV (FA) */}
 
         {/* Composant Expériences (gros bloc) */}
@@ -137,7 +157,7 @@ export default function Home() {
       {/* Page 3: Projets */}
       <section className="section page3">
 
-        <ProjectPage />
+        <ProjectPage isMobile={isMobile} />
 
       </section>
 

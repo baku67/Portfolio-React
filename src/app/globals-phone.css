@@ -1,0 +1,179 @@
+@media only screen and (max-width: 767px) {
+
+
+
+    .isDesktop {
+        display: none;
+    }
+    .isMobile {
+        display: block;
+    }
+    .isMobileFlex {
+        display: inline-flex;
+    }
+
+
+
+    .faIcon {
+        margin: 0px 7px;
+    }
+
+
+
+
+
+    .page3 {
+        /* height: fit-content; */
+
+        /* Temporaire: */
+        /* opacity: 1; */
+    }
+
+
+
+
+
+    .shapeProject2 {
+        top: -66%;
+    }
+
+    .titleSection {
+        font-size: 1.5em;
+    }
+
+
+    .contactPage-icon {
+        right: 8px;
+        top: 8px;
+        font-size: 2em;
+    }
+    .projectCardsList {
+        flex-direction: column !important;
+        margin: 25px 0;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        gap: 10px 10px;
+        grid-template-areas:
+            ". ."
+            ". ."
+            ". .";
+    }
+    .projectCard{
+        width: 100% !important;
+        padding: 6px 7px 5px 7px;
+        border-bottom: 2px solid var(--primary-cyan);
+
+
+    }
+
+    .projectCard_thumbnail {
+        height: 12vh;
+        padding: 1px 1px 1px 1px;
+
+        border-radius: 8px;
+
+        border-width: 0px !important;
+    }
+
+
+    .projectCard_infos {
+        margin: 8px auto 5px auto;
+    }
+
+
+    .headerSubTitle {
+        font-size: 76%;
+        width: 90%;
+        margin: 0 auto;
+
+        background: linear-gradient(90deg, rgba(29, 29, 36, 0) 0%, var(--secondary-cyan) 40%, var(--secondary-cyan) 60%, rgba(29, 29, 36, 0) 100%);;
+    }
+
+
+    .projectCard-footer {
+        font-size: 70%;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /* Page Contact */
+
+    .btnSocial-wrapper {
+        width: 180px;
+    }
+    .btnSocial {
+        width: 180px;
+        padding: 7px 0px;
+    }
+    .btnSocial-icon {
+        width: 25px;
+        height: 25px;
+    }
+
+    .socialsContactsDiv {
+        margin-top: 10px;
+        margin-bottom: 20px;
+
+        border-width: 0px;
+    }
+
+
+    .emailLine {
+        justify-content: start;
+    }
+
+    .faIconTel {
+        margin: "0px 14px 0px 6px";
+    }
+
+
+    .contactMain {
+        flex-direction: column-reverse !important;
+       margin: 20px auto;
+    }
+
+    .contactMain {
+        width: 90%;
+        flex-direction: column;
+    }
+    .contact-section1 {
+        width: 100%;
+        padding: 10px 15px 15px 15px;
+        margin: 20px auto;
+    }
+    .contact-section2 {
+        width: 100%;
+    }
+
+    .contactFormHeader {
+        color: var(--primary-cyan);
+        font-size: 1.2em;
+      }
+
+
+
+
+
+
+
+    .page3 {
+        /* height: fit-content; */
+    }
+
+
+
+}
