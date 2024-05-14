@@ -210,24 +210,20 @@ export function ProjectPage() {
 
             carroussel_imgs: [
                 {
-                    src: "./projects/terrine1-min.png",
+                    src: "./projects/portfolio1-min.png",
                     alt: "Slide 1",
                 },
                 {
-                    src: "./projects/terrine2-min.png",
+                    src: "./projects/portfolio2-min.png",
                     alt: "Slide 2",
                 },
                 {
-                    src: "./projects/terrine3-min.png",
+                    src: "./projects/portfolio3-min.png",
                     alt: "Slide 3",
                 },
                 {
-                    src: "./projects/terrine4-min.png",
+                    src: "./projects/portfolio4-min.png",
                     alt: "Slide 4",
-                },
-                {
-                    src: "./projects/terrine5-min.png",
-                    alt: "Slide 5",
                 },
             ],
         },
@@ -238,7 +234,7 @@ export function ProjectPage() {
             repo_name: "ELAN_MVC_cinema",
             fontFamily: "Righteous",
             primaryColor: "#fecc02",
-            logo: "",
+            logo: "./projects/projects_logos/terrine4.png",
             shadowLogo: false,
             thumbnail: "./projects/cards_thumbnails/terrine.png",
             slogan: "",

@@ -94,6 +94,19 @@ export function LandingPageProjects({projects, selectProject}) {
                         }}
                         onClick={() => handleClickProject(project.id)}
                     >
+
+
+                    {/* WIP projectCardHeader au dessus */}
+                    
+                    {/* <div 
+                        className="projectCard_infos"
+                        //   style={{transform: isHovered ? "translateY(7px)" : "translateY(0px)"}}
+                    >
+                        <h2 className="projectCard_title" style={{fontFamily: project.fontFamily, color: project.primaryColor}}>{project.name}</h2>
+                        <p className="projectCard_description">{project.description}</p> 
+                    </div> */}
+
+
                         <ProjectThumbnail project={project} isHovered={hoveredIndex === index ? true : false} />
 
                         <ProjectCardInfos project={project} isHovered={hoveredIndex === index ? true : false} token={token} owner="baku67" repo={project.repo_name} />

@@ -9,11 +9,12 @@ export function ProjectInfos({actualProject, actualProjectIndex}) {
 
         <div className="projectInfosDiv">
 
-            <span style={{opacity:0.7}}>Projet n°{actualProjectIndex +1}</span>
+            <span className="projectPageNumber">Projet n°{actualProjectIndex +1}</span>
 
-            <h2 style={{fontFamily: actualProject.fontFamily, color: actualProject.primaryColor}} className="projectName">{actualProject.name}</h2>
-
-            <p className="projectDescription">{actualProject.description}</p>
+            <div className="projectPageInfoHeader" style={{borderColor: actualProject.primaryColor}}>
+                <h2 style={{fontFamily: actualProject.fontFamily, color: actualProject.primaryColor}} className="projectName">{actualProject.name}</h2>
+                <p className="projectDescription">{actualProject.description}</p>
+            </div>
 
             <ul className="projectSkillList">
                 {actualProject.skills.map( (skill) => (

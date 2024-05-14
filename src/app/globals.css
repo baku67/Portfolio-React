@@ -368,18 +368,24 @@ main {
 }
 .btnMockup1 {
   position: absolute;
-  height: 102px;
+  height: 118px;
   width: 4px;
   right: -5px;
-  top: 34px;
+  top: 35px;
+
+  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
 }
 .btnShutDown {
   cursor: pointer;
   position: absolute;
-  height: 40px;
+  height: 50px;
   width: 4px;
   right: -5px;
-  top: 160px;
+  top: 200px;
+
+  border-top-right-radius: 6px !important;
+  border-bottom-right-radius: 6px !important;
 
   transition: all 0.3s;
 }
@@ -424,13 +430,20 @@ main {
   transition: all 0.3s;
 }
 
+.projectPageNumber {
+  opacity: 0.7;
+    width: 100%;
+    text-align: left;
+    display: flex;
+}
+
 .projectGitBtn {
   cursor: pointer;
   position: absolute;
-  right: -60px;
-  top: 35px;
+  right: -76px;
+  top: 34px;
   border: 3px solid;
-  padding: 6px 6px 4px 4px;
+  padding: 6px 6px 4px 5px;
   display: inline-flex;
   border-radius: 7px;
   border-top-right-radius: 21px;
@@ -439,16 +452,16 @@ main {
   transition: all 0.3s;
 }
 .projectGitIcon {
-  font-size: 2em;
+  font-size: 2.5em;
   transition: all 0.3s;
 }
 .projectSiteBtn {
   cursor: pointer;
   position: absolute;
-  right: -60px;
-  top: 90px;
+  right: -76px;
+  top: 100px;
   border: 3px solid;
-  padding: 4px 6px 6px 4px;
+  padding: 4px 6px 6px 5px;
   display: inline-flex;
   border-radius: 7px;
   border-bottom-right-radius: 21px;
@@ -457,11 +470,12 @@ main {
   transition: all 0.3s;
 }
 .projectSiteIcon {
-  font-size: 2em;
+  font-size: 2.4em;
   transition: all 0.3s;
 }
 
 .projectSkillList {
+  width: 100%;
   display: inline-flex;
   gap: 10px;
 }
@@ -471,7 +485,7 @@ main {
   color: black;
   font-size: 0.9em;
   font-weight: 600;
-  margin: 10px auto;
+  margin: 10px 0px;
 }
 .projectInfosDiv {
   text-align: center;
@@ -598,11 +612,20 @@ main {
 
 .projectName {
   font-size: 2.4em;
+  text-align: left;
+  margin-top: 10px;
+  margin-bottom: 0px;
 }
+.projectPageInfoHeader {
+  padding-left: 22px;
+  border-left: 3px solid;
+}
+
+
 .projectFuncList {
   text-align: left;
   list-style-type: disc;
-  margin: 25px auto 10px auto;
+  margin: 25px auto 10px 45px;
   /* Pour saut de ligne projet 1 */
   white-space: pre-wrap;
 
@@ -613,6 +636,7 @@ main {
 
 .projectDescription {
   font-size: 1.3em;
+  text-align: left;
 }
 
 .projectLogo {
@@ -924,7 +948,7 @@ main {
   position: absolute;
   z-index: 999;
   right: 15px;
-  top: 10px;
+  top: 15px;
   font-size: 8.5em;
 
 
