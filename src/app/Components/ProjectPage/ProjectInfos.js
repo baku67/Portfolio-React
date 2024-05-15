@@ -3,7 +3,7 @@ import { CarrousselProject } from "./CarrousselProject";
 
 
 
-export function ProjectInfos({actualProject, actualProjectIndex}) {
+export function ProjectInfos({actualProject, actualProjectIndex, isMobile}) {
 
     return (
 
@@ -13,7 +13,10 @@ export function ProjectInfos({actualProject, actualProjectIndex}) {
 
             <div className="projectPageInfoHeader" style={{borderColor: actualProject.primaryColor}}>
                 <h2 style={{fontFamily: actualProject.fontFamily, color: actualProject.primaryColor}} className="projectName">{actualProject.name}</h2>
-                <p className="projectDescription">{actualProject.description}</p>
+                {!isMobile && (
+                    <p className="projectDescription">{actualProject.description}</p>
+                )}
+                
             </div>
 
             <ul className="projectSkillList">
@@ -39,6 +42,7 @@ export function ProjectInfos({actualProject, actualProjectIndex}) {
 
             <CarrousselProject actualProject={actualProject} />
 
+           
         </div>
     )
 }

@@ -134,12 +134,12 @@
     }
 
     .projectPageWrapper {
+        width: 100%;
         flex-direction: column;
         justify-content: flex-start;
 
-        width: 95%;
         margin: 0 auto;
-        margin-top: 25px;
+        margin-top: 17px;
         position: relative;
         left: 50%;
 
@@ -148,8 +148,28 @@
         transform: translateX(-50%) scale(0.8) translateY(-85px);
     }
 
+
+    .flipped {
+        animation: flipped 1s 0s ease forwards;
+    }
+    @keyframes flipped {
+        0% {
+            opacity: 1;
+            transform: rotateY(0deg);
+        }
+        50% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+            transform: rotateY(360deg);
+        }
+    }
+
+
+
     .projectPageInfoHeader {
-        margin-bottom: 25px;
+        margin-bottom: 15px;
         margin-left: 5px;
 
         padding-left: 18px;
@@ -240,21 +260,50 @@
 
     .projectSiteBtn {
         position: relative;
+
+        right: 0;
+        top: 0;
+    }
+
+    .projectGitBtn {
+        position: relative;
+        right: 0;
+        top: 0;
     }
 
     .toggleFlipCard svg {
-        transform: scale(1.5);
-        width: 47px;
-        height: 47px;
+        transform: scale(1.2);
+        fill: var(--secondary-cyan);
+        width: 45px;
+        height: 45px;
 
         /* ? */
-        background-color: var(--secondary-cyan);
+        /* background-color: var(--secondary-cyan); */
         border-radius: 100px;
         padding: 0px;
     }
 
     .toggleFlipCard svg g {
         transform: translate(4px, 5px);
+    }
+
+
+    .projectPageNumber {
+        position: relative;
+        bottom: 2px;
+    }
+
+
+    .projectCardInfo-mobile {
+        position: relative;
+        display: inline-flex;
+        flex-direction: row;
+
+        gap: 25px;
+        margin-top: 45px;
+
+        width: 100%;
+        justify-content: center;
     }
 
 
@@ -280,6 +329,7 @@
 
     .projectInfosDiv {
         margin-top: 0px;
+        width: 100%;
     }
 
 

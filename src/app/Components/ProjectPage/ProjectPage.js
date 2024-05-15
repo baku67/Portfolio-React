@@ -299,7 +299,15 @@ export function ProjectPage({isMobile}) {
 
     const handleFlip = () => {
         setFlipped(!flipped);
+        setFlippedCss(true);
     };
+
+
+    const [flippedCss, setFlippedCss] = useState(false);
+    setTimeout(() => {
+        setFlippedCss(false);
+    }, 500); // Délai égal à la durée de votre animation en millisecondes
+
 
 
     // null ? landingPage : projet n°X
@@ -378,7 +386,7 @@ export function ProjectPage({isMobile}) {
                     {isMobile && (
 
                         <div className="toggleFlipCard" onClick={handleFlip}>
-                            <svg fill={projects[actualProjectIndex].primaryColor}>
+                            <svg fill={"var(--secondaryCyan"} style={{backgroundColor: projects[actualProjectIndex].primaryColor}} className={flippedCss ? 'flipped' : ''}>
                                 <style type="text/css"></style>
                                 <g>
                                     <path class="st0" d="M32.2,7.9v20.2c0,2.1-1.7,3.8-3.8,3.8h-13c-2.1,0-3.8-1.7-3.8-3.8v-3.3l2.8,0.6V28c0,0.6,0.5,1.1,1.1,1.1h12.8   c0.6,0,1.1-0.5,1.1-1.1V8.1c0-0.6-0.5-1.1-1.1-1.1H15.5c-0.6,0-1.1,0.5-1.1,1.1v7.5l-2.8-0.2v-2.5c-5.6,2.6-4.3,3.9-1.2,4.6   c0.4,0.1,0.8,0.2,1.2,0.2c0.9,0.1,1.9,0.2,2.8,0.3c0.6,0.1,1.2,0.1,1.8,0.1c2,0.1,3.5,0.1,3.5,0.1v-3.1c0-0.5,0.6-0.4,0.8-0.2   l5.8,4l2.3,1.6c0.2,0.2,0.2,0.5,0,0.8l-2.3,1.6l-2.8,2l-2.9,2c-0.1,0.1-0.3,0.2-0.4,0.2c-0.1,0-0.4,0-0.4-0.3v-2.5   c-1.5-0.3-2.9-0.5-4.2-0.8c-0.4-0.1-0.7-0.2-1.1-0.2c-1-0.2-2-0.5-2.8-0.7c-0.7-0.2-1.3-0.4-1.9-0.6c-14.4-5.1,1.9-11.1,1.9-11.1   V7.9c0-2.1,1.7-3.8,3.8-3.8h13C30.5,4.1,32.2,5.8,32.2,7.9z"/>
@@ -438,18 +446,22 @@ export function ProjectPage({isMobile}) {
                                     }}
                                 >
 
-                                        <span>BLALKE Z EF ZEF ZEF ZEF ZE</span>
 
-                                        <a href={projects[actualProjectIndex].github_link}>
-                                            <div className="projectGitBtn" style={{borderColor: projects[actualProjectIndex].primaryColor, backgroundColor: gitBtnHovered ? projectColor : "rgb(37 37 38)"}} onMouseEnter={projectGitHover} onMouseLeave={projectGitLeave}>
-                                                <FontAwesomeIcon icon={faGithub} className="projectGitIcon" style={{color: projects[actualProjectIndex].primaryColor, color: gitBtnHovered ? "rgb(37 37 38)" : projects[actualProjectIndex].primaryColor}} />
-                                            </div>
-                                        </a>
-                                        <a href={projects[actualProjectIndex].site_link}>
-                                            <div className="projectSiteBtn" style={{borderColor: projects[actualProjectIndex].primaryColor, backgroundColor: siteBtnHovered ? projectColor : "rgb(37 37 38)"}} onMouseEnter={projectSiteHover} onMouseLeave={projectSiteLeave}>
-                                                <FontAwesomeIcon icon={faGlobe} className="projectSiteIcon" style={{color: projects[actualProjectIndex].primaryColor, color: siteBtnHovered ? "rgb(37 37 38)" : projects[actualProjectIndex].primaryColor}} />
-                                            </div>
-                                        </a>
+                                        <ProjectInfos actualProject={projects[actualProjectIndex]} actualProjectIndex={actualProjectIndex} isMobile={isMobile} />
+
+
+                                        <div className="projectCardInfo-mobile">
+                                            <a href={projects[actualProjectIndex].github_link}>
+                                                <div className="projectGitBtn" style={{borderColor: projects[actualProjectIndex].primaryColor, backgroundColor: gitBtnHovered ? projectColor : "rgb(37 37 38)"}} onMouseEnter={projectGitHover} onMouseLeave={projectGitLeave}>
+                                                    <FontAwesomeIcon icon={faGithub} className="projectGitIcon" style={{color: projects[actualProjectIndex].primaryColor, color: gitBtnHovered ? "rgb(37 37 38)" : projects[actualProjectIndex].primaryColor}} />
+                                                </div>
+                                            </a>
+                                            <a href={projects[actualProjectIndex].site_link}>
+                                                <div className="projectSiteBtn" style={{borderColor: projects[actualProjectIndex].primaryColor, backgroundColor: siteBtnHovered ? projectColor : "rgb(37 37 38)"}} onMouseEnter={projectSiteHover} onMouseLeave={projectSiteLeave}>
+                                                    <FontAwesomeIcon icon={faGlobe} className="projectSiteIcon" style={{color: projects[actualProjectIndex].primaryColor, color: siteBtnHovered ? "rgb(37 37 38)" : projects[actualProjectIndex].primaryColor}} />
+                                                </div>
+                                            </a>
+                                        </div>
                                     
                                 </animated.div>
                                     
@@ -463,7 +475,7 @@ export function ProjectPage({isMobile}) {
                             <>
                                 <IframeProject actualProject={projects[actualProjectIndex]} />
                             
-                                <ProjectInfos actualProject={projects[actualProjectIndex]} actualProjectIndex={actualProjectIndex} />
+                                <ProjectInfos actualProject={projects[actualProjectIndex]} actualProjectIndex={actualProjectIndex} isMobile={isMobile} />
                             </>
                         )}
                         
