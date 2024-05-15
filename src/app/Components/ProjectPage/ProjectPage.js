@@ -289,6 +289,7 @@ export function ProjectPage({isMobile}) {
     // null ? landingPage : projet n°X
     const [actualProjectIndex, setActualProjectIndex] = useState(null);
 
+
     
 
 
@@ -341,12 +342,31 @@ export function ProjectPage({isMobile}) {
                     </div>
 
 
-
+                    {/* TODO sorti le conditional rendering de la classe (et sur mobile le scale concerne que le iframeProjec pas le title etc) */}
+                    {/* Structure HTML différente mobile/desktop */}
                     <div className="projectPageWrapper">
 
-                        <IframeProject actualProject={projects[actualProjectIndex]} />
+                        {isMobile ? (
+                            <>
+                                {/* Titre + bouton toggle cardInfos + les 2 btn Github et linkedin */}
+                                <div className="projectPageInfoHeader" style={{borderColor: projects[actualProjectIndex].primaryColor}}>
+                                    <h2 style={{fontFamily: projects[actualProjectIndex].fontFamily, color: projects[actualProjectIndex].primaryColor}} className="projectName">{projects[actualProjectIndex].name}</h2>
+                                    <p className="projectDescription">{projects[actualProjectIndex].description}</p>
+                                </div>
+
+                                <IframeProject actualProject={projects[actualProjectIndex]} />
+                            
+                                {/* Card infos retournée : toggleBtn */}
+                                {/* <ProjectInfos actualProject={projects[actualProjectIndex]} actualProjectIndex={actualProjectIndex} /> */}
+                            </>
+                        ) : (
+                            <>
+                                <IframeProject actualProject={projects[actualProjectIndex]} />
+                            
+                                <ProjectInfos actualProject={projects[actualProjectIndex]} actualProjectIndex={actualProjectIndex} />
+                            </>
+                        )}
                         
-                        <ProjectInfos actualProject={projects[actualProjectIndex]} actualProjectIndex={actualProjectIndex} />
 
                     </div>
 

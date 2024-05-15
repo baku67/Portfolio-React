@@ -9,7 +9,8 @@
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
-  --primary-cyan: #1c8ec6 !important;
+  /* --primary-cyan: #1c8ec6 !important; */
+  --primary-cyan: #1bbbda !important;
   --secondary-cyan: #0c2e3e !important;
   --background-color: #1d1d24;
 }
