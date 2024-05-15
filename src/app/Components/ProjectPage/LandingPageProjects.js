@@ -79,9 +79,12 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
             </div>
 
 
+
             {/* CARDS projets */}
             <ul className="projectCardsList">
+
                 {projects.map( (project, index) => (
+
                     <li 
                         key={index}
                         className="projectCard"
@@ -92,29 +95,26 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
                             boxShadow: hoveredIndex === index ? "0px 6px 10px #00000070" : "0px 0px 0px #00000000",
                             backgroundColor: hoveredIndex === index ? "#10394d" : "var(--secondary-cyan)",
                             animationDelay: `${1 + index * 0.15}s`, // Global delay + individual delay
-                            // borderColor: project.primaryColor,
                         }}
                         onClick={() => handleClickProject(project.id)}
                     >
 
-
-                    {/* WIP projectCardHeader au dessus */}
-                    
-                    {/* <div 
-                        className="projectCard_infos"
-                        //   style={{transform: isHovered ? "translateY(7px)" : "translateY(0px)"}}
-                    >
-                        <h2 className="projectCard_title" style={{fontFamily: project.fontFamily, color: project.primaryColor}}>{project.name}</h2>
-                        <p className="projectCard_description">{project.description}</p> 
-                    </div> */}
-
+                        <div 
+                            className="projectCard_infos"
+                        >
+                            <h2 className="projectCard_title" style={{fontFamily: project.fontFamily, color: project.primaryColor}}>{project.name}</h2>
+                            <p className="projectCard_description">{project.description}</p> 
+                        </div>
 
                         <ProjectThumbnail project={project} isHovered={hoveredIndex === index ? true : false} isMobile={isMobile} />
 
                         <ProjectCardInfos project={project} isHovered={hoveredIndex === index ? true : false} token={token} owner="baku67" repo={project.repo_name} />
                     </li>
+
                 ))}
+
             </ul>
+
 
 
             {/* GithubCalendar */}

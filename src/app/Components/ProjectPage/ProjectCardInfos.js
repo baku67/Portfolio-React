@@ -44,17 +44,12 @@ export function ProjectCardInfos({ project, isHovered, token, owner, repo }) {
       console.log("Error: " + error.message);
     }
   
+
+
+
     return (
+
       <div className="projectCard-footer">
-
-        <div 
-          className="projectCard_infos"
-          style={{transform: isHovered ? "translateY(7px)" : "translateY(0px)"}}
-        >
-            <h2 className="projectCard_title" style={{fontFamily: project.fontFamily, color: project.primaryColor}}>{project.name}</h2>
-            <p className="projectCard_description">{project.description}</p> 
-        </div>
-
 
         <div className="projectCard_footerBottom">
           <ul className="projectCard_primSkills">
@@ -75,8 +70,9 @@ export function ProjectCardInfos({ project, isHovered, token, owner, repo }) {
             </span>
           }
 
-      </div>
+        </div>
 
       </div>
+
     );
   }

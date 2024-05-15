@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faPersonRunning } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faPersonRunning, faClipboardCheck } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 import { Shape1 } from "./Components/Shapes/Shape1";
@@ -148,7 +148,8 @@ export default function Home() {
       <section className="section page2">
 
         {/* Icone Page (top-right) */}
-        <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" />
+        {/* <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" /> */}
+        <FontAwesomeIcon icon={faClipboardCheck} className="pageIcon" />
 
         {/* Shapes neutres(cyan) */}
         <Shape1 />
@@ -177,7 +178,7 @@ export default function Home() {
         {/* FIN GRIIIIIIID */}
 
 
-        <DownloadCvBtn />
+        <DownloadCvBtn isMobile={isMobile} />
         
       </section>
 

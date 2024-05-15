@@ -3,18 +3,22 @@ import { faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 
 
-export function DownloadCvBtn() {
+export function DownloadCvBtn({isMobile}) {
 
     return (
 
         <div>
 
-            <div className="IconAndText" >
+            <a href={"./CV_BasileKuntz.pdf"} dowload={"CV_BasileKuntz.pdf"} target="_blank" rel="noopener noreferrer">
 
-                <FontAwesomeIcon icon={faFileArrowDown} />
-                <span>.pdf</span>
+                <div className="IconAndText" >
 
-            </div>
+                    <FontAwesomeIcon icon={faFileArrowDown} />
+                    <span>{isMobile ? ".pdf" : "Version .pdf"}</span>
+
+                </div>
+
+            </a>
 
         </div>
     )

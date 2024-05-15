@@ -316,18 +316,20 @@ export function ProjectPage({isMobile}) {
 
 
                     {/* Header ("Mes Projets" + nav) */}
-                    <div className="projectPageHeader">
+                    <div className="projectPageHeader pPH-resp">
 
-                        <FontAwesomeIcon 
-                            icon={faArrowLeft} 
-                            className="backToProjectsBtn" 
-                            onMouseEnter={backBtnEnter}
-                            onMouseLeave={backBtnLeave}
-                            onClick={handleBackBtn}
-                            style={{opacity: isBackBtnHovered ? 0.5 : 1}}
-                        />
+                        <div className="porjectPageHeaderTitle">
+                            <FontAwesomeIcon 
+                                icon={faArrowLeft} 
+                                className="backToProjectsBtn" 
+                                onMouseEnter={backBtnEnter}
+                                onMouseLeave={backBtnLeave}
+                                onClick={handleBackBtn}
+                                style={{opacity: isBackBtnHovered ? 0.5 : 1}}
+                            />
 
-                        <h2 className="titleSection">Mes Projets</h2>
+                            <h2 className="titleSection">Mes Projets</h2>
+                        </div>
 
                         <ProjectsNav 
                             nbrProjects={projects.length} 

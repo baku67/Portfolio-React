@@ -180,6 +180,10 @@ main {
   }
 }
 
+.pPH-resp {
+  display: block;
+}
+
 .testezLe-div {
   position: absolute;
   bottom: 26px;
@@ -562,6 +566,8 @@ main {
   width: 100%;
 
   flex:1;
+
+  margin-top: 20px;
 }
 
 .projectCard_footerBottom {
@@ -616,6 +622,7 @@ main {
 
 .projectCard_thumbnail {
   position: relative;
+  z-index: 99999;
   height: 30vh;
   margin: 0 auto;
   border: 1px solid transparent;
@@ -624,7 +631,7 @@ main {
   background-color: #060606;
   border-radius: 10px;
 
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 
 .projectCard_thumbnail_homeShape {
@@ -648,11 +655,12 @@ main {
 }
 
 .projectCard_title {
-  font-size: 1.4em;
+  font-size: 1.6em;
 
   margin-bottom: 0.1em;
 }
 .projectCard_description {
+  font-size: 0.8em;
   margin-bottom: 0.1em;
 }
 
@@ -811,7 +819,7 @@ main {
   width: 21%;
 
   background-color: var(--secondary-cyan);
-  padding: 19px 15px 12px 15px;
+  padding: 6px 15px 12px 15px;
   border-radius: 11px;
   
 
