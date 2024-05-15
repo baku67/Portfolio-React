@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
+// Anim flip card
+import { useSpring, animated } from '@react-spring/web';
 
 import { Shape1 } from "../Shapes/Shape1";
 import { Shape2 } from "../Shapes/Shape2";
@@ -286,6 +288,19 @@ export function ProjectPage({isMobile}) {
     ];
 
 
+    // flip card (mobile)
+    const [flipped, setFlipped] = useState(false);
+    const { transform, opacity } = useSpring({
+        opacity: flipped ? 1 : 0,
+        transform: `perspective(600px) rotateY(${flipped ? 180 : 0}deg)`,
+        config: { mass: 5, tension: 500, friction: 80, duration: 500 },
+    });
+
+    const handleFlip = () => {
+        setFlipped(!flipped);
+    };
+
+
     // null ? landingPage : projet n°X
     const [actualProjectIndex, setActualProjectIndex] = useState(null);
 
@@ -307,14 +322,12 @@ export function ProjectPage({isMobile}) {
                     <Shape1 projectColor={projects[actualProjectIndex].primaryColor} />
                     <Shape2 projectColor={projects[actualProjectIndex].primaryColor} />
 
-
                     {/* Logo haut-droite */}
                     <img 
                         src={projects[actualProjectIndex].logo} 
                         style={{filter: projects[actualProjectIndex].shadowLogo ? "drop-shadow(0px 0px 1px rgba(0,0,0,0.7))" : "none"}}
                         className="projectLogo" 
                     />
-
 
                     {/* Header ("Mes Projets" + nav) */}
                     <div className="projectPageHeader pPH-resp">
@@ -342,24 +355,87 @@ export function ProjectPage({isMobile}) {
                     </div>
 
 
+
                     {/* TODO sorti le conditional rendering de la classe (et sur mobile le scale concerne que le iframeProjec pas le title etc) */}
                     {/* Structure HTML différente mobile/desktop */}
                     <div className="projectPageWrapper">
 
                         {isMobile ? (
-                            <>
-                                {/* Titre + bouton toggle cardInfos + les 2 btn Github et linkedin */}
-                                <div className="projectPageInfoHeader" style={{borderColor: projects[actualProjectIndex].primaryColor}}>
-                                    <h2 style={{fontFamily: projects[actualProjectIndex].fontFamily, color: projects[actualProjectIndex].primaryColor}} className="projectName">{projects[actualProjectIndex].name}</h2>
-                                    <p className="projectDescription">{projects[actualProjectIndex].description}</p>
-                                </div>
 
-                                <IframeProject actualProject={projects[actualProjectIndex]} />
-                            
-                                {/* Card infos retournée : toggleBtn */}
-                                {/* <ProjectInfos actualProject={projects[actualProjectIndex]} actualProjectIndex={actualProjectIndex} /> */}
-                            </>
+                            // <div onClick={() => setFlipped(!flipped)}>
+                            <div>
+
+                                {/* FRONT CARD (mobile) */}
+                                <animated.div
+                                    style={{
+                                        opacity: opacity.interpolate(o => 1 - o),
+                                        transform,
+                                        position: 'absolute',
+                                        width: '100%',
+                                        height: '100%',
+                                    }}
+                                >
+                                    {/* Titre + bouton toggle cardInfos + les 2 btn Github et linkedin */}
+                                    <div className="projectPageInfoHeader" style={{borderColor: projects[actualProjectIndex].primaryColor}}>
+                                        <h2 style={{fontFamily: projects[actualProjectIndex].fontFamily, color: projects[actualProjectIndex].primaryColor}} className="projectName">{projects[actualProjectIndex].name}</h2>
+                                        <p className="projectDescription">{projects[actualProjectIndex].description}</p>
+                                    </div>
+
+                                    <IframeProject 
+                                        actualProject={projects[actualProjectIndex]} 
+                                        isMobile={isMobile}
+                                        flipped={flipped} 
+                                        handleFlip={handleFlip} 
+                                    />
+
+
+                                    {/* Flip card */}
+                                    <div className="toggleFlipCard" onClick={handleFlip}>
+                                        <svg fill={projects[actualProjectIndex].primaryColor}>
+                                            <style type="text/css"></style>
+                                            <g>
+                                                <path class="st0" d="M32.2,7.9v20.2c0,2.1-1.7,3.8-3.8,3.8h-13c-2.1,0-3.8-1.7-3.8-3.8v-3.3l2.8,0.6V28c0,0.6,0.5,1.1,1.1,1.1h12.8   c0.6,0,1.1-0.5,1.1-1.1V8.1c0-0.6-0.5-1.1-1.1-1.1H15.5c-0.6,0-1.1,0.5-1.1,1.1v7.5l-2.8-0.2v-2.5c-5.6,2.6-4.3,3.9-1.2,4.6   c0.4,0.1,0.8,0.2,1.2,0.2c0.9,0.1,1.9,0.2,2.8,0.3c0.6,0.1,1.2,0.1,1.8,0.1c2,0.1,3.5,0.1,3.5,0.1v-3.1c0-0.5,0.6-0.4,0.8-0.2   l5.8,4l2.3,1.6c0.2,0.2,0.2,0.5,0,0.8l-2.3,1.6l-2.8,2l-2.9,2c-0.1,0.1-0.3,0.2-0.4,0.2c-0.1,0-0.4,0-0.4-0.3v-2.5   c-1.5-0.3-2.9-0.5-4.2-0.8c-0.4-0.1-0.7-0.2-1.1-0.2c-1-0.2-2-0.5-2.8-0.7c-0.7-0.2-1.3-0.4-1.9-0.6c-14.4-5.1,1.9-11.1,1.9-11.1   V7.9c0-2.1,1.7-3.8,3.8-3.8h13C30.5,4.1,32.2,5.8,32.2,7.9z"/>
+                                            </g>
+                                        </svg>
+                                    </div>
+
+                                </animated.div>
+
+
+                                {/* BACK CARD (mobile) */}     
+                                <animated.div
+                                    style={{
+                                        opacity,
+                                        transform: transform.interpolate(t => `${t} rotateY(180deg)`),
+                                        position: 'absolute',
+                                        width: '100%',
+                                        height: '100%',
+                                    }}
+                                >
+
+                                        <span>BLALKE Z EF ZEF ZEF ZEF ZE</span>
+
+                                        {/* Bouton flip card (Mobile) */}
+                                        {isMobile && (
+                                            <div className="toggleFlipCard" onClick={handleFlip}>
+                                                {/* Btn FLIP */}
+                                                <svg fill={projects[actualProjectIndex].primaryColor}>
+                                                    <style type="text/css"></style>
+                                                    <g>
+                                                        <path class="st0" d="M32.2,7.9v20.2c0,2.1-1.7,3.8-3.8,3.8h-13c-2.1,0-3.8-1.7-3.8-3.8v-3.3l2.8,0.6V28c0,0.6,0.5,1.1,1.1,1.1h12.8   c0.6,0,1.1-0.5,1.1-1.1V8.1c0-0.6-0.5-1.1-1.1-1.1H15.5c-0.6,0-1.1,0.5-1.1,1.1v7.5l-2.8-0.2v-2.5c-5.6,2.6-4.3,3.9-1.2,4.6   c0.4,0.1,0.8,0.2,1.2,0.2c0.9,0.1,1.9,0.2,2.8,0.3c0.6,0.1,1.2,0.1,1.8,0.1c2,0.1,3.5,0.1,3.5,0.1v-3.1c0-0.5,0.6-0.4,0.8-0.2   l5.8,4l2.3,1.6c0.2,0.2,0.2,0.5,0,0.8l-2.3,1.6l-2.8,2l-2.9,2c-0.1,0.1-0.3,0.2-0.4,0.2c-0.1,0-0.4,0-0.4-0.3v-2.5   c-1.5-0.3-2.9-0.5-4.2-0.8c-0.4-0.1-0.7-0.2-1.1-0.2c-1-0.2-2-0.5-2.8-0.7c-0.7-0.2-1.3-0.4-1.9-0.6c-14.4-5.1,1.9-11.1,1.9-11.1   V7.9c0-2.1,1.7-3.8,3.8-3.8h13C30.5,4.1,32.2,5.8,32.2,7.9z"/>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                        )}
+                                </animated.div>
+                                    
+                                    {/* Card infos retournée : toggleBtn */}
+                                    {/* <ProjectInfos actualProject={projects[actualProjectIndex]} actualProjectIndex={actualProjectIndex} /> */}
+
+                            </div>
+
                         ) : (
+
                             <>
                                 <IframeProject actualProject={projects[actualProjectIndex]} />
                             

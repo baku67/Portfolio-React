@@ -6,7 +6,7 @@ import { faPowerOff, faGlobe, faTriangleExclamation } from "@fortawesome/free-so
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 
-export function IframeProject({ actualProject }) {
+export function IframeProject({ actualProject, isMobile }) {
 
     const [iframeKey, setIframeKey] = useState(0);
     const [homeBtnHovered, setHomeBtnHovered] = useState(false);
@@ -114,17 +114,20 @@ export function IframeProject({ actualProject }) {
 
 
             {/* Boutons github et site */}
-            <a href={actualProject.github_link}>
-                <div className="projectGitBtn" style={{borderColor: projectColor, backgroundColor: gitBtnHovered ? projectColor : "rgb(37 37 38)"}} onMouseEnter={projectGitHover} onMouseLeave={projectGitLeave}>
-                    <FontAwesomeIcon icon={faGithub} className="projectGitIcon" style={{color: projectColor, color: gitBtnHovered ? "rgb(37 37 38)" : projectColor}} />
-                </div>
-            </a>
-            <a href={actualProject.site_link}>
-                <div className="projectSiteBtn" style={{borderColor: projectColor, backgroundColor: siteBtnHovered ? projectColor : "rgb(37 37 38)"}} onMouseEnter={projectSiteHover} onMouseLeave={projectSiteLeave}>
-                    <FontAwesomeIcon icon={faGlobe} className="projectSiteIcon" style={{color: projectColor, color: siteBtnHovered ? "rgb(37 37 38)" : projectColor}} />
-                </div>
-            </a>
-
+            {!isMobile && (
+                <>
+                    <a href={actualProject.github_link}>
+                        <div className="projectGitBtn" style={{borderColor: projectColor, backgroundColor: gitBtnHovered ? projectColor : "rgb(37 37 38)"}} onMouseEnter={projectGitHover} onMouseLeave={projectGitLeave}>
+                            <FontAwesomeIcon icon={faGithub} className="projectGitIcon" style={{color: projectColor, color: gitBtnHovered ? "rgb(37 37 38)" : projectColor}} />
+                        </div>
+                    </a>
+                    <a href={actualProject.site_link}>
+                        <div className="projectSiteBtn" style={{borderColor: projectColor, backgroundColor: siteBtnHovered ? projectColor : "rgb(37 37 38)"}} onMouseEnter={projectSiteHover} onMouseLeave={projectSiteLeave}>
+                            <FontAwesomeIcon icon={faGlobe} className="projectSiteIcon" style={{color: projectColor, color: siteBtnHovered ? "rgb(37 37 38)" : projectColor}} />
+                        </div>
+                    </a>
+                </>
+            )}
 
             {/* Iframe */}
             <iframe key={iframeKey} src={iframeState && actualProject.site_link} className="iframe"></iframe>

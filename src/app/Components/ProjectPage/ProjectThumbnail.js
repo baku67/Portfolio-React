@@ -13,7 +13,7 @@ export function ProjectThumbnail({project, isHovered, isMobile}) {
 
 
     return (
-        <div style={{position:"relative", flex:0}}>
+        <div style={{position:"relative", flex:1, display:"inline-flex", alignItems:"end"}}>
 
             <div style={{width:"fit-content", margin:"0 auto"}}>
 

@@ -560,15 +560,17 @@ main {
 
 
 .projectCard-footer {
-  display: inline-flex;
-  justify-content: space-between;
+  /* display: inline-flex;
+  justify-content: space-between; */
   flex-direction: column;
   align-items: center;
   width: 100%;
 
-  flex:1;
+  flex:0;
 
   margin-top: 20px;
+  display: flex;
+  justify-content: end;
 }
 
 .projectCard_footerBottom {
@@ -652,6 +654,11 @@ main {
   margin: 10px auto;
   text-align: center;
 
+  display: inline-flex;
+  flex-direction: column;
+
+  flex: 1;
+
   transition: all 0.3s;
 }
 
@@ -661,8 +668,10 @@ main {
   margin-bottom: 0.1em;
 }
 .projectCard_description {
-  font-size: 0.8em;
+  font-size: 1em;
   margin-bottom: 0.1em;
+  flex: 1;
+  align-content: center;
 }
 
 .projectName {
