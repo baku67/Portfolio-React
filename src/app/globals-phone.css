@@ -230,9 +230,27 @@
         border-radius: 0px;
 
         border-radius: 5px;
-        
+
         border-width: 0px !important;
     }
+
+
+    .mobile_gifPlayBtn {
+        position: absolute;
+        z-index: 99999999;
+
+        font-size: 3.8em;
+        color: var(--primary-cyan);
+
+        width: fit-content;
+        height: auto;
+
+        bottom: 7px;
+        right: 17px;
+
+        padding: 0px 15px;
+    }
+
 
 
     .projectCard_infos {

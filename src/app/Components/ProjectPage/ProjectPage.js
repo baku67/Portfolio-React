@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faCirclePause, faCirclePlay } from "@fortawesome/free-regular-svg-icons";
 
 // Anim flip card
 import { useSpring, animated } from '@react-spring/web';
@@ -39,14 +40,13 @@ export function ProjectPage({isMobile}) {
         {
             id: 0,
             name: "SquadForge",
-            // Nom en minuscule pour API
             repo_name: "ELAN_Projet_SquadForge",
             fontFamily: "Julius Sans One",
             primaryColor: "#ffa012",
             logo: "./projects/projects_logos/logoSquadForge_dark2.png",
 
             gif_demo_desktop: "../projects/gifs/desktop/squadforge.gif",
-            gif_demo_mobile: "../projects/gifs/mobile/squadforge.gif",
+            gif_demo_mobile: "../projects/gifs/mobile/squadforge_min.gif",
 
             shadowLogo: true,
 
@@ -100,14 +100,18 @@ export function ProjectPage({isMobile}) {
         {
             id: 1,
             name: "BlackJack Jo'",
-            // Nom en minuscule pour API
             repo_name: "blackjackjo-projet",
             fontFamily: "Kavoon",
             primaryColor: "#00ffea",
             logo: "./projects/projects_logos/logoBlackjackjo3_dark.png",
+
+            gif_demo_mobile: "../projects/gifs/mobile/blackjackjo-min.gif",
+
             shadowLogo: false,
+
             thumbnail_isMobile: "./projects/cards_thumbnails/blackjackjo.png",
             thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/blackjackjo2-min.png",
+            
             slogan: "",
             description: "Application web de Blackjack",
             skills: ["HTML / CSS", "Javascript", "PHP"],
@@ -158,6 +162,9 @@ export function ProjectPage({isMobile}) {
             fontFamily: "Montserrat Alternates",
             primaryColor: "#e8ca7d",
             logo: "./projects/projects_logos/logoLes100ciels_dark.png",
+
+            gif_demo_mobile: "./projects/gifs/mobile/les100ciels_spedUp.gif",
+
             shadowLogo: false,
 
             thumbnail_isMobile: "./projects/cards_thumbnails/les100ciels.png",
@@ -215,6 +222,9 @@ export function ProjectPage({isMobile}) {
             fontFamily: "Nunito",
             primaryColor: "#ef3b2d",
             logo: "./projects/projects_logos/portfolioV1.png",
+
+            gif_demo_mobile: "./projects/gifs/mobile/portfolio.webp",
+
             shadowLogo: false,
             thumbnail_isMobile: "./projects/cards_thumbnails/portfolioV2.png",
             thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/portfolio1-min.png",
@@ -261,6 +271,9 @@ export function ProjectPage({isMobile}) {
             fontFamily: "Righteous",
             primaryColor: "#fecc02",
             logo: "./projects/projects_logos/terrine4.png",
+
+            gif_demo_mobile: "./projects/gifs/mobile/terrine.webp",
+
             shadowLogo: false,
             thumbnail_isMobile: "./projects/cards_thumbnails/terrine.png",
             thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/terrine.png",
@@ -514,8 +527,21 @@ export function ProjectPage({isMobile}) {
 
                 <>  
                     {isMobile && (
-                        <span className="mobile_gifPlayBtn" onClick={handleToggleGif}>PLAY</span>
+
+                        <span className="mobile_gifPlayBtn" onClick={handleToggleGif}>
+
+                            {isGifToggled ? (
+                                <FontAwesomeIcon icon={faCirclePause} />
+                            ) : (
+                                <FontAwesomeIcon icon={faCirclePlay} />
+                            )}
+                            
+
+                            
+
+                        </span>
                     )}
+
 
                     <LandingPageProjects projects={projects} selectProject={setActualProjectIndex} isMobile={isMobile} gifState={isGifToggled} />
 

@@ -43,7 +43,8 @@ export function ProjectThumbnail({project, isHovered, isMobile, gifState}) {
                     className="projectCard_thumbnail" 
                     style={{
                         borderColor: project.primaryColor, 
-                        transform: isHovered ? "scale(1.05)" : "scale(1)"
+                        transform: isHovered ? "scale(1.05)" : "scale(1)",
+                        boxShadow: isHovered ? `0px 0px 55px ${project.primaryColor}` : "",
                     }} 
                 />
             </div>
