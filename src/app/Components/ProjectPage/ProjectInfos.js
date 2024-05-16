@@ -3,7 +3,7 @@ import { CarrousselProject } from "./CarrousselProject";
 
 
 
-export function ProjectInfos({actualProject, actualProjectIndex, isMobile}) {
+export function ProjectInfos({actualProject, actualProjectIndex, isMobile, isFlipped}) {
 
     return (
 
@@ -11,7 +11,7 @@ export function ProjectInfos({actualProject, actualProjectIndex, isMobile}) {
 
             <span className="projectPageNumber">Projet n°{actualProjectIndex +1}</span>
 
-            <div className="projectPageInfoHeader" style={{borderColor: actualProject.primaryColor}}>
+            <div className={`projectPageInfoHeader ${isFlipped ? 'ppih-resp' : ''}`} style={{borderColor: actualProject.primaryColor}}>
                 <h2 style={{fontFamily: actualProject.fontFamily, color: actualProject.primaryColor}} className="projectName">{actualProject.name}</h2>
                 {!isMobile && (
                     <p className="projectDescription">{actualProject.description}</p>

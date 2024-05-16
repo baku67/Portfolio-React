@@ -49,10 +49,12 @@ export function ProjectPage({isMobile}) {
             thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/squadforge-min.png",
             slogan: "",
             description: "Plateforme communautaire \"Gaming\"",
-            skills: ["HTML / CSS", "Javascript", "PHP", "Symfony", "BDD", "Twig", "DQL"],
-            primarySkill : ["PHP", "Symfony"],
+            skills: ["Javascript", "Symfony", "Twig", "DQL"],
+            primarySkill : ["Symfony", "JS"],
             github_link : "https://github.com/baku67/ELAN_Projet_SquadForge",
             site_link: "https://squadforge.ovh",
+
+            title_bold: true,
 
             fonctionalities: [
                 "Authentification et rôles",
@@ -107,6 +109,8 @@ export function ProjectPage({isMobile}) {
             github_link : "https://github.com/baku67/BLACKJACKJO-projet",
             site_link: "https://www.blackjackjo.com",
 
+            title_bold: false,
+
             fonctionalities: [
                 "Système de compte et sauvegarde",
                 "Crédits quotidiens à la connexion",
@@ -157,6 +161,8 @@ export function ProjectPage({isMobile}) {
             primarySkill : ["CSS", "Javascript"],
             github_link : "https://github.com/baku67/les100ciels-js-",
             site_link: "https://les100ciels.art",
+
+            title_bold: true,
 
             fonctionalities: [
                 "Galleries, modals et navigation",
@@ -211,6 +217,8 @@ export function ProjectPage({isMobile}) {
             github_link : "https://github.com/baku67/Portfolio-v2",
             site_link: "https://bk-dev.fr/cv.html",
 
+            title_bold: true,
+
             fonctionalities: [
                 "Multi-pages et navigation",
                 "Animation CSS orchestrées avec Javascript",
@@ -254,6 +262,8 @@ export function ProjectPage({isMobile}) {
             primarySkill : ["MVC"],
             github_link : "https://github.com/baku67/ELAN_MVC_cinema",
             site_link: "https://eneffet.basilek.ovh",
+
+            title_bold: false,
 
             fonctionalities: [
                 "Pages de listings \n (Acteurs, Réalisateurs, Films)",
@@ -447,7 +457,7 @@ export function ProjectPage({isMobile}) {
                                 >
 
 
-                                        <ProjectInfos actualProject={projects[actualProjectIndex]} actualProjectIndex={actualProjectIndex} isMobile={isMobile} />
+                                        <ProjectInfos actualProject={projects[actualProjectIndex]} actualProjectIndex={actualProjectIndex} isMobile={isMobile} isFlipped={flipped}/>
 
 
                                         <div className="projectCardInfo-mobile">

@@ -91,18 +91,27 @@
 
 
 
+    .projectGitIcon {
+        font-size: 3.4em;
+    }
+    .projectSiteIcon {
+        font-size: 3.4em;
+    }
 
 
     .iframeContainer {
-        width: 90%;
+        width: 85%;
         margin: 0 auto;
     }
     .iframe {
         width: 100%;
-        height: 69vh;
+        height: 68vh;
     }
 
 
+    .ppih-resp {
+        margin-bottom: 11px !important;
+    }
 
 
     .pageIcon {
@@ -150,26 +159,26 @@
 
 
     .flipped {
-        animation: flipped 1s 0s ease forwards;
+        animation: flipped 0.7s 0s ease forwards;
     }
     @keyframes flipped {
         0% {
             opacity: 1;
-            transform: rotateY(0deg);
+            /* transform: rotateY(0deg); */
         }
         50% {
             opacity: 0;
         }
         100% {
             opacity: 1;
-            transform: rotateY(360deg);
+            /* transform: rotateY(360deg); */
         }
     }
 
 
 
     .projectPageInfoHeader {
-        margin-bottom: 15px;
+        margin-bottom: 25px;
         margin-left: 5px;
 
         padding-left: 18px;
@@ -211,6 +220,7 @@
 
     .NbrCommits {
         gap:2px;
+        color: #afb7b6;
     }
 
     .projectCard_thumbnail {
@@ -273,7 +283,7 @@
 
     .toggleFlipCard svg {
         transform: scale(1.2);
-        fill: var(--secondary-cyan);
+        fill: #0a1f29;
         width: 45px;
         height: 45px;
 
@@ -444,7 +454,29 @@
 
 
 
+      .githubCalendarLink {
+        width: 100%;
+      }
 
+
+      .styles-module_scrollContainer__-bJC8 {
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+      }
+      .styles-module_container__GBNxC {
+        overflow: scroll;
+        transform: scale(1) !important;
+      }
+      .styles-module_calendar__sT1ND {
+        width: fit-content;
+        padding-left: 16px;
+      }
+
+      .react-activity-calendar__count {
+        width: 100%;
+        text-align: right;
+        font-size: 1.1em;
+      }
 
 
 

@@ -99,11 +99,20 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
                         onClick={() => handleClickProject(project.id)}
                     >
 
-                        <div 
-                            className="projectCard_infos"
-                        >
-                            <h2 className="projectCard_title" style={{fontFamily: project.fontFamily, color: project.primaryColor}}>{project.name}</h2>
+                        <div  className="projectCard_infos">
+
+                            <h2 
+                                className="projectCard_title" 
+                                style={{
+                                    fontFamily: project.fontFamily, 
+                                    color: project.primaryColor, 
+                                    fontWeight: project.title_bold ? "bold" : "normal"
+                            }}>
+                                {project.name}
+                            </h2>
+
                             <p className="projectCard_description">{project.description}</p> 
+
                         </div>
 
                         <ProjectThumbnail project={project} isHovered={hoveredIndex === index ? true : false} isMobile={isMobile} />
@@ -136,8 +145,14 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
                         <FontAwesomeIcon icon={faChartLine} className="faIcon" />
                         <h3 className="githubCalendarTitle">Activité :</h3>
                     </div>
+
                     {/* Props light/dark par exemple: https://grubersjoe.github.io/react-github-calendar/#/?user=baku67 */}
-                    <GitHubCalendar username="baku67" theme={explicitTheme} />
+                    <GitHubCalendar 
+                        username="baku67"
+                        theme={explicitTheme} 
+                        blockRadius="10"
+
+                    />
                 </div>
             </a>
             
