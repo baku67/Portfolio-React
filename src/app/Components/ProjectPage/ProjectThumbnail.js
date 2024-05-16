@@ -7,7 +7,13 @@ export function ProjectThumbnail({project, isHovered, isMobile}) {
         if (isMobile) {
             return project.thumbnail_isDesktop; 
         } else {
-            return project.thumbnail_isMobile; 
+            if (isHovered) {
+                console.log(project.gif_demo)
+                return project.gif_demo;
+            }
+            else {
+                return project.thumbnail_isMobile; 
+            }
         }
     }
 

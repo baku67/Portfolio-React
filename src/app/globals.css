@@ -24,6 +24,8 @@
 }
 
 
+
+
 .isDesktop {
   display: block;
 }
@@ -57,6 +59,11 @@ a {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.btn-primary {
+  background-color: var(--primary-cyan);
+  color: black;
 }
 
 

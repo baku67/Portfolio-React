@@ -80,7 +80,7 @@ export function ContactForm() {
                         <Form.Control as="textarea" name="message" placeholder="Entrez votre message" />
                     </Form.Group>
 
-                    <div style={{display:"inline-flex"}}>
+                    <div style={{display:"inline-flex", width: "100%", justifyContent: "end"}}>
                         <Button variant="primary" type="submit" disabled={isSubmitting} className="testMobiel" >
                             Envoyer
                         </Button>
