@@ -13,7 +13,7 @@ import GitHubCalendar from 'react-github-calendar';
 import { ProjectCardInfos } from "./ProjectCardInfos";
 
 
-export function LandingPageProjects({projects, selectProject, isMobile}) {
+export function LandingPageProjects({projects, selectProject, isMobile, gifState}) {
 
     // API github
     const token = process.env.REACT_APP_GITHUB_TOKEN;
@@ -115,7 +115,7 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
 
                         </div>
 
-                        <ProjectThumbnail project={project} isHovered={hoveredIndex === index ? true : false} isMobile={isMobile} />
+                        <ProjectThumbnail project={project} isHovered={hoveredIndex === index ? true : false} isMobile={isMobile} gifState={gifState} />
 
                         <ProjectCardInfos project={project} isHovered={hoveredIndex === index ? true : false} token={token} owner="baku67" repo={project.repo_name} />
                     </li>

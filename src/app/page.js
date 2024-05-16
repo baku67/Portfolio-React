@@ -191,6 +191,8 @@ export default function Home() {
       {/* Page 3: Projets */}
       <section className="section page3">
 
+        
+
         <ProjectPage isMobile={isMobile} />
 
       </section>

@@ -1,18 +1,31 @@
 "use client";
 
-export function ProjectThumbnail({project, isHovered, isMobile}) {
+export function ProjectThumbnail({project, isHovered, isMobile, gifState}) {
 
 
     const handleSrcImg = () => {
+
         if (isMobile) {
-            return project.thumbnail_isDesktop; 
-        } else {
-            if (isHovered) {
-                console.log(project.gif_demo)
-                return project.gif_demo;
+
+            if(gifState) {
+                return project.gif_demo_desktop;
             }
             else {
+                return project.thumbnail_isDesktop; 
+            }
+
+
+        } else {
+
+            if (isHovered) {
+
+                return project.gif_demo_mobile;
+
+            }
+            else {
+
                 return project.thumbnail_isMobile; 
+
             }
         }
     }

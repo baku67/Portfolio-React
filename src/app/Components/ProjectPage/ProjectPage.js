@@ -44,10 +44,15 @@ export function ProjectPage({isMobile}) {
             fontFamily: "Julius Sans One",
             primaryColor: "#ffa012",
             logo: "./projects/projects_logos/logoSquadForge_dark2.png",
-            gif_demo: "../projects/gifs/mobile/squadforge_resized.gif",
+
+            gif_demo_desktop: "../projects/gifs/desktop/squadforge.gif",
+            gif_demo_mobile: "../projects/gifs/mobile/squadforge.gif",
+
             shadowLogo: true,
+
             thumbnail_isMobile: "./projects/cards_thumbnails/squadforge.png",
             thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/squadforge-min.png",
+
             slogan: "",
             description: "Plateforme communautaire \"Gaming\"",
             skills: ["Javascript", "Symfony", "Twig", "DQL"],
@@ -154,8 +159,10 @@ export function ProjectPage({isMobile}) {
             primaryColor: "#e8ca7d",
             logo: "./projects/projects_logos/logoLes100ciels_dark.png",
             shadowLogo: false,
+
             thumbnail_isMobile: "./projects/cards_thumbnails/les100ciels.png",
-            thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/les100ciels-min.png",
+            thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/les100ciels-1.png",
+
             slogan: "",
             description: "Site vitrine d'artiste",
             skills: ["HTML", "CSS", "Javascript", "PHP"],
@@ -345,6 +352,14 @@ export function ProjectPage({isMobile}) {
 
 
 
+
+    // Gif Play Btn:
+    const [ isGifToggled, setIsGifToggled ] = useState(false);
+    const handleToggleGif = () => {
+        setIsGifToggled(!isGifToggled);
+    }
+
+
     return (
 
         <>
@@ -497,7 +512,14 @@ export function ProjectPage({isMobile}) {
 
             ) : (
 
-                <LandingPageProjects projects={projects} selectProject={setActualProjectIndex} isMobile={isMobile} />
+                <>  
+                    {isMobile && (
+                        <span className="mobile_gifPlayBtn" onClick={handleToggleGif}>PLAY</span>
+                    )}
+
+                    <LandingPageProjects projects={projects} selectProject={setActualProjectIndex} isMobile={isMobile} gifState={isGifToggled} />
+
+                </>
 
             )}
 
