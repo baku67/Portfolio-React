@@ -3,7 +3,12 @@
 import { Octokit } from "@octokit/core";
 import { useState, useEffect } from "react";
 
-export function ProjectCardInfos({ project, isHovered, token, owner, repo }) {
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; 
+import { faGitAlt } from "@fortawesome/free-brands-svg-icons";
+
+
+
+export function ProjectCardInfos({ project, isHovered, token, owner, repo, isMobile }) {
 
     const octokit = new Octokit({ auth: token });
     const [commitActivity, setCommitActivity] = useState(null);
@@ -58,16 +63,28 @@ export function ProjectCardInfos({ project, isHovered, token, owner, repo }) {
               ))}
           </ul>
 
+
           {error ? 
-            <span className="NbrCommits">
+
+            <div className="NbrCommits">
               <span>Commits: </span>
               <span style={{fontSize:"0.8em", color:"#f65353"}}>API</span>
-            </span>
+            </div>
           : 
-            <span className="NbrCommits">
-              <span style={{color:"var(--primary-cyan)", fontWeight:"bold"}}>{commitActivity}</span>
-              <span>Commits</span>
-            </span>
+
+            <div className="NbrCommits">
+
+              <span className="nbrCommitsNbr" style={{color:"var(--primary-cyan)", fontWeight:"bold"}}>{commitActivity}</span>
+
+              {isMobile && (
+                <FontAwesomeIcon icon={faGitAlt} className="faCommitsMobile" style={{ color: project.primaryColor }} />
+              )}
+
+              {!isMobile && (
+                <span>Commits</span>
+              )}
+
+            </div>
           }
 
         </div>

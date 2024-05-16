@@ -105,6 +105,7 @@ export function ProjectPage({isMobile}) {
             primaryColor: "#00ffea",
             logo: "./projects/projects_logos/logoBlackjackjo3_dark.png",
 
+            gif_demo_desktop: "../projects/gifs/desktop/bjj-light.webp",
             gif_demo_mobile: "../projects/gifs/mobile/blackjackjo-min.gif",
 
             shadowLogo: false,
@@ -163,6 +164,7 @@ export function ProjectPage({isMobile}) {
             primaryColor: "#e8ca7d",
             logo: "./projects/projects_logos/logoLes100ciels_dark.png",
 
+            gif_demo_desktop: "../projects/gifs/desktop/les100ciels.gif",
             gif_demo_mobile: "./projects/gifs/mobile/les100ciels_spedUp.gif",
 
             shadowLogo: false,
@@ -223,11 +225,14 @@ export function ProjectPage({isMobile}) {
             primaryColor: "#ef3b2d",
             logo: "./projects/projects_logos/portfolioV1.png",
 
+            gif_demo_desktop: "../projects/gifs/desktop/portfolio.webp",
             gif_demo_mobile: "./projects/gifs/mobile/portfolio.webp",
 
             shadowLogo: false,
+
             thumbnail_isMobile: "./projects/cards_thumbnails/portfolioV2.png",
-            thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/portfolio1-min.png",
+            thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/portfolio3-min.png",
+
             slogan: "",
             description: "Portfolio \"from scratch\"",
             skills: ["HTML", "CSS", "Javascript"],
@@ -272,11 +277,14 @@ export function ProjectPage({isMobile}) {
             primaryColor: "#fecc02",
             logo: "./projects/projects_logos/terrine4.png",
 
+            gif_demo_desktop: "./projects/cards_thumbnails/desktop/terrine2.png",
             gif_demo_mobile: "./projects/gifs/mobile/terrine.webp",
 
             shadowLogo: false,
+
             thumbnail_isMobile: "./projects/cards_thumbnails/terrine.png",
-            thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/terrine.png",
+            thumbnail_isDesktop: "./projects/cards_thumbnails/desktop/terrine2.png",
+
             slogan: "",
             description: "Plateforme cinématographique",
             skills: ["HTML : CSS", "Javascript", "PHP", "MVC"],
@@ -478,7 +486,7 @@ export function ProjectPage({isMobile}) {
                                     style={{
                                         opacity,
                                         transform: transform.interpolate(t => `${t} rotateY(180deg)`),
-                                        zIndex: -5,
+                                        zIndex: 1,
                                         position: 'absolute',
                                         width: '100%',
                                         height: '100%',

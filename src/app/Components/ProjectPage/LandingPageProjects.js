@@ -93,9 +93,10 @@ export function LandingPageProjects({projects, selectProject, isMobile, gifState
                         style={{ 
                             transform: hoveredIndex === index ? "translateY(-10px)" : "translateY(0px)",
                             boxShadow: hoveredIndex === index ? "0px 6px 10px #00000070" : "0px 0px 0px #00000000",
-                            backgroundColor: hoveredIndex === index ? "#10394d" : "var(--secondary-cyan)",
+                            background: hoveredIndex === index ? "#10394d" : "linear-gradient(0deg, rgba(19,79,76,0) 70%, rgba(12,46,62,1) 100%)",
                             animationDelay: `${1 + index * 0.15}s`, // Global delay + individual delay
-                        }}
+                            borderColor: project.primaryColor, 
+                        }} 
                         onClick={() => handleClickProject(project.id)}
                     >
 
@@ -117,7 +118,7 @@ export function LandingPageProjects({projects, selectProject, isMobile, gifState
 
                         <ProjectThumbnail project={project} isHovered={hoveredIndex === index ? true : false} isMobile={isMobile} gifState={gifState} />
 
-                        <ProjectCardInfos project={project} isHovered={hoveredIndex === index ? true : false} token={token} owner="baku67" repo={project.repo_name} />
+                        <ProjectCardInfos project={project} isHovered={hoveredIndex === index ? true : false} token={token} owner="baku67" repo={project.repo_name} isMobile={isMobile} />
                     </li>
 
                 ))}

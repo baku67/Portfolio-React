@@ -128,7 +128,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
-        gap: 10px 10px;
+        gap: 13px 10px;
         grid-template-areas:
             ". ."
             ". ."
@@ -140,6 +140,12 @@
         border-bottom: 1px solid var(--primary-cyan);
 
         box-shadow: 0px 0px 5px #000000;
+
+        background: rgb(19,79,76);
+        background: -moz-linear-gradient(180deg, rgba(19,79,76,0) 0%, rgba(12,46,62,1) 100%);
+        background: -webkit-linear-gradient(180deg, rgba(19,79,76,0) 0%, rgba(12,46,62,1) 100%);
+        background: linear-gradient(180deg, rgba(19,79,76,0) 0%, rgba(12,46,62,1) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#134f4c",endColorstr="#0c2e3e",GradientType=1);
     }
 
     .projectPageWrapper {
@@ -219,8 +225,16 @@
     }
 
     .NbrCommits {
-        gap:2px;
+        gap:4px;
         color: #afb7b6;
+
+        top: 0;
+    }
+
+    .nbrCommitsNbr {
+        align-self: flex-end;
+        font-size: 1.2em;
+        line-height: 1em;
     }
 
     .projectCard_thumbnail {
@@ -229,7 +243,7 @@
 
         border-radius: 0px;
 
-        border-radius: 5px;
+        border-radius: 3px;
 
         border-width: 0px !important;
     }
@@ -252,6 +266,15 @@
     }
 
 
+    .projectCard {
+        border-bottom-width: 2px;
+    }
+
+
+    .faCommitsMobile {
+        height: 1.6em;
+    }
+
 
     .projectCard_infos {
         display: inline-flex;
@@ -269,7 +292,8 @@
         align-items: center;
         align-self: center;
 
-        font-size: 0.8em;
+        font-size: 0.73em;
+        line-height: 1.2em;
 
         flex: 1;
     }
@@ -293,8 +317,9 @@
         right: 0;
         top: 0;
 
-        border-radius: 50px;
-        border-top-right-radius: 50px;
+        /* border-radius: 50px;
+        border-top-right-radius: 50px; */
+        border-width: 0px;
     }
 
     .projectGitBtn {
@@ -302,8 +327,9 @@
         right: 0;
         top: 0;
 
-        border-radius: 50px;
-        border-top-right-radius: 50px;
+        /* border-radius: 50px;
+        border-top-right-radius: 50px; */
+        border-width: 0px;
     }
 
     .toggleFlipCard svg {
