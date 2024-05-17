@@ -142,9 +142,9 @@
         box-shadow: 0px 0px 5px #000000;
 
         background: rgb(19,79,76);
-        background: -moz-linear-gradient(180deg, rgba(19,79,76,0) 0%, rgba(12,46,62,1) 100%);
-        background: -webkit-linear-gradient(180deg, rgba(19,79,76,0) 0%, rgba(12,46,62,1) 100%);
-        background: linear-gradient(180deg, rgba(19,79,76,0) 0%, rgba(12,46,62,1) 100%);
+        background: -moz-linear-gradient(180deg, #1d1d24 0%, rgba(12,46,62,1) 100%);
+        background: -webkit-linear-gradient(180deg, #1d1d24 0%, rgba(12,46,62,1) 100%);
+        background: linear-gradient(180deg, #1d1d24 0%, rgba(12,46,62,1) 100%);
         filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#134f4c",endColorstr="#0c2e3e",GradientType=1);
     }
 

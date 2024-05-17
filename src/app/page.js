@@ -16,6 +16,7 @@ import { Hobbies } from "./Components/CvPage/Hobbies";
 import { Socials } from "./Components/ContactPage/Socials";
 import { ContactForm } from './Components/ContactPage/ContactForm';
 import { Footer } from "./Components/ContactPage/Footer";
+import { Wip } from "./Components/HomePage/Wip";
 import { Header } from "./Components/HomePage/Header";
 import { ProjectPage } from "./Components/ProjectPage/ProjectPage";
 import AOS from 'aos';
@@ -136,7 +137,11 @@ export default function Home() {
         {/* Poissons que ici ? juste raie ? */}
 
         {/* Header (Photo + HeaderText) */}
-        <Header />
+        {/* <Header /> */}
+
+
+        <Wip />
+
         
       </section>
 

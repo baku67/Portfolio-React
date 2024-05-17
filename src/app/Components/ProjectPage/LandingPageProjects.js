@@ -93,7 +93,7 @@ export function LandingPageProjects({projects, selectProject, isMobile, gifState
                         style={{ 
                             transform: hoveredIndex === index ? "translateY(-10px)" : "translateY(0px)",
                             boxShadow: hoveredIndex === index ? "0px 6px 10px #00000070" : "0px 0px 0px #00000000",
-                            background: hoveredIndex === index ? "#10394d" : "linear-gradient(0deg, rgba(19,79,76,0) 70%, rgba(12,46,62,1) 100%)",
+                            background: hoveredIndex === index ? "#10394d" : "linear-gradient(0deg, #1d1d24 70%, rgba(12,46,62,1) 100%)",
                             animationDelay: `${1 + index * 0.15}s`, // Global delay + individual delay
                             borderColor: project.primaryColor, 
                         }} 
