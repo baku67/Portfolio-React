@@ -3,6 +3,9 @@ import { faPersonDigging, faSquareCheck, faSquare, faBatteryThreeQuarters, faSig
 import { faHtml5, faCss3Alt, faJs, faPhp, faSymfony, faReact, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import ReactCurvedText from 'react-curved-text';
+// import Clock from 'react-live-clock';
+import dynamic from 'next/dynamic';
+const LiveClock = dynamic(() => import('react-live-clock'), { ssr: false });
 
 import { Shape1 } from "../Shapes/Shape1";
 import { Shape2 } from "../Shapes/Shape2";
@@ -31,18 +34,45 @@ export function Wip() {
     }
 
 
+    // Projets (hover):
+    const [isProjetHovered, setIsProjetHovered] = useState(false);
+    const handleProjetEnter = () => {
+        setIsProjetHovered(true);
+    }
+    const handleProjetLeave = () => {
+        setIsProjetHovered(false);
+    }
+
+
+    // Cafe (hover) :
+    const [isCafeHovered, setIsCafeHovered] = useState(false);
+    const handleCafeEnter = () => {
+        setIsCafeHovered(true);
+    }
+    const handleCafeLeave = () => {
+        setIsCafeHovered(false);
+    }
+
+
 
     return(
         <>
 
             {/* Shapes neutres(cyan) */}
-            <div className="shapeProject1" style={{zIndex:10, backgroundColor: "var(--primary-cyan)"}}></div>
-            <Shape2 />
+            <div className="shapeProject1-accueil" style={{zIndex:10, backgroundColor: "var(--primary-cyan)"}}></div>
+            <div className="shapeProject2" style={{transition: "0.4s", backgroundColor: "var(--primary-cyan)", boxShadow: isCafeHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white"}}></div>
 
 
             {/* Shape Projets (TITRE ECRIT SVG pour faire bloc notes) */}
-            <div className="shapeProjet">
-                <h2 className="titleShapeProjet">Projets</h2>
+            <div 
+                className="shapeProjet"
+                onMouseEnter={handleProjetEnter}
+                onMouseLeave={handleProjetLeave}
+                style={{boxShadow: isProjetHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white", transform: isProjetHovered ? "rotate(16deg) translateX(-15px)" : "rotate(20deg) translateX(0px)"}}
+            >
+
+                <h2 className="titleShapeProjet" style={{letterSpacing: isProjetHovered ? "2px" : "0px"}}>Projets</h2>
+
                 <ul className="shapeProjet-fakeUl">
                     <li className="shapeProjet-fakeLi">
                         <FontAwesomeIcon icon={faSquareCheck} className="shapeProjet-icon" />
@@ -61,14 +91,20 @@ export function Wip() {
                         <div></div>
                     </li>
                 </ul>
+
             </div>
 
 
             {/* Tasse café CSS */}
-            <div className="tasseCafe">
+            <div className="tasseCafe" style={{transform: isCafeHovered ? "scale(1.5) translate(-10px, 15px)" : "scale(1.5) translate(0px, 0px)"}}>
 
                 {/* https://www.npmjs.com/package/react-curved-text  */}
-                <div className="tasseCafe-text">
+                <div 
+                    className="tasseCafe-text" 
+                    onMouseEnter={handleCafeEnter} 
+                    onMouseLeave={handleCafeLeave}
+                    style={{}} 
+                >
                     <ReactCurvedText
                         width={250}
                         height={115}
@@ -81,7 +117,7 @@ export function Wip() {
                         text="Contact"
                         textProps={{ style: { fontSize: 28 } }}
                         textPathProps={{style : { fill : /* "#dfdfdf" */ "var(--primary-cyan)"} }}
-                        tspanProps={{"dy": "20"}}
+                        tspanProps={{"dy": isCafeHovered ? "22" : "20"}}
                         ellipseProps={null}
                         svgProps={null}
                     />
@@ -89,9 +125,16 @@ export function Wip() {
 
 
                 <div className="cup">
-                    <div className="reflect"></div>
-                    <div className="handle"></div>
-                    <div className="plate"></div>
+                    <div className="reflect" style={{background: isCafeHovered ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0.09)", top: isCafeHovered ? "14px" : "19px", left: isCafeHovered ? "15px" : "13px"}}></div>
+                    <div 
+                        className="handle" 
+                        style={{
+                            transform: isCafeHovered ? "rotate(266deg)" : "rotate(254deg)",
+                            top: isCafeHovered ? "103%" : "100%",
+                            left: isCafeHovered ? "50px" : "72px",
+                        }}
+                    ></div>
+                    <div className="plate" style={{boxShadow: isCafeHovered ? "0px 0px 40px -20px white" : "0px 0px 0px 0px white"}}></div>
                 </div>
             </div>
 
@@ -120,27 +163,61 @@ export function Wip() {
                 <span className="portable-text" style={{letterSpacing: isPhoneHovered ? "4px" : "1px"}}>Compétences</span>
                 
                 <div className="portable-div" style={{boxShadow: isPhoneHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white"}}>
+
+                    {/* Bouton mockup */}
+                    <div className="portable-btnMockup1"></div>
+                    <div className="portable-btnMockup2"></div>
+
                     <div className="portable-screen" style={{backgroundColor: isPhoneHovered ? "#154d68" : "var(--secondary-cyan)"}}>
+
                         <div className="portable-header">
-                            <span>5% 15:05</span>
+
+                            {/* https://www.npmjs.com/package/react-live-clock?activeTab=readme */}
+                            <span><LiveClock format={'h:mm'} ticking={true} /></span>
+
                             <span><FontAwesomeIcon icon={faSignal} /> 82% <FontAwesomeIcon icon={faBatteryThreeQuarters} /></span>
+
                         </div>
-                        {/* Div grid skills */}
-                        <div className="portable-skillGrid">
-                            <div><FontAwesomeIcon icon={faHtml5} className="portable-app" /></div>
-                            <div><FontAwesomeIcon icon={faCss3Alt} className="portable-app" /></div>
-                            <div><FontAwesomeIcon icon={faPhp} className="portable-app" /></div>
-                            <div><FontAwesomeIcon icon={faSymfony} className="portable-app" /></div>
-                            <div><FontAwesomeIcon icon={faJs} className="portable-app" /></div>
-                            <div><FontAwesomeIcon icon={faReact} className="portable-app" /></div>
-                            {/* Emplacements d'apps vides */}
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div></div>
-                            <div><FontAwesomeIcon icon={faGithub} className="portable-app" /></div>
+
+                        <div className="portable-contentWrapper" style={{transform: isPhoneHovered ? "translateX(-50%)" : "translateX(0)"}}>
+                            {/* Div grid skills */}
+                            <div className="portable-skillGrid">
+                                <div><FontAwesomeIcon icon={faHtml5} className="portable-app" /></div>
+                                <div><FontAwesomeIcon icon={faCss3Alt} className="portable-app" /></div>
+                                <div><FontAwesomeIcon icon={faPhp} className="portable-app" /></div>
+                                <div><FontAwesomeIcon icon={faSymfony} className="portable-app" /></div>
+                                <div><FontAwesomeIcon icon={faJs} className="portable-app" /></div>
+                                <div><FontAwesomeIcon icon={faReact} className="portable-app" /></div>
+                                {/* Emplacements d'apps vides */}
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                {/* Vscode */}
+                                <div>
+                                    <svg fill="#f1b16b" width="36px" height="36px" viewBox="0 0 32 32">
+                                        <path d="M30.865 3.448l-6.583-3.167c-0.766-0.37-1.677-0.214-2.276 0.385l-12.609 11.505-5.495-4.167c-0.51-0.391-1.229-0.359-1.703 0.073l-1.76 1.604c-0.583 0.526-0.583 1.443-0.005 1.969l4.766 4.349-4.766 4.349c-0.578 0.526-0.578 1.443 0.005 1.969l1.76 1.604c0.479 0.432 1.193 0.464 1.703 0.073l5.495-4.172 12.615 11.51c0.594 0.599 1.505 0.755 2.271 0.385l6.589-3.172c0.693-0.333 1.13-1.031 1.13-1.802v-21.495c0-0.766-0.443-1.469-1.135-1.802zM24.005 23.266l-9.573-7.266 9.573-7.266z"/>
+                                    </svg>
+                                </div>
+                                <div><FontAwesomeIcon icon={faGithub} className="portable-app" /></div>
+                            </div>
+
+                            <div className="portable-skillGrid2">
+                                <div>
+                                    <h3 className="portable-skillGrid2-title">Formations</h3>
+                                    <ul>
+                                        <li className="portable-skillGrid2-li">Titre RNCP "Développeur web et web mobile"</li>
+                                        <li className="portable-skillGrid2-li">BTS SIO option SLAM</li>
+                                    </ul>
+                                    <h3 className="portable-skillGrid2-title">Expériences</h3>
+                                    <ul>
+                                        <li className="portable-skillGrid2-li">Stage chez Hoplunch</li>
+                                        <li className="portable-skillGrid2-li">Alternance BTS (2ans) </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
+                        
                     </div>
                 </div>
                 
@@ -171,6 +248,14 @@ export function Wip() {
                     </div>
                     {/* Pas de perspective sur le clavier comme il est à plat  */}
                     <div className="accueil-mockup-bottom-wrapper">
+
+                        {/* cable mockup desktop */}
+                        {/* <svg className="cableSvg" >
+                            <g>
+                                <path d="M 0 0 C 15 145 121 22 176 119 C 206 171 323 132 263 52 C 211 -9 114 39 124 122 C 132 187 234 240 359 166 C 451 101 454 150 560 104"/>
+                            </g>
+                        </svg> */}
+
                         <div className="accueil-mockup-bottom">
                             {/* Clavier */}
                                 <div class="keyboard">
@@ -243,7 +328,7 @@ export function Wip() {
 
 
 
-
+                {/* Main */}
                 <div className="homeMain-wip">
 
                     <FontAwesomeIcon icon={faPersonDigging} style={{color:"var(--primary-cyan)", fontSize:"2em"}} />
