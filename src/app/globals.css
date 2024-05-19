@@ -61,6 +61,8 @@ a {
 
 
 .homeMain {
+    position: relative;
+    z-index: 9;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -180,7 +182,7 @@ main {
   background-color: #0e435c;
   border: 4px solid var(--primary-cyan);
   transform: rotate(20deg);
-  z-index: 0;
+  z-index: 9999;
   right: -60px;
   bottom: -240px;
 
@@ -634,6 +636,7 @@ main {
 .portable {
   cursor: pointer;
   position: absolute;
+  z-index: 99;
   left: 60px;
   bottom: 20px;
   transform: rotate(348deg);
@@ -847,11 +850,14 @@ main {
 
 .shapeProject1-accueil {
   position: absolute;
+  z-index: 999;
   bottom: -60%;
   left: -40%;
   width: 55%;
   height: 100%;
   transform: rotate(325deg);
+
+  background-color: var(--primary-cyan);
 
   box-shadow: 0px 0px 25px black;
 
@@ -890,6 +896,65 @@ main {
     right: -35%;
   }
 }
+
+
+.shapeProject2-accueil {
+  position: absolute;
+  z-index: 9;
+  top: -60%;
+  right: -35%;
+  width: 39%;
+  height: 125%;
+  transform: rotate(301deg);
+
+  box-shadow: 0px 0px 25px black;
+
+  transition: 0.4s;
+  background-color: var(--primary-cyan);
+
+  animation: shapeProjet2 0.7s 0s ease forwards
+}
+
+
+
+.plantAccueil-div {
+  position: absolute;
+  left: -125px;
+  top: -125px;
+}
+
+
+.plantAccueil {
+  position: relative;
+  z-index: 999;
+}
+
+
+.bocal-exterieur {
+  position: absolute;
+
+  top: 21px;
+  left: 50px;
+
+  height: 350px;
+  width: 350px;
+  background-color: var(--primary-cyan);
+  border-radius: 50%;
+}
+
+.bocal-ouverture {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  height: 300px;
+  width: 300px;
+  background-color: var(--secondary-cyan);
+  border: 1px solid #02b4f3;
+  border-radius: 50%;
+}
+
 
 .projectPageWrapper {
   width: 100%;

@@ -7,6 +7,8 @@ import ReactCurvedText from 'react-curved-text';
 import dynamic from 'next/dynamic';
 const LiveClock = dynamic(() => import('react-live-clock'), { ssr: false });
 
+import Image from 'next/image'
+
 import { Shape1 } from "../Shapes/Shape1";
 import { Shape2 } from "../Shapes/Shape2";
 import { useState } from "react";
@@ -59,8 +61,58 @@ export function Wip() {
         <>
 
             {/* Shapes neutres(cyan) */}
-            <div className="shapeProject1-accueil" style={{zIndex:10, backgroundColor: "var(--primary-cyan)"}}></div>
-            <div className="shapeProject2" style={{transition: "0.4s", backgroundColor: "var(--primary-cyan)", boxShadow: isCafeHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white"}}></div>
+            <div className="shapeProject1-accueil"></div>
+            <div className="shapeProject2-accueil" style={{boxShadow: isCafeHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white"}}></div>
+
+
+            {/* Image fond */}
+            <Image 
+                src="/plant-bg-min.png"
+                // width={0}
+                // height={0}
+                fill={true}
+                style={{opacity: "0.15", zIndex:"0"}}
+            />
+
+
+
+            {/* Plante */}
+            <div className="plantAccueil-div" style={{width:"fit-content"}}>
+
+                {/* <Image src="/plant-2.png" width={450} height={450} /> */}
+                <Image src="/plant-1-min.png" width={450} height={450} className="plantAccueil" />
+
+                <div className="bocal-exterieur">
+                    <div className="bocal-ouverture"></div>
+                    <div className="bocal-landscape"></div>
+                </div>
+
+            </div>
+
+
+
+            {/* Camera */}
+            {/* https://codepen.io/cassidoo/pen/QMZmNV */}
+            {/* <div className="camera-container">
+                <div className="camera-top">
+                    <div className="camera-zoom"></div>
+                    <div className="camera-modeChanger"></div>
+                    <div className="camera-sides"></div>
+                    <div className="camera-rangeFinder"></div>
+                    <div className="camera-focus"></div>
+                    <div className="camera-red"></div>
+                    <div className="camera-viewFinder"></div>
+                    <div className="camera-flash">
+                        <div className="camera-light"></div>
+                    </div>
+                </div>
+                <div className="camera-mid">
+                    <div className="camera-sensor"></div>
+                    <div className="camera-lens"></div>
+                </div>
+                <div className="camera-bottom"></div>
+            </div> */}
+
 
 
             {/* Shape Projets (TITRE ECRIT SVG pour faire bloc notes) */}
@@ -139,18 +191,8 @@ export function Wip() {
             </div>
 
 
-            {/* Stylo contact A faire en SVG ou dl un PNG */}
-            {/* <div className="stylo">
-                <div class="pen">
-                    <div class="cap"></div>
-                    <div class="clip"></div>
-                    <div class="tip"></div>
-                    <div class="nib"></div>
-                </div>
-            </div> */}
 
-
-            {/* Portable (avec des icones d'APP mais en fait c'est mes SKILLS */}
+            {/* Portable */}
             <div 
                 className="portable"
                 onMouseEnter={handlePhoneEnter}
@@ -206,7 +248,7 @@ export function Wip() {
                                 <div>
                                     <h3 className="portable-skillGrid2-title">Formations</h3>
                                     <ul>
-                                        <li className="portable-skillGrid2-li">Titre RNCP "Développeur web et web mobile"</li>
+                                        <li className="portable-skillGrid2-li">Titre RNCP &quot;Développeur web et web mobile&quot;</li>
                                         <li className="portable-skillGrid2-li">BTS SIO option SLAM</li>
                                     </ul>
                                     <h3 className="portable-skillGrid2-title">Expériences</h3>
@@ -225,7 +267,8 @@ export function Wip() {
 
 
             {/* Plante vert/bleu */}
-            {/* Poisson animé */}
+            {/* Bocal + Poisson animé ou Appareil Photo */}
+            {/* Déco: Stylo? */}
 
 
             <div className="homeMain">
@@ -243,7 +286,14 @@ export function Wip() {
                     <div className="accueil-mockup-top-wrapper">
                         <div className="accueil-mockup-top">
                             {/* screen */}
-                            <div className="amt-imgWrapper"><img src={"https://images.ctfassets.net/hrltx12pl8hq/OUTY6uKFBSjjf0pALsZBV/690873db4c0588bcd4e2048f90a3017b/02-landscapes_631352762.jpg"} /></div>
+                            <div className="amt-imgWrapper">
+                                <Image 
+                                    src={"/test.jpg"}
+                                    fill={true} 
+                                    alt="Portfolio demo" 
+                                />
+                                {/* <img src={"https://images.ctfassets.net/hrltx12pl8hq/OUTY6uKFBSjjf0pALsZBV/690873db4c0588bcd4e2048f90a3017b/02-landscapes_631352762.jpg"} /> */}
+                            </div>
                         </div>
                     </div>
                     {/* Pas de perspective sur le clavier comme il est à plat  */}
@@ -298,7 +348,7 @@ export function Wip() {
                                     <div class="key">K</div>
                                     <div class="key">L</div>
                                     <div class="key semicolon">;</div>
-                                    <div class="key quote">'</div>
+                                    <div class="key quote">&apos;</div>
                                     <div class="key enter">Enter</div>
                                     
                                     <div class="key shift-left">Shift</div>
@@ -344,7 +394,7 @@ export function Wip() {
 
 
 
-
+            {/* Scroll SVG */}
             <svg 
                 className="scrollSvg"
                 onMouseEnter={handleScrollEnter}
