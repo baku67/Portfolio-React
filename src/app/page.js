@@ -150,7 +150,7 @@ export default function Home() {
 
 
       {/* Page 2: Parcours */}
-      <section className="section page2">
+      <section className="section page2" id="home-scroll-skills">
 
         {/* Icone Page (top-right) */}
         {/* <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" /> */}
@@ -194,7 +194,7 @@ export default function Home() {
 
 
       {/* Page 3: Projets */}
-      <section className="section page3">
+      <section className="section page3" id="home-scroll-project">
 
         
 
@@ -220,7 +220,7 @@ export default function Home() {
 
 
       {/* Page 5: Contact */}
-      <section className="section page5">
+      <section className="section page5" id="home-scroll-contact">
 
         {/* Icone Page (top-right) */}
         <FontAwesomeIcon icon={faEnvelope} className="pageIcon" />

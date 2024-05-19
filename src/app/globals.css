@@ -71,15 +71,23 @@ a {
     flex-direction: column;
     justify-content: center;
 
-    gap: 70px;
+    /* gap: 70px; */
+    gap: 30px;
+}
+
+.homeMain-title {
+  font-weight: bold;
+  color: #1a1b1b;
+  text-shadow: 2px 1px var(--primary-cyan);
 }
 
 .wip1 {
 
 }
-.homeMain-header span {
-  color: #f1b16b;
+.homeMain-subtitle {
+  color: #00fff3;
   font-size: 1.4em;
+  text-shadow: 1px 1px 2px black;
 }
 .homeMain-wip {
   display: flex;
@@ -193,7 +201,7 @@ main {
     color: var(--primary-cyan);
     z-index: 9999999999999999;
     position: relative;
-    font-size: 3.5em;
+    font-size: 3em;
     top: 10px;
 
     text-align: center;
@@ -234,12 +242,13 @@ main {
   perspective: 800px; 
 }
 .accueil-mockup-top {
-  height: 167px;
-  width: 272px;
+  /* height: 167px;
+  width: 272px; */
+  height: 235px;
+  width: 405px;
+
   border-radius: 5px;
-
   background-color: var(--primary-cyan);
-
   transform-style: preserve-3d;
   transform: rotateX(330deg); 
 }
@@ -250,15 +259,15 @@ main {
   /* perspective: 800px;  */
 }
 .accueil-mockup-bottom {
-  height: 100px;
+  /* height: 100px;
   width: 260px;
-  transform: translateX(6px) translateY(-10px);
+  transform: translateX(6px) translateY(-10px); */
+  height: 180px;
+  width: 374px;
+  transform: translateX(16px) translateY(-16px);
+
   border-radius: 5px;
-
   background-color: var(--primary-cyan);
-
-  /* transform-style: preserve-3d;
-  transform: rotateX(0deg);  */
 }
 
 
@@ -277,7 +286,8 @@ main {
   width: 100%;
 }
 .amt-imgWrapper img {
-  padding: 3px 1px 7px;
+  /* padding: 3px 1px 7px; */
+  padding: 4px 2px 2px;
   height: 100%;
   width: 100%;
 
@@ -297,11 +307,27 @@ main {
   grid-gap: 2px;
   padding: 5px;
   background-color: var(--primary-cyan);
-  border: 1px solid #ccc;
+  border: 0px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 
   font-size: 0;
+}
+
+.mockup-pad {
+  background-color: var(--secondary-cyan);
+  border: 1px solid var(--secondary-cyan);
+  border-radius: 5px;
+  text-align: center;
+  padding: 7px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+  width: 71px;
+    height: 53px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 3px;
+    position: relative;
 }
 
 .key {
@@ -930,6 +956,18 @@ main {
 }
 
 
+
+.fishBowl-div {
+  position: absolute;
+  left: 265px;
+  top: -136px;
+}
+
+
+
+
+
+/* Pot de plante: */
 .bocal-exterieur {
   position: absolute;
 

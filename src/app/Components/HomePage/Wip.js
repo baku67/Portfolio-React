@@ -8,6 +8,7 @@ import dynamic from 'next/dynamic';
 const LiveClock = dynamic(() => import('react-live-clock'), { ssr: false });
 
 import Image from 'next/image'
+import Link from 'next/link';
 
 import { Shape1 } from "../Shapes/Shape1";
 import { Shape2 } from "../Shapes/Shape2";
@@ -67,11 +68,10 @@ export function Wip() {
 
             {/* Image fond */}
             <Image 
-                src="/plant-bg-min.png"
-                // width={0}
-                // height={0}
+                // src="/plant-bg-min.png"
+                src="/wood-bg.jpeg"
                 fill={true}
-                style={{opacity: "0.15", zIndex:"0"}}
+                style={{opacity: "0.7", zIndex:"0"}}
             />
 
 
@@ -89,6 +89,16 @@ export function Wip() {
 
             </div>
 
+
+            {/* Test fish bowl (loisirs) */}
+            <div className="fishBowl-div">
+                <Image 
+                    src="/fishBowl-rounded2.png" 
+                    width={320} 
+                    height={320} 
+                    style={{transform: "rotate(182deg)", filter:"hue-rotate(334deg)"}}
+                />
+            </div>
 
 
             {/* Camera */}
@@ -116,154 +126,162 @@ export function Wip() {
 
 
             {/* Shape Projets (TITRE ECRIT SVG pour faire bloc notes) */}
-            <div 
-                className="shapeProjet"
-                onMouseEnter={handleProjetEnter}
-                onMouseLeave={handleProjetLeave}
-                style={{boxShadow: isProjetHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white", transform: isProjetHovered ? "rotate(16deg) translateX(-15px)" : "rotate(20deg) translateX(0px)"}}
-            >
+            <Link href="#home-scroll-project" passHref>
+                <div 
+                    className="shapeProjet"
+                    onMouseEnter={handleProjetEnter}
+                    onMouseLeave={handleProjetLeave}
+                    style={{boxShadow: isProjetHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white", transform: isProjetHovered ? "rotate(16deg) translateX(-15px)" : "rotate(20deg) translateX(0px)"}}
+                >
 
-                <h2 className="titleShapeProjet" style={{letterSpacing: isProjetHovered ? "2px" : "0px"}}>Projets</h2>
+                    <h2 className="titleShapeProjet" style={{letterSpacing: isProjetHovered ? "2px" : "0px"}}>Projets</h2>
 
-                <ul className="shapeProjet-fakeUl">
-                    <li className="shapeProjet-fakeLi">
-                        <FontAwesomeIcon icon={faSquareCheck} className="shapeProjet-icon" />
-                        <div></div>
-                    </li>
-                    <li className="shapeProjet-fakeLi">
-                        <FontAwesomeIcon icon={faSquare} className="shapeProjet-icon" />
-                        <div></div>
-                    </li>
-                    <li className="shapeProjet-fakeLi">
-                        <FontAwesomeIcon icon={faSquareCheck} className="shapeProjet-icon" />
-                        <div></div>
-                    </li>
-                    <li className="shapeProjet-fakeLi">
-                        <FontAwesomeIcon icon={faSquare} className="shapeProjet-icon" />
-                        <div></div>
-                    </li>
-                </ul>
+                    <ul className="shapeProjet-fakeUl">
+                        <li className="shapeProjet-fakeLi">
+                            <FontAwesomeIcon icon={faSquareCheck} className="shapeProjet-icon" />
+                            <div></div>
+                        </li>
+                        <li className="shapeProjet-fakeLi">
+                            <FontAwesomeIcon icon={faSquare} className="shapeProjet-icon" />
+                            <div></div>
+                        </li>
+                        <li className="shapeProjet-fakeLi">
+                            <FontAwesomeIcon icon={faSquareCheck} className="shapeProjet-icon" />
+                            <div></div>
+                        </li>
+                        <li className="shapeProjet-fakeLi">
+                            <FontAwesomeIcon icon={faSquare} className="shapeProjet-icon" />
+                            <div></div>
+                        </li>
+                    </ul>
 
-            </div>
+                </div>
+            </Link>
+
 
 
             {/* Tasse café CSS */}
-            <div className="tasseCafe" style={{transform: isCafeHovered ? "scale(1.5) translate(-10px, 15px)" : "scale(1.5) translate(0px, 0px)"}}>
+            <Link href="#home-scroll-contact" passHref>
+                <div className="tasseCafe" style={{transform: isCafeHovered ? "scale(1.5) translate(-10px, 15px)" : "scale(1.5) translate(0px, 0px)"}}>
 
-                {/* https://www.npmjs.com/package/react-curved-text  */}
-                <div 
-                    className="tasseCafe-text" 
-                    onMouseEnter={handleCafeEnter} 
-                    onMouseLeave={handleCafeLeave}
-                    style={{}} 
-                >
-                    <ReactCurvedText
-                        width={250}
-                        height={115}
-                        cx={150}
-                        cy={0}
-                        rx={100}
-                        ry={100}
-                        startOffset={30}
-                        reversed={false}
-                        text="Contact"
-                        textProps={{ style: { fontSize: 28 } }}
-                        textPathProps={{style : { fill : /* "#dfdfdf" */ "var(--primary-cyan)"} }}
-                        tspanProps={{"dy": isCafeHovered ? "22" : "20"}}
-                        ellipseProps={null}
-                        svgProps={null}
-                    />
-                </div>
-
-
-                <div className="cup">
-                    <div className="reflect" style={{background: isCafeHovered ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0.09)", top: isCafeHovered ? "14px" : "19px", left: isCafeHovered ? "15px" : "13px"}}></div>
+                    {/* https://www.npmjs.com/package/react-curved-text  */}
                     <div 
-                        className="handle" 
-                        style={{
-                            transform: isCafeHovered ? "rotate(266deg)" : "rotate(254deg)",
-                            top: isCafeHovered ? "103%" : "100%",
-                            left: isCafeHovered ? "50px" : "72px",
-                        }}
-                    ></div>
-                    <div className="plate" style={{boxShadow: isCafeHovered ? "0px 0px 40px -20px white" : "0px 0px 0px 0px white"}}></div>
+                        className="tasseCafe-text" 
+                        onMouseEnter={handleCafeEnter} 
+                        onMouseLeave={handleCafeLeave}
+                        style={{}} 
+                    >
+                        <ReactCurvedText
+                            width={250}
+                            height={115}
+                            cx={150}
+                            cy={0}
+                            rx={100}
+                            ry={100}
+                            startOffset={30}
+                            reversed={false}
+                            text="Contact"
+                            textProps={{ style: { fontSize: 28 } }}
+                            textPathProps={{style : { fill : /* "#dfdfdf" */ "var(--primary-cyan)"} }}
+                            tspanProps={{"dy": isCafeHovered ? "22" : "20"}}
+                            ellipseProps={null}
+                            svgProps={null}
+                        />
+                    </div>
+
+
+                    <div className="cup">
+                        <div className="reflect" style={{background: isCafeHovered ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0.09)", top: isCafeHovered ? "14px" : "19px", left: isCafeHovered ? "15px" : "13px"}}></div>
+                        <div 
+                            className="handle" 
+                            style={{
+                                transform: isCafeHovered ? "rotate(266deg)" : "rotate(254deg)",
+                                top: isCafeHovered ? "103%" : "100%",
+                                left: isCafeHovered ? "50px" : "72px",
+                            }}
+                        ></div>
+                        <div className="plate" style={{boxShadow: isCafeHovered ? "0px 0px 40px -20px white" : "0px 0px 0px 0px white"}}></div>
+                    </div>
                 </div>
-            </div>
+            </Link>
 
 
 
             {/* Portable */}
-            <div 
-                className="portable"
-                onMouseEnter={handlePhoneEnter}
-                onMouseLeave={handlePhoneLeave}
-                style={{ 
-                    transform: isPhoneHovered ? "translate(20px, 0px) rotate(350deg) scale(1.05)" : "rotate(348deg)"
-                }}
-            >
+            <Link href="#home-scroll-skills" passHref>
+                <div 
+                    className="portable"
+                    onMouseEnter={handlePhoneEnter}
+                    onMouseLeave={handlePhoneLeave}
+                    style={{ 
+                        transform: isPhoneHovered ? "translate(20px, 0px) rotate(350deg) scale(1.05)" : "rotate(348deg)"
+                    }}
+                >
 
-                <span className="portable-text" style={{letterSpacing: isPhoneHovered ? "4px" : "1px"}}>Compétences</span>
-                
-                <div className="portable-div" style={{boxShadow: isPhoneHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white"}}>
+                    <span className="portable-text" style={{letterSpacing: isPhoneHovered ? "4px" : "1px"}}>Compétences</span>
+                    
+                    <div className="portable-div" style={{boxShadow: isPhoneHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white"}}>
 
-                    {/* Bouton mockup */}
-                    <div className="portable-btnMockup1"></div>
-                    <div className="portable-btnMockup2"></div>
+                        {/* Bouton mockup */}
+                        <div className="portable-btnMockup1"></div>
+                        <div className="portable-btnMockup2"></div>
 
-                    <div className="portable-screen" style={{backgroundColor: isPhoneHovered ? "#154d68" : "var(--secondary-cyan)"}}>
+                        <div className="portable-screen" style={{backgroundColor: isPhoneHovered ? "#154d68" : "var(--secondary-cyan)"}}>
 
-                        <div className="portable-header">
+                            <div className="portable-header">
 
-                            {/* https://www.npmjs.com/package/react-live-clock?activeTab=readme */}
-                            <span><LiveClock format={'h:mm'} ticking={true} /></span>
+                                {/* https://www.npmjs.com/package/react-live-clock?activeTab=readme */}
+                                <span><LiveClock format={'h:mm'} ticking={true} /></span>
 
-                            <span><FontAwesomeIcon icon={faSignal} /> 82% <FontAwesomeIcon icon={faBatteryThreeQuarters} /></span>
+                                <span><FontAwesomeIcon icon={faSignal} /> 82% <FontAwesomeIcon icon={faBatteryThreeQuarters} /></span>
 
-                        </div>
-
-                        <div className="portable-contentWrapper" style={{transform: isPhoneHovered ? "translateX(-50%)" : "translateX(0)"}}>
-                            {/* Div grid skills */}
-                            <div className="portable-skillGrid">
-                                <div><FontAwesomeIcon icon={faHtml5} className="portable-app" /></div>
-                                <div><FontAwesomeIcon icon={faCss3Alt} className="portable-app" /></div>
-                                <div><FontAwesomeIcon icon={faPhp} className="portable-app" /></div>
-                                <div><FontAwesomeIcon icon={faSymfony} className="portable-app" /></div>
-                                <div><FontAwesomeIcon icon={faJs} className="portable-app" /></div>
-                                <div><FontAwesomeIcon icon={faReact} className="portable-app" /></div>
-                                {/* Emplacements d'apps vides */}
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                {/* Vscode */}
-                                <div>
-                                    <svg fill="#f1b16b" width="36px" height="36px" viewBox="0 0 32 32">
-                                        <path d="M30.865 3.448l-6.583-3.167c-0.766-0.37-1.677-0.214-2.276 0.385l-12.609 11.505-5.495-4.167c-0.51-0.391-1.229-0.359-1.703 0.073l-1.76 1.604c-0.583 0.526-0.583 1.443-0.005 1.969l4.766 4.349-4.766 4.349c-0.578 0.526-0.578 1.443 0.005 1.969l1.76 1.604c0.479 0.432 1.193 0.464 1.703 0.073l5.495-4.172 12.615 11.51c0.594 0.599 1.505 0.755 2.271 0.385l6.589-3.172c0.693-0.333 1.13-1.031 1.13-1.802v-21.495c0-0.766-0.443-1.469-1.135-1.802zM24.005 23.266l-9.573-7.266 9.573-7.266z"/>
-                                    </svg>
-                                </div>
-                                <div><FontAwesomeIcon icon={faGithub} className="portable-app" /></div>
                             </div>
 
-                            <div className="portable-skillGrid2">
-                                <div>
-                                    <h3 className="portable-skillGrid2-title">Formations</h3>
-                                    <ul>
-                                        <li className="portable-skillGrid2-li">Titre RNCP &quot;Développeur web et web mobile&quot;</li>
-                                        <li className="portable-skillGrid2-li">BTS SIO option SLAM</li>
-                                    </ul>
-                                    <h3 className="portable-skillGrid2-title">Expériences</h3>
-                                    <ul>
-                                        <li className="portable-skillGrid2-li">Stage chez Hoplunch</li>
-                                        <li className="portable-skillGrid2-li">Alternance BTS (2ans) </li>
-                                    </ul>
+                            <div className="portable-contentWrapper" style={{transform: isPhoneHovered ? "translateX(-50%)" : "translateX(0)"}}>
+                                {/* Div grid skills */}
+                                <div className="portable-skillGrid">
+                                    <div><FontAwesomeIcon icon={faHtml5} className="portable-app" /></div>
+                                    <div><FontAwesomeIcon icon={faCss3Alt} className="portable-app" /></div>
+                                    <div><FontAwesomeIcon icon={faPhp} className="portable-app" /></div>
+                                    <div><FontAwesomeIcon icon={faSymfony} className="portable-app" /></div>
+                                    <div><FontAwesomeIcon icon={faJs} className="portable-app" /></div>
+                                    <div><FontAwesomeIcon icon={faReact} className="portable-app" /></div>
+                                    {/* Emplacements d'apps vides */}
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    {/* Vscode */}
+                                    <div>
+                                        <svg fill="#f1b16b" width="36px" height="36px" viewBox="0 0 32 32">
+                                            <path d="M30.865 3.448l-6.583-3.167c-0.766-0.37-1.677-0.214-2.276 0.385l-12.609 11.505-5.495-4.167c-0.51-0.391-1.229-0.359-1.703 0.073l-1.76 1.604c-0.583 0.526-0.583 1.443-0.005 1.969l4.766 4.349-4.766 4.349c-0.578 0.526-0.578 1.443 0.005 1.969l1.76 1.604c0.479 0.432 1.193 0.464 1.703 0.073l5.495-4.172 12.615 11.51c0.594 0.599 1.505 0.755 2.271 0.385l6.589-3.172c0.693-0.333 1.13-1.031 1.13-1.802v-21.495c0-0.766-0.443-1.469-1.135-1.802zM24.005 23.266l-9.573-7.266 9.573-7.266z"/>
+                                        </svg>
+                                    </div>
+                                    <div><FontAwesomeIcon icon={faGithub} className="portable-app" /></div>
+                                </div>
+
+                                <div className="portable-skillGrid2">
+                                    <div>
+                                        <h3 className="portable-skillGrid2-title">Formations</h3>
+                                        <ul>
+                                            <li className="portable-skillGrid2-li">Titre RNCP &quot;Développeur web et web mobile&quot;</li>
+                                            <li className="portable-skillGrid2-li">BTS SIO option SLAM</li>
+                                        </ul>
+                                        <h3 className="portable-skillGrid2-title">Expériences</h3>
+                                        <ul>
+                                            <li className="portable-skillGrid2-li">Stage chez Hoplunch</li>
+                                            <li className="portable-skillGrid2-li">Alternance BTS (2ans) </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
+                            
                         </div>
-                        
                     </div>
+                    
                 </div>
-                
-            </div>
+            </Link>
+
 
 
             {/* Plante vert/bleu */}
@@ -274,8 +292,8 @@ export function Wip() {
             <div className="homeMain">
 
                 <div className="homeMain-header">
-                    <h1>Basile KUNTZ</h1>
-                    <span>Développeur web</span>
+                    <h1 className="homeMain-title">Basile KUNTZ</h1>
+                    <span className="homeMain-subtitle">Développeur web</span>
                 </div>
 
 
@@ -288,11 +306,11 @@ export function Wip() {
                             {/* screen */}
                             <div className="amt-imgWrapper">
                                 <Image 
-                                    src={"/test.jpg"}
+                                    src={"/test2.png"}
                                     fill={true} 
                                     alt="Portfolio demo" 
                                 />
-                                {/* <img src={"https://images.ctfassets.net/hrltx12pl8hq/OUTY6uKFBSjjf0pALsZBV/690873db4c0588bcd4e2048f90a3017b/02-landscapes_631352762.jpg"} /> */}
+                                {/* <iframe src="https://portfolio-react-sand-kappa.vercel.app" /> */}
                             </div>
                         </div>
                     </div>
@@ -308,70 +326,72 @@ export function Wip() {
 
                         <div className="accueil-mockup-bottom">
                             {/* Clavier */}
-                                <div class="keyboard">
-                                    <div class="key">Esc</div>
-                                    <div class="key">1</div>
-                                    <div class="key">2</div>
-                                    <div class="key">3</div>
-                                    <div class="key">4</div>
-                                    <div class="key">5</div>
-                                    <div class="key">6</div>
-                                    <div class="key">9</div>
-                                    <div class="key">0</div>
-                                    {/* <div class="key">-</div>
-                                    <div class="key">=</div> */}
-                                    <div class="key backspace">Backspace</div>
-                                    
-                                    <div class="key tab">Tab</div>
-                                    <div class="key">Q</div>
-                                    <div class="key">W</div>
-                                    <div class="key">E</div>
-                                    <div class="key">R</div>
-                                    <div class="key">T</div>
-                                    <div class="key">Y</div>
-                                    <div class="key">U</div>
-                                    <div class="key">I</div>
-                                    <div class="key">O</div>
-                                    <div class="key">P</div>
-                                    <div class="key">[</div>
-                                    <div class="key">]</div>
-                                    <div class="key backslash">\</div>
-                                    
-                                    <div class="key capslock">Caps Lock</div>
-                                    <div class="key">A</div>
-                                    <div class="key">S</div>
-                                    <div class="key">D</div>
-                                    <div class="key">F</div>
-                                    <div class="key">G</div>
-                                    <div class="key">H</div>
-                                    <div class="key">J</div>
-                                    <div class="key">K</div>
-                                    <div class="key">L</div>
-                                    <div class="key semicolon">;</div>
-                                    <div class="key quote">&apos;</div>
-                                    <div class="key enter">Enter</div>
-                                    
-                                    <div class="key shift-left">Shift</div>
-                                    <div class="key">Z</div>
-                                    <div class="key">X</div>
-                                    <div class="key">C</div>
-                                    <div class="key">V</div>
-                                    <div class="key">B</div>
-                                    <div class="key">N</div>
-                                    <div class="key">M</div>
-                                    <div class="key">,</div>
-                                    <div class="key">.</div>
-                                    <div class="key">/</div>
-                                    <div class="key shift-right">Shift</div>
-                                    
-                                    <div class="key ctrl">Ctrl</div>
-                                    <div class="key">Win</div>
-                                    <div class="key">Alt</div>
-                                    <div class="key space">Space</div>
-                                    <div class="key">Alt</div>
-                                    <div class="key">Fn</div>
-                                    <div class="key">Ctrl</div>
-                                </div>
+                            <div class="keyboard">
+                                <div class="key">Esc</div>
+                                <div class="key">1</div>
+                                <div class="key">2</div>
+                                <div class="key">3</div>
+                                <div class="key">4</div>
+                                <div class="key">5</div>
+                                <div class="key">6</div>
+                                <div class="key">9</div>
+                                <div class="key">0</div>
+                                {/* <div class="key">-</div>
+                                <div class="key">=</div> */}
+                                <div class="key backspace">Backspace</div>
+                                
+                                <div class="key tab">Tab</div>
+                                <div class="key">Q</div>
+                                <div class="key">W</div>
+                                <div class="key">E</div>
+                                <div class="key">R</div>
+                                <div class="key">T</div>
+                                <div class="key">Y</div>
+                                <div class="key">U</div>
+                                <div class="key">I</div>
+                                <div class="key">O</div>
+                                <div class="key">P</div>
+                                <div class="key">[</div>
+                                <div class="key">]</div>
+                                <div class="key backslash">\</div>
+                                
+                                <div class="key capslock">Caps Lock</div>
+                                <div class="key">A</div>
+                                <div class="key">S</div>
+                                <div class="key">D</div>
+                                <div class="key">F</div>
+                                <div class="key">G</div>
+                                <div class="key">H</div>
+                                <div class="key">J</div>
+                                <div class="key">K</div>
+                                <div class="key">L</div>
+                                <div class="key semicolon">;</div>
+                                <div class="key quote">&apos;</div>
+                                <div class="key enter">Enter</div>
+                                
+                                <div class="key shift-left">Shift</div>
+                                <div class="key">Z</div>
+                                <div class="key">X</div>
+                                <div class="key">C</div>
+                                <div class="key">V</div>
+                                <div class="key">B</div>
+                                <div class="key">N</div>
+                                <div class="key">M</div>
+                                <div class="key">,</div>
+                                <div class="key">.</div>
+                                <div class="key">/</div>
+                                <div class="key shift-right">Shift</div>
+                                
+                                <div class="key ctrl">Ctrl</div>
+                                <div class="key">Win</div>
+                                <div class="key">Alt</div>
+                                <div class="key space">Space</div>
+                                <div class="key">Alt</div>
+                                <div class="key">Fn</div>
+                                <div class="key">Ctrl</div>
+                            </div>
+                            {/* Pad */}
+                            <div className="mockup-pad"></div>
                         </div>
                     </div>
                 </div>
