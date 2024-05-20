@@ -1,6 +1,8 @@
 "use client";
 import { useState } from "react"
 
+import Image from 'next/image'
+
 import Tooltip from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo, faChevronLeft, faChevronRight, faChartLine } from "@fortawesome/free-solid-svg-icons";
@@ -55,6 +57,15 @@ export function LandingPageProjects({projects, selectProject, isMobile, gifState
 
     return (
         <div>
+
+
+            {/* Image fond */}
+            <Image 
+                // src="/plant-bg-min.png"
+                src="/wood-bg.jpeg"
+                fill={true}
+                style={{opacity: "0.7", zIndex:"0"}}
+            />
 
             {/* Icone Page (top-right) */}
             <FontAwesomeIcon icon={faLightbulb} className="pageIcon" />

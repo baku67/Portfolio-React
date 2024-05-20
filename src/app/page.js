@@ -1,6 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 
+import Image from "next/image";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight, faPersonRunning, faClipboardCheck } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -133,19 +135,9 @@ export default function Home() {
       {/* Page 1: Présentation */}
       <section className="section page1">
 
-        {/* Photo, intro + Langages (FA couleurs ?), navigation, alerte recherche d'alternance */}
-        {/* Poissons que ici ? juste raie ? */}
-
-        {/* Header (Photo + HeaderText) */}
-        {/* <Header /> */}
-
-
         <Wip />
-
         
       </section>
-
-
 
 
 
@@ -190,22 +182,12 @@ export default function Home() {
 
 
 
-
-
-
       {/* Page 3: Projets */}
       <section className="section page3" id="home-scroll-project">
-
-        
 
         <ProjectPage isMobile={isMobile} />
 
       </section>
-
-
-
-
-
 
 
 
@@ -216,11 +198,16 @@ export default function Home() {
 
 
 
-
-
-
       {/* Page 5: Contact */}
       <section className="section page5" id="home-scroll-contact">
+
+        {/* Image fond */}
+        <Image 
+            // src="/plant-bg-min.png"
+            src="/wood-bg.jpeg"
+            fill={true}
+            style={{opacity: "0.7", zIndex:"0"}}
+        />
 
         {/* Icone Page (top-right) */}
         <FontAwesomeIcon icon={faEnvelope} className="pageIcon" />
@@ -247,10 +234,6 @@ export default function Home() {
         <Footer />
       
       </section>
-
-
-
-
 
 
     </main>

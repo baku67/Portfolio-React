@@ -57,6 +57,20 @@ export function Wip() {
     }
 
 
+    // Desktop (hover) & (click):
+    const [isMockupDeskHovered, setIsMockupDeskHovered] = useState(false);
+    const handleMockupDeskEnter = () => {
+        setIsMockupDeskHovered(true);
+    }
+    const handleMockupDeskLeave = () => {
+        setIsMockupDeskHovered(false);
+    }
+    const [isMockupDeskClicked, setIsMockupDeskClicked] = useState(false);
+    const handleMockupDeskClick = () => {
+        setIsMockupDeskClicked(!isMockupDeskClicked);
+    }
+
+
 
     return(
         <>
@@ -299,10 +313,16 @@ export function Wip() {
 
 
                 {/* Demo mockup desktop (gif) */}
-                <div className="accueil-mockup">
+                <div className="accueil-mockup" 
+                    onMouseEnter={handleMockupDeskEnter}
+                    onMouseLeave={handleMockupDeskLeave}
+                    onClick={handleMockupDeskClick}
+                >
                     {/* perspective écran */}
                     <div className="accueil-mockup-top-wrapper">
-                        <div className="accueil-mockup-top">
+                        <div 
+                            className={`accueil-mockup-top ${isMockupDeskClicked ? "accueil-mockup-top-clicked" : ""}`}
+                        >
                             {/* screen */}
                             <div className="amt-imgWrapper">
                                 <Image 
@@ -310,7 +330,7 @@ export function Wip() {
                                     fill={true} 
                                     alt="Portfolio demo" 
                                 />
-                                {/* <iframe src="https://portfolio-react-sand-kappa.vercel.app" /> */}
+                                {/* Gif demo home avec nav des projets */}
                             </div>
                         </div>
                     </div>

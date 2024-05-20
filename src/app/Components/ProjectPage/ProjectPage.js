@@ -2,6 +2,8 @@
 "use client";
 import { useState, useEffect } from "react";
 
+import Image from 'next/image'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -389,6 +391,14 @@ export function ProjectPage({isMobile}) {
                 
                 <div style={{zIndex:5, height:"100%"}}>
 
+                    {/* Image fond */}
+                    <Image 
+                        // src="/plant-bg-min.png"
+                        src="/wood-bg.jpeg"
+                        fill={true}
+                        style={{opacity: "0.7", zIndex:"0"}}
+                    />
+
 
                     {/* Shapes adaptées*/}
                     <Shape1 projectColor={projects[actualProjectIndex].primaryColor} />
@@ -544,9 +554,6 @@ export function ProjectPage({isMobile}) {
                                 <FontAwesomeIcon icon={faCirclePlay} />
                             )}
                             
-
-                            
-
                         </span>
                     )}
 
