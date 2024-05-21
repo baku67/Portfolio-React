@@ -15,7 +15,7 @@ import { Shape2 } from "../Shapes/Shape2";
 import { useState } from "react";
 
 
-export function Wip() {
+export function Wip({isMobile}) {
 
 
     const [isScrollHovered, setIsScrollHovered] = useState(false);
@@ -212,7 +212,7 @@ export function Wip() {
                             startOffset={30}
                             reversed={false}
                             text="Contact"
-                            textProps={{ style: { fontSize: 28 } }}
+                            textProps={{ style: { fontSize: isMobile ? 35 : 28 } }}
                             textPathProps={{style : { fill : /* "#dfdfdf" */ "var(--primary-cyan)"} }}
                             tspanProps={{"dy": isCafeHovered ? "22" : "20"}}
                             ellipseProps={null}

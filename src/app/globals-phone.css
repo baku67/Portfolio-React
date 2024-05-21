@@ -556,4 +556,57 @@
         color: #d9d9d9;
     }
 
+
+
+    .homeMain-title {
+        text-shadow: 1px 1px var(--primary-cyan);
+    }
+
+
+
+
+
+    /* HOME: Scales et adaptations */
+    .plantAccueil-div {
+        transform: scale(0.4);
+        left: -177px;
+        top: -138px;
+    }
+
+    .tasseCafe {
+        transform: scale(0.6) translate(0px, 0px) !important;
+        top: -32px;
+        right: -50px;
+    }
+
+    
+    .accueil-mockup {
+        /* transform: scale(0.6); */
+    }
+    .accueil-mockup-top {
+        margin: 0 auto;
+        height: 165px;
+        width: 250px;
+    }
+    .accueil-mockup-bottom {
+        transform: translate(5px, -10px);
+        height: 120px;
+        width: 239px;
+    }
+    .keyboard {
+        grid-template-columns: repeat(17, 1fr);
+    }
+    .key {
+        border-radius: 2px;
+        padding: 4px;
+    }
+
+
+    .portable {
+        display: none;
+    }
+    .shapeProjet {
+        display: none;
+    }
+
 }

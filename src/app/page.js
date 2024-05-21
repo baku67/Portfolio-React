@@ -135,7 +135,7 @@ export default function Home() {
       {/* Page 1: Présentation */}
       <section className="section page1">
 
-        <Wip />
+        <Wip isMobile={isMobile} />
         
       </section>
 
