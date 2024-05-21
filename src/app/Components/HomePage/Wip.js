@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPersonDigging, faSquareCheck, faCheck, faSquare, faBatteryThreeQuarters, faSignal, faSign } from "@fortawesome/free-solid-svg-icons";
+import { faPersonDigging, faPersonRunning, faLightbulb, faCamera, faEnvelope, faSquareCheck, faCheck, faSquare, faBatteryThreeQuarters, faSignal, faSign } from "@fortawesome/free-solid-svg-icons";
 import { faHtml5, faCss3Alt, faJs, faPhp, faSymfony, faReact, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import ReactCurvedText from 'react-curved-text';
@@ -93,29 +93,34 @@ export function Wip({isMobile}) {
 
 
 
-            {/* Plante */}
-            <div className="plantAccueil-div" style={{width:"fit-content"}}>
+            {/* Plante + fishBowl */}
+            <Link href="#home-scroll-hobbies" passHref>
 
-                {/* <Image src="/plant-2.png" width={450} height={450} /> */}
-                <Image src="/plant-1-min.png" width={450} height={450} className="plantAccueil" />
+                {/* Plante */}
+                <div className="plantAccueil-div" style={{width:"fit-content"}}>
 
-                <div className="bocal-exterieur">
-                    <div className="bocal-ouverture"></div>
-                    <div className="bocal-landscape"></div>
+                    {/* <Image src="/plant-2.png" width={450} height={450} /> */}
+                    <Image src="/plant-1-min.png" width={450} height={450} className="plantAccueil" />
+
+                    <div className="bocal-exterieur">
+                        <div className="bocal-ouverture"></div>
+                        <div className="bocal-landscape"></div>
+                    </div>
+
                 </div>
 
-            </div>
 
+                {/* Test fish bowl (loisirs) */}
+                <div className="fishBowl-div">
+                    <Image 
+                        src="/fishBowl-rounded2.png" 
+                        width={320} 
+                        height={320} 
+                        style={{transform: "rotate(182deg)", filter:"hue-rotate(334deg)"}}
+                    />
+                </div>
 
-            {/* Test fish bowl (loisirs) */}
-            <div className="fishBowl-div">
-                <Image 
-                    src="/fishBowl-rounded2.png" 
-                    width={320} 
-                    height={320} 
-                    style={{transform: "rotate(182deg)", filter:"hue-rotate(334deg)"}}
-                />
-            </div>
+            </Link>
 
 
             {/* Camera */}
@@ -202,22 +207,24 @@ export function Wip({isMobile}) {
                         onMouseLeave={handleCafeLeave}
                         style={{}} 
                     >
-                        <ReactCurvedText
-                            width={250}
-                            height={115}
-                            cx={150}
-                            cy={0}
-                            rx={100}
-                            ry={100}
-                            startOffset={30}
-                            reversed={false}
-                            text="Contact"
-                            textProps={{ style: { fontSize: isMobile ? 35 : 28 } }}
-                            textPathProps={{style : { fill : /* "#dfdfdf" */ "var(--primary-cyan)"} }}
-                            tspanProps={{"dy": isCafeHovered ? "22" : "20"}}
-                            ellipseProps={null}
-                            svgProps={null}
-                        />
+                        {!isMobile && (
+                            <ReactCurvedText
+                                width={250}
+                                height={115}
+                                cx={150}
+                                cy={0}
+                                rx={100}
+                                ry={100}
+                                startOffset={30}
+                                reversed={false}
+                                text="Contact"
+                                textProps={{ style: { fontSize: 28 } }}
+                                textPathProps={{style : { fill : /* "#dfdfdf" */ "var(--primary-cyan)"} }}
+                                tspanProps={{"dy": isCafeHovered ? "22" : "20"}}
+                                ellipseProps={null}
+                                svgProps={null}
+                            />
+                        )}
                     </div>
 
 
@@ -436,7 +443,9 @@ export function Wip({isMobile}) {
 
 
                 {/* Main */}
-                <div className="homeMain-wip">
+
+                {/* WIP */}
+                {/* <div className="homeMain-wip">
 
                     <FontAwesomeIcon icon={faPersonDigging} style={{color:"var(--primary-cyan)", fontSize:"2em"}} />
 
@@ -445,14 +454,57 @@ export function Wip({isMobile}) {
                         <a href="https://bk-dev.fr" target="_blank">Ancienne version</a>
                     </div>
 
-                </div>
+                </div> */}
+
+
+
+                {/* Liens internes (Mobile) */}
+                {isMobile && (
+                    
+                    <div>
+                        <ul className="mobile-homeLinksUl">
+
+                            <Link href="#home-scroll-skills" passHref>
+                                <li className="mobile-homeLinksLi">
+                                    <FontAwesomeIcon icon={faPersonRunning} />
+                                    <h2>Parcours</h2>
+                                </li>
+                            </Link>
+
+                            <Link href="#home-scroll-project" passHref>
+                                <li className="mobile-homeLinksLi">
+                                    <FontAwesomeIcon icon={faLightbulb} />
+                                    <h2>Projets</h2>
+                                </li>
+                            </Link>
+
+                            <Link href="#home-scroll-hobbies" passHref>
+                            <li className="mobile-homeLinksLi">
+                                <FontAwesomeIcon icon={faCamera} />
+                                <h2>Loisirs</h2>
+                            </li>
+                            </Link>
+
+                            <Link href="#home-scroll-contact" passHref>
+                                <li className="mobile-homeLinksLi">
+                                    <FontAwesomeIcon icon={faEnvelope} />
+                                    <h2>Contact</h2>
+                                </li>
+                            </Link>
+
+                        </ul>
+                    </div>
+                )}
+
 
             </div>
 
 
 
-            {/* Scroll SVG */}
-            <svg 
+            {/* Scroll SVG icon (Desktop) */}
+            {!isMobile && (
+
+                <svg 
                 className="scrollSvg"
                 onMouseEnter={handleScrollEnter}
                 onMouseLeave={handleScrollLeave}
@@ -461,11 +513,14 @@ export function Wip({isMobile}) {
                     transform: isScrollHovered ? "translateX(-50%) translateY(7px)" : "translateX(-50%) translateY(0px)",
                     paddingTop: "7px",
                 }}
-            >
-                <g>
-                    <path d="M67.71,42.631c-0.001-9.565-7.753-17.317-17.318-17.318h-0.784c-9.565,0.001-17.317,7.753-17.318,17.318V57.35   c0.001,9.565,7.753,17.316,17.318,17.317h0.784c9.565-0.001,17.317-7.753,17.318-17.317V42.631z M64.806,57.35   c-0.001,3.985-1.611,7.579-4.222,10.192c-2.613,2.611-6.208,4.221-10.193,4.222h-0.784c-3.985-0.001-7.58-1.611-10.193-4.222   c-2.611-2.613-4.221-6.208-4.222-10.192V42.631c0.001-3.985,1.611-7.58,4.222-10.193c2.613-2.611,6.208-4.221,10.193-4.222h0.784   c3.985,0.001,7.579,1.611,10.193,4.222c2.611,2.613,4.221,6.208,4.222,10.193V57.35z"/><path d="M49.977,39.903c-0.802,0-1.452,0.65-1.452,1.452v4.258c0,0.802,0.65,1.452,1.452,1.452c0.802,0,1.452-0.65,1.452-1.452   v-4.258C51.429,40.553,50.779,39.903,49.977,39.903z"/><path d="M49.093,94.682c0.53,0.424,1.283,0.424,1.814,0l7.258-5.806c0.626-0.501,0.727-1.414,0.227-2.04   c-0.501-0.626-1.414-0.727-2.04-0.227l0,0L50,91.689l-6.351-5.081c-0.626-0.501-1.54-0.399-2.04,0.227   c-0.501,0.626-0.399,1.539,0.227,2.04L49.093,94.682z"/><path d="M56.351,13.392c0.626,0.501,1.539,0.399,2.04-0.227c0.501-0.626,0.399-1.539-0.227-2.04l-7.258-5.807   c-0.531-0.425-1.283-0.425-1.814,0l-7.258,5.806c-0.626,0.501-0.728,1.414-0.227,2.04c0.501,0.626,1.414,0.727,2.04,0.227l0,0   L50,8.311L56.351,13.392z"/>
-                </g>
-            </svg>
+                >
+                    <g>
+                        <path d="M67.71,42.631c-0.001-9.565-7.753-17.317-17.318-17.318h-0.784c-9.565,0.001-17.317,7.753-17.318,17.318V57.35   c0.001,9.565,7.753,17.316,17.318,17.317h0.784c9.565-0.001,17.317-7.753,17.318-17.317V42.631z M64.806,57.35   c-0.001,3.985-1.611,7.579-4.222,10.192c-2.613,2.611-6.208,4.221-10.193,4.222h-0.784c-3.985-0.001-7.58-1.611-10.193-4.222   c-2.611-2.613-4.221-6.208-4.222-10.192V42.631c0.001-3.985,1.611-7.58,4.222-10.193c2.613-2.611,6.208-4.221,10.193-4.222h0.784   c3.985,0.001,7.579,1.611,10.193,4.222c2.611,2.613,4.221,6.208,4.222,10.193V57.35z"/><path d="M49.977,39.903c-0.802,0-1.452,0.65-1.452,1.452v4.258c0,0.802,0.65,1.452,1.452,1.452c0.802,0,1.452-0.65,1.452-1.452   v-4.258C51.429,40.553,50.779,39.903,49.977,39.903z"/><path d="M49.093,94.682c0.53,0.424,1.283,0.424,1.814,0l7.258-5.806c0.626-0.501,0.727-1.414,0.227-2.04   c-0.501-0.626-1.414-0.727-2.04-0.227l0,0L50,91.689l-6.351-5.081c-0.626-0.501-1.54-0.399-2.04,0.227   c-0.501,0.626-0.399,1.539,0.227,2.04L49.093,94.682z"/><path d="M56.351,13.392c0.626,0.501,1.539,0.399,2.04-0.227c0.501-0.626,0.399-1.539-0.227-2.04l-7.258-5.807   c-0.531-0.425-1.283-0.425-1.814,0l-7.258,5.806c-0.626,0.501-0.728,1.414-0.227,2.04c0.501,0.626,1.414,0.727,2.04,0.227l0,0   L50,8.311L56.351,13.392z"/>
+                    </g>
+                </svg>
+
+            )}
+
 
         </>
     )

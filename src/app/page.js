@@ -192,7 +192,7 @@ export default function Home() {
 
 
       {/* Page 4: Photographie, animations */}
-      <section className="section page4">
+      <section className="section page4" id="home-scroll-hobbies">
 
       </section>
 

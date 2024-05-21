@@ -1030,6 +1030,8 @@ main {
 .plantAccueil {
   position: relative;
   z-index: 999;
+
+  filter: drop-shadow(-6px 9px 4px black);
 }
 
 
@@ -1039,7 +1041,7 @@ main {
   left: 265px;
   top: -136px;
 
-  filter: drop-shadow(2px 4px 6px black);
+  filter: drop-shadow(-16px 12px 7px black);
 }
 
 
@@ -1058,7 +1060,7 @@ main {
   background-color: var(--primary-cyan);
   border-radius: 50%;
 
-  filter: drop-shadow(2px 4px 6px black);
+  filter: drop-shadow(-13px 28px 8px black);
 }
 
 .bocal-ouverture {
