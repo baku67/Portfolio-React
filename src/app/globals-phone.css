@@ -131,7 +131,7 @@
 
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
         gap: 13px 10px;
         grid-template-areas:
             ". ."
@@ -167,6 +167,14 @@
         /* Scale pour les dimensions iframe responsiv même très petit, ATTENTION */
 
         transform: translateX(-50%) scale(0.8) translateY(-85px);
+    }
+
+
+    .paginationProject {
+        z-index: 999999;
+        display: block;
+        position: relative;
+        text-align: center;
     }
 
 

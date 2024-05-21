@@ -180,7 +180,27 @@ a {
 }
 
 
+.paginationProject {
+  z-index: 999999;
+  display: block;
+  position: relative;
+  text-align: center;
+}
 
+
+/* align left: */
+.paginationProject {
+    z-index: 999999;
+    display: block;
+    position: relative;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    display: inline-flex;
+    left: 50%;
+    justify-content: flex-end;
+    transform: translateX(-50%);
+}
 
 .scrollSvg {
   cursor: pointer;
@@ -1929,6 +1949,12 @@ main {
 
 
 
+.githubCalendar-iconAndText {
+  justify-content: left;
+}
+
+
+
 .skill-li svg {
   width: 3.5rem !important;
   height: 3.5rem !important;
@@ -1967,4 +1993,22 @@ main {
 /* Attention il faut que la classe soit déclarée après les section  */
 .active {
   opacity: 1;
+}
+
+
+
+.projectsPage-NonActive {
+  font-size: 1.5em;
+  color: rgb(255, 255, 255);
+  padding: 0px 10px;
+  margin: 0 4px;
+}
+
+.projectsPage-active {
+  background-color: var(--primary-cyan);
+  font-size: 1.5em;
+  color: black;
+  padding: 0px 10px;
+  border-radius: 50%;
+  margin: 0 4px;
 }

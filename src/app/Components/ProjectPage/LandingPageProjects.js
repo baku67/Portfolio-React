@@ -13,9 +13,34 @@ import { Shape2 } from "../Shapes/Shape2";
 import { ProjectThumbnail } from "./ProjectThumbnail";
 import GitHubCalendar from 'react-github-calendar';
 import { ProjectCardInfos } from "./ProjectCardInfos";
+import { Pagination } from "@mui/material";
+
+const ITEMS_PER_PAGE = 4; // Set the number of items per page
 
 
 export function LandingPageProjects({projects, selectProject, isMobile, gifState}) {
+
+
+
+    // Pagination
+    const [currentPage, setCurrentPage] = useState(1);
+    // Calculate the indices for slicing the projects array
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    const currentProjects = projects.slice(startIndex, endIndex);
+    // Calculate the total number of pages
+    const totalPages = Math.ceil(projects.length / ITEMS_PER_PAGE);
+    // Handle page change
+    const handlePageChange = (pageNumber) => {
+        setCurrentPage(pageNumber);
+    }
+
+
+
+
+
+
+
 
     // API github
     const token = process.env.REACT_APP_GITHUB_TOKEN;
@@ -93,48 +118,51 @@ export function LandingPageProjects({projects, selectProject, isMobile, gifState
 
             {/* CARDS projets */}
             <ul className="projectCardsList">
-
-                {projects.map( (project, index) => (
-
-                    <li 
-                        key={index}
-                        className="projectCard"
-                        onMouseEnter={() => handleMouseEnterLi(index)}
-                        onMouseLeave={handleMouseLeaveLi}
-                        style={{ 
-                            transform: hoveredIndex === index ? "translateY(-10px)" : "translateY(0px)",
-                            boxShadow: hoveredIndex === index ? "0px 6px 10px #00000070" : "0px 0px 0px #00000000",
-                            background: hoveredIndex === index ? "#10394d" : "linear-gradient(0deg, rgb(29, 29, 36) 70%, rgb(12, 46, 62) 100%)",
-                            animationDelay: `${1 + index * 0.15}s`, // Global delay + individual delay
-                            borderColor: project.primaryColor, 
-                        }} 
-                        onClick={() => handleClickProject(project.id)}
-                    >
-
-                        <div  className="projectCard_infos">
-
-                            <h2 
-                                className="projectCard_title" 
-                                style={{
-                                    fontFamily: project.fontFamily, 
-                                    color: project.primaryColor, 
-                                    fontWeight: project.title_bold ? "bold" : "normal"
-                            }}>
-                                {project.name}
-                            </h2>
-
-                            <p className="projectCard_description">{project.description}</p> 
-
-                        </div>
-
-                        <ProjectThumbnail project={project} isHovered={hoveredIndex === index ? true : false} isMobile={isMobile} gifState={gifState} />
-
-                        <ProjectCardInfos project={project} isHovered={hoveredIndex === index ? true : false} token={token} owner="baku67" repo={project.repo_name} isMobile={isMobile} />
-                    </li>
-
+                {currentProjects.map((project, index) => (
+                <li 
+                    key={startIndex + index}
+                    className="projectCard"
+                    onMouseEnter={() => handleMouseEnterLi(startIndex + index)}
+                    onMouseLeave={handleMouseLeaveLi}
+                    style={{ 
+                    transform: hoveredIndex === (startIndex + index) ? "translateY(-10px)" : "translateY(0px)",
+                    boxShadow: hoveredIndex === (startIndex + index) ? "0px 6px 10px #00000070" : "0px 0px 0px #00000000",
+                    background: hoveredIndex === (startIndex + index) ? "#10394d" : "linear-gradient(0deg, rgb(29, 29, 36) 70%, rgb(12, 46, 62) 100%)",
+                    animationDelay: `${1 + (startIndex + index) * 0.15}s`, // Global delay + individual delay
+                    borderColor: project.primaryColor, 
+                    }} 
+                    onClick={() => handleClickProject(project.id)}
+                >
+                    <div className="projectCard_infos">
+                    <h2 
+                        className="projectCard_title" 
+                        style={{
+                        fontFamily: project.fontFamily, 
+                        color: project.primaryColor, 
+                        fontWeight: project.title_bold ? "bold" : "normal"
+                        }}>
+                        {project.name}
+                    </h2>
+                    <p className="projectCard_description">{project.description}</p> 
+                    </div>
+                    <ProjectThumbnail project={project} isHovered={hoveredIndex === (startIndex + index) ? true : false} isMobile={isMobile} gifState={gifState} />
+                    <ProjectCardInfos project={project} isHovered={hoveredIndex === (startIndex + index) ? true : false} token={token} owner="baku67" repo={project.repo_name} isMobile={isMobile} />
+                </li>
                 ))}
+        </ul>
 
-            </ul>
+        {/* Pagination (ITEMS_PER_PAGE=4) */}
+        <div className="paginationProject">
+            {Array.from({ length: totalPages }, (_, index) => (
+            <button 
+                key={index + 1} 
+                onClick={() => handlePageChange(index + 1)} 
+                className={currentPage === index + 1 ? 'projectsPage-active' : 'projectsPage-NonActive'}
+            >
+                {index + 1}
+            </button>
+            ))}
+        </div>
 
 
 
@@ -153,7 +181,7 @@ export function LandingPageProjects({projects, selectProject, isMobile, gifState
                         borderColor: githubCardHovered ? "transparent" : "transparent",
                     }}
                 >
-                    <div className="iconAndText" style={{marginBottom: "0.5em"}}>
+                    <div className="iconAndText githubCalendar-iconAndText" style={{marginBottom: "0.5em"}}>
                         <FontAwesomeIcon icon={faChartLine} className="faIcon" />
                         <h3 className="githubCalendarTitle">Activité :</h3>
                     </div>

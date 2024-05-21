@@ -110,7 +110,7 @@ export function Wip({isMobile}) {
 
                 <div className="post-it-textDiv">
                     <FontAwesomeIcon icon={faMagnifyingGlass} className="post-it-textIcon" />
-                    <span className="post-it-textSpan">Alternance <br />"Concepteur Développeur d'Applications"</span>
+                    <span className="post-it-textSpan">Alternance <br />&ldquo;Concepteur Développeur d'Applications&ldquo;</span>
                 </div>
 
             </div>
@@ -393,69 +393,69 @@ export function Wip({isMobile}) {
 
                         <div className="accueil-mockup-bottom">
                             {/* Clavier */}
-                            <div class="keyboard">
-                                <div class="key">Esc</div>
-                                <div class="key">1</div>
-                                <div class="key">2</div>
-                                <div class="key">3</div>
-                                <div class="key">4</div>
-                                <div class="key">5</div>
-                                <div class="key">6</div>
-                                <div class="key">9</div>
-                                <div class="key">0</div>
-                                {/* <div class="key">-</div>
-                                <div class="key">=</div> */}
-                                <div class="key backspace">Backspace</div>
+                            <div className="keyboard">
+                                <div className="key">Esc</div>
+                                <div className="key">1</div>
+                                <div className="key">2</div>
+                                <div className="key">3</div>
+                                <div className="key">4</div>
+                                <div className="key">5</div>
+                                <div className="key">6</div>
+                                <div className="key">9</div>
+                                <div className="key">0</div>
+                                {/* <div className="key">-</div>
+                                <div className="key">=</div> */}
+                                <div className="key backspace">Backspace</div>
                                 
-                                <div class="key tab">Tab</div>
-                                <div class="key">Q</div>
-                                <div class="key">W</div>
-                                <div class="key">E</div>
-                                <div class="key">R</div>
-                                <div class="key">T</div>
-                                <div class="key">Y</div>
-                                <div class="key">U</div>
-                                <div class="key">I</div>
-                                <div class="key">O</div>
-                                <div class="key">P</div>
-                                <div class="key">[</div>
-                                <div class="key">]</div>
-                                <div class="key backslash">\</div>
+                                <div className="key tab">Tab</div>
+                                <div className="key">Q</div>
+                                <div className="key">W</div>
+                                <div className="key">E</div>
+                                <div className="key">R</div>
+                                <div className="key">T</div>
+                                <div className="key">Y</div>
+                                <div className="key">U</div>
+                                <div className="key">I</div>
+                                <div className="key">O</div>
+                                <div className="key">P</div>
+                                <div className="key">[</div>
+                                <div className="key">]</div>
+                                <div className="key backslash">\</div>
                                 
-                                <div class="key capslock">Caps Lock</div>
-                                <div class="key">A</div>
-                                <div class="key">S</div>
-                                <div class="key">D</div>
-                                <div class="key">F</div>
-                                <div class="key">G</div>
-                                <div class="key">H</div>
-                                <div class="key">J</div>
-                                <div class="key">K</div>
-                                <div class="key">L</div>
-                                <div class="key semicolon">;</div>
-                                <div class="key quote">&apos;</div>
-                                <div class="key enter">Enter</div>
+                                <div className="key capslock">Caps Lock</div>
+                                <div className="key">A</div>
+                                <div className="key">S</div>
+                                <div className="key">D</div>
+                                <div className="key">F</div>
+                                <div className="key">G</div>
+                                <div className="key">H</div>
+                                <div className="key">J</div>
+                                <div className="key">K</div>
+                                <div className="key">L</div>
+                                <div className="key semicolon">;</div>
+                                <div className="key quote">&apos;</div>
+                                <div className="key enter">Enter</div>
                                 
-                                <div class="key shift-left">Shift</div>
-                                <div class="key">Z</div>
-                                <div class="key">X</div>
-                                <div class="key">C</div>
-                                <div class="key">V</div>
-                                <div class="key">B</div>
-                                <div class="key">N</div>
-                                <div class="key">M</div>
-                                <div class="key">,</div>
-                                <div class="key">.</div>
-                                <div class="key">/</div>
-                                <div class="key shift-right">Shift</div>
+                                <div className="key shift-left">Shift</div>
+                                <div className="key">Z</div>
+                                <div className="key">X</div>
+                                <div className="key">C</div>
+                                <div className="key">V</div>
+                                <div className="key">B</div>
+                                <div className="key">N</div>
+                                <div className="key">M</div>
+                                <div className="key">,</div>
+                                <div className="key">.</div>
+                                <div className="key">/</div>
+                                <div className="key shift-right">Shift</div>
                                 
-                                <div class="key ctrl">Ctrl</div>
-                                <div class="key">Win</div>
-                                <div class="key">Alt</div>
-                                <div class="key space">Space</div>
-                                <div class="key">Alt</div>
-                                <div class="key">Fn</div>
-                                <div class="key">Ctrl</div>
+                                <div className="key ctrl">Ctrl</div>
+                                <div className="key">Win</div>
+                                <div className="key">Alt</div>
+                                <div className="key space">Space</div>
+                                <div className="key">Alt</div>
+                                <div className="key">Fn</div>
+                                <div className="key">Ctrl</div>
                             </div>
                             {/* Pad */}
                             <div className="mockup-pad"></div>
