@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPersonDigging, faPersonRunning, faLightbulb, faCamera, faEnvelope, faSquareCheck, faCheck, faSquare, faBatteryThreeQuarters, faSignal, faSign } from "@fortawesome/free-solid-svg-icons";
+import { faPersonDigging, faMagnifyingGlass, faPersonRunning, faLightbulb, faCamera, faEnvelope, faSquareCheck, faCheck, faSquare, faBatteryThreeQuarters, faSignal, faSign } from "@fortawesome/free-solid-svg-icons";
 import { faHtml5, faCss3Alt, faJs, faPhp, faSymfony, faReact, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import ReactCurvedText from 'react-curved-text';
@@ -91,6 +91,29 @@ export function Wip({isMobile}) {
                 style={{opacity: "0.7", zIndex:"0"}}
             />
 
+
+
+            {/* Post-it "alternance" */}
+            <div className="post-it-container">
+
+                <div className="post-it-pick">
+                    <div className="post-it-socle"></div>
+                    <div className="post-it-pickTrait"></div>
+                </div>
+
+                <Image 
+                    src="/post-it-1-cropped.png"
+                    width={210}
+                    height={210}
+                    className="post-it-img"
+                />
+
+                <div className="post-it-textDiv">
+                    <FontAwesomeIcon icon={faMagnifyingGlass} className="post-it-textIcon" />
+                    <span className="post-it-textSpan">Alternance <br />"Concepteur Développeur d'Applications"</span>
+                </div>
+
+            </div>
 
 
             {/* Plante + fishBowl */}

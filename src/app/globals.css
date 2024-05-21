@@ -78,7 +78,7 @@ a {
 .homeMain-title {
   font-weight: bold;
   color: #1a1b1b;
-  text-shadow: 2px 1px var(--primary-cyan);
+  text-shadow: 0px 1px 4px var(--primary-cyan);
 }
 
 .wip1 {
@@ -86,8 +86,8 @@ a {
 }
 .homeMain-subtitle {
   color: #00fff3;
-  font-size: 1.4em;
-  text-shadow: 1px 1px 2px black;
+  font-size: 1.5em;
+  text-shadow: 0px 2px 3px black;
 }
 .homeMain-wip {
   display: flex;
@@ -109,6 +109,78 @@ a {
   /* text-decoration: underline; */
 
 }
+
+
+
+.post-it-container {
+  position: absolute;
+
+  right: 25%;
+  top: 30%;
+  transform: translate(75%, -30%) rotate(12deg);
+}
+
+.post-it-pick {
+  position: absolute;
+  z-index: 99999999999999;
+  top: -45px;
+  left: 50%;
+  transform: translateX(-50%) rotate(353deg);
+
+  display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.post-it-socle {
+  height: 23px;
+  width: 23px;
+  border-radius: 50%;
+  background-color: var(--primary-cyan);
+  transform: rotateX(45deg);
+  position: relative;
+  top: 14px;
+  z-index: 9999;
+
+  filter: drop-shadow(6px 40px 8px black);
+}
+
+.post-it-pickTrait {
+  height: 30px;
+  width: 1px;
+  background-color: white;
+
+  filter: drop-shadow(2px 2px 1px black);
+
+}
+
+.post-it-img {
+  /* filter: hue-rotate(117deg); */
+  filter: drop-shadow(8px 12px 6px black);
+}
+
+.post-it-textDiv {
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  font-size: 0.8em;
+  margin-top: 8px;
+  width: 175px;
+  color: black;
+}
+
+.post-it-textIcon {
+  font-size: 2em;
+  margin: 0px 10px 6px 5px;
+  color: var(--secondary-cyan);
+}
+.post-it-textSpan {
+  font-size: 1.5em;
+  font-family: 'Kalam', sans-serif;
+}
+
+
+
 
 .scrollSvg {
   cursor: pointer;

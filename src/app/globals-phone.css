@@ -1,6 +1,10 @@
 @media only screen and (max-width: 767px) {
 
 
+    /* Temporaire pas de scroll mobile */
+    body {
+        overflow: hidden;
+    }
 
     .isDesktop {
         display: none;
@@ -140,6 +144,8 @@
         border-bottom: 1px solid var(--primary-cyan);
 
         box-shadow: 0px 0px 5px #000000;
+
+        border-radius: 6px;
 
         background: rgb(19,79,76);
         background: -moz-linear-gradient(180deg, #1d1d24 0%, rgba(12,46,62,1) 100%);
@@ -560,7 +566,7 @@
 
     .homeMain-title {
         font-size: 1.6em;
-        text-shadow: 1px 1px var(--primary-cyan);
+        text-shadow: 0px 1px 0px var(--primary-cyan);
         margin-bottom: 0em;
     }
 
@@ -576,15 +582,15 @@
     .plantAccueil-div {
         transform: scale(0.4);
         left: -184px;
-        top: -176px;
+        top: -190px;
 
         z-index: 999;
     }
 
     .tasseCafe {
-        transform: scale(0.6) translate(0px, 0px) !important;
-        top: -48px;
-        right: -42px;
+        transform: scale(0.5) translate(0px, 0px) !important;
+        top: -44px;
+        right: -50px;
     }
 
     .fishBowl-div {
@@ -640,6 +646,7 @@
     }
     .homeMain-subtitle {
         font-size: 1.15em;
+        text-shadow: 0px 1px 2px black;
     }
 
 
