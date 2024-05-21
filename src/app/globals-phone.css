@@ -172,6 +172,11 @@
     }
 
 
+    .accueil-mockup-bottom-wrapper {
+        display: none;
+    }
+
+
     .paginationProject {
         z-index: 999999;
         display: block;
@@ -624,6 +629,8 @@
     
     .accueil-mockup {
         /* transform: scale(0.6); */
+        width: fit-content;
+        transform: rotate(348deg) translate(-12px, 75px);
     }
     .accueil-mockup-top {
         margin: 0 auto;
@@ -646,6 +653,13 @@
     .mockup-pad {
         width: 61px;
         height: 38px;
+    }
+
+
+    .post-it-container {
+        right: 15%;
+        top: 10%;
+        transform: scale(0.6) translate(85%, -10%) rotate(12deg);
     }
 
 

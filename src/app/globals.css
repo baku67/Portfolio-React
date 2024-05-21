@@ -114,6 +114,8 @@ a {
 
 .post-it-container {
   position: absolute;
+  cursor: pointer;
+  z-index: 999999999999999999999999;
 
   right: 25%;
   top: 30%;
@@ -125,11 +127,14 @@ a {
   z-index: 99999999999999;
   top: -45px;
   left: 50%;
-  transform: translateX(-50%) rotate(353deg);
+  /* JS: */
+  /* transform: translateX(-50%) rotate(353deg); */
 
   display: inline-flex;
     flex-direction: column;
     align-items: center;
+
+  transition: all 0.4s;
 }
 
 .post-it-socle {
@@ -137,12 +142,15 @@ a {
   width: 23px;
   border-radius: 50%;
   background-color: var(--primary-cyan);
+  /* JS: */
   transform: rotateX(45deg);
   position: relative;
   top: 14px;
   z-index: 9999;
 
-  filter: drop-shadow(6px 40px 8px black);
+  transition: all 0.4s;
+
+  /* filter: drop-shadow(6px 40px 8px black); */
 }
 
 .post-it-pickTrait {
@@ -156,7 +164,9 @@ a {
 
 .post-it-img {
   /* filter: hue-rotate(117deg); */
-  filter: drop-shadow(8px 12px 6px black);
+  /* filter: drop-shadow(8px 12px 6px black); */
+
+  transition: all 0.4s;
 }
 
 .post-it-textDiv {
@@ -167,6 +177,8 @@ a {
   margin-top: 8px;
   width: 175px;
   color: black;
+
+  transition: all 0.4s;
 }
 
 .post-it-textIcon {
@@ -376,6 +388,7 @@ main {
 
 .accueil-mockup {
   cursor: pointer;
+  transform: rotate(359deg);
 }
 
 
@@ -461,7 +474,7 @@ main {
 .keyboard {
   display: grid;
   grid-template-columns: repeat(11, 1fr);
-  grid-gap: 2px;
+  grid-gap: 3px;
   padding: 5px;
   background-color: var(--primary-cyan);
   border: 0px solid #ccc;
@@ -479,11 +492,11 @@ main {
   padding: 7px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
-  width: 71px;
+  width: 80px;
     height: 53px;
     left: 50%;
     transform: translateX(-50%);
-    top: 3px;
+    top: 1px;
     position: relative;
 }
 
