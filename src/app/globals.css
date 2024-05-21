@@ -181,19 +181,23 @@ main {
 }
 
 
+
+
+
+
 .shapeProjet {
   cursor: pointer;
   position: absolute;
   width: 470px;
   height: 500px;
-  border-radius: 10px;
+  border-radius: 6px;
   /* background-color: var(--secondary-cyan); */
   background-color: #0e435c;
-  border: 4px solid var(--primary-cyan);
+  border: 3px solid var(--primary-cyan);
   transform: rotate(20deg);
   z-index: 9999;
-  right: -60px;
-  bottom: -240px;
+  right: -124px;
+  bottom: -206px;
 
   transition: all 0.4s;
 }
@@ -205,16 +209,25 @@ main {
     font-size: 3em;
     top: 10px;
 
-    text-align: center;
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
+    text-align: left;
+    margin-left: 60px;
+    margin-top: 20px;
+    padding-left: 30px;
+    border-left: 5px solid var(--primary-cyan);
+
+    margin-bottom: 0;
+
 
     transition: all 0.4s;
 
 }
 
+
+
+
+
 .shapeProjet-fakeUl {
-  margin-top: 60px;
+  margin-top: 50px;
 }
 .shapeProjet-fakeLi {
   /* background-color: red; */
@@ -222,7 +235,7 @@ main {
   margin: 28px auto;
   padding-inline-start: 4em;
 }
-.shapeProjet-fakeLi div {
+.home-projectsLine {
   height: 5px;
   background-color: #00ddffa2;
 }
@@ -232,6 +245,41 @@ main {
     opacity: 0.7;
     color: #f1b16b;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.home-projects {
+  font-size: 1.3em;
+  margin-left: 13px;
+}
+.home-projects-squadforgeTitle {
+  font-family: Julius Sans One;
+}
+.home-projects-bjjTitle {
+  font-family: Kavoon;
+  font-weight: 100;
+}
+.home-projects-les100cielsTitle {
+  font-family: Montserrat Alternates;
+}
+.home-projects-terrineTitle {
+  font-family: Righteous;
+}
+
+
+
 
 
 .accueil-mockup {
@@ -416,15 +464,15 @@ main {
 }
 
 .tasseCafe {
-  transform: scale(1.5);
+  transform: scale(1.35);
   z-index: 9999;
     position: absolute;
 
     /* top: -24px; */
 
     /* A droite, sur le bleu */
-    top: -4px;
-    right: 17px;
+    top: -22px;
+    right: 15px;
 
     transition: all 0.4s;
 }
@@ -451,6 +499,7 @@ main {
   background: rgba(255, 255, 255, 0.09);
   border-radius: 50%;
   z-index: 1;
+  filter: blur(1px);
 
   transition: all 0.4s;
 }
@@ -516,10 +565,11 @@ main {
     top: 100%;
     left: 72px;
     width: 59px;
-    height: 30px;
-    border: 18px solid #c69c6d;
+    height: 33px;
     border-left: none;
     border-radius: 19%;
+    background-color: #c69c6d;
+    border-top: 1px solid #e3c29c;
     transform: rotate(254deg);
 
     transition: all 0.4s;
@@ -912,6 +962,10 @@ main {
 
   animation: shapeProjet1 0.7s 0s ease forwards;
 }
+
+
+
+
 
 
 .contactBoutons-wrapper {
@@ -1587,7 +1641,7 @@ main {
 
   width: 21%;
 
-  background-color: var(--secondary-cyan);
+  /* background-color: var(--secondary-cyan); */
   padding: 6px 15px 12px 15px;
   border-radius: 11px;
   

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPersonDigging, faSquareCheck, faSquare, faBatteryThreeQuarters, faSignal, faSign } from "@fortawesome/free-solid-svg-icons";
+import { faPersonDigging, faSquareCheck, faCheck, faSquare, faBatteryThreeQuarters, faSignal, faSign } from "@fortawesome/free-solid-svg-icons";
 import { faHtml5, faCss3Alt, faJs, faPhp, faSymfony, faReact, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import ReactCurvedText from 'react-curved-text';
@@ -77,7 +77,10 @@ export function Wip() {
 
             {/* Shapes neutres(cyan) */}
             <div className="shapeProject1-accueil"></div>
-            <div className="shapeProject2-accueil" style={{boxShadow: isCafeHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white"}}></div>
+            <div className="shapeProject2-accueil" style={{
+                boxShadow: isCafeHovered ? "0px 0px 50px -10px black" : "0px 0px 0px 0px white",
+                transform: isCafeHovered ? "rotate(301deg) translate(-5px, -5px)" : "rotate(301deg) translate(0px, 0px)",
+            }}></div>
 
 
             {/* Image fond */}
@@ -139,8 +142,9 @@ export function Wip() {
 
 
 
-            {/* Shape Projets (TITRE ECRIT SVG pour faire bloc notes) */}
+            {/* Block Projets (TITRE ECRIT SVG pour faire bloc notes) */}
             <Link href="#home-scroll-project" passHref>
+
                 <div 
                     className="shapeProjet"
                     onMouseEnter={handleProjetEnter}
@@ -152,20 +156,32 @@ export function Wip() {
 
                     <ul className="shapeProjet-fakeUl">
                         <li className="shapeProjet-fakeLi">
-                            <FontAwesomeIcon icon={faSquareCheck} className="shapeProjet-icon" />
-                            <div></div>
+                            <div>
+                                <FontAwesomeIcon icon={faCheck} className="shapeProjet-icon" />
+                                <span className="home-projects home-projects-squadforgeTitle">Squadforge</span>
+                            </div>
+                            <div className="home-projectsLine"></div>
                         </li>
                         <li className="shapeProjet-fakeLi">
-                            <FontAwesomeIcon icon={faSquare} className="shapeProjet-icon" />
-                            <div></div>
+                            <div>
+                                <FontAwesomeIcon icon={faCheck} className="shapeProjet-icon" />
+                                <span className="home-projects home-projects-bjjTitle">Backjackjo</span>
+                            </div>
+                            <div className="home-projectsLine"></div>
                         </li>
                         <li className="shapeProjet-fakeLi">
-                            <FontAwesomeIcon icon={faSquareCheck} className="shapeProjet-icon" />
-                            <div></div>
+                            <div>
+                                <FontAwesomeIcon icon={faCheck} className="shapeProjet-icon" />
+                                <span className="home-projects home-projects-les100cielsTitle">les100ciels</span>
+                            </div>
+                            <div className="home-projectsLine"></div>
                         </li>
                         <li className="shapeProjet-fakeLi">
-                            <FontAwesomeIcon icon={faSquare} className="shapeProjet-icon" />
-                            <div></div>
+                            <div>
+                                <FontAwesomeIcon icon={faCheck} className="shapeProjet-icon" />
+                                <span className="home-projects home-projects-terrineTitle">Terrine</span>
+                            </div>
+                            <div className="home-projectsLine"></div>
                         </li>
                     </ul>
 
@@ -174,9 +190,10 @@ export function Wip() {
 
 
 
+
             {/* Tasse café CSS */}
             <Link href="#home-scroll-contact" passHref>
-                <div className="tasseCafe" style={{transform: isCafeHovered ? "scale(1.5) translate(-10px, 15px)" : "scale(1.5) translate(0px, 0px)"}}>
+                <div className="tasseCafe" style={{transform: isCafeHovered ? "scale(1.35) translate(-8px, 11px)" : "scale(1.35) translate(0px, 0px)"}}>
 
                     {/* https://www.npmjs.com/package/react-curved-text  */}
                     <div 
