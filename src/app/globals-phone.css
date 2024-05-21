@@ -141,7 +141,7 @@
     .projectCard{
         width: 100% !important;
         padding: 2px 2px 6px 2px;
-        border-bottom: 1px solid var(--primary-cyan);
+        border-bottom-width: 1px;
 
         box-shadow: 0px 0px 5px #000000;
 
@@ -151,7 +151,9 @@
         background: -moz-linear-gradient(180deg, #1d1d24 0%, rgba(12,46,62,1) 100%);
         background: -webkit-linear-gradient(180deg, #1d1d24 0%, rgba(12,46,62,1) 100%);
         background: linear-gradient(180deg, #1d1d24 0%, rgba(12,46,62,1) 100%);
-        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#134f4c",endColorstr="#0c2e3e",GradientType=1);
+        
+
+        filter: drop-shadow(0px 3px 5px black);
     }
 
     .projectPageWrapper {
@@ -175,6 +177,7 @@
         display: block;
         position: relative;
         text-align: center;
+        margin-left: 0;
     }
 
 
@@ -280,9 +283,6 @@
     }
 
 
-    .projectCard {
-        border-bottom-width: 2px;
-    }
 
 
     .faCommitsMobile {
@@ -534,14 +534,22 @@
         transform: scale(1) !important;
       }
       .styles-module_calendar__sT1ND {
-        width: fit-content;
-        padding-left: 16px;
+        width: 100%;
+        height: auto;
+        padding: 8px 10px !important;
+        border-radius: 5px;
       }
 
       .react-activity-calendar__count {
+        display: none;
+
         width: 100%;
         text-align: right;
         font-size: 1.1em;
+      }
+
+      .styles-module_legendColors__kFY2e {
+        display: none !important;
       }
 
 

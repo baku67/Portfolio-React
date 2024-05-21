@@ -110,7 +110,7 @@ export function Wip({isMobile}) {
 
                 <div className="post-it-textDiv">
                     <FontAwesomeIcon icon={faMagnifyingGlass} className="post-it-textIcon" />
-                    <span className="post-it-textSpan">Alternance <br />&ldquo;Concepteur Développeur d'Applications&ldquo;</span>
+                    <span className="post-it-textSpan">Alternance <br />&ldquo;Concepteur Développeur d&apos;Applications&ldquo;</span>
                 </div>
 
             </div>
