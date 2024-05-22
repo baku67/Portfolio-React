@@ -1,21 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPersonDigging, faMagnifyingGlass, faPersonRunning, faLightbulb, faCamera, faEnvelope, faSquareCheck, faCheck, faSquare, faBatteryThreeQuarters, faSignal, faSign } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faPersonRunning, faLightbulb, faCamera, faEnvelope, faCheck, faBatteryThreeQuarters, faSignal } from "@fortawesome/free-solid-svg-icons";
 import { faHtml5, faCss3Alt, faJs, faPhp, faSymfony, faReact, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import ReactCurvedText from 'react-curved-text';
-// import Clock from 'react-live-clock';
 import dynamic from 'next/dynamic';
 const LiveClock = dynamic(() => import('react-live-clock'), { ssr: false });
 
 import Image from 'next/image'
 import Link from 'next/link';
 
-import { Shape1 } from "../Shapes/Shape1";
-import { Shape2 } from "../Shapes/Shape2";
 import { useState } from "react";
 
 
-export function Wip({isMobile}) {
+export function HomePage({isMobile}) {
 
 
     const [isScrollHovered, setIsScrollHovered] = useState(false);
@@ -646,28 +643,28 @@ export function Wip({isMobile}) {
                     <div>
                         <ul className="mobile-homeLinksUl">
 
-                            <Link href="#home-scroll-skills" passHref>
+                            <Link href="/parcours">
                                 <li className="mobile-homeLinksLi">
                                     <FontAwesomeIcon icon={faPersonRunning} />
                                     <h2>Parcours</h2>
                                 </li>
                             </Link>
 
-                            <Link href="#home-scroll-project" passHref>
+                            <Link href="/projets">
                                 <li className="mobile-homeLinksLi">
                                     <FontAwesomeIcon icon={faLightbulb} />
                                     <h2>Projets</h2>
                                 </li>
                             </Link>
 
-                            <Link href="#home-scroll-hobbies" passHref>
+                            <Link href="/loisirs">
                             <li className="mobile-homeLinksLi">
                                 <FontAwesomeIcon icon={faCamera} />
                                 <h2>Loisirs</h2>
                             </li>
                             </Link>
 
-                            <Link href="#home-scroll-contact" passHref>
+                            <Link href="/contact">
                                 <li className="mobile-homeLinksLi">
                                     <FontAwesomeIcon icon={faEnvelope} />
                                     <h2>Contact</h2>

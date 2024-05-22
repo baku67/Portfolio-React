@@ -27,11 +27,19 @@
 
 
 
+    .page2 {
+        opacity: 1;
+    }
     .page3 {
-        /* height: fit-content; */
+        opacity: 1;
+    }
 
-        /* Temporaire: */
-        /* opacity: 1; */
+    .page4 {
+        opacity: 1;
+    }
+
+    .page5 {
+        opacity: 1;
     }
 
 
@@ -537,6 +545,7 @@
       .styles-module_container__GBNxC {
         overflow: scroll;
         transform: scale(1) !important;
+        overflow: hidden;
       }
       .styles-module_calendar__sT1ND {
         width: 100%;
@@ -670,6 +679,7 @@
         filter: drop-shadow(-6px 2px 9px black);
     }
     .keyboard {
+        padding: 3px;
         grid-template-columns: repeat(14, 1fr);
         grid-gap: 2px;
     }
@@ -737,7 +747,7 @@
     .homeMain {
         /* height: 88%;
         gap: 42px; */
-        height: 90%;
+        height: 82%;
         justify-content: flex-end;
         gap: 50px;
     }

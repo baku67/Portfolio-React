@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faPersonRunning, faClipboardCheck } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faClipboardCheck } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 import { Shape1 } from "./Components/Shapes/Shape1";
@@ -18,8 +18,7 @@ import { Hobbies } from "./Components/CvPage/Hobbies";
 import { Socials } from "./Components/ContactPage/Socials";
 import { ContactForm } from './Components/ContactPage/ContactForm';
 import { Footer } from "./Components/ContactPage/Footer";
-import { Wip } from "./Components/HomePage/Wip";
-import { Header } from "./Components/HomePage/Header";
+import { HomePage } from "./Components/HomePage/HomePage";
 import { ProjectPage } from "./Components/ProjectPage/ProjectPage";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -135,14 +134,18 @@ export default function Home() {
       {/* Page 1: Présentation */}
       <section className="section page1">
 
-        <Wip isMobile={isMobile} />
+        <HomePage isMobile={isMobile} />
         
       </section>
 
 
 
-      {/* Page 2: Parcours */}
-      <section className="section page2" id="home-scroll-skills">
+      {/* ***********   Sur Desktop: scrcoll sections: */}
+      {!isMobile && (
+        <>
+
+        {/* Page 2: Parcours */}
+        <section className="section page2" id="home-scroll-skills">
 
         {/* Icone Page (top-right) */}
         {/* <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" /> */}
@@ -163,78 +166,72 @@ export default function Home() {
         </div>
 
 
-        {/* GRIIIIIIIIIIIID */}
         <Experiences />
         <Formations />
 
         <Skills />
         <Tools />
 
-        {/* Symboles plutot que text? */}
         <Hobbies />
-        {/* FIN GRIIIIIIID */}
-
 
         <DownloadCvBtn isMobile={isMobile} />
         
-      </section>
+        </section>
 
 
+        {/* Page 3: Projets */}
+        <section className="section page3" id="home-scroll-project">
+
+          <ProjectPage isMobile={isMobile} />
+
+        </section>
 
 
-      {/* Page 3: Projets */}
-      <section className="section page3" id="home-scroll-project">
+        {/* Page 4: Photographie, animations */}
+        <section className="section page4" id="home-scroll-hobbies">
 
-        <ProjectPage isMobile={isMobile} />
-
-      </section>
+        </section>
 
 
+        {/* Page 5: Contact */}
+        <section className="section page5" id="home-scroll-contact">
 
-      {/* Page 4: Photographie, animations */}
-      <section className="section page4" id="home-scroll-hobbies">
+          {/* Image fond */}
+          <Image 
+              // src="/plant-bg-min.png"
+              src="/wood-bg.jpeg"
+              fill={true}
+              style={{opacity: "0.7", zIndex:"0"}}
+          />
 
-      </section>
+          {/* Icone Page (top-right) */}
+          <FontAwesomeIcon icon={faEnvelope} className="pageIcon" />
 
+          {/* Shapes neutres(cyan) */}
+          <Shape1 />
+          <Shape2 />
 
+          {/* Header */}
+          <div className="projectPageHeader">
+              <h2 className="titleSection" style={{marginBottom:"0.4em"}}>
+                  <FontAwesomeIcon icon={faChevronLeft} className="faIcon-chevron" /> 
+                  <span style={{margin:"0px 15px"}}>Contact</span>
+                  <span className="slash">/</span>
+                  <FontAwesomeIcon icon={faChevronRight} className="faIcon-chevron" /> 
+              </h2>
+          </div>
 
-      {/* Page 5: Contact */}
-      <section className="section page5" id="home-scroll-contact">
+          <div className="contactMain">
+            <ContactForm />
+            <Socials isMobile={isMobile} />
+          </div>
 
-        {/* Image fond */}
-        <Image 
-            // src="/plant-bg-min.png"
-            src="/wood-bg.jpeg"
-            fill={true}
-            style={{opacity: "0.7", zIndex:"0"}}
-        />
+          <Footer />
+        
+        </section>
 
-        {/* Icone Page (top-right) */}
-        <FontAwesomeIcon icon={faEnvelope} className="pageIcon" />
-
-        {/* Shapes neutres(cyan) */}
-        <Shape1 />
-        <Shape2 />
-
-        {/* Header */}
-        <div className="projectPageHeader">
-            <h2 className="titleSection" style={{marginBottom:"0.4em"}}>
-                <FontAwesomeIcon icon={faChevronLeft} className="faIcon-chevron" /> 
-                <span style={{margin:"0px 15px"}}>Contact</span>
-                <span className="slash">/</span>
-                <FontAwesomeIcon icon={faChevronRight} className="faIcon-chevron" /> 
-            </h2>
-        </div>
-
-        <div className="contactMain">
-          <ContactForm />
-          <Socials isMobile={isMobile} />
-        </div>
-
-        <Footer />
-      
-      </section>
-
+        </>
+      )}
 
     </main>
   );
