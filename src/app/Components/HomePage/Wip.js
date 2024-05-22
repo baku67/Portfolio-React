@@ -332,17 +332,21 @@ export function Wip({isMobile}) {
                             <div className="portable-contentWrapper" style={{transform: isPhoneHovered ? "translateX(-50%)" : "translateX(0)"}}>
                                 {/* Div grid skills */}
                                 <div className="portable-skillGrid">
-                                    <div><FontAwesomeIcon icon={faHtml5} className="portable-app" /></div>
-                                    <div><FontAwesomeIcon icon={faCss3Alt} className="portable-app" /></div>
-                                    <div><FontAwesomeIcon icon={faPhp} className="portable-app" /></div>
-                                    <div><FontAwesomeIcon icon={faSymfony} className="portable-app" /></div>
-                                    <div><FontAwesomeIcon icon={faJs} className="portable-app" /></div>
-                                    <div><FontAwesomeIcon icon={faReact} className="portable-app" /></div>
+                                    <div><FontAwesomeIcon icon={faHtml5} className="portable-app app-html" /></div>
+                                    <div><FontAwesomeIcon icon={faCss3Alt} className="portable-app app-css" /></div>
+                                    <div><FontAwesomeIcon icon={faPhp} className="portable-app app-php" /></div>
+                                    <div><FontAwesomeIcon icon={faSymfony} className="portable-app app-sf" /></div>
+                                    <div><FontAwesomeIcon icon={faJs} className="portable-app app-js" /></div>
+                                    <div><FontAwesomeIcon icon={faReact} className="portable-app app-react" /></div>
                                     {/* Emplacements d'apps vides */}
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                                    <div className="portable-app-void"></div>
+                                    <div className="portable-app-void"></div>
+                                    <div className="portable-app-void"></div>
+                                    <div className="portable-app-void"></div>
+                                    <div className="portable-app-void"></div>
+                                    <div className="portable-app-void"></div>
+                                    <div className="portable-app-void"></div>
+                                    <div className="portable-app-void"></div>
                                     {/* Vscode */}
                                     <div>
                                         <svg fill="#f1b16b" width="36px" height="36px" viewBox="0 0 32 32">

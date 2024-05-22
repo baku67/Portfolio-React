@@ -299,7 +299,8 @@ main {
   border-radius: 6px;
   /* background-color: var(--secondary-cyan); */
   background-color: #0e435c;
-  border: 3px solid var(--primary-cyan);
+  background: url('/bristol-opa.png') #0e435c;
+  border: 2px solid var(--primary-cyan);
   transform: rotate(20deg);
   z-index: 9999;
   right: -124px;
@@ -515,7 +516,7 @@ main {
   /* background-color: #e0e0e0; */
   background-color: var(--secondary-cyan);
   border: 1px solid var(--secondary-cyan);
-  border-radius: 5px;
+  border-radius: 4px;
   text-align: center;
   padding: 7px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -685,7 +686,7 @@ main {
     border-left: none;
     border-radius: 19%;
     background-color: #c69c6d;
-    border-top: 1px solid #e3c29c;
+    /* border-top: 1px solid #e3c29c; */
     transform: rotate(254deg);
 
     transition: all 0.4s;
@@ -696,9 +697,9 @@ main {
 .portable-header {
   display: flex;
     justify-content: space-between;
-  background-color: #0b2835;
+  background-color: #0a232f;
   font-size: 0.7em;
-  opacity: 0.5;
+  opacity: 0.6;
   padding: 2px 6px;
 }
 
@@ -711,11 +712,18 @@ main {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 12px;
+    grid-column-gap: 8px;
     grid-row-gap: 12px;
 
     padding: 25px 10px;
     width: 100%;
+}
+
+.portable-skillGrid div {
+  background-color: #00000061;
+  filter: drop-shadow(0px 3px 4px black);
+
+  border-radius: 7px;
 }
 
 .portable-skillGrid2 {
@@ -744,9 +752,15 @@ main {
 
 
 .portable-app {
-  font-size: 2.5em;
+  font-size: 2.3em;
   /* color: var(--primary-cyan); */
   color: #f1b16b;
+
+  padding: 5px 0px;
+}
+
+.portable-app-void {
+  background-color: #00000000 !important;
 }
 
 
@@ -841,15 +855,35 @@ main {
 
 
 
-
+.app-html {
+  /* color: #ee6a32; */
+  color: #eb703c;
+}
+.app-css {
+  /* color: #2076b8; */
+  color: #2f9df1;
+}
+.app-php {
+  /* color: #b1b4d6; */
+  color: #cacce7;
+}
+.app-sf {
+  color: #ffffff;
+}
+.app-js {
+  color: #f7e02a;
+}
+.app-react {
+  color: #81e0ff;
+}
 
 
 .portable {
   cursor: pointer;
   position: absolute;
   z-index: 99;
-  left: 60px;
-  bottom: 20px;
+  left: 80px;
+  bottom: 50px;
   transform: rotate(348deg);
 
   transition: all 0.4s;
@@ -862,14 +896,18 @@ main {
     position: relative;
     bottom: 5px;
 
+    width: 100%;
+    display: block;
+    text-align: center;
+
     transition: all 0.4s;
 }
 
 .portable-div {
-  height: 470px;
-  width: 265px;
+  height: 400px;
+  width: 232px;
   border-radius: 17px;
-  padding: 20px 5px 44px 5px;
+  padding: 15px 5px 30px 5px;
   background-color: rgb(20, 21, 21);
   border: 1px solid var(--primary-cyan);
 
@@ -891,6 +929,11 @@ main {
 .portable-contentWrapper {
   display: inline-flex;
   width: 200%;
+
+  background: url('/wallpaper-mobile.jpg');
+  background-position: center;
+
+  /* Ptit délai 2 temps */
   transition: all 0.4s 0.2s;
 }
 
@@ -898,7 +941,7 @@ main {
 .portable-btnMockup1 {
   position: absolute;
   right: -2px;
-  top: 90px;
+  top: 50px;
   height: 85px;
   width: 2px;
   background-color: var(--primary-cyan);
