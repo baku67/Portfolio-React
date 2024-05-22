@@ -608,25 +608,35 @@
         filter: drop-shadow(-4px 4px 6px black);
     }
     .plantAccueil-div {
-        transform: scale(0.4);
-        left: -184px;
-        top: -210px;
+        transform: scale(0.42);
+        /* left: -184px;
+        top: -210px; */
+        left: -200px;
+        top: -226px;
 
         z-index: 999;
     }
 
+    .plate {
+        filter: drop-shadow(6px 11px 11px black)
+    }
+
     .tasseCafe {
-        transform: scale(0.5) translate(0px, 0px) !important;
-        top: -44px;
+        transform: scale(0.42) translate(0px, 0px) !important;
+        top: -66px;
         right: -50px;
     }
 
     .fishBowl-div {
         position: absolute;
         left: 107px;
-        top: -38px;
+        top: -43px;
         width: 100px;
-        filter: drop-shadow(-1px 2px 3px black);
+        filter: drop-shadow(-12px 11px 6px black);
+    }
+
+    .post-it-textDiv {
+        font-size: 0.86em;
     }
 
     .handle {
@@ -641,18 +651,23 @@
         position: absolute;
 
         width: fit-content;
-        transform: rotate(348deg) translate(-10px, 78px);
+        transform: rotate(348deg) translate(1px, 57px);
     }
     .accueil-mockup-top {
         margin: 0 auto;
         height: 100px;
         width: 160px;
+
+        background-color: var(--secondary-cyan);
+        border: 1px solid var(--primary-cyan);
     }
     .accueil-mockup-bottom {
         transform: translate(6px, -8px);
         height: 78px;
         /* width: 239px; */
         width: 148px;
+
+        filter: drop-shadow(-6px 2px 9px black);
     }
     .keyboard {
         grid-template-columns: repeat(14, 1fr);
@@ -669,19 +684,42 @@
         width: 45px;
         height: 26px;
 
+        top: 2px;
+
         background-color: #146185;
     }
 
 
     .post-it-container {
-        right: 15%;
+        right: 17%;
         top: 10%;
-        transform: scale(0.5) translate(85%, -10%) rotate(12deg);
+        transform: scale(0.5) translate(83%, -10%) rotate(12deg);
     }
 
 
+    .amt-imgWrapper {
+        display: flex;
+    }
     .amt-imgWrapper img {
         padding: 3px 4px 2px;
+
+        height: 0%;
+        width: 2%;
+        align-self: center;
+
+        animation: amt-imgWrapper-img 0.9s 0.3s ease forwards;
+    }
+    @keyframes amt-imgWrapper-img {
+        0% {
+            width: 2%;
+            height: 0%;
+        }
+        30% {
+            width: 100%;
+        }
+        100% {
+            height: 100%
+        }
     }
 
     .portable {
@@ -692,10 +730,16 @@
     }
 
 
+    .post-it-pickTrait {
+    filter: drop-shadow(1px 1px 1px black);
+    }
+
     .homeMain {
-        height: 80%;
+        /* height: 88%;
+        gap: 42px; */
+        height: 90%;
         justify-content: flex-end;
-        gap: 15px;
+        gap: 50px;
     }
     .homeMain-subtitle {
         font-size: 1.15em;

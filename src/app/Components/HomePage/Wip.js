@@ -116,7 +116,7 @@ export function Wip({isMobile}) {
                 >
                     <div 
                         className="post-it-socle"
-                        style={{filter: isPostItHovered ? "drop-shadow(6px 58px 13px black)" : "drop-shadow(6px 40px 8px black)"}}
+                        style={{filter: isPostItHovered ? "drop-shadow(6px 58px 15px black)" : "drop-shadow(6px 40px 10px black)"}}
                     ></div>
                     <div className="post-it-pickTrait"></div>
                 </div>
@@ -208,7 +208,10 @@ export function Wip({isMobile}) {
                     style={{boxShadow: isProjetHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white", transform: isProjetHovered ? "rotate(16deg) translateX(-15px)" : "rotate(20deg) translateX(0px)"}}
                 >
 
-                    <h2 className="titleShapeProjet" style={{letterSpacing: isProjetHovered ? "2px" : "0px"}}>Projets</h2>
+                    <h2 className="titleShapeProjet" style={{letterSpacing: isProjetHovered ? "2px" : "0px"}}>
+                        <FontAwesomeIcon icon={faLightbulb} className="titleShapeProjet-icon" />
+                        <span>Projets</span>
+                    </h2>
 
                     <ul className="shapeProjet-fakeUl">
                         <li className="shapeProjet-fakeLi">
@@ -413,7 +416,7 @@ export function Wip({isMobile}) {
                         </svg> */}
 
 
-<div className="accueil-mockup-bottom">
+                        <div className="accueil-mockup-bottom">
                                 {/* Clavier */}
                                 <div className="keyboard">
                                     <div className="key">Esc</div>
