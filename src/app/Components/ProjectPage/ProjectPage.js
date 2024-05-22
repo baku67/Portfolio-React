@@ -117,8 +117,8 @@ export function ProjectPage({isMobile}) {
             
             slogan: "",
             description: "Application web de Blackjack",
-            skills: ["HTML / CSS", "Javascript", "PHP"],
-            primarySkill : ["Javascript"],
+            skills: ["HTML / CSS", "JS", "PHP"],
+            primarySkill : ["JS", "PHP"],
             github_link : "https://github.com/baku67/BLACKJACKJO-projet",
             site_link: "https://www.blackjackjo.com",
 
@@ -176,8 +176,8 @@ export function ProjectPage({isMobile}) {
 
             slogan: "",
             description: "Site vitrine d'artiste",
-            skills: ["HTML", "CSS", "Javascript", "PHP"],
-            primarySkill : ["CSS", "Javascript"],
+            skills: ["HTML", "CSS", "JS", "PHP"],
+            primarySkill : ["CSS", "JS"],
             github_link : "https://github.com/baku67/les100ciels-js-",
             site_link: "https://les100ciels.art",
 
@@ -237,8 +237,8 @@ export function ProjectPage({isMobile}) {
 
             slogan: "",
             description: "Portfolio \"from scratch\"",
-            skills: ["HTML", "CSS", "Javascript"],
-            primarySkill : ["CSS", "Javascript"],
+            skills: ["HTML", "CSS", "JS"],
+            primarySkill : ["CSS", "JS"],
             github_link : "https://github.com/baku67/Portfolio-v2",
             site_link: "https://bk-dev.fr/cv.html",
 
@@ -289,7 +289,7 @@ export function ProjectPage({isMobile}) {
 
             slogan: "",
             description: "Plateforme cinématographique",
-            skills: ["HTML : CSS", "Javascript", "PHP", "MVC"],
+            skills: ["HTML : CSS", "JS", "PHP", "MVC"],
             primarySkill : ["MVC"],
             github_link : "https://github.com/baku67/ELAN_MVC_cinema",
             site_link: "https://eneffet.basilek.ovh",
@@ -469,7 +469,7 @@ export function ProjectPage({isMobile}) {
                                     style={{
                                         opacity: opacity.interpolate(o => 1 - o),
                                         transform,
-                                        zIndex: -1,
+                                        zIndex: flipped ? -1 : 1,
                                         position: 'absolute',
                                         width: '100%',
                                         height: '100%',
@@ -496,7 +496,7 @@ export function ProjectPage({isMobile}) {
                                     style={{
                                         opacity,
                                         transform: transform.interpolate(t => `${t} rotateY(180deg)`),
-                                        zIndex: 1,
+                                        zIndex: flipped ? 1 : -1,
                                         position: 'absolute',
                                         width: '100%',
                                         height: '100%',

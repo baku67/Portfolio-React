@@ -57,10 +57,20 @@ export function ProjectCardInfos({ project, isHovered, token, owner, repo, isMob
       <div className="projectCard-footer">
 
         <div className="projectCard_footerBottom">
+
           <ul className="projectCard_primSkills">
+
               {project.primarySkill.map( (skill, index) => (
-                  <li key={index} style={{backgroundColor:project.primaryColor}}>{skill}</li>
+                  <li 
+                    key={index} 
+                    style={{
+                      backgroundColor: isMobile ? "" : project.primaryColor,
+                      color: isMobile ? project.primaryColor : "",
+                    }}>
+                    {skill}
+                  </li>
               ))}
+
           </ul>
 
 

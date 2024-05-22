@@ -501,8 +501,14 @@ export function HomePage({isMobile}) {
 
                 
                 <div className="homeMain-header">
+
+                    {isMobile && (
+                        <div className="accueil-visitCard-shape"></div>
+                    )}
+
                     <h1 className="homeMain-title">Basile KUNTZ</h1>
                     <span className="homeMain-subtitle">Développeur web</span>
+
                 </div>
 
 
