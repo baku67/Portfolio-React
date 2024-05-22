@@ -173,7 +173,7 @@
 
 
     .accueil-mockup-bottom-wrapper {
-        display: none;
+        /* display: none; */
     }
 
 
@@ -587,7 +587,8 @@
 
     .homeMain-title {
         font-size: 1.6em;
-        text-shadow: 0px 1px 0px var(--primary-cyan);
+        color: rgb(219, 231, 233);
+        text-shadow: 0px 2px 1px black;
         margin-bottom: 0em;
     }
 
@@ -597,13 +598,19 @@
 
     /* HOME: Scales et adaptations */
 
+    .bocal-exterieur {
+        height: 345px;
+        width: 375px;
+    }
+
     .plantAccueil {
+        width: 500px;
         filter: drop-shadow(-4px 4px 6px black);
     }
     .plantAccueil-div {
         transform: scale(0.4);
         left: -184px;
-        top: -190px;
+        top: -210px;
 
         z-index: 999;
     }
@@ -626,42 +633,56 @@
         filter: drop-shadow(-14px 4px 6px black);
     }
 
+    .accueil-mockup-top-wrapper {
+        perspective: 300px;
+    }
     
     .accueil-mockup {
-        /* transform: scale(0.6); */
+        position: absolute;
+
         width: fit-content;
-        transform: rotate(348deg) translate(-12px, 75px);
+        transform: rotate(348deg) translate(-10px, 78px);
     }
     .accueil-mockup-top {
         margin: 0 auto;
-        height: 135px;
-        width: 200px;
+        height: 100px;
+        width: 160px;
     }
     .accueil-mockup-bottom {
-        transform: translate(4px, -8px);
-        height: 105px;
+        transform: translate(6px, -8px);
+        height: 78px;
         /* width: 239px; */
-        width: 192px;
+        width: 148px;
     }
     .keyboard {
-        grid-template-columns: repeat(16, 1fr);
+        grid-template-columns: repeat(14, 1fr);
+        grid-gap: 2px;
     }
     .key {
         border-radius: 2px;
-        padding: 4px;
+        /* padding: 4px; */
+        padding: 3px;
+
+        background-color: #146185;
     }
     .mockup-pad {
-        width: 61px;
-        height: 38px;
+        width: 45px;
+        height: 26px;
+
+        background-color: #146185;
     }
 
 
     .post-it-container {
         right: 15%;
         top: 10%;
-        transform: scale(0.6) translate(85%, -10%) rotate(12deg);
+        transform: scale(0.5) translate(85%, -10%) rotate(12deg);
     }
 
+
+    .amt-imgWrapper img {
+        padding: 3px 4px 2px;
+    }
 
     .portable {
         display: none;
@@ -672,6 +693,8 @@
 
 
     .homeMain {
+        height: 80%;
+        justify-content: flex-end;
         gap: 15px;
     }
     .homeMain-subtitle {
