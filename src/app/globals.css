@@ -72,7 +72,7 @@ a {
     justify-content: center;
 
     /* gap: 70px; */
-    gap: 42px;
+    gap: 0px;
 }
 
 .homeMain-title {
@@ -301,8 +301,8 @@ main {
   border-radius: 6px;
   /* background-color: var(--secondary-cyan); */
   background-color: #0e435c;
-  background: url('/bristol-opa.png') #0e435c;
-  border: 2px solid var(--primary-cyan);
+  /* background: url('/bristol-opa.png') #0e435c; */
+  border: 1px solid var(--primary-cyan);
   transform: rotate(20deg);
   z-index: 9999;
   right: -124px;
@@ -391,12 +391,31 @@ main {
 }
 
 
+.homeLinksUl {
+  display: inline-flex;
+    flex-direction: column;
+}
 
+
+.homeLinksLi {
+  background-color: var(--secondary-cyan);
+  padding: 10px 25px;
+  border-radius: 4px;
+  margin: 7px;
+  filter: drop-shadow(0px 2px 2px black);
+  display: inline-flex;
+  flex-direction: column;
+}
 
 
 .accueil-mockup {
   cursor: pointer;
-  transform: rotate(360deg);
+  /* transform: rotate(360deg); */
+
+  position: absolute;
+    top: 15%;
+    left: 78px;
+    transform: rotate(341deg);
 }
 
 
@@ -404,10 +423,11 @@ main {
   perspective: 800px; 
 }
 .accueil-mockup-top {
-  /* height: 167px;
-  width: 272px; */
-  height: 235px;
-  width: 405px;
+  /* height: 235px;
+  width: 405px; */
+
+  height: 283px;
+    width: 458px;
 
   border-radius: 5px;
   background-color: var(--primary-cyan);
@@ -426,9 +446,12 @@ main {
   /* perspective: 800px;  */
 }
 .accueil-mockup-bottom {
-  height: 185px;
+  /* height: 185px;
   width: 378px;
-  transform: translateX(14px) translateY(-19px);
+  transform: translateX(14px) translateY(-19px); */
+  height: 232px;
+  width: 422px;
+  transform: translateX(16px) translateY(-23px);
   border-radius: 9px;
 
   border-right: 1px solid var(--primary-cyan);
@@ -438,9 +461,9 @@ main {
 
   /* background-color: var(--primary-cyan); */
   background: rgb(29,65,74);
-  background: -moz-linear-gradient(180deg, rgba(29,65,74,1) 0%, rgba(41,150,175,1) 12%, rgba(44,189,217,1) 78%, rgba(99,229,255,1) 100%);
-  background: -webkit-linear-gradient(180deg, rgba(29,65,74,1) 0%, rgba(41,150,175,1) 12%, rgba(44,189,217,1) 78%, rgba(99,229,255,1) 100%);
-  background: linear-gradient(180deg, rgba(29,65,74,1) 0%, rgba(41,150,175,1) 12%, rgba(44,189,217,1) 78%, rgba(99,229,255,1) 100%);
+  background: -moz-linear-gradient(180deg, rgba(29,65,74,1) 0%, rgba(41,150,175,1) 0%, rgba(44,189,217,1) 78%, rgba(99,229,255,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(29,65,74,1) 0%, rgba(41,150,175,1) 0%, rgba(44,189,217,1) 78%, rgba(99,229,255,1) 100%);
+  background: linear-gradient(180deg, rgba(29,65,74,1) 0%, rgba(41,150,175,1) 0%, rgba(44,189,217,1) 78%, rgba(99,229,255,1) 100%);
 
   filter: drop-shadow(0px 5px 3px black);
 }
@@ -458,8 +481,8 @@ main {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 450px;
-  height: 450px;
+  width: 30%;
+  height: 70vh;
   transform: rotate(11deg);
   filter: drop-shadow(0px 5px 6px black);
 
@@ -555,8 +578,8 @@ main {
   padding: 10px 8px;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 
-  width: 85px;
-  height: 58px;
+  width: 110px;
+  height: 70px;
   top: 8px;
 
   position: relative;
@@ -952,9 +975,9 @@ main {
   cursor: pointer;
   position: absolute;
   z-index: 99;
-  left: 185px;
+  right: 185px;
   bottom: 120px;
-  transform: rotate(348deg);
+  transform: rotate(13deg);
 
   transition: all 0.4s;
 }
@@ -1218,9 +1241,9 @@ main {
   z-index: 999;
   bottom: -60%;
   left: -40%;
-  width: 55%;
+  width: 47%;
   height: 100%;
-  transform: rotate(325deg);
+  transform: rotate(337deg);
 
   background-color: var(--primary-cyan);
 
@@ -1256,7 +1279,7 @@ main {
   z-index: 9;
   top: -60%;
   right: -35%;
-  width: 39%;
+  width: 37%;
   height: 125%;
   transform: rotate(301deg);
 
@@ -1279,7 +1302,7 @@ main {
   z-index: 9;
   top: -60%;
   right: -35%;
-  width: 39%;
+  width: 36%;
   height: 125%;
   transform: rotate(301deg);
 
@@ -2055,8 +2078,10 @@ main {
 }
 
 .homeMain-header {
-  width: 254px;
-  height: 125px;
+  /* width: 254px;
+  height: 125px; */
+  width: 275px;
+    height: 145px;
   background-color: var(--secondary-cyan);
 
   padding: 28px 20px;

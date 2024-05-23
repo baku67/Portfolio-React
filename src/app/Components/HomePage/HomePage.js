@@ -194,7 +194,7 @@ export function HomePage({isMobile}) {
 
 
             {/* Block Projets (desktop) */}
-            <Link href="/projets">
+            {/* <Link href="/projets">
 
                 <div 
                     className="shapeProjet"
@@ -240,7 +240,7 @@ export function HomePage({isMobile}) {
                     </ul>
 
                 </div>
-            </Link>
+            </Link> */}
 
 
 
@@ -249,7 +249,7 @@ export function HomePage({isMobile}) {
                 <div className="tasseCafe" style={{transform: isCafeHovered ? "translate(-8px, 11px)" : "translate(0px, 0px)"}}>
 
                     {/* https://www.npmjs.com/package/react-curved-text  */}
-                    <div 
+                    {/* <div 
                         className="tasseCafe-text" 
                         onMouseEnter={handleCafeEnter} 
                         onMouseLeave={handleCafeLeave}
@@ -267,13 +267,13 @@ export function HomePage({isMobile}) {
                                 reversed={false}
                                 text="Contact"
                                 textProps={{ style: { fontSize: 32 } }}
-                                textPathProps={{style : { fill : /* "#dfdfdf" */ "white"} }}
+                                textPathProps={{style : { fill : "white"} }}
                                 tspanProps={{"dy": isCafeHovered ? "28" : "25"}}
                                 ellipseProps={null}
                                 svgProps={null}
                             />
                         )}
-                    </div>
+                    </div> */}
 
 
                     <div className="cup">
@@ -294,17 +294,17 @@ export function HomePage({isMobile}) {
 
 
             {/* Smartphone (desktop) */}
-            <Link href="/loisirs">
+            <Link href="/parcours">
                 <div 
                     className="portable"
                     onMouseEnter={handlePhoneEnter}
                     onMouseLeave={handlePhoneLeave}
                     style={{ 
-                        transform: isPhoneHovered ? "translate(20px, 0px) rotate(350deg) scale(1.05)" : "rotate(348deg)"
+                        transform: isPhoneHovered ? "translate(-20px, 0px) rotate(11deg) scale(1.05)" : "rotate(13deg)"
                     }}
                 >
 
-                    <span className="portable-text" style={{letterSpacing: isPhoneHovered ? "4px" : "1px"}}>Compétences</span>
+                    {/* <span className="portable-text" style={{letterSpacing: isPhoneHovered ? "4px" : "1px"}}>Compétences</span> */}
                     
                     <div className="portable-div" style={{boxShadow: isPhoneHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white"}}>
 
@@ -530,6 +530,13 @@ export function HomePage({isMobile}) {
                         <h1 className="homeMain-title">Basile KUNTZ</h1>
                         <span className="homeMain-subtitle">Développeur web</span>
 
+                        <div>
+                            {/* TODO hovers */}
+                            <FontAwesomeIcon icon={faGithub} className="accueil-visitCard-reseauIcon" style={{}} />
+                            <FontAwesomeIcon icon={faLinkedin} className="accueil-visitCard-reseauIcon" style={{}} />
+
+                        </div>
+
                     </div>
 
                 )}
@@ -672,34 +679,34 @@ export function HomePage({isMobile}) {
 
 
                 {/* Liens internes (Mobile) */}
-                {isMobile && (
+                {/* {isMobile && ( */}
                     
                     <div>
-                        <ul className="mobile-homeLinksUl">
+                        <ul className="homeLinksUl">
 
                             <Link href="/parcours">
-                                <li className="mobile-homeLinksLi">
+                                <li className="homeLinksLi">
                                     <FontAwesomeIcon icon={faPersonRunning} />
                                     <h2>Parcours</h2>
                                 </li>
                             </Link>
 
                             <Link href="/projets">
-                                <li className="mobile-homeLinksLi">
+                                <li className="homeLinksLi">
                                     <FontAwesomeIcon icon={faLightbulb} />
                                     <h2>Projets</h2>
                                 </li>
                             </Link>
 
                             <Link href="/loisirs">
-                            <li className="mobile-homeLinksLi">
+                            <li className="homeLinksLi">
                                 <FontAwesomeIcon icon={faCamera} />
                                 <h2>Loisirs</h2>
                             </li>
                             </Link>
 
                             <Link href="/contact">
-                                <li className="mobile-homeLinksLi">
+                                <li className="homeLinksLi">
                                     <FontAwesomeIcon icon={faEnvelope} />
                                     <h2>Contact</h2>
                                 </li>
@@ -707,7 +714,7 @@ export function HomePage({isMobile}) {
 
                         </ul>
                     </div>
-                )}
+                {/* )} */}
 
 
             </div>

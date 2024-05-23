@@ -102,7 +102,10 @@ export default function Home() {
 
             <div className="parcours-main">
 
-               <div className="parcours-chronologie">
+
+              {/* {isMobile && ( */}
+
+                <div className="parcours-chronologie">
 
                   <ul className="parcours-chronologie-ul">
 
@@ -127,10 +130,9 @@ export default function Home() {
                   </ul >
 
                 </div>
+              {/* )} */}
 
                 <Skills />
-                <Tools />
-                <Hobbies />
 
             </div>
 
