@@ -684,11 +684,21 @@
         width: 148px;
 
         filter: drop-shadow(-6px 2px 9px black);
+
+        /* background: rgb(20,74,87);
+        background: -moz-linear-gradient(125deg, rgba(20,74,87,1) 0%, rgba(25,141,167,1) 40%, rgba(27,168,195,1) 75%, rgba(0,213,255,1) 100%);
+        background: -webkit-linear-gradient(125deg, rgba(20,74,87,1) 0%, rgba(25,141,167,1) 40%, rgba(27,168,195,1) 75%, rgba(0,213,255,1) 100%);
+        background: linear-gradient(125deg, rgba(20,74,87,1) 0%, rgba(25,141,167,1) 40%, rgba(27,168,195,1) 75%, rgba(0,213,255,1) 100%); */
+        background: rgb(29,65,74);
+        background: -moz-linear-gradient(125deg, rgba(29,65,74,1) 0%, rgba(41,150,175,1) 52%, rgba(44,189,217,1) 78%, rgba(99,229,255,1) 100%);
+        background: -webkit-linear-gradient(125deg, rgba(29,65,74,1) 0%, rgba(41,150,175,1) 52%, rgba(44,189,217,1) 78%, rgba(99,229,255,1) 100%);
+        background: linear-gradient(125deg, rgba(29,65,74,1) 0%, rgba(41,150,175,1) 52%, rgba(44,189,217,1) 78%, rgba(99,229,255,1) 100%);
     }
     .keyboard {
         padding: 3px;
         grid-template-columns: repeat(14, 1fr);
         grid-gap: 2px;
+        background-color: transparent;
     }
     .key {
         border-radius: 2px;
@@ -713,24 +723,34 @@
 
 
     .homeMain-header {
+        width: 215px;
+        height: 111px;
         background-color: var(--secondary-cyan);
+
         padding: 28px 20px;
         border-radius: 3px;
 
         overflow: hidden;
-
         filter: drop-shadow(0px 4px 5px black);
         transform: rotate(355deg);
     }
+
+
+    .homeMain-header-mobileVisitCard {
+        text-align: left;
+    }
+
 
     .accueil-visitCard-shape {
         width: 139px;
         height: 85px;
         background-color: var(--primary-cyan);
         position: absolute;
-        top: -17px;
-        right: -100px;
-        transform: rotate(45deg);
+        top: -93px;
+        right: -55px;
+        transform: rotate(26deg);
+
+
     }
 
     .post-it-container {
@@ -787,8 +807,15 @@
     .homeMain-subtitle {
         font-size: 1.15em;
         text-shadow: 0px 1px 2px black;
+
+        width: 100%;
+        display: block;
     }
 
+
+    .splide__slide {
+        margin-right: 0rem !important;
+    }
 
     .mobile-homeLinksUl {
         display: inline-flex;

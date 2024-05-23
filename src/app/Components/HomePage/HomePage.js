@@ -1,15 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faPersonRunning, faLightbulb, faCamera, faEnvelope, faCheck, faBatteryThreeQuarters, faSignal } from "@fortawesome/free-solid-svg-icons";
-import { faHtml5, faCss3Alt, faJs, faPhp, faSymfony, faReact, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faMagnifyingGlass, faPersonRunning, faLightbulb, faCamera, faEnvelope, faCheck, faBatteryThreeQuarters, faSignal, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faHtml5, faCss3Alt, faJs, faPhp, faSymfony, faReact, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import ReactCurvedText from 'react-curved-text';
 import dynamic from 'next/dynamic';
 const LiveClock = dynamic(() => import('react-live-clock'), { ssr: false });
 
+// Anim flip visitCard Spring
+import { useSpring, animated } from '@react-spring/web';
+
+
 import Image from 'next/image'
 import Link from 'next/link';
 
 import { useState } from "react";
+import EmailEncryption from "../ContactPage/EmailEncryption";
 
 
 export function HomePage({isMobile}) {
@@ -79,10 +84,24 @@ export function HomePage({isMobile}) {
 
 
 
+    // flip Carte de visite: (mobile?)
+    const [visitCardFlipped, setVisitCardFlipped] = useState(false);
+    const { transform, opacity } = useSpring({
+        opacity: visitCardFlipped ? 1 : 0,
+        transform: `perspective(600px) rotateY(${visitCardFlipped ? 180 : 0}deg)`,
+        config: { mass: 5, tension: 500, friction: 80, duration: 500 },
+    });
+
+    const handleVisitCardFlip = () => {
+        setVisitCardFlipped(!visitCardFlipped);
+    };
+
+
+
     return(
         <>
 
-            {/* Shapes neutres(cyan) */}
+            {/* Shapes */}
             <div className="shapeProject1-accueil"></div>
             <div className="shapeProject2-accueil" style={{
                 boxShadow: isCafeHovered ? "0px 0px 50px -10px black" : "0px 0px 0px 0px white",
@@ -90,7 +109,7 @@ export function HomePage({isMobile}) {
             }}></div>
 
 
-            {/* Image fond */}
+            {/* Background image wood */}
             <Image 
                 // src="/plant-bg-min.png"
                 src="/wood-bg.jpeg"
@@ -141,6 +160,7 @@ export function HomePage({isMobile}) {
             </div>
 
 
+
             {/* Plante + fishBowl */}
             <Link href="#home-scroll-hobbies" passHref>
 
@@ -171,31 +191,8 @@ export function HomePage({isMobile}) {
             </Link>
 
 
-            {/* Camera */}
-            {/* https://codepen.io/cassidoo/pen/QMZmNV */}
-            {/* <div className="camera-container">
-                <div className="camera-top">
-                    <div className="camera-zoom"></div>
-                    <div className="camera-modeChanger"></div>
-                    <div className="camera-sides"></div>
-                    <div className="camera-rangeFinder"></div>
-                    <div className="camera-focus"></div>
-                    <div className="camera-red"></div>
-                    <div className="camera-viewFinder"></div>
-                    <div className="camera-flash">
-                        <div className="camera-light"></div>
-                    </div>
-                </div>
-                <div className="camera-mid">
-                    <div className="camera-sensor"></div>
-                    <div className="camera-lens"></div>
-                </div>
-                <div className="camera-bottom"></div>
-            </div> */}
 
-
-
-            {/* Block Projets (TITRE ECRIT SVG pour faire bloc notes) */}
+            {/* Block Projets (desktop) */}
             <Link href="#home-scroll-project" passHref>
 
                 <div 
@@ -243,7 +240,6 @@ export function HomePage({isMobile}) {
 
                 </div>
             </Link>
-
 
 
 
@@ -296,7 +292,7 @@ export function HomePage({isMobile}) {
 
 
 
-            {/* Portable */}
+            {/* Smartphone (desktop) */}
             <Link href="#home-scroll-skills" passHref>
                 <div 
                     className="portable"
@@ -374,8 +370,6 @@ export function HomePage({isMobile}) {
                     
                 </div>
             </Link>
-
-
 
 
 
@@ -492,24 +486,101 @@ export function HomePage({isMobile}) {
 
 
 
-            {/* Plante vert/bleu */}
-            {/* Bocal + Poisson animé ou Appareil Photo */}
-            {/* Déco: Stylo? */}
-
-
             <div className="homeMain">
 
+                {/* Desktop */}
+                {isMobile ? (
+
+                    // Mobile visitCard flip:
+                    <>
+    
+                        <div className="homeMain-header">
+
+                            {/* FRONT CARD (mobile) */}
+                            <animated.div
+                                style={{
+                                    opacity: opacity.interpolate(o => 1 - o),
+                                    transform,
+                                    zIndex: visitCardFlipped ? -1 : 1,
+                                    position: 'absolute',
+                                    width: '100%',
+                                    height: '100%',
+                                }}
+                                onClick={handleVisitCardFlip}
+                            >
+
+                                <div className="homeMain-header-mobileVisitCard">
+
+                                    <div className="accueil-visitCard-shape"></div>
+
+                                    <h1 className="homeMain-title">Basile KUNTZ</h1>
+                                    <span className="homeMain-subtitle">Développeur web</span>
+
+                                </div>
+
+                            </animated.div>
+
+
+                            {/* BACK CARD (mobile) */}  
+                            <animated.div
+                                style={{
+                                    opacity,
+                                    transform: transform.interpolate(t => `${t} rotateY(180deg)`),
+                                    zIndex: visitCardFlipped ? 1 : -1,
+                                    position: 'absolute',
+                                    width: '100%',
+                                    height: '100%',
+                                }}
+                                onClick={handleVisitCardFlip}
+                            >
+
+                                <div className="homeMain-header-mobileVisitCard">
+                                    <div className="accueil-visitCard-shape"></div>
+
+                                    <div>
+                                        <FontAwesomeIcon icon={faGithub} />
+                                        <FontAwesomeIcon icon={faLinkedin} />
+                                    </div>
+
+                                    <div>
+                                        <EmailEncryption />
+                                        <div>
+                                            <FontAwesomeIcon icon={faLocationDot} />
+                                            <span>Strasbourg</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </animated.div>
+
+                        </div>
+
+                    </>
+
+                ) : (
                 
-                <div className="homeMain-header">
+                    <div className="homeMain-header">
 
-                    {isMobile && (
                         <div className="accueil-visitCard-shape"></div>
-                    )}
 
-                    <h1 className="homeMain-title">Basile KUNTZ</h1>
-                    <span className="homeMain-subtitle">Développeur web</span>
+                        <h1 className="homeMain-title">Basile KUNTZ</h1>
+                        <span className="homeMain-subtitle">Développeur web</span>
 
-                </div>
+                    </div>
+
+                )
+
+
+            
+                }
+
+
+
+
+
+
+
+
 
 
 
