@@ -8,9 +8,6 @@ import { faChevronLeft, faChevronRight, faClipboardCheck, faFilePdf } from "@for
 
 import { Shape1 } from "/src/app/Components/Shapes/Shape1";
 import { Shape2 } from "/src/app/Components/Shapes/Shape2";
-import { DownloadCvBtn } from "/src/app/Components/CvPage/DownloadCvBtn";
-import { Experiences } from "/src/app/Components/CvPage/Experiences";
-import { Formations } from "/src/app/Components/CvPage/Formations";
 import { Skills } from "/src/app/Components/CvPage/Skills";
 import { Tools } from "/src/app/Components/CvPage/Tools";
 import { Hobbies } from "/src/app/Components/CvPage/Hobbies";
@@ -103,16 +100,39 @@ export default function Home() {
                 </h2>
             </div>
 
+            <div className="parcours-main">
 
-            <Experiences />
-            <Formations />
+               <div className="parcours-chronologie">
 
-            <Skills />
-            <Tools />
+                  <ul className="parcours-chronologie-ul">
 
-            <Hobbies />
+                    <li className="parcours-chronologie-li">
+                      <span>2023</span>
+                      <span>Titre RNCP "Développeur web et web mobile"</span>
+                      <span>Stage chez Hoplunch</span>
+                    </li>
 
-            <DownloadCvBtn isMobile={isMobile} />
+                    <li className="parcours-chronologie-li">
+                      <span>2020-2022</span>
+                      <span>BTS SIO option SLAM</span>
+                      <span>Alternance chez Europ Tech Group</span>
+                    </li>
+
+                    <li className="parcours-chronologie-li">
+                      <span>2019</span>
+                      <span>Service Civique "Médiateur numérique"</span>
+                      <span>Centre social & culturel l'Éscale</span>
+                    </li>
+
+                  </ul >
+
+                </div>
+
+                <Skills />
+                <Tools />
+                <Hobbies />
+
+            </div>
 
 
             <div className="cv-pdf-wrapper">

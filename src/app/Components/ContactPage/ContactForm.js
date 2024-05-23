@@ -2,7 +2,7 @@ import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleCheck } from "@fortawesome/free-regular-svg-icons";
+import { faCircleCheck, faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 // Bootstrap Components & CSS
@@ -81,8 +81,9 @@ export function ContactForm() {
                     </Form.Group>
 
                     <div style={{display:"inline-flex", width: "100%", justifyContent: "end"}}>
-                        <Button variant="primary" type="submit" disabled={isSubmitting} className="testMobiel" >
-                            Envoyer
+                        <Button variant="primary" type="submit" disabled={isSubmitting} className="contactForm-sendBtn" >
+                            <FontAwesomeIcon icon={faPaperPlane} />
+                            <span>Envoyer</span>
                         </Button>
 
                         {stateMessage && <p>{stateMessage}</p>}

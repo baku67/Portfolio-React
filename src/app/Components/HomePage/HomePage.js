@@ -162,7 +162,7 @@ export function HomePage({isMobile}) {
 
 
             {/* Plante + fishBowl */}
-            <Link href="#home-scroll-hobbies" passHref>
+            <Link href="/loisirs">
 
                 {/* Plante */}
                 <div className="plantAccueil-div" style={{width:"fit-content"}}>
@@ -194,7 +194,7 @@ export function HomePage({isMobile}) {
 
 
             {/* Block Projets (desktop) */}
-            <Link href="#home-scroll-project" passHref>
+            <Link href="/projets">
 
                 <div 
                     className="shapeProjet"
@@ -245,7 +245,7 @@ export function HomePage({isMobile}) {
 
 
             {/* Tasse café CSS */}
-            <Link href="#home-scroll-contact" passHref>
+            <Link href="/contact">
                 <div className="tasseCafe" style={{transform: isCafeHovered ? "translate(-8px, 11px)" : "translate(0px, 0px)"}}>
 
                     {/* https://www.npmjs.com/package/react-curved-text  */}
@@ -294,7 +294,7 @@ export function HomePage({isMobile}) {
 
 
             {/* Smartphone (desktop) */}
-            <Link href="#home-scroll-skills" passHref>
+            <Link href="/loisirs">
                 <div 
                     className="portable"
                     onMouseEnter={handlePhoneEnter}
@@ -511,6 +511,7 @@ export function HomePage({isMobile}) {
                         <div className="homeMain-header-mobileVisitCard">
 
                             <div className="accueil-visitCard-shape"></div>
+                            <div className="accueil-visitCard-shape2"></div>
 
                             <h1 className="homeMain-title">Basile KUNTZ</h1>
                             <span className="homeMain-subtitle">Développeur web</span>

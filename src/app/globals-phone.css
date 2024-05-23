@@ -46,7 +46,7 @@
     .contact-section2-wrap {
         background-color: var(--secondary-cyan);
         width: auto;
-        padding: 16px 15px;
+        padding: 18px 18px;
         border-radius: 5px;
         transform: rotate(358deg);
         filter: drop-shadow(0px 4px 5px black);
@@ -457,9 +457,10 @@
     .contactBoutons-wrapper {
         display: inline-flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
 
         margin-right: 14px;
+        margin-top: 2px;
     }
 
     .btnSocial-wrapper {
@@ -480,7 +481,7 @@
     .socialsContactsDiv {
         margin: 0;
         justify-content: space-between;
-        gap: 0px;
+        gap: 8px;
         border-width: 0px;
         padding-left: 15px;
         border-left: 1px solid var(--primary-cyan);
@@ -543,9 +544,10 @@
         width: 100%;
     }
 
-    .testMobiel {
-        /* width: 100% !important;
-        justify-content: end !important; */
+    .contactForm-sendBtn {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
     }
 
     .contactFormHeader {
@@ -677,15 +679,33 @@
         transform: translateX(-8%);
         filter: drop-shadow(0px 3px 3px black);
         font-size: 2.7em;
-        border-radius: 4px;
+        border-radius: 2px;
         color: var(--secondary-cyan);
       }
 
 
     .cv-pdf-wrapper {
+        position: relative;
+
+        left: 50%;
+        transform: translateX(-50%) rotate(4deg);
         width: 250px;
         height: 250px;    
     }
+
+
+    .parcours-chronologie {
+        width: 80%;
+        margin: 35px auto;
+    
+        padding: 15px;
+        background-color: var(--secondary-cyan);
+        border-radius: 2px;
+        transform: rotate(358deg);
+    
+        filter: drop-shadow(1px 3px 6px black);
+    }
+    
 
     .post-it-textDiv {
         font-size: 0.9em;
@@ -789,8 +809,16 @@
         top: -74px;
         right: -55px;
         transform: rotate(26deg);
+    }
 
-
+    .accueil-visitCard-shape2 {
+        width: 139px;
+        height: 85px;
+        background-color: var(--primary-cyan);
+        position: absolute;
+        top: -74px;
+        right: -55px;
+        transform: rotate(26deg);
     }
 
     .post-it-container {
@@ -873,8 +901,8 @@
     .mobile-homeLinksLi {
         background-color: var(--primary-cyan);
         color: #0a191c;
-        padding: 4px 15px;
-        margin: 10px auto;
+        padding: 6px 15px;
+        margin: 9px auto;
         border-radius: 20px;
         display: flex;
         justify-content: center;
