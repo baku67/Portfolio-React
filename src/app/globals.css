@@ -446,12 +446,22 @@ main {
 
 
 .cv-pdf-wrapper {
-  position: relative;
-  width: 250px;
-  height: 250px;
-
-  transform: rotate(3deg);
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 450px;
+  height: 450px;
+  transform: rotate(11deg);
   filter: drop-shadow(0px 5px 6px black);
+
+  transition: all 0.4s;
+}
+
+
+.parcours-main {
+  position: relative;
+  z-index: 999999;
 }
 
 .cv-pdf {
@@ -752,6 +762,11 @@ main {
     width: 100%;
 }
 
+.smartphone-cv {
+  height: 330px;
+  position: relative !important;
+}
+
 
 .portable-skillGrid div {
     display: flex;
@@ -925,9 +940,10 @@ main {
     transition: all 0.4s;
 }
 
+/* Attention height synchro : .smartphone-cv  */
 .portable-div {
   height: 400px;
-  width: 232px;
+  width: 225px;
   border-radius: 17px;
   padding: 15px 5px 30px 5px;
   background-color: rgb(20, 21, 21);
@@ -1013,11 +1029,11 @@ main {
   position: absolute;
   bottom: 15px;
   right: 8%;
-  padding: 11px 38px;
+  padding: 11px 48px;
   background-color: var(--primary-cyan);
-  transform: translateX(-8%);
+  transform: translateX(-8%) rotate(1deg);
   filter: drop-shadow(0px 3px 3px black);
-  font-size: 2.7em;
+  font-size: 4.2em;
   border-radius: 4px;
   color: var(--secondary-cyan);
 }
@@ -1230,13 +1246,30 @@ main {
 }
 
 
+.contact-section2-wrap {
+    display: inline-flex;
+    background-color: var(--secondary-cyan);
+    width: auto;
+    padding: 16px 15px;
+    border-radius: 5px;
+    transform: rotate(358deg);
+    filter: drop-shadow(0px 4px 5px black);
+
+}
+
+
 
 .fishBowl-div {
   position: absolute;
-  left: 265px;
-  top: -136px;
+  left: 289px;
+  top: -123px;
 
   filter: drop-shadow(-16px 12px 7px black);
+}
+
+.fishBowl-img {
+  width: 265px;
+  height: auto;
 }
 
 
@@ -1806,11 +1839,12 @@ main {
 .socialsContactsDiv {
   border-left: 3px solid var(--primary-cyan);
     margin-left: 25px;
-    margin-top: 25px;
+    margin-top: 0px;
 
     
     display: inline-flex;
     flex-direction: column;
+    justify-content: center;
     gap: 15px;
 }
 
@@ -2081,7 +2115,7 @@ main {
 }
 
 .footer {
-  height: 10vh;
+  height: 6vh;
   z-index: 99;
   background-color: #19191e;
   /* text-align: center; */

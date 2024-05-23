@@ -185,6 +185,7 @@ export function HomePage({isMobile}) {
                         width={320} 
                         height={320} 
                         style={{transform: "rotate(182deg)", filter:"hue-rotate(334deg)"}}
+                        className="fishBowl-img"
                     />
                 </div>
 
@@ -323,6 +324,7 @@ export function HomePage({isMobile}) {
                             </div>
 
                             <div className="portable-contentWrapper" style={{transform: isPhoneHovered ? "translateX(-50%)" : "translateX(0)"}}>
+
                                 {/* Div grid skills */}
                                 <div className="portable-skillGrid">
                                     <div><FontAwesomeIcon icon={faHtml5} className="portable-app app-html" /></div>
@@ -350,8 +352,9 @@ export function HomePage({isMobile}) {
                                 </div>
 
                                 <div className="portable-skillGrid2">
-                                    <div>
-                                        <h3 className="portable-skillGrid2-title">Formations</h3>
+
+
+                                        {/* <h3 className="portable-skillGrid2-title">Formations</h3>
                                         <ul>
                                             <li className="portable-skillGrid2-li">Titre RNCP &quot;Développeur web et web mobile&quot;</li>
                                             <li className="portable-skillGrid2-li">BTS SIO option SLAM</li>
@@ -360,9 +363,19 @@ export function HomePage({isMobile}) {
                                         <ul>
                                             <li className="portable-skillGrid2-li">Stage chez Hoplunch</li>
                                             <li className="portable-skillGrid2-li">Alternance BTS (2ans) </li>
-                                        </ul>
-                                    </div>
+                                        </ul> */}
+                                        
+
+                                        <Image 
+                                            src="/CV_BasileKuntz.png" 
+                                            fill={true}
+                                            alt="CV de Basile Kuntz"
+                                            className="smartphone-cv"
+                                        />
+
                                 </div>
+
+
                             </div>
                             
                         </div>

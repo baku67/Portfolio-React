@@ -15,25 +15,29 @@ export function Socials({isMobile}) {
 
         <div className="contact-section2">
 
-            <div className="contactBoutons-wrapper">
+            <div className="contact-section2-wrap">
 
-                <BoutonSocials href={"www.linkedin.com/in/basile-kuntz-719278267"} iconSrcNormal={"./linkedin-tiny.png"} iconSrcHovered={"./linkedin-tiny-dark.png"} btnTxt={isMobile ? "" : "Mon LinkedIn"} />
+                <div className="contactBoutons-wrapper">
 
-                <BoutonSocials href={"https://github.com/baku67"} iconSrcNormal={"./github-mark-white.png"} iconSrcHovered={"./github-mark-dark.png"} btnTxt={isMobile ? "" : "Mon Github"} />
+                    <BoutonSocials href={"www.linkedin.com/in/basile-kuntz-719278267"} iconSrcNormal={"./linkedin-tiny.png"} iconSrcHovered={"./linkedin-tiny-dark.png"} btnTxt={isMobile ? "" : "Mon LinkedIn"} />
 
-            </div>
+                    <BoutonSocials href={"https://github.com/baku67"} iconSrcNormal={"./github-mark-white.png"} iconSrcHovered={"./github-mark-dark.png"} btnTxt={isMobile ? "" : "Mon Github"} />
+
+                </div>
 
 
-            <div className="socialsContactsDiv">
+                <div className="socialsContactsDiv">
 
-                <EmailEncryption />
+                    <EmailEncryption />
 
-                <PhoneNumberEncryption />
+                    <PhoneNumberEncryption />
 
-                <span className='iconAndText iconAndTextSocials' style={{marginBottom:"0px"}}>
-                    <FontAwesomeIcon icon={faLocationDot} className="faIcon faIcon-localisation" />
-                    <span className="localisationTxt">Strasbourg</span>
-                </span>
+                    <span className='iconAndText iconAndTextSocials' style={{marginBottom:"0px"}}>
+                        <FontAwesomeIcon icon={faLocationDot} className="faIcon faIcon-localisation" />
+                        <span className="localisationTxt">Strasbourg</span>
+                    </span>
+
+                </div>
 
             </div>
 

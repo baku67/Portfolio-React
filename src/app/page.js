@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faClipboardCheck } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faClipboardCheck, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 import { Shape1 } from "./Components/Shapes/Shape1";
@@ -28,6 +28,17 @@ import 'aos/dist/aos.css';
 const isMobileDevice = () => {
   return window.matchMedia("(max-width: 767px)").matches;
 };
+
+
+const downloadPDF = () => {
+  const link = document.createElement('a');
+  link.href = '/CV_BasileKuntz.pdf'; 
+  link.download = 'CV_BasileKuntz.pdf'; 
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 
 
 
@@ -144,37 +155,65 @@ export default function Home() {
       {!isMobile && (
         <>
 
-        {/* Page 2: Parcours */}
-        <section className="section page2" id="home-scroll-skills">
-
-        {/* Icone Page (top-right) */}
-        {/* <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" /> */}
-        <FontAwesomeIcon icon={faClipboardCheck} className="pageIcon" />
-
-        {/* Shapes neutres(cyan) */}
-        <Shape1 />
-        <Shape2 />
-
-        {/* Header */}
-        <div className="projectPageHeader">
-            <h2 className="titleSection" style={{marginBottom:"0.4em"}}>
-                <FontAwesomeIcon icon={faChevronLeft} className="faIcon-chevron" /> 
-                <span style={{margin:"0px 15px"}}>Mon parcours</span>
-                <span className="slash">/</span>
-                <FontAwesomeIcon icon={faChevronRight} className="faIcon-chevron" /> 
-            </h2>
-        </div>
+          {/* Page 2: Parcours */}
+          <section className="section page2" id="home-scroll-skills">
 
 
-        <Experiences />
-        <Formations />
+            {/* Background image wood */}
+            <Image 
+                src="/wood-bg.jpeg"
+                fill={true}
+                style={{opacity: "0.7", zIndex:"0"}}
+            />
 
-        <Skills />
-        <Tools />
 
-        <Hobbies />
+            {/* Icone Page (top-right) */}
+            {/* <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" /> */}
+            <FontAwesomeIcon icon={faClipboardCheck} className="pageIcon" />
 
-        <DownloadCvBtn isMobile={isMobile} />
+            {/* Shapes neutres(cyan) */}
+            <Shape1 />
+            <Shape2 />
+
+
+
+            {/* Header */}
+            <div className="projectPageHeader">
+                <h2 className="titleSection" style={{marginBottom:"0.4em"}}>
+                    <FontAwesomeIcon icon={faChevronLeft} className="faIcon-chevron" /> 
+                    <span style={{margin:"0px 15px"}}>Mon parcours</span>
+                    <span className="slash">/</span>
+                    <FontAwesomeIcon icon={faChevronRight} className="faIcon-chevron" /> 
+                </h2>
+            </div>
+
+
+            <div className="parcours-main">
+              <Skills />
+              <Tools />
+
+              <Hobbies />
+
+              <DownloadCvBtn isMobile={isMobile} />
+            </div>
+
+
+            {/* CV */}
+            <div className="cv-pdf-wrapper">
+
+              <Image 
+                src="/CV_BasileKuntz.png" 
+                fill={true}
+                alt="CV de Basile Kuntz"
+                onClick={downloadPDF} 
+                className="cv-pdf"
+              />
+
+              {/* Download icone: */}
+              <FontAwesomeIcon icon={faFilePdf} className="cv-pdf-dlIcon" />
+
+            </div>
+
         
         </section>
 
