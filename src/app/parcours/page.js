@@ -108,7 +108,7 @@ export default function Home() {
 
                     <li className="parcours-chronologie-li">
                       <span>2023</span>
-                      <span>Titre RNCP "Développeur web et web mobile"</span>
+                      <span>Titre RNCP &quot;Développeur web et web mobile&quot;</span>
                       <span>Stage chez Hoplunch</span>
                     </li>
 
@@ -120,8 +120,8 @@ export default function Home() {
 
                     <li className="parcours-chronologie-li">
                       <span>2019</span>
-                      <span>Service Civique "Médiateur numérique"</span>
-                      <span>Centre social & culturel l'Éscale</span>
+                      <span>Service Civique &quot;Médiateur numérique&quot;</span>
+                      <span>Centre social & culturel l&apos;Éscale</span>
                     </li>
 
                   </ul >
