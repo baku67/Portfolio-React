@@ -77,8 +77,9 @@ export function ProjectCardInfos({ project, isHovered, token, owner, repo, isMob
           {error ? 
 
             <div className="NbrCommits">
-              <span>Commits: </span>
-              <span style={{fontSize:"0.8em", color:"#f65353"}}>API</span>
+              {/* <span>Commits: </span> */}
+              <span className="nbrCommitsNbr" style={{color:"#f65353"}}>API</span>
+              <FontAwesomeIcon icon={faGitAlt} className="faCommitsMobile" style={{ color: project.primaryColor }} />
             </div>
           : 
 

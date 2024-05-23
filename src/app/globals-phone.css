@@ -638,7 +638,7 @@
     }
 
     .tasseCafe {
-        transform: scale(0.42) translate(0px, 0px) !important;
+        transform: scale(0.48) translate(0px, 0px) !important;
         top: -66px;
         right: -50px;
     }
@@ -683,7 +683,11 @@
         /* width: 239px; */
         width: 148px;
 
+        border-radius: 2px 2px 5px 5px;
+
         filter: drop-shadow(-6px 2px 9px black);
+
+        border-left: 1px solid var(--secondary-cyan);
 
         /* background: rgb(20,74,87);
         background: -moz-linear-gradient(125deg, rgba(20,74,87,1) 0%, rgba(25,141,167,1) 40%, rgba(27,168,195,1) 75%, rgba(0,213,255,1) 100%);
@@ -798,11 +802,14 @@
     }
 
     .homeMain {
-        /* height: 88%;
-        gap: 42px; */
-        height: 82%;
+        /* height: 82%;
+        justify-content: flex-end;
+        gap: 50px; */
+
+        height: 100%;
         justify-content: flex-end;
         gap: 50px;
+        bottom: 7vh;
     }
     .homeMain-subtitle {
         font-size: 1.15em;

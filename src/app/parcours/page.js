@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faClipboardCheck } from "@fortawesome/free-solid-svg-icons";
+import { faChevronLeft, faChevronRight, faClipboardCheck, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 
 import { Shape1 } from "/src/app/Components/Shapes/Shape1";
 import { Shape2 } from "/src/app/Components/Shapes/Shape2";
@@ -19,6 +19,19 @@ import { Hobbies } from "/src/app/Components/CvPage/Hobbies";
 // Define isMobileDevice function outside of the component
 const isMobileDevice = () => {
   return window.matchMedia("(max-width: 767px)").matches;
+};
+
+
+
+
+
+const downloadPDF = () => {
+  const link = document.createElement('a');
+  link.href = '/CV_BasileKuntz.pdf'; 
+  link.download = 'CV_BasileKuntz.pdf'; 
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
 
 
@@ -58,6 +71,14 @@ export default function Home() {
   return (
 
     <main className="main">
+
+
+        {/* Background image wood */}
+        <Image 
+            src="/wood-bg.jpeg"
+            fill={true}
+            style={{opacity: "0.7", zIndex:"0"}}
+        />
       
 
 
@@ -92,7 +113,26 @@ export default function Home() {
             <Hobbies />
 
             <DownloadCvBtn isMobile={isMobile} />
+
+
+            <div className="cv-pdf-wrapper">
+
+              <Image 
+                src="/CV_BasileKuntz.png" 
+                // width={100} 
+                // height={250} 
+                fill={true}
+                alt="CV de Basile Kuntz"
+                onClick={downloadPDF} 
+                className="cv-pdf"
+              />
+
+              {/* Download icone: */}
+              <FontAwesomeIcon icon={faFilePdf} className="cv-pdf-dlIcon" />
+
+            </div>
         
+
         </section>
 
 

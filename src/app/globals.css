@@ -424,17 +424,38 @@ main {
   /* perspective: 800px;  */
 }
 .accueil-mockup-bottom {
-  /* height: 100px;
-  width: 260px;
-  transform: translateX(6px) translateY(-10px); */
-  height: 180px;
+  height: 185px;
   width: 378px;
-  transform: translateX(14px) translateY(-16px);
+  transform: translateX(14px) translateY(-19px);
+  border-radius: 9px;
 
-  border-radius: 5px;
-  background-color: var(--primary-cyan);
+  border-right: 1px solid var(--primary-cyan);
+  border-left: 1px solid var(--primary-cyan);
+  border-bottom: 1px solid var(--secondary-cyan);
+
+
+  /* background-color: var(--primary-cyan); */
+  background: rgb(29,65,74);
+  background: -moz-linear-gradient(180deg, rgba(29,65,74,1) 0%, rgba(41,150,175,1) 52%, rgba(44,189,217,1) 78%, rgba(99,229,255,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(29,65,74,1) 0%, rgba(41,150,175,1) 52%, rgba(44,189,217,1) 78%, rgba(99,229,255,1) 100%);
+  background: linear-gradient(180deg, rgba(29,65,74,1) 0%, rgba(41,150,175,1) 52%, rgba(44,189,217,1) 78%, rgba(99,229,255,1) 100%);
 
   filter: drop-shadow(0px 5px 3px black);
+}
+
+
+
+.cv-pdf-wrapper {
+  position: relative;
+  width: 250px;
+  height: 250px;
+
+  transform: rotate(3deg);
+  filter: drop-shadow(0px 5px 6px black);
+}
+
+.cv-pdf {
+  object-fit: contain;
 }
 
 
@@ -488,7 +509,8 @@ main {
   grid-template-columns: repeat(15, 1fr);
   grid-gap: 3px;
   padding: 7px;
-  background-color: var(--primary-cyan);
+  /* background-color: var(--primary-cyan); */
+  
   border: 0px solid #ccc;
   border-radius: 3px;
 
@@ -496,7 +518,7 @@ main {
 }
 
 .mockup-pad {
-  background-color: var(--secondary-cyan);
+  background-color: #0d506f;
   border: 1px solid var(--secondary-cyan);
   border-radius: 5px;
   text-align: center;
@@ -980,10 +1002,24 @@ main {
   width: 100%;
   height: 100vh;
 
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
+  z-index: 2;
 
   opacity: 0;
   transition: 0.5s;
+}
+
+.cv-pdf-dlIcon {
+  position: absolute;
+  bottom: 15px;
+  right: 8%;
+  padding: 11px 38px;
+  background-color: var(--primary-cyan);
+  transform: translateX(-8%);
+  filter: drop-shadow(0px 3px 3px black);
+  font-size: 2.7em;
+  border-radius: 4px;
+  color: var(--secondary-cyan);
 }
 
 

@@ -139,8 +139,8 @@ export function HomePage({isMobile}) {
 
                 <Image 
                     src="/post-it-1-cropped.png"
-                    width={210}
-                    height={210}
+                    width={ isMobile ? 220 : 210 }
+                    height={ isMobile ? 220 : 210 }
                     className="post-it-img"
                     style={{
                         transform: isPostItHovered ? "translate(-2px, 5px) rotate(1deg)" : "translate(0px, 0px)",
@@ -584,7 +584,7 @@ export function HomePage({isMobile}) {
 
 
 
-                {/* Demo mockup desktop (gif) */}
+                {/* Laptop (gif) */}
                 {!isMobile && (
                     <div className="accueil-mockup" 
                         onMouseEnter={handleMockupDeskEnter}
