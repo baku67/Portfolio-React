@@ -76,10 +76,12 @@ a {
 }
 
 .homeMain-title {
-  font-weight: bold;
-  color: #1a1b1b;
-  /* text-shadow: 0px 1px 4px var(--primary-cyan); */
-  text-shadow: 0px 1px 6px #dbe6e9b0;
+
+    font-size: 1.6em;
+    color: rgb(219, 231, 233);
+    text-shadow: 0px 2px 1px black;
+    margin-bottom: 0em;
+
 }
 
 .wip1 {
@@ -239,8 +241,8 @@ a {
 }
 
 .btn-primary {
-  background-color: var(--primary-cyan);
-  color: black;
+    background-color: var(--primary-cyan) !important;
+    color: var(--secondary-cyan) !important;
 }
 
 
@@ -445,7 +447,7 @@ main {
 
 
 .contactForm-sendBtn {
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
   gap: 8px;
 }
@@ -641,6 +643,21 @@ main {
     right: -16px;
 
     transition: all 0.4s;
+
+    opacity: 0;
+    transform: translate(50px, -20px) rotate(25deg);
+    animation: tasseCafe 1s 1s ease forwards;
+}
+
+@keyframes tasseCafe {
+  from {
+      opacity: 0;
+      transform: translate(50px, -20px) rotate(25deg);
+  }
+  to {
+      opacity: 1;
+      transform: translate(0px, 0px) rotate(0deg);
+  }
 }
 
 
@@ -747,9 +764,9 @@ main {
   display: flex;
     justify-content: space-between;
   background-color: #0a232f;
-  font-size: 0.7em;
-  opacity: 0.6;
-  padding: 2px 6px;
+  font-size: 0.6em;
+  opacity: 0.65;
+  padding: 1px 6px;
 }
 
 
@@ -758,18 +775,17 @@ main {
 
 
 .portable-skillGrid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 8px;
-    grid-row-gap: 12px;
-
-    padding: 25px 10px;
-    width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 8px;
+  grid-row-gap: 8px;
+  padding: 15px 6px;
+  width: 100%;
 }
 
 .portable-skillGrid div {
-  background-color: #00000061;
+  background-color: #141414d6;
   filter: drop-shadow(0px 3px 4px black);
 
   border-radius: 7px;
@@ -806,7 +822,7 @@ main {
 
 
 .portable-app {
-  font-size: 2.3em;
+  font-size: 1.7em;
   /* color: var(--primary-cyan); */
   color: #f1b16b;
 
@@ -936,8 +952,8 @@ main {
   cursor: pointer;
   position: absolute;
   z-index: 99;
-  left: 80px;
-  bottom: 50px;
+  left: 185px;
+  bottom: 120px;
   transform: rotate(348deg);
 
   transition: all 0.4s;
@@ -959,11 +975,11 @@ main {
 
 /* Attention height synchro : .smartphone-cv  */
 .portable-div {
-  height: 400px;
-  width: 225px;
-  border-radius: 17px;
-  padding: 15px 5px 30px 5px;
-  background-color: rgb(20, 21, 21);
+  height: 365px;
+  width: 205px;
+  border-radius: 13px;
+  padding: 6px 4px 23px 4px;
+  background-color: rgb(7 7 7);
   border: 1px solid var(--primary-cyan);
 
   filter: drop-shadow(black 4px 6px 6px);
@@ -974,7 +990,7 @@ main {
 .portable-screen {
   width: 100%;
   height: 100%;
-  border-radius: 4px;
+  border-radius: 9px;
   background-color: var(--secondary-cyan);
   overflow: hidden;
 
@@ -995,17 +1011,17 @@ main {
 
 .portable-btnMockup1 {
   position: absolute;
-  right: -2px;
+  right: -3px;
   top: 50px;
-  height: 85px;
+  height: 72px;
   width: 2px;
   background-color: var(--primary-cyan);
 }
 .portable-btnMockup2 {
   position: absolute;
-  right: -2px;
-  top: 200px;
-  height: 50px;
+  right: -3px;
+  top: 143px;
+  height: 35px;
   width: 2px;
   background-color: var(--primary-cyan);
 }
@@ -1298,12 +1314,42 @@ main {
     width: auto;
     /* padding: 16px 15px; */
     padding: 35px 31px;
-    border-radius: 5px;
-    transform: rotate(2deg);
+    border-radius: 2px;
+    overflow: hidden;
+    
     filter: drop-shadow(0px 4px 5px black);
 
+    transform: rotate(6deg) translateX(30%);
+    opacity: 0;
+    animation: contact-section2-wrap 1.3s 1s ease forwards;
+}
+@keyframes contact-section2-wrap {
+  from {
+    opacity: 0;
+    transform: rotate(6deg) translateX(30%);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(2deg) translateX(0%);
+  }
 }
 
+
+.contact-visitCardShape {
+  height: 100px;
+  width: 50px;
+  background-color: var(--primary-cyan);
+  position: absolute;
+  bottom: -50px;
+  right: -18px;
+  transform: rotate(58deg);
+}
+
+
+
+.formGroup {
+  margin-bottom: 1rem;
+}
 
 
 .fishBowl-div {
@@ -2008,18 +2054,69 @@ main {
   flex:1;
 }
 
+.homeMain-header {
+  width: 254px;
+  height: 125px;
+  background-color: var(--secondary-cyan);
+
+  padding: 28px 20px;
+  border-radius: 2px;
+  overflow: hidden;
+  filter: drop-shadow(0px 4px 3px black);
+  transform: rotate(358deg) translateX(-15px);
+
+  opacity: 0;
+  animation: homeMain-header 0.8s 1s ease forwards;
+}
+@keyframes homeMain-header {
+  from {
+    opacity: 0;
+    transform: rotate(358deg) translateX(-15px);
+
+  }
+  to {
+    opacity: 1;
+    transform: rotate(355deg) translateX(-0px);
+
+  }
+}
+
+
+.accueil-visitCard-shape {
+  width: 139px;
+  height: 85px;
+  background-color: var(--primary-cyan);
+  position: absolute;
+  top: -74px;
+  right: -55px;
+  transform: rotate(26deg);
+}
+
 .contact-section1 {
   width: 50%;
-  padding: 16px 23px 20px 20px;
-  /* background-color: #28282f; */
+  padding: 23px 27px 25px 29px;
   background-color: var(--secondary-cyan);
-  border-radius: 7px;
+  border-radius: 2px;
+  border-left: 3px solid var(--primary-cyan);
 
-  transform: rotate(358deg);
-
-  border: 3px solid #00d7ff;
-  box-shadow: 0px 0px 15px #00d7ff;
+  filter: drop-shadow(-1px 6px 6px black);
+  transform: rotate(352deg) translateX(-30%);
+  opacity: 0;
+  animation: contact-section1 1.7s 0.5s ease forwards;
 }
+@keyframes contact-section1 {
+  from {
+    opacity: 0;
+    transform: rotate(352deg) translateX(-30%);
+
+  }
+  to {
+    opacity: 1;
+    transform: rotate(358deg) translateX(0);
+
+  }
+}
+
 .contact-section2 {
   width: fit-content;
   text-align: center;

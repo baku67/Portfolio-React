@@ -715,7 +715,7 @@ export function HomePage({isMobile}) {
 
 
             {/* Scroll SVG icon (Desktop) */}
-            {!isMobile && (
+            {/* {!isMobile && (
 
                 <svg 
                 className="scrollSvg"
@@ -734,7 +734,7 @@ export function HomePage({isMobile}) {
 
             )}
 
-
+            */}
         </>
     )
 }

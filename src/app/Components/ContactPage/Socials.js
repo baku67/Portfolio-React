@@ -36,6 +36,9 @@ export function Socials({isMobile}) {
 
             <div className="contact-section2-wrap">
 
+
+                <div className="contact-visitCardShape"></div>
+
                 <div className="contactBoutons-wrapper">
 
                     <a 

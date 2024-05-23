@@ -62,12 +62,12 @@ export function ContactForm() {
             <div>
                 <h3 className="contactFormHeader">Envoyez-moi un message :</h3>
                 <Form onSubmit={sendEmail}>
-                    <Form.Group className="mb-3" controlId="formBasicName">
+                    <Form.Group className="formGroup" controlId="formBasicName">
                         <Form.Label>Nom</Form.Label>
                         <Form.Control type="text" name="user_name" placeholder="Entrez votre nom" />
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="formGroup" controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
                         <Form.Control type="email" name="from_name" placeholder="Entrez votre email" />
                         <Form.Text className="text-mutedd">
@@ -75,7 +75,7 @@ export function ContactForm() {
                         </Form.Text>
                     </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicMessage">
+                    <Form.Group className="formGroup" controlId="formBasicMessage">
                         <Form.Label>Message</Form.Label>
                         <Form.Control as="textarea" name="message" placeholder="Entrez votre message" />
                     </Form.Group>
