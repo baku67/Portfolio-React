@@ -445,6 +445,9 @@
 
 
 
+    .contact-reseauIcon {
+        font-size: 2em;
+    }
 
 
 
@@ -454,7 +457,7 @@
     .contactBoutons-wrapper {
         display: inline-flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 15px;
 
         margin-right: 14px;
     }
@@ -783,7 +786,7 @@
         height: 85px;
         background-color: var(--primary-cyan);
         position: absolute;
-        top: -93px;
+        top: -74px;
         right: -55px;
         transform: rotate(26deg);
 

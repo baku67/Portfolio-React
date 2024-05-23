@@ -2,13 +2,32 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PhoneNumberEncryption from './PhoneNumberEncryption';
 import EmailEncryption from './EmailEncryption';
-import { BoutonSocials } from './BoutonSocials';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 
 export function Socials({isMobile}) {
+
+
+    const [linkedinIconHovered, setLinkedinIconHovered] = useState(false);
+    const handleLinkedinEnter = () => {
+        setLinkedinIconHovered(true);
+    };
+    const handleLinkedinLeave = () => {
+        setLinkedinIconHovered(false);
+    };
+
+    
+    const [githubIconHovered, setGithubIconHovered] = useState(false);
+    const handleGithubEnter = () => {
+        setGithubIconHovered(true);
+    };
+    const handleGithubLeave = () => {
+        setGithubIconHovered(false);
+    };
+
 
 
     return (
@@ -19,9 +38,21 @@ export function Socials({isMobile}) {
 
                 <div className="contactBoutons-wrapper">
 
-                    <BoutonSocials href={"www.linkedin.com/in/basile-kuntz-719278267"} iconSrcNormal={"./linkedin-tiny.png"} iconSrcHovered={"./linkedin-tiny-dark.png"} btnTxt={isMobile ? "" : "Mon LinkedIn"} />
+                    <a 
+                        href="www.linkedin.com/in/basile-kuntz-719278267" 
+                        onMouseEnter={handleLinkedinEnter} 
+                        onMouseLeave={handleLinkedinLeave} 
+                    >
+                        <FontAwesomeIcon icon={faLinkedin} className="contact-reseauIcon" style={{color: linkedinIconHovered ? "var(--primary-cyan)" : "white"}} />
+                    </a>
 
-                    <BoutonSocials href={"https://github.com/baku67"} iconSrcNormal={"./github-mark-white.png"} iconSrcHovered={"./github-mark-dark.png"} btnTxt={isMobile ? "" : "Mon Github"} />
+
+                    <a href="https://github.com/baku67"
+                        onMouseEnter={handleGithubEnter} 
+                        onMouseLeave={handleGithubLeave}    
+                    >
+                        <FontAwesomeIcon icon={faGithub} className="contact-reseauIcon" style={{color: githubIconHovered ? "var(--primary-cyan)" : "white"}} />
+                    </a>
 
                 </div>
 

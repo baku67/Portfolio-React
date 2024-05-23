@@ -246,7 +246,7 @@ export function HomePage({isMobile}) {
 
             {/* Tasse café CSS */}
             <Link href="#home-scroll-contact" passHref>
-                <div className="tasseCafe" style={{transform: isCafeHovered ? "scale(1.35) translate(-8px, 11px)" : "scale(1.35) translate(0px, 0px)"}}>
+                <div className="tasseCafe" style={{transform: isCafeHovered ? "translate(-8px, 11px)" : "translate(0px, 0px)"}}>
 
                     {/* https://www.npmjs.com/package/react-curved-text  */}
                     <div 
@@ -266,9 +266,9 @@ export function HomePage({isMobile}) {
                                 startOffset={30}
                                 reversed={false}
                                 text="Contact"
-                                textProps={{ style: { fontSize: 28 } }}
-                                textPathProps={{style : { fill : /* "#dfdfdf" */ "var(--primary-cyan)"} }}
-                                tspanProps={{"dy": isCafeHovered ? "22" : "20"}}
+                                textProps={{ style: { fontSize: 32 } }}
+                                textPathProps={{style : { fill : /* "#dfdfdf" */ "white"} }}
+                                tspanProps={{"dy": isCafeHovered ? "28" : "25"}}
                                 ellipseProps={null}
                                 svgProps={null}
                             />
@@ -501,74 +501,24 @@ export function HomePage({isMobile}) {
 
             <div className="homeMain">
 
-                {/* Desktop */}
+
+
+                {/* Header (carte de visite) */}
                 {isMobile ? (
 
-                    // Mobile visitCard flip:
-                    <>
-    
-                        <div className="homeMain-header">
+                    <div className="homeMain-header">
 
-                            {/* FRONT CARD (mobile) */}
-                            <animated.div
-                                style={{
-                                    opacity: opacity.interpolate(o => 1 - o),
-                                    transform,
-                                    zIndex: visitCardFlipped ? -1 : 1,
-                                    position: 'absolute',
-                                    width: '100%',
-                                    height: '100%',
-                                }}
-                                onClick={handleVisitCardFlip}
-                            >
+                        <div className="homeMain-header-mobileVisitCard">
 
-                                <div className="homeMain-header-mobileVisitCard">
+                            <div className="accueil-visitCard-shape"></div>
 
-                                    <div className="accueil-visitCard-shape"></div>
-
-                                    <h1 className="homeMain-title">Basile KUNTZ</h1>
-                                    <span className="homeMain-subtitle">Développeur web</span>
-
-                                </div>
-
-                            </animated.div>
-
-
-                            {/* BACK CARD (mobile) */}  
-                            <animated.div
-                                style={{
-                                    opacity,
-                                    transform: transform.interpolate(t => `${t} rotateY(180deg)`),
-                                    zIndex: visitCardFlipped ? 1 : -1,
-                                    position: 'absolute',
-                                    width: '100%',
-                                    height: '100%',
-                                }}
-                                onClick={handleVisitCardFlip}
-                            >
-
-                                <div className="homeMain-header-mobileVisitCard">
-                                    <div className="accueil-visitCard-shape"></div>
-
-                                    <div>
-                                        <FontAwesomeIcon icon={faGithub} />
-                                        <FontAwesomeIcon icon={faLinkedin} />
-                                    </div>
-
-                                    <div>
-                                        <EmailEncryption />
-                                        <div>
-                                            <FontAwesomeIcon icon={faLocationDot} />
-                                            <span>Strasbourg</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </animated.div>
+                            <h1 className="homeMain-title">Basile KUNTZ</h1>
+                            <span className="homeMain-subtitle">Développeur web</span>
 
                         </div>
 
-                    </>
+                    </div>
+
 
                 ) : (
                 
@@ -581,14 +531,7 @@ export function HomePage({isMobile}) {
 
                     </div>
 
-                )
-
-
-            
-                }
-
-
-
+                )}
 
 
 
