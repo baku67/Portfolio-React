@@ -93,7 +93,7 @@
     }
 
     .titleSection {
-        font-size: 1.8em;
+        font-size: 2.2em;
 
         /* margin-bottom: 0.4em; */
         margin-bottom: 0;
@@ -111,7 +111,10 @@
     .projectPageHeader {
         filter: drop-shadow(0px 4px 4px black);
 
-        margin-top: 15px;
+        margin-top: 12px;
+
+        /* left: 0px; */
+        padding-left: 0px;
     }
 
     .projectsNav-list {
@@ -747,12 +750,11 @@
     .cv-pdf-wrapper {
         position: absolute;
         left: auto;
-        right: -77px;
-        bottom: -51px;
-        transform: translateX(0%) rotate(18deg);
-        width: 202px;
-        height: 200px;
-
+        right: -65px;
+        bottom: -7px;
+        transform: translateX(0%) rotate(14deg);
+        width: 317px;
+        height: 286px;
         filter: drop-shadow(0px 2px 3px black);
     }
 

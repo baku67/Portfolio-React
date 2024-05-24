@@ -1116,6 +1116,11 @@ main {
 .parcours-chronologie-li {
     display: inline-flex;
     flex-direction: column;
+    margin: 10px 5px;
+}
+
+.parcours-chrono-titleIcon {
+  color: white;
 }
 
 
@@ -1133,10 +1138,23 @@ main {
 
 
 
+.parcours-chronologie-li-header {
+
+}
 
 
+.parcours-chrono-title {
+  color: var(--primary-cyan);
+}
 
+.parcours-chrono-date {
+  margin: 0px 10px 0px 2px;
+}
 
+.parcours-chrono-exp {
+  color: rgb(179, 179, 179);
+  font-size: 85%;
+}
 
 
 .page3 {
@@ -1165,7 +1183,8 @@ main {
   width: fit-content;
 
   position: relative;
-  left: 50px;
+  /* left: 50px; */
+  padding-left: 50px;
 
   animation: projectPageHeader 1s 0s ease forwards;
 }

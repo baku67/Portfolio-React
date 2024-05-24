@@ -17,7 +17,7 @@ import { ProjectCardInfos } from "./ProjectCardInfos";
 const ITEMS_PER_PAGE = 4; // Set the number of items per page
 
 
-export function LandingPageProjects({projects, selectProject, isMobile, gifState}) {
+export function LandingPageProjects({projects, selectProject, isMobile}) {
 
 
 
@@ -131,7 +131,7 @@ export function LandingPageProjects({projects, selectProject, isMobile, gifState
                     </h2>
                     <p className="projectCard_description">{project.description}</p> 
                     </div>
-                    <ProjectThumbnail project={project} isHovered={hoveredIndex === (startIndex + index) ? true : false} isMobile={isMobile} gifState={gifState} />
+                    <ProjectThumbnail project={project} isHovered={hoveredIndex === (startIndex + index) ? true : false} isMobile={isMobile} />
                     <ProjectCardInfos project={project} isHovered={hoveredIndex === (startIndex + index) ? true : false} token={token} owner="baku67" repo={project.repo_name} isMobile={isMobile} />
                 </li>
                 ))}

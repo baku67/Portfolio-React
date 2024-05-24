@@ -1,6 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faOtter } from "@fortawesome/free-solid-svg-icons";
 
+import Image from "next/image";
+
+import { Shape1 } from "../Components/Shapes/Shape1";
+import { Shape2 } from "../Components/Shapes/Shape2";
+import PageTitleNav from "../Components/PageTitleNav";
 
 
 // Define isMobileDevice function outside of the component
@@ -48,6 +55,27 @@ export default function Loisirs() {
 
         {/* Page 4: Photographie, animations */}
         <section className="section page4" id="home-scroll-hobbies">
+
+
+            {/* Background image wood */}
+            <Image 
+                src="/wood-bg.jpeg"
+                fill={true}
+                style={{opacity: "0.7", zIndex:"0"}}
+            />
+
+
+
+            {/* Icone Page (top-right) */}
+            {/* <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" /> */}
+            <FontAwesomeIcon icon={faOtter} className="pageIcon" />
+
+            {/* Shapes neutres(cyan) */}
+            <Shape1 />
+            <Shape2 />
+
+
+            <PageTitleNav title={"Loisirs"} />
 
         </section>
 

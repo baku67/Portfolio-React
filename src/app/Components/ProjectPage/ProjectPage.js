@@ -375,14 +375,6 @@ export function ProjectPage({isMobile}) {
 
 
 
-
-    // Gif Play Btn:
-    const [ isGifToggled, setIsGifToggled ] = useState(false);
-    const handleToggleGif = () => {
-        setIsGifToggled(!isGifToggled);
-    }
-
-
     return (
 
         <>
@@ -544,21 +536,8 @@ export function ProjectPage({isMobile}) {
             ) : (
 
                 <>  
-                    {isMobile && (
 
-                        <span className="mobile_gifPlayBtn" onClick={handleToggleGif}>
-
-                            {isGifToggled ? (
-                                <FontAwesomeIcon icon={faCirclePause} />
-                            ) : (
-                                <FontAwesomeIcon icon={faCirclePlay} />
-                            )}
-                            
-                        </span>
-                    )}
-
-
-                    <LandingPageProjects projects={projects} selectProject={setActualProjectIndex} isMobile={isMobile} gifState={isGifToggled} />
+                    <LandingPageProjects projects={projects} selectProject={setActualProjectIndex} isMobile={isMobile} />
 
                 </>
 
