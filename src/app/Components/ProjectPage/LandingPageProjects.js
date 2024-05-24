@@ -3,17 +3,16 @@ import { useState } from "react"
 
 import Image from 'next/image'
 
-import Tooltip from '@mui/material/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleInfo, faChevronLeft, faChevronRight, faChartLine } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faChartLine } from "@fortawesome/free-solid-svg-icons";
 import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 
 import { Shape1 } from "../Shapes/Shape1";
 import { Shape2 } from "../Shapes/Shape2";
+import PageTitleNav from "../PageTitleNav";
 import { ProjectThumbnail } from "./ProjectThumbnail";
 import GitHubCalendar from 'react-github-calendar';
 import { ProjectCardInfos } from "./ProjectCardInfos";
-import { Pagination } from "@mui/material";
 
 const ITEMS_PER_PAGE = 4; // Set the number of items per page
 
@@ -83,7 +82,6 @@ export function LandingPageProjects({projects, selectProject, isMobile, gifState
     return (
         <div>
 
-
             {/* Image fond */}
             <Image 
                 // src="/plant-bg-min.png"
@@ -98,21 +96,9 @@ export function LandingPageProjects({projects, selectProject, isMobile, gifState
             {/* Shapes neutres(cyan) */}
             <Shape1 />
             <Shape2 />
-            
+        
 
-            {/* Header */}
-            <div className="projectPageHeader">
-                <h2 className="titleSection" style={{marginBottom:"0.4em"}}>
-                    <FontAwesomeIcon icon={faChevronLeft} className="faIcon-chevron" /> 
-                    <span style={{margin:"0px 15px"}}>Mes Projets</span>
-                    <span className="slash">/</span>
-                    <FontAwesomeIcon icon={faChevronRight} className="faIcon-chevron" /> 
-                </h2>
-                <div className="headerSubTitle isDesktop">
-                    <FontAwesomeIcon icon={faCircleInfo} className="faIcon" />
-                    <span> Cliquez sur un projet pour voir sa démo, sa description, etc...</span>
-                </div>
-            </div>
+            <PageTitleNav title={"Projets"} />
 
 
 

@@ -50,7 +50,23 @@
         border-radius: 2px;
         transform: rotate(358deg);
         filter: drop-shadow(0px 4px 5px black);
+
+        transform: rotate(3deg) translateX(10%);
+        opacity: 0;
+        animation: contact-section2-wrap 1.3s 1.5s ease forwards;
+    
     }
+
+    @keyframes contact-section2-wrap {
+        from {
+          opacity: 0;
+          transform: rotate(3deg) translateX(10%);
+        }
+        to {
+          opacity: 1;
+          transform: rotate(1deg) translateX(0%);
+        }
+      }
 
 
 
@@ -77,13 +93,15 @@
     }
 
     .titleSection {
-        font-size: 1.5em;
+        font-size: 1.8em;
 
         /* margin-bottom: 0.4em; */
         margin-bottom: 0;
-        margin-left: 22px;
+        margin-left: 10px;
         text-align: left;
         justify-content: flex-start;
+
+        gap: 7px;
     }
 
     .projectCard_title {
@@ -92,6 +110,8 @@
 
     .projectPageHeader {
         filter: drop-shadow(0px 4px 4px black);
+
+        margin-top: 15px;
     }
 
     .projectsNav-list {
@@ -725,12 +745,15 @@
 
 
     .cv-pdf-wrapper {
-        position: relative;
+        position: absolute;
+        left: auto;
+        right: -77px;
+        bottom: -51px;
+        transform: translateX(0%) rotate(18deg);
+        width: 202px;
+        height: 200px;
 
-        left: 50%;
-        transform: translateX(-50%) rotate(4deg);
-        width: 250px;
-        height: 260px;    
+        filter: drop-shadow(0px 2px 3px black);
     }
 
 

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faPersonRunning, faClipboardCheck } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 import { Shape1 } from "/src/app/Components/Shapes/Shape1";
@@ -12,6 +11,7 @@ import { Shape2 } from "/src/app/Components/Shapes/Shape2";
 import { Socials } from "/src/app/Components/ContactPage/Socials";
 import { ContactForm } from '/src/app/Components/ContactPage/ContactForm';
 import { Footer } from "/src/app/Components/ContactPage/Footer";
+import PageTitleNav from "../Components/PageTitleNav";
 
 
 // Define isMobileDevice function outside of the component
@@ -75,15 +75,11 @@ export default function Contact() {
         <Shape1 />
         <Shape2 />
 
-        {/* Header */}
-        <div className="projectPageHeader">
-            <h2 className="titleSection" style={{marginBottom:"0.4em"}}>
-                <FontAwesomeIcon icon={faChevronLeft} className="faIcon-chevron" /> 
-                <span style={{margin:"0px 15px"}}>Contact</span>
-                <span className="slash">/</span>
-                <FontAwesomeIcon icon={faChevronRight} className="faIcon-chevron" /> 
-            </h2>
-        </div>
+
+
+        <PageTitleNav title={"Contact"} />
+
+
 
         <div className="contactMain">
           <ContactForm />

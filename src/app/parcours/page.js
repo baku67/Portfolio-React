@@ -4,13 +4,12 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronLeft, faChevronRight, faClipboardCheck, faFilePdf } from "@fortawesome/free-solid-svg-icons";
+import { faClipboardCheck, faFilePdf, faBars } from "@fortawesome/free-solid-svg-icons";
 
 import { Shape1 } from "/src/app/Components/Shapes/Shape1";
 import { Shape2 } from "/src/app/Components/Shapes/Shape2";
 import { Skills } from "/src/app/Components/CvPage/Skills";
-import { Tools } from "/src/app/Components/CvPage/Tools";
-import { Hobbies } from "/src/app/Components/CvPage/Hobbies";
+import PageTitleNav from "../Components/PageTitleNav";
 
 
 // Define isMobileDevice function outside of the component
@@ -90,69 +89,80 @@ export default function Home() {
             <Shape1 />
             <Shape2 />
 
-            {/* Header */}
-            <div className="projectPageHeader">
-                <h2 className="titleSection" style={{marginBottom:"0.4em"}}>
-                    <FontAwesomeIcon icon={faChevronLeft} className="faIcon-chevron" /> 
-                    <span style={{margin:"0px 15px"}}>Mon parcours</span>
-                    <span className="slash">/</span>
-                    <FontAwesomeIcon icon={faChevronRight} className="faIcon-chevron" /> 
-                </h2>
-            </div>
+
+            <PageTitleNav title={"Parcours"} />
+
+
 
             <div className="parcours-main">
-
-
-              {/* {isMobile && ( */}
 
                 <div className="parcours-chronologie">
 
                   <ul className="parcours-chronologie-ul">
-
                     <li className="parcours-chronologie-li">
                       <span>2023</span>
                       <span>Titre RNCP &quot;Développeur web et web mobile&quot;</span>
                       <span>Stage chez Hoplunch</span>
                     </li>
-
                     <li className="parcours-chronologie-li">
                       <span>2020-2022</span>
                       <span>BTS SIO option SLAM</span>
                       <span>Alternance chez Europ Tech Group</span>
                     </li>
-
                     <li className="parcours-chronologie-li">
                       <span>2019</span>
                       <span>Service Civique &quot;Médiateur numérique&quot;</span>
                       <span>Centre social & culturel l&apos;Éscale</span>
                     </li>
-
                   </ul >
 
+                  {/* CV Mobile dans la div*/}
+                  {isMobile && (
+                    <div className="cv-pdf-wrapper">
+                      <Image 
+                        src="/CV_BasileKuntz.png" 
+                        // width={100} 
+                        // height={250} 
+                        fill={true}
+                        alt="CV de Basile Kuntz"
+                        onClick={downloadPDF} 
+                        className="cv-pdf"
+                      />
+
+                      {/* Download icone: */}
+                      <FontAwesomeIcon icon={faFilePdf} className="cv-pdf-dlIcon" />
+                    </div>
+                  )}
+
                 </div>
-              {/* )} */}
 
                 <Skills />
 
             </div>
 
 
-            <div className="cv-pdf-wrapper">
 
-              <Image 
-                src="/CV_BasileKuntz.png" 
-                // width={100} 
-                // height={250} 
-                fill={true}
-                alt="CV de Basile Kuntz"
-                onClick={downloadPDF} 
-                className="cv-pdf"
-              />
 
-              {/* Download icone: */}
-              <FontAwesomeIcon icon={faFilePdf} className="cv-pdf-dlIcon" />
+            {/* CV Desktop absolute bottom right*/}
+            {!isMobile && (
 
-            </div>
+              <div className="cv-pdf-wrapper">
+
+                <Image 
+                  src="/CV_BasileKuntz.png" 
+                  // width={100} 
+                  // height={250} 
+                  fill={true}
+                  alt="CV de Basile Kuntz"
+                  onClick={downloadPDF} 
+                  className="cv-pdf"
+                />
+
+                {/* Download icone: */}
+                <FontAwesomeIcon icon={faFilePdf} className="cv-pdf-dlIcon" />
+
+              </div>
+            )}
         
 
         </section>

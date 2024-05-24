@@ -411,7 +411,7 @@ export function ProjectPage({isMobile}) {
                         className="projectLogo" 
                     />
 
-                    {/* Header ("Mes Projets" + nav) */}
+                    {/* Header ("Mes Projets" + retour) */}
                     <div className="projectPageHeader pPH-resp">
 
                         <div className="porjectPageHeaderTitle">
