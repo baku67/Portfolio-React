@@ -111,7 +111,7 @@ export default function Home() {
                           <span className="parcours-chrono-title">
                             <FontAwesomeIcon icon={faMagnifyingGlass} className="parcours-chrono-titleIcon" />
                             <span>
-                              Alternance &quot;Concepteur Développeur d'Application&quot;</span>
+                              Alternance &quot;Concepteur Développeur d&apos;Application&quot;</span>
                             </span>
                         </span>
                       </div>
