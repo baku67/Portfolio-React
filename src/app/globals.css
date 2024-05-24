@@ -58,6 +58,13 @@ a {
 
 
 
+.home-visitCard-linksDiv {
+  display: inline-flex;
+  width: 100%;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
 
 
 
@@ -66,7 +73,8 @@ a {
     z-index: 9;
     width: 100%;
     height: 100%;
-    text-align: center;
+    /* text-align: center; */
+    text-align: left;
     align-items: center;
     display: flex;
     flex-direction: column;
@@ -83,6 +91,7 @@ a {
     text-shadow: 0px 2px 1px black;
     margin-bottom: 0em;
 
+    line-height: 1.4em;
 }
 
 .wip1 {
@@ -480,6 +489,7 @@ main {
 .cv-pdf-wrapper {
   cursor: pointer;
   position: absolute;
+  z-index: 999;
   bottom: 0;
   right: 0;
   width: 30%;
@@ -505,7 +515,7 @@ main {
 
 .parcours-main {
   position: relative;
-  z-index: 999999;
+  z-index: 99;
 }
 
 .cv-pdf {
@@ -1117,10 +1127,14 @@ main {
     display: inline-flex;
     flex-direction: column;
     margin: 10px 5px;
+
+    border-left: 1px solid var(--primary-cyan);
+    padding-left: 11px;
 }
 
 .parcours-chrono-titleIcon {
   color: white;
+  margin-right: 10px;
 }
 
 
@@ -1145,6 +1159,7 @@ main {
 
 .parcours-chrono-title {
   color: var(--primary-cyan);
+  font-weight: bold;
 }
 
 .parcours-chrono-date {
@@ -2137,6 +2152,19 @@ main {
   }
 }
 
+.home-visitCard-reseauIcon {
+  font-size: 1.5em;
+  color: var(--primary-cyan);
+}
+
+
+.accueil-visitCard-content {
+  display: inline-flex;
+  flex-direction: column;
+  width: 100%;
+  height: -webkit-fill-available;
+    justify-content: space-between;
+}
 
 .accueil-visitCard-shape {
   width: 139px;
@@ -2267,7 +2295,7 @@ main {
   z-index: 999;
   right: 15px;
   top: 15px;
-  font-size: 6.5em;
+  font-size: 4.5em;
 
 
 

@@ -65,9 +65,7 @@ export default function Loisirs() {
             />
 
 
-
             {/* Icone Page (top-right) */}
-            {/* <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" /> */}
             <FontAwesomeIcon icon={faOtter} className="pageIcon" />
 
             {/* Shapes neutres(cyan) */}

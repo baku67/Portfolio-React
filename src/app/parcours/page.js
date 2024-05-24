@@ -84,7 +84,6 @@ export default function Home() {
 
 
             {/* Icone Page (top-right) */}
-            {/* <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" /> */}
             <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" />
 
             {/* Shapes neutres(cyan) */}
@@ -111,8 +110,9 @@ export default function Home() {
                           <span className="parcours-chrono-title">
                             <FontAwesomeIcon icon={faMagnifyingGlass} className="parcours-chrono-titleIcon" />
                             <span>
-                              Alternance &quot;Concepteur Développeur d&apos;Application&quot;</span>
+                              Alternance &quot;Concepteur Développeur d&apos;Application&quot;
                             </span>
+                          </span>
                         </span>
                       </div>
 
@@ -144,7 +144,7 @@ export default function Home() {
                         </span>
                       </div>
 
-                      <span className="parcours-chrono-exp">Alternance chez Europ Tech Group</span>
+                      <span className="parcours-chrono-exp">Alternance chez Europe Tech Group</span>
 
                     </li>
 

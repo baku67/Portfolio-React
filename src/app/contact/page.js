@@ -60,16 +60,18 @@ export default function Contact() {
       {/* Page 5: Contact */}
       <section className="section page5" id="home-scroll-contact">
 
+
         {/* Image fond */}
         <Image 
-            // src="/plant-bg-min.png"
             src="/wood-bg.jpeg"
             fill={true}
             style={{opacity: "0.7", zIndex:"0"}}
         />
 
+
         {/* Icone Page (top-right) */}
         <FontAwesomeIcon icon={faEnvelope} className="pageIcon" />
+
 
         {/* Shapes neutres(cyan) */}
         <Shape1 />

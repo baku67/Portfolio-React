@@ -6,27 +6,23 @@ import ReactCurvedText from 'react-curved-text';
 import dynamic from 'next/dynamic';
 const LiveClock = dynamic(() => import('react-live-clock'), { ssr: false });
 
-// Anim flip visitCard Spring
-import { useSpring, animated } from '@react-spring/web';
-
 
 import Image from 'next/image'
 import Link from 'next/link';
 
 import { useState } from "react";
-import EmailEncryption from "../ContactPage/EmailEncryption";
 
 
 export function HomePage({isMobile}) {
 
-
-    const [isScrollHovered, setIsScrollHovered] = useState(false);
-    const handleScrollEnter = () => {
-        setIsScrollHovered(true);
-    }
-    const handleScrollLeave = () => {
-        setIsScrollHovered(false);
-    }
+    // Scroll bouton (hover):
+    // const [isScrollHovered, setIsScrollHovered] = useState(false);
+    // const handleScrollEnter = () => {
+    //     setIsScrollHovered(true);
+    // }
+    // const handleScrollLeave = () => {
+    //     setIsScrollHovered(false);
+    // }
 
 
     // Phone (skills) hover:
@@ -40,13 +36,13 @@ export function HomePage({isMobile}) {
 
 
     // Projets (hover):
-    const [isProjetHovered, setIsProjetHovered] = useState(false);
-    const handleProjetEnter = () => {
-        setIsProjetHovered(true);
-    }
-    const handleProjetLeave = () => {
-        setIsProjetHovered(false);
-    }
+    // const [isProjetHovered, setIsProjetHovered] = useState(false);
+    // const handleProjetEnter = () => {
+    //     setIsProjetHovered(true);
+    // }
+    // const handleProjetLeave = () => {
+    //     setIsProjetHovered(false);
+    // }
 
 
     // Cafe (hover) :
@@ -86,11 +82,11 @@ export function HomePage({isMobile}) {
 
     // flip Carte de visite: (mobile?)
     const [visitCardFlipped, setVisitCardFlipped] = useState(false);
-    const { transform, opacity } = useSpring({
-        opacity: visitCardFlipped ? 1 : 0,
-        transform: `perspective(600px) rotateY(${visitCardFlipped ? 180 : 0}deg)`,
-        config: { mass: 5, tension: 500, friction: 80, duration: 500 },
-    });
+    // const { transform, opacity } = useSpring({
+    //     opacity: visitCardFlipped ? 1 : 0,
+    //     transform: `perspective(600px) rotateY(${visitCardFlipped ? 180 : 0}deg)`,
+    //     config: { mass: 5, tension: 500, friction: 80, duration: 500 },
+    // });
 
     const handleVisitCardFlip = () => {
         setVisitCardFlipped(!visitCardFlipped);
@@ -386,7 +382,7 @@ export function HomePage({isMobile}) {
 
 
 
-            {/* Mobile tablette: */}
+            {/* laptop (mobile) */}
             {isMobile && (
 
                 <div className="accueil-mockup" 
@@ -502,48 +498,27 @@ export function HomePage({isMobile}) {
             <div className="homeMain">
 
 
+                {/* Carte de visite accueil */}
+                <div className="homeMain-header" onClick={handleVisitCardFlip} >
 
-                {/* Header (carte de visite) */}
-                {isMobile ? (
+                    <div className="accueil-visitCard-shape"></div>
 
-                    <div className="homeMain-header">
-
-                        <div className="homeMain-header-mobileVisitCard">
-
-                            <div className="accueil-visitCard-shape"></div>
-                            <div className="accueil-visitCard-shape2"></div>
-
-                            <h1 className="homeMain-title">Basile KUNTZ</h1>
-                            <span className="homeMain-subtitle">Développeur web</span>
-
-                        </div>
-
-                    </div>
-
-
-                ) : (
-                
-                    <div className="homeMain-header">
-
-                        <div className="accueil-visitCard-shape"></div>
-
-                        <h1 className="homeMain-title">Basile KUNTZ</h1>
-                        <span className="homeMain-subtitle">Développeur web</span>
+                    <div className="accueil-visitCard-content">
 
                         <div>
-                            {/* TODO hovers */}
-                            <FontAwesomeIcon icon={faGithub} className="accueil-visitCard-reseauIcon" style={{}} />
-                            <FontAwesomeIcon icon={faLinkedin} className="accueil-visitCard-reseauIcon" style={{}} />
+                            <h1 className="homeMain-title">Basile KUNTZ</h1>
+                            <span className="homeMain-subtitle">Développeur web</span>
+                        </div>
 
+                        <div className="home-visitCard-linksDiv">
+                            <FontAwesomeIcon icon={faLinkedin} className="home-visitCard-reseauIcon" />
+                            <FontAwesomeIcon icon={faGithub} className="home-visitCard-reseauIcon" />
                         </div>
 
                     </div>
 
-                )}
 
-
-
-
+                </div>
 
 
 

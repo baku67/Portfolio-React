@@ -666,6 +666,8 @@
         color: rgb(219, 231, 233);
         text-shadow: 0px 2px 1px black;
         margin-bottom: 0em;
+
+        line-height: 1.2em;
     }
 
 
@@ -852,10 +854,10 @@
 
     .homeMain-header {
         width: 215px;
-        height: 111px;
+        height: 113px;
         background-color: var(--secondary-cyan);
 
-        padding: 28px 20px;
+        padding: 12px 10px 10px 13px;
         border-radius: 3px;
 
         overflow: hidden;
@@ -942,9 +944,11 @@
         justify-content: flex-end;
         gap: 50px;
         bottom: 14vh;
+
+        text-align: left;
     }
     .homeMain-subtitle {
-        font-size: 1.15em;
+        font-size: 1em;
         text-shadow: 0px 1px 2px black;
 
         width: 100%;
