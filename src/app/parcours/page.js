@@ -105,10 +105,11 @@ export default function Home() {
                     <li className="parcours-chronologie-li">
 
                       <div className="parcours-chronologie-li-header">
+                      <FontAwesomeIcon icon={faMagnifyingGlass} className="parcours-chrono-titleIcon" />
                         <span>
                           <span className="parcours-chrono-date">2024</span>
                           <span className="parcours-chrono-title">
-                            <FontAwesomeIcon icon={faMagnifyingGlass} className="parcours-chrono-titleIcon" />
+                            
                             <span>
                               Alternance &quot;Concepteur Développeur d&apos;Application&quot;
                             </span>

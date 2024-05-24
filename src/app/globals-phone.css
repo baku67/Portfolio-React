@@ -559,9 +559,26 @@
         transform: rotate(3deg);
 
         filter: drop-shadow(1px 3px 6px black);
-        border-left: 1px solid var(--primary-cyan);
+        /* border-left: 1px solid var(--primary-cyan); */
         /* box-shadow: 0px 0px 0px transparent; */
+
+        animation: contact-section1 1s 0.7s ease forwards;
+
     }
+    @keyframes contact-section1 {
+        from {
+          opacity: 0;
+          transform: rotate(0deg) translateX(-20%);
+      
+        }
+        to {
+          opacity: 1;
+          transform: rotate(-5deg) translateX(0);
+      
+        }
+      }
+
+
     .contact-section2 {
         width: 100%;
 
@@ -660,6 +677,18 @@
     }
 
 
+    .home-visitCard-reseauIcon {
+        font-size: 1.65em;
+        color: var(--primary-cyan);
+      }
+
+
+      .home-visitCard-linksDiv {
+        display: inline-flex;
+        width: 100%;
+        justify-content: flex-end;
+        gap: 15px;
+      }
 
     .homeMain-title {
         font-size: 1.6em;
@@ -775,7 +804,8 @@
     
 
     .post-it-textDiv {
-        font-size: 0.9em;
+        font-size: 0.8em;
+        margin-top: 0px;
     }
 
     .handle {
@@ -852,18 +882,40 @@
     }
 
 
+    .accueil-visitCard-content {
+        font-size: 0.85em;
+    }
+
+
     .homeMain-header {
-        width: 215px;
-        height: 113px;
+        width: 200px;
+        height: 107px;
         background-color: var(--secondary-cyan);
 
         padding: 12px 10px 10px 13px;
-        border-radius: 3px;
+        border-radius: 1px;
 
         overflow: hidden;
-        filter: drop-shadow(0px 4px 5px black);
-        transform: rotate(355deg);
+        filter: drop-shadow(0px 3px 4px black);
+        transform: rotate(360deg) translateX(-15px);
+
+        opacity: 0;
+        animation: homeMain-header 0.8s 1s ease forwards;
+      
     }
+
+    @keyframes homeMain-header {
+        from {
+          opacity: 0;
+          transform: rotate(360deg) translateX(-15px);
+      
+        }
+        to {
+          opacity: 1;
+          transform: rotate(357deg) translateX(-0px);
+      
+        }
+      }
 
 
     .homeMain-header-mobileVisitCard {

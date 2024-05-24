@@ -122,7 +122,8 @@ export function HomePage({isMobile}) {
                 onMouseLeave={handlePostItLeave}
             >
 
-                <div 
+                {/* Post-it punaise pick (désactivé) */}
+                {/* <div 
                     className="post-it-pick"
                     style={{transform: isPostItHovered ? "translateX(-50%) rotate(359deg) translateY(-10px)" : "translateX(-50%) rotate(351deg) translateY(-0px)"}}
                 >
@@ -131,12 +132,12 @@ export function HomePage({isMobile}) {
                         style={{filter: isPostItHovered ? "drop-shadow(6px 58px 15px black)" : "drop-shadow(6px 40px 10px black)"}}
                     ></div>
                     <div className="post-it-pickTrait"></div>
-                </div>
+                </div> */}
 
                 <Image 
                     src="/post-it-1-cropped.png"
-                    width={ isMobile ? 220 : 210 }
-                    height={ isMobile ? 220 : 210 }
+                    width={ isMobile ? 195 : 210 }
+                    height={ isMobile ? 195 : 210 }
                     className="post-it-img"
                     style={{
                         transform: isPostItHovered ? "translate(-2px, 5px) rotate(1deg)" : "translate(0px, 0px)",
