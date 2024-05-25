@@ -1,8 +1,11 @@
+"use client"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faPersonRunning, faLightbulb, faCamera, faEnvelope, faCheck, faBatteryThreeQuarters, faSignal, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faHtml5, faCss3Alt, faJs, faPhp, faSymfony, faReact, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import ReactCurvedText from 'react-curved-text';
+import { useRouter } from 'next/navigation';
+
 import dynamic from 'next/dynamic';
 const LiveClock = dynamic(() => import('react-live-clock'), { ssr: false });
 
@@ -23,6 +26,18 @@ export function HomePage({isMobile}) {
     // const handleScrollLeave = () => {
     //     setIsScrollHovered(false);
     // }
+
+
+    // Délai avant click redirection pour anims fadeOut
+    const [isFadingOut, setIsFadingOut] = useState(false);
+    const router = useRouter();
+    const handleClickLink = (event, href) => {
+        event.preventDefault();
+        setIsFadingOut(true);
+        setTimeout(() => {
+        router.push(href);
+        }, 5000); // Le délai doit correspondre à la durée de l'animation CSS
+    }
 
 
     // Phone (skills) hover:
@@ -188,56 +203,6 @@ export function HomePage({isMobile}) {
 
             </Link>
 
-
-
-            {/* Block Projets (desktop) */}
-            {/* <Link href="/projets">
-
-                <div 
-                    className="shapeProjet"
-                    onMouseEnter={handleProjetEnter}
-                    onMouseLeave={handleProjetLeave}
-                    style={{boxShadow: isProjetHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white", transform: isProjetHovered ? "rotate(16deg) translateX(-15px)" : "rotate(20deg) translateX(0px)"}}
-                >
-
-                    <h2 className="titleShapeProjet" style={{letterSpacing: isProjetHovered ? "2px" : "0px"}}>
-                        <FontAwesomeIcon icon={faLightbulb} className="titleShapeProjet-icon" />
-                        <span>Projets</span>
-                    </h2>
-
-                    <ul className="shapeProjet-fakeUl">
-                        <li className="shapeProjet-fakeLi">
-                            <div>
-                                <FontAwesomeIcon icon={faCheck} className="shapeProjet-icon" />
-                                <span className="home-projects home-projects-squadforgeTitle">Squadforge</span>
-                            </div>
-                            <div className="home-projectsLine"></div>
-                        </li>
-                        <li className="shapeProjet-fakeLi">
-                            <div>
-                                <FontAwesomeIcon icon={faCheck} className="shapeProjet-icon" />
-                                <span className="home-projects home-projects-bjjTitle">Backjackjo</span>
-                            </div>
-                            <div className="home-projectsLine"></div>
-                        </li>
-                        <li className="shapeProjet-fakeLi">
-                            <div>
-                                <FontAwesomeIcon icon={faCheck} className="shapeProjet-icon" />
-                                <span className="home-projects home-projects-les100cielsTitle">les100ciels</span>
-                            </div>
-                            <div className="home-projectsLine"></div>
-                        </li>
-                        <li className="shapeProjet-fakeLi">
-                            <div>
-                                <FontAwesomeIcon icon={faCheck} className="shapeProjet-icon" />
-                                <span className="home-projects home-projects-terrineTitle">Terrine</span>
-                            </div>
-                            <div className="home-projectsLine"></div>
-                        </li>
-                    </ul>
-
-                </div>
-            </Link> */}
 
 
 
@@ -654,34 +619,35 @@ export function HomePage({isMobile}) {
 
 
 
-                {/* Liens internes (Mobile) */}
+                {/* Liens internes */}
                 {/* {isMobile && ( */}
                     
+
                     <div>
                         <ul className="homeLinksUl">
 
-                            <Link href="/parcours">
+                            <Link onClick={(event) => handleClickLink(event, "/parcours")} href={"/parcours"} >
                                 <li className="homeLinksLi">
                                     <FontAwesomeIcon icon={faPersonRunning} />
                                     <h2>Parcours</h2>
                                 </li>
                             </Link>
 
-                            <Link href="/projets">
+                            <Link onClick={(event) => handleClickLink(event, "/projets")} href={"/projets"} >
                                 <li className="homeLinksLi">
                                     <FontAwesomeIcon icon={faLightbulb} />
                                     <h2>Projets</h2>
                                 </li>
                             </Link>
 
-                            <Link href="/loisirs">
+                            <Link onClick={(event) => handleClickLink(event, "/loisirs")} href={"/loisirs"} >
                             <li className="homeLinksLi">
                                 <FontAwesomeIcon icon={faCamera} />
                                 <h2>Loisirs</h2>
                             </li>
                             </Link>
 
-                            <Link href="/contact">
+                            <Link onClick={(event) => handleClickLink(event, "/contact")} href={"/contact"} >
                                 <li className="homeLinksLi">
                                     <FontAwesomeIcon icon={faEnvelope} />
                                     <h2>Contact</h2>
