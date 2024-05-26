@@ -342,19 +342,29 @@ export default function Loisirs() {
 
             </div>
 
-            <div className="galleryDiv">
 
-              <ImageGallery items={images} thumbnailPosition={"bottom"} autoPlay={"true"} slideDuration={500} slideInterval={4000} />
+
+
+
+            <div className="hobbies-main">
+
+              <div className="galleryDiv">
+                <ImageGallery items={images} thumbnailPosition={"bottom"} autoPlay={"true"} slideDuration={500} slideInterval={4000} />
+              </div>
+
+              <div className="hobbies-list">
+                <ul>
+                  <li>Plongée sous-marine</li>
+                  <li>Photographie macroscopique</li>
+                  <li>Dessin</li>
+                  <li>Découverte de jeux vidéo</li>
+                </ul>
+              </div>
 
             </div>
 
 
-            <ul className="hobbies-list">
-              <li>Plongée sous-marine</li>
-              <li>Photographie macroscopique</li>
-              <li>Dessin</li>
-              <li>Découverte de jeux vidéo</li>
-            </ul>
+            
 
         </section>
 
