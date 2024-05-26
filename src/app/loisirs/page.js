@@ -71,9 +71,44 @@ export default function Loisirs() {
             {/* Shapes neutres(cyan) */}
             <Shape1 />
             <Shape2 />
+                             <Image 
+                  src={"/aquarium-animation.webp"}
+                  width={isMobile ? 150 : 600}
+                  height={isMobile ? 150 : 600}
+                  className="aquarium-shape"
+                />
 
 
             <PageTitleNav title={"Loisirs"} />
+
+
+
+
+
+
+             {/* Aquarium */}
+             <div className="aquariumWrapper">
+
+              <div className="aquariumDiv">
+                <Image 
+                  src={"/aquarium-cropped.png"}
+                  width={isMobile ? 150 : 350}
+                  height={isMobile ? 150 : 350}
+                  className="aquariumPng"
+                />
+
+              </div>
+
+              {/* Masque de plongée: */}
+              <Image 
+                src={"/diving-mask.png"}
+                width={isMobile ? 150 : 230}
+                height={isMobile ? 150 : 230}
+                className="divingMask"
+              />
+
+
+             </div>
 
         </section>
 
