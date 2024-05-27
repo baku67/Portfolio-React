@@ -36,7 +36,7 @@ export function HomePage({isMobile}) {
         setIsFadingOut(true);
         setTimeout(() => {
         router.push(href);
-        }, 5000); // Le délai doit correspondre à la durée de l'animation CSS
+        }, 1000); // Le délai doit correspondre à la durée de l'animation CSS
     }
 
 
@@ -113,11 +113,14 @@ export function HomePage({isMobile}) {
         <>
 
             {/* Shapes */}
-            <div className="shapeProject1-accueil"></div>
-            <div className="shapeProject2-accueil" style={{
-                boxShadow: isCafeHovered ? "0px 0px 50px -10px black" : "0px 0px 0px 0px white",
-                transform: isCafeHovered ? "rotate(301deg) translate(-5px, -5px)" : "rotate(301deg) translate(0px, 0px)",
-            }}></div>
+            <div className={`shapeProject1-accueil ${isFadingOut ? "shapeProject1-accueil-fadeOut" : ""}`}></div>
+            <div 
+                className={`shapeProject2-accueil ${isFadingOut ? "shapeProject2-accueil-fadeOut" : ""}`}
+                style={{
+                    boxShadow: isCafeHovered ? "0px 0px 50px -10px black" : "0px 0px 0px 0px white",
+                    transform: isCafeHovered ? "rotate(301deg) translate(-5px, -5px)" : "rotate(301deg) translate(0px, 0px)",
+                }}
+            ></div>
 
 
             {/* Background image wood */}
@@ -177,7 +180,10 @@ export function HomePage({isMobile}) {
             <Link href="/loisirs">
 
                 {/* Plante */}
-                <div className="plantAccueil-div" style={{width:"fit-content"}}>
+                <div 
+                    className={`plantAccueil-div ${isFadingOut ? "plantAccueil-div-fadeOut" : ""}`} 
+                    style={{width:"fit-content"}}
+                >
 
                     {/* <Image src="/plant-2.png" width={450} height={450} /> */}
                     <Image src="/plant-1-min.png" width={450} height={450} className="plantAccueil" />

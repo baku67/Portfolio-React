@@ -10,7 +10,7 @@ export function ProjectInfos({actualProject, actualProjectIndex, isMobile, isFli
         <div className="projectInfosDiv">
 
             <div>
-                <span className="projectPageNumber">Projet n°{actualProjectIndex +1}</span>
+                {/* <span className="projectPageNumber">Projet n°{actualProjectIndex +1}</span> */}
 
                 <div className={`projectPageInfoHeader ${isFlipped ? 'ppih-resp' : ''}`} style={{borderColor: actualProject.primaryColor}}>
                     <h2 style={{fontFamily: actualProject.fontFamily, color: actualProject.primaryColor}} className="projectName">{actualProject.name}</h2>

@@ -330,19 +330,18 @@ export function ProjectPage({isMobile}) {
     ];
 
 
-    // flip card (mobile)
+    // flip card (mobile) Spring
     const [flipped, setFlipped] = useState(false);
     const { transform, opacity } = useSpring({
         opacity: flipped ? 1 : 0,
         transform: `perspective(600px) rotateY(${flipped ? 180 : 0}deg)`,
-        config: { mass: 5, tension: 500, friction: 80, duration: 500 },
+        config: { mass: 5, tension: 500, friction: 80, duration: 300 },
     });
 
     const handleFlip = () => {
         setFlipped(!flipped);
         setFlippedCss(true);
     };
-
 
     const [flippedCss, setFlippedCss] = useState(false);
     setTimeout(() => {
@@ -381,7 +380,7 @@ export function ProjectPage({isMobile}) {
 
             {actualProjectIndex !== null ? (
                 
-                <div style={{zIndex:5, height:"100%"}}>
+                <div className="scrollMobile" style={{zIndex:5, height:"100%"}}>
 
                     {/* Image fond */}
                     <Image 
@@ -404,20 +403,20 @@ export function ProjectPage({isMobile}) {
                     />
 
                     {/* Header ("Mes Projets" + retour) */}
-                    <div className="projectPageHeader pPH-resp">
+                    <div className="projectPageHeader">
 
-                        <div className="porjectPageHeaderTitle">
+                        <h2 className="titleSection">
                             <FontAwesomeIcon 
                                 icon={faArrowLeft} 
-                                className="backToProjectsBtn" 
+                                className="burgerIcon" 
                                 onMouseEnter={backBtnEnter}
                                 onMouseLeave={backBtnLeave}
                                 onClick={handleBackBtn}
                                 style={{opacity: isBackBtnHovered ? 0.5 : 1}}
                             />
 
-                            <h2 className="titleSection">Mes Projets</h2>
-                        </div>
+                            <span style={{margin: "0px 15px"}}>Mes Projets</span>
+                        </h2>
 
                         <ProjectsNav 
                             nbrProjects={projects.length} 

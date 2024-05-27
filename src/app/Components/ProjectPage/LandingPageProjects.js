@@ -80,7 +80,7 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
 
 
     return (
-        <div>
+        <div className="scrollMobile">
 
             {/* Image fond */}
             <Image 
