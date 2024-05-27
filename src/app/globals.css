@@ -67,6 +67,10 @@ a {
 
 
 
+.main {
+  transition: all 0.5s;
+}
+
 
 .homeMain {
     position: relative;
@@ -1126,7 +1130,7 @@ main {
 }
 .navBar {
   position: absolute;
-  z-index: 99999999999999999999999999999;
+  z-index: 999999999;
   background-color: var(--secondary-cyan);
   width: 350px;
   height: 100%;
@@ -1141,6 +1145,7 @@ main {
 .activeNav {
   transform: translateX(-0px);
   opacity: 1;
+  z-index: 999999999999;
   /* display: block; */
 }
 

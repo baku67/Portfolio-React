@@ -74,11 +74,15 @@ export default function Home() {
 
   return (
 
-    <main className="main">
+    <>
 
+      <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"parcours"} />
 
-        <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"parcours"} />
-
+    
+      <main 
+        className="main"
+        style={{filter: isNavActive ? "brightness(0.5) blur(1px)" : ""}}
+      >
 
         {/* Page 2: Parcours */}
         <section className="section page2" id="home-scroll-skills">
@@ -215,9 +219,10 @@ export default function Home() {
 
         </section>
 
+      </main>
+    
 
+    </>
 
-
-    </main>
   );
 }

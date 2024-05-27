@@ -65,44 +65,51 @@ export default function Contact() {
 
   return (
 
-    <main className="main">
-
+    <>
 
       <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"contact"} />
 
+    
+      <main 
+        className="main"
+        style={{filter: isNavActive ? "brightness(0.5) blur(1px)" : ""}}
+      >
+
+        {/* Page 5: Contact */}
+        <section className="section page5" id="home-scroll-contact">
 
 
-      {/* Page 5: Contact */}
-      <section className="section page5" id="home-scroll-contact">
+          {/* Icone Page (top-right) */}
+          <FontAwesomeIcon icon={faEnvelope} className="pageIcon" />
 
 
-        {/* Icone Page (top-right) */}
-        <FontAwesomeIcon icon={faEnvelope} className="pageIcon" />
-
-
-        {/* Shapes neutres(cyan) */}
-        <Shape1 />
-        <Shape2 />
-
-
-
-        <PageTitleNav 
-          title={"Contact"} 
-          onClickNav={toggleNav}
-        />
+          {/* Shapes neutres(cyan) */}
+          <Shape1 />
+          <Shape2 />
 
 
 
-        <div className="contactMain">
-          <ContactForm />
-          <Socials isMobile={isMobile} />
-        </div>
-
-        <Footer />
-      
-      </section>
+          <PageTitleNav 
+            title={"Contact"} 
+            onClickNav={toggleNav}
+          />
 
 
-    </main>
+
+          <div className="contactMain">
+            <ContactForm />
+            <Socials isMobile={isMobile} />
+          </div>
+
+          <Footer />
+
+        </section>
+
+
+      </main>
+
+    
+    </>
+
   );
 }

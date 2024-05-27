@@ -409,28 +409,20 @@ export default function Loisirs() {
 
   return (
 
-    <main className="main">
-      
+    <>
 
-        <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"loisirs"} />
+      <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"loisirs"} />
 
+
+      <main 
+        className="main"
+        style={{filter: isNavActive ? "brightness(0.5) blur(1px)" : ""}}
+      >
 
         {/* Page 4: Photographie, animations */}
         <section className="section page4" id="home-scroll-hobbies">
 
-
-
           <div className="loisirs-div scrollMobile">
-
-
-            {/* Background image wood */}
-            {/* <Image 
-                src="/wood-bg.jpeg"
-                fill={true}
-                style={{opacity: "0.7", zIndex:"0"}}
-                alt={"background"}
-            /> */}
-
 
             {/* Icone Page (top-right) */}
             <FontAwesomeIcon icon={faOtter} className="pageIcon" />
@@ -438,24 +430,14 @@ export default function Loisirs() {
             {/* Shapes neutres(cyan) */}
             <Shape1 />
             <Shape2 />
-            {/* <Image 
-                  src={"/aquarium-animation.webp"}
-                  width={isMobile ? 320 : 600}
-                  height={isMobile ? 320 : 600}
-                  className="aquarium-shape"
-            /> */}
 
-
-
-            
 
             <PageTitleNav 
               title={"Loisirs"} 
               onClickNav={toggleNav}
             />
-
-
             
+
             {!isMobile ? (
 
               <>
@@ -498,10 +480,6 @@ export default function Loisirs() {
             )}
             
 
-
-
-
-
             <div className="hobbies-main">
 
               <div className="galleryDiv">
@@ -520,15 +498,12 @@ export default function Loisirs() {
 
             </div>
 
-
           </div>
-
-
-            
 
         </section>
 
+      </main>
 
-    </main>
+    </>
   );
 }

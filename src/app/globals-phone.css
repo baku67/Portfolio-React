@@ -590,7 +590,7 @@
         width: 70%;
         height: 100%;
       
-        transform: translateX(-70%);
+        transform: translateX(-100%);
         opacity: 0;
         /* display: none; */
       
@@ -613,11 +613,30 @@
         top: 7%;
         right: 14%;
       }
+
+
+
       .galleryDiv {
         margin: 0 auto;
         width: 80%;
-        transform: rotate3d(1, 1, 1, 355deg);
+        transform: rotate3d(1, 1, 1, 5deg) translate(-55px, 0px);
+        animation: galleryDiv 1.2s 1s ease forwards;
+
       }
+      @keyframes galleryDiv {
+        from {
+          opacity: 0;
+          transform: rotate3d(1, 1, 1, 5deg) translate(-55px, 0px);
+        }
+        to {
+          opacity: 1;
+          transform: rotate3d(1, 1, 1, -3deg);
+        }
+      }
+
+
+
+
       .image-gallery-image {
         border:7px solid #f0f9f9;
       }
@@ -627,7 +646,13 @@
       .hobbies-list ul {
         width: fit-content;
         margin: 0 auto;
+        transform: rotate(2deg);
       }
+      .hobbies-list ul li {
+        font-size: 1em;
+      }
+
+      
       .aquarium-shape {
         bottom: -2%;
         left: -45%;
