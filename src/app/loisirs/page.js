@@ -294,6 +294,10 @@ export default function Loisirs() {
         <section className="section page4" id="home-scroll-hobbies">
 
 
+
+          <div className="loisirs-div scrollMobile">
+
+
             {/* Background image wood */}
             <Image 
                 src="/wood-bg.jpeg"
@@ -310,8 +314,8 @@ export default function Loisirs() {
             <Shape2 />
             <Image 
                   src={"/aquarium-animation.webp"}
-                  width={isMobile ? 150 : 600}
-                  height={isMobile ? 150 : 600}
+                  width={isMobile ? 320 : 600}
+                  height={isMobile ? 320 : 600}
                   className="aquarium-shape"
             />
 
@@ -320,27 +324,45 @@ export default function Loisirs() {
             <PageTitleNav title={"Loisirs"} />
 
 
-            {/* Aquarium */}
-            <div className="aquariumWrapper">
+            
+            {!isMobile ? (
 
-                <div className="aquariumDiv">
+              <>
+                {/* Aquarium + Masque (Desktop) */}
+                <div className="aquariumWrapper">
+                  <div className="aquariumDiv">
+                    <Image 
+                      src={"/aquarium-cropped.png"}
+                      width={350}
+                      height={350}
+                      className="aquariumPng"
+                    />
+                  </div>
+
+                  {/* Masque de plongée: */}
                   <Image 
-                    src={"/aquarium-cropped.png"}
-                    width={isMobile ? 150 : 350}
-                    height={isMobile ? 150 : 350}
-                    className="aquariumPng"
+                    src={"/diving-mask.png"}
+                    width={230}
+                    height={230}
+                    className="divingMask"
                   />
                 </div>
+              </>
 
-                {/* Masque de plongée: */}
-                <Image 
-                  src={"/diving-mask.png"}
-                  width={isMobile ? 150 : 230}
-                  height={isMobile ? 150 : 230}
-                  className="divingMask"
-                />
+            ) : (
 
-            </div>
+              <>
+                  {/* Juste Masque (mobile) */}
+                  <Image 
+                    src={"/diving-mask.png"}
+                    width={90}
+                    height={90}
+                    className="divingMask"
+                  />
+              </>
+
+            )}
+            
 
 
 
@@ -362,6 +384,9 @@ export default function Loisirs() {
               </div>
 
             </div>
+
+
+          </div>
 
 
             

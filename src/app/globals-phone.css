@@ -574,6 +574,46 @@
       }
 
 
+
+
+
+
+      .hobbies-main {
+        flex-direction: column;
+        top: 14%;
+        gap: 70px;
+      }
+      .aquariumWrapper {
+        top: 7%;
+        right: 14%;
+      }
+      .galleryDiv {
+        margin: 0 auto;
+        width: 80%;
+        transform: rotate3d(1, 1, 1, 355deg);
+      }
+      .image-gallery-image {
+        border:7px solid #f0f9f9;
+      }
+      .aquariumPng {
+        filter: drop-shadow(4px 5px 4px black);
+      }
+      .hobbies-list ul {
+        width: fit-content;
+        margin: 0 auto;
+      }
+      .aquarium-shape {
+        bottom: -2%;
+        left: -45%;
+        transform: rotate(63deg);
+      }
+
+      .divingMask {
+        top: 1%;
+        right: 6%;
+        transform: rotate(47deg);
+      }
+
     .contact-section2 {
         width: 100%;
 

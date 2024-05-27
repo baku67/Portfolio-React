@@ -2203,7 +2203,7 @@ main {
 
 
 .image-gallery-image {
-  border: 13px solid white;
+  border: 13px solid #f0f9f9;
 }
 
 
@@ -2509,7 +2509,9 @@ main {
 
 
 
-
+.loisirs-div {
+  height: 100%;
+}
 
 
 
