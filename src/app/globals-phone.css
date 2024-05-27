@@ -251,7 +251,10 @@
 
 
     .scrollMobile {
+        /* overflow-y: scroll; */
         overflow-y: scroll;
+        min-height: 100vh;
+        overflow-x: hidden;
     }
 
 
@@ -827,10 +830,10 @@
 
 
     .parcours-chronologie {
-        width: 80%;
+        width: 85%;
         margin: 35px auto;
     
-        padding: 15px;
+        padding: 7px 9px;
         background-color: var(--secondary-cyan);
         border-radius: 2px;
         transform: rotate(358deg);
@@ -1076,7 +1079,7 @@
     }
 
     .homeLinksLi {
-        background-color: var(--primary-cyan);
+        background: var(--primary-cyan);
         color: #0a191c;
         padding: 6px 15px;
         margin: 9px auto;
@@ -1087,16 +1090,17 @@
 
         flex-direction: row;
 
-        /* clip-path: polygon(3% 0, 100% 0, 97% 100%, 0% 100%); */
-
         filter: drop-shadow(0px 4px 6px black);
 
         min-width: 150px;
+        width: 170px;
         display: inline-flex;
         justify-content: space-around;
     }
     .homeLinksLi h2 {
         margin-bottom: 0;
+        font-size: 1.2em;
+        width: 105px;
     }
 
     .homeLinksLi svg {

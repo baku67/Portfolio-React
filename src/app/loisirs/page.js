@@ -312,12 +312,12 @@ export default function Loisirs() {
             {/* Shapes neutres(cyan) */}
             <Shape1 />
             <Shape2 />
-            <Image 
+            {/* <Image 
                   src={"/aquarium-animation.webp"}
                   width={isMobile ? 320 : 600}
                   height={isMobile ? 320 : 600}
                   className="aquarium-shape"
-            />
+            /> */}
 
 
 
@@ -371,6 +371,7 @@ export default function Loisirs() {
             <div className="hobbies-main">
 
               <div className="galleryDiv">
+                <span>Photographie</span>
                 <ImageGallery items={images} thumbnailPosition={"bottom"} autoPlay={"true"} slideDuration={500} slideInterval={4000} />
               </div>
 

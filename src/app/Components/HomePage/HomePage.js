@@ -609,87 +609,47 @@ export function HomePage({isMobile}) {
 
 
 
-                {/* Main */}
-
-                {/* WIP */}
-                {/* <div className="homeMain-wip">
-
-                    <FontAwesomeIcon icon={faPersonDigging} style={{color:"var(--primary-cyan)", fontSize:"2em"}} />
-
-                    <div className="homeMain-wip-text">
-                        <span>Portfolio en construction</span>
-                        <a href="https://bk-dev.fr" target="_blank">Ancienne version</a>
-                    </div>
-
-                </div> */}
-
 
 
                 {/* Liens internes */}
-                {/* {isMobile && ( */}
-                    
+        
+                <div>
+                    <ul className="homeLinksUl">
 
-                    <div>
-                        <ul className="homeLinksUl">
-
-                            <Link onClick={(event) => handleClickLink(event, "/parcours")} href={"/parcours"} >
-                                <li className="homeLinksLi">
-                                    <FontAwesomeIcon icon={faPersonRunning} />
-                                    <h2>Parcours</h2>
-                                </li>
-                            </Link>
-
-                            <Link onClick={(event) => handleClickLink(event, "/projets")} href={"/projets"} >
-                                <li className="homeLinksLi">
-                                    <FontAwesomeIcon icon={faLightbulb} />
-                                    <h2>Projets</h2>
-                                </li>
-                            </Link>
-
-                            <Link onClick={(event) => handleClickLink(event, "/loisirs")} href={"/loisirs"} >
+                        <Link onClick={(event) => handleClickLink(event, "/parcours")} href={"/parcours"} >
                             <li className="homeLinksLi">
-                                <FontAwesomeIcon icon={faCamera} />
-                                <h2>Loisirs</h2>
+                                <FontAwesomeIcon icon={faPersonRunning} />
+                                <h2>Parcours</h2>
                             </li>
-                            </Link>
+                        </Link>
 
-                            <Link onClick={(event) => handleClickLink(event, "/contact")} href={"/contact"} >
-                                <li className="homeLinksLi">
-                                    <FontAwesomeIcon icon={faEnvelope} />
-                                    <h2>Contact</h2>
-                                </li>
-                            </Link>
+                        <Link onClick={(event) => handleClickLink(event, "/projets")} href={"/projets"} >
+                            <li className="homeLinksLi">
+                                <FontAwesomeIcon icon={faLightbulb} />
+                                <h2>Projets</h2>
+                            </li>
+                        </Link>
 
-                        </ul>
-                    </div>
-                {/* )} */}
+                        <Link onClick={(event) => handleClickLink(event, "/loisirs")} href={"/loisirs"} >
+                        <li className="homeLinksLi">
+                            <FontAwesomeIcon icon={faCamera} />
+                            <h2>Loisirs</h2>
+                        </li>
+                        </Link>
 
+                        <Link onClick={(event) => handleClickLink(event, "/contact")} href={"/contact"} >
+                            <li className="homeLinksLi">
+                                <FontAwesomeIcon icon={faEnvelope} />
+                                <h2>Contact</h2>
+                            </li>
+                        </Link>
+
+                    </ul>
+                </div>
 
             </div>
 
 
-
-            {/* Scroll SVG icon (Desktop) */}
-            {/* {!isMobile && (
-
-                <svg 
-                className="scrollSvg"
-                onMouseEnter={handleScrollEnter}
-                onMouseLeave={handleScrollLeave}
-                style={{
-                    fill: isScrollHovered ? "white" : "grey",
-                    transform: isScrollHovered ? "translateX(-50%) translateY(7px)" : "translateX(-50%) translateY(0px)",
-                    paddingTop: "7px",
-                }}
-                >
-                    <g>
-                        <path d="M67.71,42.631c-0.001-9.565-7.753-17.317-17.318-17.318h-0.784c-9.565,0.001-17.317,7.753-17.318,17.318V57.35   c0.001,9.565,7.753,17.316,17.318,17.317h0.784c9.565-0.001,17.317-7.753,17.318-17.317V42.631z M64.806,57.35   c-0.001,3.985-1.611,7.579-4.222,10.192c-2.613,2.611-6.208,4.221-10.193,4.222h-0.784c-3.985-0.001-7.58-1.611-10.193-4.222   c-2.611-2.613-4.221-6.208-4.222-10.192V42.631c0.001-3.985,1.611-7.58,4.222-10.193c2.613-2.611,6.208-4.221,10.193-4.222h0.784   c3.985,0.001,7.579,1.611,10.193,4.222c2.611,2.613,4.221,6.208,4.222,10.193V57.35z"/><path d="M49.977,39.903c-0.802,0-1.452,0.65-1.452,1.452v4.258c0,0.802,0.65,1.452,1.452,1.452c0.802,0,1.452-0.65,1.452-1.452   v-4.258C51.429,40.553,50.779,39.903,49.977,39.903z"/><path d="M49.093,94.682c0.53,0.424,1.283,0.424,1.814,0l7.258-5.806c0.626-0.501,0.727-1.414,0.227-2.04   c-0.501-0.626-1.414-0.727-2.04-0.227l0,0L50,91.689l-6.351-5.081c-0.626-0.501-1.54-0.399-2.04,0.227   c-0.501,0.626-0.399,1.539,0.227,2.04L49.093,94.682z"/><path d="M56.351,13.392c0.626,0.501,1.539,0.399,2.04-0.227c0.501-0.626,0.399-1.539-0.227-2.04l-7.258-5.807   c-0.531-0.425-1.283-0.425-1.814,0l-7.258,5.806c-0.626,0.501-0.728,1.414-0.227,2.04c0.501,0.626,1.414,0.727,2.04,0.227l0,0   L50,8.311L56.351,13.392z"/>
-                    </g>
-                </svg>
-
-            )}
-
-            */}
         </>
     )
 }

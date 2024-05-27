@@ -74,126 +74,131 @@ export default function Home() {
         <section className="section page2" id="home-scroll-skills">
 
 
-            {/* Background image wood */}
-            <Image 
-                src="/wood-bg.jpeg"
-                fill={true}
-                style={{opacity: "0.7", zIndex:"0"}}
-            />
+
+            <div className="scrollMobile">
+
+
+              {/* Background image wood */}
+              <Image 
+                  src="/wood-bg.jpeg"
+                  fill={true}
+                  style={{opacity: "0.7", zIndex:"0"}}
+              />
 
 
 
-            {/* Icone Page (top-right) */}
-            <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" />
+              {/* Icone Page (top-right) */}
+              <FontAwesomeIcon icon={faPersonRunning} className="pageIcon" />
 
-            {/* Shapes neutres(cyan) */}
-            <Shape1 />
-            <Shape2 />
-
-
-            <PageTitleNav title={"Parcours"} />
+              {/* Shapes neutres(cyan) */}
+              <Shape1 />
+              <Shape2 />
 
 
-
-            <div className="parcours-main">
-
-                <div className="parcours-chronologie">
-
-                  <ul className="parcours-chronologie-ul">
+              <PageTitleNav title={"Parcours"} />
 
 
-                    <li className="parcours-chronologie-li">
 
-                      <div className="parcours-chronologie-li-header">
-                      <FontAwesomeIcon icon={faMagnifyingGlass} className="parcours-chrono-titleIcon" />
-                        <span>
-                          <span className="parcours-chrono-date">2024</span>
-                          <span className="parcours-chrono-title">
-                            
-                            <span>
-                              Alternance &quot;Concepteur Développeur d&apos;Application&quot;
+              <div className="parcours-main">
+
+                  <div className="parcours-chronologie">
+
+                    <ul className="parcours-chronologie-ul">
+
+
+                      <li className="parcours-chronologie-li">
+
+                        <div className="parcours-chronologie-li-header">
+                        <FontAwesomeIcon icon={faMagnifyingGlass} className="parcours-chrono-titleIcon" />
+                          <span>
+                            <span className="parcours-chrono-date">2024</span>
+                            <span className="parcours-chrono-title">
+                              
+                              <span>
+                                Alternance &quot;Concepteur Développeur d&apos;Application&quot;
+                              </span>
                             </span>
                           </span>
-                        </span>
-                      </div>
+                        </div>
 
-                      <span className="parcours-chrono-exp">24 Juin</span>
+                        <span className="parcours-chrono-exp">24 Juin</span>
 
-                    </li>
-
+                      </li>
 
 
-                    <li className="parcours-chronologie-li">
 
-                      <div className="parcours-chronologie-li-header">
-                        <span>
-                          <span className="parcours-chrono-date">2023</span>
-                          <span className="parcours-chrono-title">Titre RNCP &quot;Développeur web et web mobile&quot;</span>
-                        </span>
-                      </div>
+                      <li className="parcours-chronologie-li">
 
-                      <span className="parcours-chrono-exp">Stage chez Hoplunch</span>
+                        <div className="parcours-chronologie-li-header">
+                          <span>
+                            <span className="parcours-chrono-date">2023</span>
+                            <span className="parcours-chrono-title">Titre RNCP &quot;Développeur web et web mobile&quot;</span>
+                          </span>
+                        </div>
 
-                    </li>
+                        <span className="parcours-chrono-exp">Stage chez Hoplunch</span>
 
-                    <li className="parcours-chronologie-li">
+                      </li>
 
-                      <div className="parcours-chronologie-li-header">
-                        <span>
-                          <span className="parcours-chrono-date">2020-2022</span>
-                          <span className="parcours-chrono-title">BTS SIO option SLAM</span>
-                        </span>
-                      </div>
+                      <li className="parcours-chronologie-li">
 
-                      <span className="parcours-chrono-exp">Alternance chez Europe Tech Group</span>
+                        <div className="parcours-chronologie-li-header">
+                          <span>
+                            <span className="parcours-chrono-date">2020-2022</span>
+                            <span className="parcours-chrono-title">BTS SIO option SLAM</span>
+                          </span>
+                        </div>
 
-                    </li>
+                        <span className="parcours-chrono-exp">Alternance chez Europe Tech Group</span>
 
-                    <li className="parcours-chronologie-li">
+                      </li>
 
-                      <div className="parcours-chronologie-li-header">
-                        <span>
-                          <span className="parcours-chrono-date">2019</span>
-                          <span className="parcours-chrono-title">Service Civique &quot;Médiateur numérique&quot;</span>
-                        </span>
+                      <li className="parcours-chronologie-li">
 
-                      </div>
+                        <div className="parcours-chronologie-li-header">
+                          <span>
+                            <span className="parcours-chrono-date">2019</span>
+                            <span className="parcours-chrono-title">Service Civique &quot;Médiateur numérique&quot;</span>
+                          </span>
 
-                      <span className="parcours-chrono-exp">Centre social & culturel l&apos;Éscale</span>
+                        </div>
 
-                    </li>
+                        <span className="parcours-chrono-exp">Centre social & culturel l&apos;Éscale</span>
 
-                  </ul >
+                      </li>
 
+                    </ul >
+
+
+                  </div>
+
+                  <Skills />
+
+              </div>
+
+
+
+
+              {/* CV Desktop absolute bottom right*/}
+
+                <div className="cv-pdf-wrapper">
+
+                  <Image 
+                    src="/CV_BasileKuntz.png" 
+                    // width={100} 
+                    // height={250} 
+                    fill={true}
+                    alt="CV de Basile Kuntz"
+                    onClick={downloadPDF} 
+                    className="cv-pdf"
+                  />
+
+                  {/* Download icone: */}
+                  <FontAwesomeIcon icon={faFilePdf} className="cv-pdf-dlIcon" />
 
                 </div>
 
-                <Skills />
-
-            </div>
-
-
-
-
-            {/* CV Desktop absolute bottom right*/}
-
-              <div className="cv-pdf-wrapper">
-
-                <Image 
-                  src="/CV_BasileKuntz.png" 
-                  // width={100} 
-                  // height={250} 
-                  fill={true}
-                  alt="CV de Basile Kuntz"
-                  onClick={downloadPDF} 
-                  className="cv-pdf"
-                />
-
-                {/* Download icone: */}
-                <FontAwesomeIcon icon={faFilePdf} className="cv-pdf-dlIcon" />
-
-              </div>
-        
+            </div>        
 
         </section>
 
