@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 
 import Image from "next/image";
 
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFilePdf, faPersonRunning, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
@@ -10,6 +11,8 @@ import { Shape1 } from "/src/app/Components/Shapes/Shape1";
 import { Shape2 } from "/src/app/Components/Shapes/Shape2";
 import { Skills } from "/src/app/Components/CvPage/Skills";
 import PageTitleNav from "../Components/PageTitleNav";
+import { NavBar } from "../Components/NavBar";
+
 
 
 // Define isMobileDevice function outside of the component
@@ -61,16 +64,10 @@ export default function Home() {
 
 
 
-  // Nav
+
+  // Click toggle Nav (isNavActive)
   const [isNavActive, setNavActive] = useState(false);
-
-  // Sur PC survol = toggle:
-  const handleMouseEnterNav = () => setNavActive(true);
-  const handleMouseLeaveNav = () => setNavActive(false);
-
-  // Sur mobile click = Toggle:
   const toggleNav = () => setNavActive(prevState => !prevState);
-
 
 
 
@@ -79,20 +76,8 @@ export default function Home() {
 
     <main className="main">
 
-        {/* Nav bar */}
-        <div 
-          className="navBar"
-          style={{display: isNavActive ? "block" : "none"}}
-        >
-          <ul>
-            <li>Accueil</li>
-            <li>Parcours</li>
-            <li>Projets</li>
-            <li>Loisirs</li>
-            <li>Contact</li>
-          </ul>
-        </div>
 
+        <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"parcours"} />
 
 
         {/* Page 2: Parcours */}
@@ -122,9 +107,6 @@ export default function Home() {
 
               <PageTitleNav 
                 title={"Parcours"} 
-                isMobile={isMobile}
-                onMouseEnterNav={handleMouseEnterNav} 
-                onMouseLeaveNav={handleMouseLeaveNav} 
                 onClickNav={toggleNav}
               />
 

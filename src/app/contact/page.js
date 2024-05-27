@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 
 import Image from "next/image";
 
+import { NavBar } from "../Components/NavBar";
+
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
@@ -51,22 +54,26 @@ export default function Contact() {
 
 
 
+  
+  // Click toggle Nav (isNavActive)
+  const [isNavActive, setNavActive] = useState(false);
+  const toggleNav = () => setNavActive(prevState => !prevState);
+
+
+
+
 
   return (
 
     <main className="main">
 
 
+      <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"contact"} />
+
+
+
       {/* Page 5: Contact */}
       <section className="section page5" id="home-scroll-contact">
-
-
-        {/* Image fond */}
-        {/* <Image 
-            src="/wood-bg.jpeg"
-            fill={true}
-            style={{opacity: "0.7", zIndex:"0"}}
-        /> */}
 
 
         {/* Icone Page (top-right) */}
@@ -79,7 +86,10 @@ export default function Contact() {
 
 
 
-        <PageTitleNav title={"Contact"} />
+        <PageTitleNav 
+          title={"Contact"} 
+          onClickNav={toggleNav}
+        />
 
 
 

@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 
 import { ProjectPage } from "/src/app/Components/ProjectPage/ProjectPage";
+import { NavBar } from "../Components/NavBar";
+
 
 
 // Define isMobileDevice function outside of the component
@@ -40,13 +42,11 @@ export default function Projets() {
 
 
 
-
-
+  
 
   return (
 
     <main className="main">
-      
 
         {/* Page 3: Projets */}
         <section className="section page3" id="home-scroll-project">

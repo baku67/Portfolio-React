@@ -13,6 +13,7 @@ import PageTitleNav from "../PageTitleNav";
 import { ProjectThumbnail } from "./ProjectThumbnail";
 import GitHubCalendar from 'react-github-calendar';
 import { ProjectCardInfos } from "./ProjectCardInfos";
+import { NavBar } from "../NavBar";
 
 const ITEMS_PER_PAGE = 4; // Set the number of items per page
 
@@ -78,17 +79,20 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
     };
 
 
+    // Click toggle Nav (isNavActive)
+    const [isNavActive, setNavActive] = useState(false);
+    const toggleNav = () => setNavActive(prevState => !prevState);
+
+
+
+
 
     return (
         <div className="scrollMobile">
 
-            {/* Image fond */}
-            {/* <Image 
-                // src="/plant-bg-min.png"
-                src="/wood-bg.jpeg"
-                fill={true}
-                style={{opacity: "0.7", zIndex:"0"}}
-            /> */}
+            <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"projets"} />
+
+
 
             {/* Icone Page (top-right) */}
             <FontAwesomeIcon icon={faLightbulb} className="pageIcon" />
@@ -98,8 +102,10 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
             <Shape2 />
         
 
-            <PageTitleNav title={"Projets"} />
-
+            <PageTitleNav 
+                title={"Projets"} 
+                onClickNav={toggleNav}
+            />
 
 
             {/* CARDS projets */}

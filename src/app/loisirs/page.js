@@ -11,6 +11,8 @@ import Image from "next/image";
 import { Shape1 } from "../Components/Shapes/Shape1";
 import { Shape2 } from "../Components/Shapes/Shape2";
 import PageTitleNav from "../Components/PageTitleNav";
+import { NavBar } from "../Components/NavBar";
+
 
 
 // Define isMobileDevice function outside of the component
@@ -396,12 +398,21 @@ export default function Loisirs() {
 
 
 
+    // Click toggle Nav (isNavActive)
+    const [isNavActive, setNavActive] = useState(false);
+    const toggleNav = () => setNavActive(prevState => !prevState);
+  
+
+
+
 
 
   return (
 
     <main className="main">
       
+
+        <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"loisirs"} />
 
 
         {/* Page 4: Photographie, animations */}
@@ -436,7 +447,12 @@ export default function Loisirs() {
 
 
 
-            <PageTitleNav title={"Loisirs"} />
+            
+
+            <PageTitleNav 
+              title={"Loisirs"} 
+              onClickNav={toggleNav}
+            />
 
 
             

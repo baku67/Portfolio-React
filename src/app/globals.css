@@ -1128,11 +1128,49 @@ main {
   position: absolute;
   z-index: 99999999999999999999999999999;
   background-color: var(--secondary-cyan);
-  width: 70%;
+  width: 350px;
   height: 100%;
 
+  transform: translateX(-350px);
+  opacity: 0;
+  /* display: none; */
 
+  transition: all 0.5s;
 }
+
+.activeNav {
+  transform: translateX(-0px);
+  opacity: 1;
+  /* display: block; */
+}
+
+.navBar-topLine {
+  text-align: right;
+}
+.navBar-topLine-exitBtn {
+  cursor: pointer;
+  font-size: 2.2em;
+    padding: 15px 20px;
+}
+
+.navBar-list-ul {
+  margin-top: 30px;
+  padding: 25px !important;
+}
+.navBar-list-ul li {
+  cursor: pointer;
+  padding: 11px 20px;
+  font-size: 1.7em;
+}
+
+.navBar-li-active {
+  background-color: var(--primary-cyan);
+  color: var(--secondary-cyan);
+}
+
+
+
+
 
 .cv-pdf-dlIcon {
   position: absolute;

@@ -577,8 +577,31 @@
       }
 
 
+      .navBar-list-ul {
+        margin-top: 0px;
+        padding: 0px 25px !important;
+      }
 
 
+      .navBar {
+        position: absolute;
+        z-index: 99999999999999999999999999999;
+        background-color: var(--secondary-cyan);
+        width: 70%;
+        height: 100%;
+      
+        transform: translateX(-70%);
+        opacity: 0;
+        /* display: none; */
+      
+        transition: all 0.5s;
+      }
+      
+      .activeNav {
+        transform: translateX(-0%);
+        opacity: 1;
+        /* display: block; */
+      }
 
 
       .hobbies-main {
