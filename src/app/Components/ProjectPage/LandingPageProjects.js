@@ -83,12 +83,12 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
         <div className="scrollMobile">
 
             {/* Image fond */}
-            <Image 
+            {/* <Image 
                 // src="/plant-bg-min.png"
                 src="/wood-bg.jpeg"
                 fill={true}
                 style={{opacity: "0.7", zIndex:"0"}}
-            />
+            /> */}
 
             {/* Icone Page (top-right) */}
             <FontAwesomeIcon icon={faLightbulb} className="pageIcon" />

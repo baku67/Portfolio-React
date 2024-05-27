@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "./globals-phone.css";
+import Image from "next/image";
 
 // The following import prevents a Font Awesome icon server-side rendering bug,
 // where the icons flash from a very large icon down to a properly sized one:
@@ -21,7 +22,24 @@ export default function RootLayout({ children }) {
   return (
     <html lang="fr">
 
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+
+
+        {/* Background image wood */}
+        <Image 
+          // src="/plant-bg-min.png"
+          src="/wood-bg.jpeg"
+          fill={true}
+          style={{opacity: "0.7", zIndex:"0"}}
+        />
+        
+        {children}
+        
+        
+        
+        </body>
+
+
 
     </html>
   );

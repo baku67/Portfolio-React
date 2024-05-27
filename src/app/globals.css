@@ -1117,6 +1117,23 @@ main {
   transition: 0.5s;
 }
 
+.test {
+  background-color: red;
+  font-size: 5em;
+  padding: 50px;
+  width: 150px;
+  height: 150px;
+}
+.navBar {
+  position: absolute;
+  z-index: 99999999999999999999999999999;
+  background-color: var(--secondary-cyan);
+  width: 70%;
+  height: 100%;
+
+
+}
+
 .cv-pdf-dlIcon {
   position: absolute;
   bottom: 15px;
@@ -1141,6 +1158,17 @@ main {
     transform: rotate(358deg);
 
     filter: drop-shadow(1px 3px 6px black);
+
+    opacity: 0;
+    animation: parcours-chronologie 1s 0.5s ease forwards;
+}
+@keyframes parcours-chronologie {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .parcours-chronologie-ul {

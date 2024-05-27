@@ -413,12 +413,12 @@ export default function Loisirs() {
 
 
             {/* Background image wood */}
-            <Image 
+            {/* <Image 
                 src="/wood-bg.jpeg"
                 fill={true}
                 style={{opacity: "0.7", zIndex:"0"}}
                 alt={"background"}
-            />
+            /> */}
 
 
             {/* Icone Page (top-right) */}

@@ -383,12 +383,12 @@ export function ProjectPage({isMobile}) {
                 <div className="scrollMobile" style={{zIndex:5, height:"100%"}}>
 
                     {/* Image fond */}
-                    <Image 
+                    {/* <Image 
                         // src="/plant-bg-min.png"
                         src="/wood-bg.jpeg"
                         fill={true}
                         style={{opacity: "0.7", zIndex:"0"}}
-                    />
+                    /> */}
 
 
                     {/* Shapes adaptées*/}

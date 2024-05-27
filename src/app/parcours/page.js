@@ -61,12 +61,37 @@ export default function Home() {
 
 
 
+  // Nav
+  const [isNavActive, setNavActive] = useState(false);
+
+  // Sur PC survol = toggle:
+  const handleMouseEnterNav = () => setNavActive(true);
+  const handleMouseLeaveNav = () => setNavActive(false);
+
+  // Sur mobile click = Toggle:
+  const toggleNav = () => setNavActive(prevState => !prevState);
+
+
 
 
 
   return (
 
     <main className="main">
+
+        {/* Nav bar */}
+        <div 
+          className="navBar"
+          style={{display: isNavActive ? "block" : "none"}}
+        >
+          <ul>
+            <li>Accueil</li>
+            <li>Parcours</li>
+            <li>Projets</li>
+            <li>Loisirs</li>
+            <li>Contact</li>
+          </ul>
+        </div>
 
 
 
@@ -79,11 +104,11 @@ export default function Home() {
 
 
               {/* Background image wood */}
-              <Image 
+              {/* <Image 
                   src="/wood-bg.jpeg"
                   fill={true}
                   style={{opacity: "0.7", zIndex:"0"}}
-              />
+              /> */}
 
 
 
@@ -95,7 +120,13 @@ export default function Home() {
               <Shape2 />
 
 
-              <PageTitleNav title={"Parcours"} />
+              <PageTitleNav 
+                title={"Parcours"} 
+                isMobile={isMobile}
+                onMouseEnterNav={handleMouseEnterNav} 
+                onMouseLeaveNav={handleMouseLeaveNav} 
+                onClickNav={toggleNav}
+              />
 
 
 

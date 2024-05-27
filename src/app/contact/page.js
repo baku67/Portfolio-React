@@ -62,11 +62,11 @@ export default function Contact() {
 
 
         {/* Image fond */}
-        <Image 
+        {/* <Image 
             src="/wood-bg.jpeg"
             fill={true}
             style={{opacity: "0.7", zIndex:"0"}}
-        />
+        /> */}
 
 
         {/* Icone Page (top-right) */}
