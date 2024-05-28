@@ -1200,7 +1200,7 @@ main {
 }
 
 .navBar-li-active svg {
-  transform: scale(1.6);
+  transform: scale(1.7);
 }
 
 
@@ -1246,6 +1246,7 @@ main {
   }
 }
 
+
 .parcours-chronologie-ul {
   display: inline-flex;
     flex-direction: column;
@@ -1253,9 +1254,9 @@ main {
 .parcours-chronologie-li {
     display: inline-flex;
     flex-direction: column;
-    margin: 10px 5px;
+    margin: 11px 5px;
 
-    border-left: 1px solid var(--primary-cyan);
+    /* border-left: 1px solid var(--primary-cyan); */
     padding-left: 11px;
 
     font-size: 1.2em;
@@ -1267,6 +1268,12 @@ main {
 
   font-size: 2em;
   color: var(--primary-cyan);
+}
+
+.parcours-chronologie-li-descriptionAlternance {
+  font-size: 0.8em;
+  margin: 10px auto;
+  color: rgb(241, 245, 244);
 }
 
 
@@ -1731,6 +1738,28 @@ main {
 }
 
 
+.hobbies-list-trait {
+  height: 2px;
+  width: 100%;
+
+  background: rgb(0,0,0);
+  background: -moz-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(27,187,218,1) 40%, rgba(27,187,218,1) 60%, rgba(0,0,0,0) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(27,187,218,1) 40%, rgba(27,187,218,1) 60%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(27,187,218,1) 40%, rgba(27,187,218,1) 60%, rgba(0,0,0,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+}
+
+.parcours-list-trait {
+  height: 2px;
+  width: 100%;
+
+  background: rgb(0,0,0);
+  background: -moz-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(27,187,218,1) 40%, rgba(27,187,218,1) 60%, rgba(0,0,0,0) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(27,187,218,1) 40%, rgba(27,187,218,1) 60%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(27,187,218,1) 40%, rgba(27,187,218,1) 60%, rgba(0,0,0,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+
+}
 
 
 
@@ -1745,7 +1774,7 @@ main {
     top: 10%;
     transform: translateX(-50%) translateY(-10%);
 
-    gap: 100px;
+    gap: 10%;
 }
 
 
@@ -1813,14 +1842,14 @@ main {
   align-items: center;
 
   font-size: 1.35em;
-  gap: 17px;
+  gap: 22px;
   margin: 10px 0px;
 }
 
 
 .hobbies-list-icon {
   color: var(--primary-cyan);
-  font-size: 1.35em;
+  font-size: 2.2em;
   width: 50px;
 }
 
@@ -2384,7 +2413,6 @@ main {
   z-index: 99;
   width: 60%;
   margin: 0 auto;
-  /* gap: 3%; */
   gap: 10%;
   justify-content: space-evenly;
   align-items: center;

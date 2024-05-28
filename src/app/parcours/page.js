@@ -124,47 +124,66 @@ export default function Home() {
                         <div className="parcours-chronologie-li-header">
 
                           <FontAwesomeIcon icon={faMagnifyingGlass} className="parcours-chrono-titleIcon" />
-                          <span>
+                          <div>
                             <span className="parcours-chrono-date">2024</span>
-                            <span className="parcours-chrono-title">
-                              <span>
-                                Alternance &quot;Concepteur Développeur d&apos;Application&quot;
-                              </span>
-                            </span>
-                          </span>
+                            <span className="parcours-chrono-title">Alternance &quot;Concepteur Développeur d&apos;Application&quot;</span>
+                          </div>
+
                         </div>
 
-                        <span className="parcours-chrono-exp">24 Juin</span>
+                        <div>
+                          <p className="parcours-chronologie-li-descriptionAlternance">Contrat d’apprentissage - Rythme : 3 semaines en entreprise / 1 semaine en école<br />
+                            Formation éligible à l’Aide Exceptionnelle de 6000€
+                          </p>
+                        </div>
+
+                        {/* <span className="parcours-chrono-exp">Départ 24 Juin</span> */}
 
                       </li>
+
+                      <div className="parcours-list-trait"></div>
 
                       <li className="parcours-chronologie-li">
 
                           <div className="parcours-chronologie-li-header">
-                          <FontAwesomeIcon icon={faGraduationCap} className="parcours-chrono-titleIcon" />
-                          <span>
-                            <span className="parcours-chrono-date">2023</span>
-                            <span className="parcours-chrono-title">Titre RNCP &quot;Développeur web et web mobile&quot;</span>
-                          </span>
-                        </div>
 
-                        <span className="parcours-chrono-exp">Stage chez Hoplunch</span>
+                            <FontAwesomeIcon icon={faGraduationCap} className="parcours-chrono-titleIcon" />
+                            <div>
+                              <span className="parcours-chrono-date">2023</span>
+                              <span className="parcours-chrono-title">Titre RNCP &quot;Développeur web et web mobile&quot;</span>
+                            </div>
+
+                          </div>
+
+                          <div>
+                            <p className="parcours-chronologie-li-description">
+                                PHP / Symfony, Maquettage, MCD, Doctrine, DQL, Twig, Projet de plateforme communautaire
+                            </p>
+                          </div>
+
+                        <span className="parcours-chrono-exp">Stage chez Hoplunch (Migration PHP =&gt; Symfony)</span>
 
                       </li>
+
+                      <div className="parcours-list-trait"></div>
 
                       <li className="parcours-chronologie-li li-widthMobile-prevLast">
 
                           <div className="parcours-chronologie-li-header">
-                          <FontAwesomeIcon icon={faGraduationCap} className="parcours-chrono-titleIcon" />
-                          <span>
-                            <span className="parcours-chrono-date">2020-2022</span>
-                            <span className="parcours-chrono-title">BTS option SLAM</span>
-                          </span>
-                        </div>
+
+                            <FontAwesomeIcon icon={faGraduationCap} className="parcours-chrono-titleIcon" />
+                            <div>
+                              <span className="parcours-chrono-date">2020-2022</span>
+                              <span className="parcours-chrono-title">BTS option SLAM</span>
+                            </div>
+
+                          </div>
 
                         <span className="parcours-chrono-exp">Alternance chez Europe Tech Group</span>
 
                       </li>
+
+                      <div className="parcours-list-trait"></div>
 
                       <li className="parcours-chronologie-li li-widthMobile-last">
 

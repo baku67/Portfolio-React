@@ -85,7 +85,7 @@ export default function Contact() {
         <section className="section page5" id="home-scroll-contact">
 
 
-          <div className="scrollMobile">
+          {/* <div className="scrollMobile"> */}
 
             {/* Icone Page (top-right) */}
             <FontAwesomeIcon icon={faEnvelope} className="pageIcon" />
@@ -96,12 +96,10 @@ export default function Contact() {
             <Shape2 />
 
 
-
             <PageTitleNav 
               title={"Contact"} 
               onClickNav={toggleNav}
             />
-
 
 
             <div className="contactMain">
@@ -109,10 +107,12 @@ export default function Contact() {
               <Socials isMobile={isMobile} />
             </div>
 
+
+
             <Footer />
 
 
-            </div>
+            {/* </div> */}
 
         </section>
 

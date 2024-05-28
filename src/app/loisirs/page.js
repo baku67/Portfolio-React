@@ -475,15 +475,21 @@ export default function Loisirs() {
                     <span>Plongée sous-marine</span>
                   </li>
 
+                  <div className="hobbies-list-trait"></div>
+
                   <li>
                     <FontAwesomeIcon icon={faCamera} className="hobbies-list-icon" />
-                    <span>Photographie macroscopique</span>
+                    <span>Photographie macro</span>
                   </li>
+
+                  <div className="hobbies-list-trait"></div>
 
                   <li>
                     <FontAwesomeIcon icon={faPencil} className="hobbies-list-icon" />
                     <span>Dessin</span>
                   </li>
+
+                  <div className="hobbies-list-trait"></div>
 
                   <li>
                     <FontAwesomeIcon icon={faGamepad} className="hobbies-list-icon" />
