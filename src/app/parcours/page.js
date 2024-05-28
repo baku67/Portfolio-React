@@ -157,11 +157,13 @@ export default function Home() {
 
                           <div>
                             <p className="parcours-chronologie-li-description">
-                                PHP / Symfony, Maquettage, MCD, Doctrine, DQL, Twig, Projet de plateforme communautaire
+                                Symfony, Design Pattern MCV, POO, Responsiv Design, SEO, UX
                             </p>
                           </div>
 
-                        <span className="parcours-chrono-exp">Stage chez Hoplunch (Migration PHP =&gt; Symfony)</span>
+                        <span className="parcours-chrono-exp">
+                          <span className="parcours-chrono-exp-strong">Stage</span> chez Hoplunch (Migration PHP vers Symfony)
+                        </span>
 
                       </li>
 
@@ -174,30 +176,45 @@ export default function Home() {
                             <FontAwesomeIcon icon={faGraduationCap} className="parcours-chrono-titleIcon" />
                             <div>
                               <span className="parcours-chrono-date">2020-2022</span>
-                              <span className="parcours-chrono-title">BTS option SLAM</span>
+                              <span className="parcours-chrono-title">BTS SIO option SLAM</span>
                             </div>
 
                           </div>
 
-                        <span className="parcours-chrono-exp">Alternance chez Europe Tech Group</span>
+                          <div>
+                            <p className="parcours-chronologie-li-description">
+                                MCD, PHP, Javascript
+                            </p>
+                          </div>
+
+
+                        <span className="parcours-chrono-exp">
+                          <span className="parcours-chrono-exp-strong">Alternance</span> chez Europe Tech Group (Hotline, Migration ERP Microsoft Navision)
+                        </span>
 
                       </li>
 
-                      <div className="parcours-list-trait"></div>
 
-                      <li className="parcours-chronologie-li li-widthMobile-last">
+                      {/* Service civique (Desktop) */}
+                      {!isMobile && (
+                          <>
+                          
+                            <div className="parcours-list-trait"></div>
 
-                        <div className="parcours-chronologie-li-header">
-                          <span>
-                            <span className="parcours-chrono-date">2019</span>
-                            <span className="parcours-chrono-title">Service Civique &quot;Médiateur numérique&quot;</span>
-                          </span>
+                            <li className="parcours-chronologie-li li-widthMobile-last">
+                              <div className="parcours-chronologie-li-header">
+                                <span>
+                                  <span className="parcours-chrono-date">2019</span>
+                                  <span className="parcours-chrono-title">Service Civique &quot;Médiateur numérique&quot;</span>
+                                </span>
+                              </div>
+                              <span className="parcours-chrono-exp">Centre social & culturel l&apos;Éscale</span>
 
-                        </div>
+                            </li>
+                      
+                          </>
+                      )}
 
-                        <span className="parcours-chrono-exp">Centre social & culturel l&apos;Éscale</span>
-
-                      </li>
 
                     </ul >
 
@@ -227,6 +244,7 @@ export default function Home() {
 
                   </div>
 
+                      
                   <Skills />
 
               </div>

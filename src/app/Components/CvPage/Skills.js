@@ -8,36 +8,20 @@ export function Skills() {
 
     return (
 
-            <div>
+        <div className="skills-div">
 
-                <h3>Compétences</h3>
+            <FontAwesomeIcon icon={faHtml5} className="skill-Fa-Icon" style={{color: "#ef6a32"}} />
 
-                <ul className="skills-list">
-                    <li className="skill-li">
-                        <FontAwesomeIcon icon={faHtml5} className="skill-Fa-Icon" />
-                    </li>
-                    <li className="skill-li">
-                        <FontAwesomeIcon icon={faCss3} className="skill-Fa-Icon" />
-                    </li>
-                    <li className="skill-li">
-                        <FontAwesomeIcon icon={faJs} className="skill-Fa-Icon" />
-                    </li>
-                    <li className="skill-li">
-                        <FontAwesomeIcon icon={faReact} className="skill-Fa-Icon" />
-                    </li>
-                    <li className="skill-li">
-                        <FontAwesomeIcon icon={faPhp} className="skill-Fa-Icon" />
-                    </li>
-                    <li className="skill-li">
-                        <FontAwesomeIcon icon={faSymfony} className="skill-Fa-Icon" />
-                    </li>
-                    <li className="skill-li">
-                        <FontAwesomeIcon icon={faDatabase} className="skill-Fa-Icon" />
-                    </li>
-                </ul>
+            <FontAwesomeIcon icon={faCss3} className="skill-Fa-Icon" style={{color: "#3bacdd"}} />
+
+            <FontAwesomeIcon icon={faJs} className="skill-Fa-Icon" style={{color: "#f7e02a"}} />
+
+            <FontAwesomeIcon icon={faReact} className="skill-Fa-Icon" style={{color: "#21ddff"}}/>
+
+            <FontAwesomeIcon icon={faPhp} className="skill-Fa-Icon" style={{color: "#7b7fb6"}} />
+
+            <FontAwesomeIcon icon={faSymfony} className="skill-Fa-Icon" style={{color: "#ffffff"}} />
 
         </div>
-
-
     )
 }

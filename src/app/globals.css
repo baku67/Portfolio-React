@@ -521,11 +521,11 @@ main {
   position: absolute;
   z-index: 999;
 
-  bottom: 5%;
-  right: 5%;
+  bottom: 15%;
+  right: 7%;
 
-  width: 20%;
-  height: 48vh;
+  width: 24%;
+  height: 55vh;
 
   transform: rotate(11deg);
   filter: drop-shadow(0px 5px 6px black);
@@ -1254,7 +1254,7 @@ main {
 .parcours-chronologie-li {
     display: inline-flex;
     flex-direction: column;
-    margin: 11px 5px;
+    margin: 15px 5px;
 
     /* border-left: 1px solid var(--primary-cyan); */
     padding-left: 11px;
@@ -1272,8 +1272,39 @@ main {
 
 .parcours-chronologie-li-descriptionAlternance {
   font-size: 0.8em;
-  margin: 10px auto;
+  margin: 17px 16px;
+  padding-left: 20px;
+  border-left: 1px solid var(--primary-cyan);
   color: rgb(241, 245, 244);
+}
+.parcours-chronologie-li-description {
+  font-size: 0.8em;
+  margin: 17px 16px;
+  padding-left: 20px;
+  border-left: 1px solid var(--primary-cyan);
+  color: rgb(241, 245, 244);
+}
+
+.parcours-chrono-exp-strong {
+  color: var(--secondary-cyan);
+  background-color: var(--primary-cyan);
+  padding: 3px 10px;
+  margin-right: 5px;
+  border-radius: 20px;
+
+  font-weight: bold;
+}
+
+
+.skills-div {
+  position: relative;
+  left: 37%;
+  width: fit-content;
+  display: inline-flex;
+  gap: 15px;
+
+  opacity: 0;
+  animation: fadeIn 1s 0.5s ease forwards;
 }
 
 
@@ -1286,7 +1317,7 @@ main {
   gap: 4px;
 }
 .skill-Fa-Icon {
-  font-size: 2em;
+  font-size: 4.2em;
 }
 
 
@@ -2720,7 +2751,7 @@ main {
 
 /* HOMEPAGE: */
 .shapeProject1-accueil-fadeOut {
-  animation: spao1-fadeOut 0.5s 0.5s ease forwards;
+  animation: spao1-fadeOut 0.5s 0s ease forwards;
 }
 @keyframes spao1-fadeOut {
   from {
@@ -2732,7 +2763,7 @@ main {
 }
 
 .shapeProject2-accueil-fadeOut {
-  animation: spao2-fadeOut 0.5s 0.5s ease forwards;
+  animation: spao2-fadeOut 0.5s 0s ease forwards;
 }
 @keyframes spao2-fadeOut {
   from {

@@ -549,9 +549,22 @@
     }
 
     .parcours-chronologie-li-descriptionAlternance {
-        font-size: 0.85em;
+        font-size: 0.75em;
+        padding-left: 12px;
+        margin: 5px auto 8px auto;
         color: rgb(241, 245, 244);
-      }
+    }
+    .parcours-chronologie-li-description {
+        font-size: 0.75em;
+        padding-left: 12px;
+        margin: 5px auto 8px auto;
+        color: rgb(241, 245, 244);
+    }
+
+    .parcours-chrono-exp-strong {
+        margin-right: 3px;
+        padding: 0px 6px;
+    }
       
 
     .contactMain {
@@ -955,7 +968,7 @@
     }
 
     .parcours-chrono-titleIcon {
-        font-size: 1.3em;
+        font-size: 1.7em;
     }
 
 
@@ -977,11 +990,35 @@
         transform: rotate(358deg);
     
         filter: drop-shadow(1px 3px 6px black);
+
+        position: relative;
+        z-index: 999999;
     }
 
     .parcours-chronologie-li {
         margin: 5px 5px;
         font-size: 1em;
+        padding-left: 7px;
+
+    }
+
+
+    .skills-div {
+        position: relative;
+        width: 69%;
+        margin-top: 50px;
+
+        display: inline-flex;
+        justify-content: center;
+        flex-flow: wrap;
+        gap: 18px;
+
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .skill-Fa-Icon {
+        font-size: 2.4em;
     }
 
 

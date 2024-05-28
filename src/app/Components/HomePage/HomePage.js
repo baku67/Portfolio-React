@@ -36,7 +36,7 @@ export function HomePage({isMobile}) {
         setIsFadingOut(true);
         setTimeout(() => {
         router.push(href);
-        }, 1000); // Le délai doit correspondre à la durée de l'animation CSS
+        }, 500); // Le délai doit correspondre à la durée de l'animation CSS
     }
 
 
@@ -133,18 +133,6 @@ export function HomePage({isMobile}) {
                 onMouseEnter={handlePostItEnter}
                 onMouseLeave={handlePostItLeave}
             >
-
-                {/* Post-it punaise pick (désactivé) */}
-                {/* <div 
-                    className="post-it-pick"
-                    style={{transform: isPostItHovered ? "translateX(-50%) rotate(359deg) translateY(-10px)" : "translateX(-50%) rotate(351deg) translateY(-0px)"}}
-                >
-                    <div 
-                        className="post-it-socle"
-                        style={{filter: isPostItHovered ? "drop-shadow(6px 58px 15px black)" : "drop-shadow(6px 40px 10px black)"}}
-                    ></div>
-                    <div className="post-it-pickTrait"></div>
-                </div> */}
 
                 <Image 
                     src="/post-it-1-cropped.png"
