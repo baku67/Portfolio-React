@@ -1427,7 +1427,7 @@ main {
   position: absolute;
   bottom: -40%;
   left: -40%;
-  width: 50%;
+  width: 45%;
   height: 100%;
   transform: rotate(325deg);
 
@@ -1487,7 +1487,7 @@ main {
   z-index: 9;
   top: -60%;
   right: -35%;
-  width: 37%;
+  width: 35%;
   height: 125%;
   transform: rotate(301deg);
 
@@ -1502,6 +1502,14 @@ main {
   to {
     right: -35%;
   }
+}
+
+
+.galleryDiv-navDiv {
+  display: inline-flex;
+  width: 100%;
+  justify-content: flex-start;
+  gap: 15px;
 }
 
 
@@ -1896,7 +1904,7 @@ main {
 .iframeContainer {
   position: relative;
   /* padding: 18px 5px 36px 5px; */
-  padding: 4px 4px 36px 4px;
+  padding: 6px 4px 36px 4px;
   background-color: #060606;
   border: 3px solid;
   border-radius: 22px;
@@ -2197,23 +2205,27 @@ main {
 .projectName {
   font-size: 2.4em;
   text-align: left;
-  margin-top: 10px;
+  /* margin-top: 10px; */
   margin-bottom: 0px;
 }
 .projectPageInfoHeader {
   padding-left: 22px;
-  border-left: 3px solid;
 
   background-color: var(--secondary-cyan);
   border-top-right-radius: 2px;
-  border-bottom-right-radius: 35px;
   width: fit-content;
-  padding: 0px 20px 10px 19px;
+  padding: 2px 25px 10px 25px;
   margin-bottom: 10px;
   filter: drop-shadow(2px 5px 5px black);
 
   position: relative;
   z-index: 999999999999;
+
+  border-left: 1px solid;
+  transform: rotate(358deg);
+
+  opacity: 0;
+  animation: fadeIn 0.7s 0.5s ease forwards;
 }
 
 

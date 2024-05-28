@@ -23,7 +23,8 @@ const isMobileDevice = () => {
 };
 
 
-const images = [
+
+const imagesPhotos = [
   {
     original: "/gallery/1.jpg",
     thumbnail: "/gallery/previews/1_preview.jpg",
@@ -371,12 +372,45 @@ const images = [
 ];
 
 
+const imagesAnims = [
+  {
+    original: "/gallery-anims/les100ciels-anim.webp",
+    thumbnail: "/gallery-anims/les100ciels-anim.webp",
+    originalAlt: "anim 1",
+    thumbnailAlt: "anim 1",
+  },
+  {
+    original: "/gallery-anims/portfolio-anim.webp",
+    thumbnail: "/gallery-anims/portfolio-anim.webp",
+    originalAlt: "anim 2",
+    thumbnailAlt: "anim 2",
+  },
+  {
+    original: "/gallery-anims/portfolio-anim-fish.webp",
+    thumbnail: "/gallery-anims/portfolio-anim-fish.webp",
+    originalAlt: "anim 3",
+    thumbnailAlt: "anim 3",
+  },
+  {
+    original: "/gallery-anims/portfolio-anim-lightBulb.webp",
+    thumbnail: "/gallery-anims/portfolio-anim-lightBulb.webp",
+    originalAlt: "anim 4",
+    thumbnailAlt: "anim 4",
+  },
+]
+
 
 
 
 export default function Loisirs() {
 
   const [isMobile, setIsMobile] = useState(false); // Initialize state with false
+
+  const [switchedGallery, setSwitchedGallery] = useState(false);
+  const handleSwitchGallery = () => {
+    setSwitchedGallery(!switchedGallery);
+  }
+
 
 
   useEffect(() => {
@@ -462,8 +496,20 @@ export default function Loisirs() {
             <div className="hobbies-main">
 
               <div className="galleryDiv">
-                <span>Photographie</span>
-                <ImageGallery items={images} thumbnailPosition={"bottom"} autoPlay={"true"} slideDuration={500} slideInterval={4000} />
+
+                <div className="galleryDiv-navDiv">
+                  <span onClick={handleSwitchGallery}>Photographie</span>
+                  <span onClick={handleSwitchGallery}>Animations CSS</span>
+                </div>
+
+                <ImageGallery 
+                  items={!switchedGallery ? imagesPhotos : imagesAnims} 
+                  thumbnailPosition={"bottom"} 
+                  autoPlay={"true"} 
+                  slideDuration={500} 
+                  slideInterval={4000} 
+                />
+
               </div>
 
               <div className="hobbies-list">
