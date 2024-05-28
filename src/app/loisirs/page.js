@@ -13,6 +13,8 @@ import { Shape2 } from "../Components/Shapes/Shape2";
 import PageTitleNav from "../Components/PageTitleNav";
 import { NavBar } from "../Components/NavBar";
 
+import { faFishFins, faPencil, faGamepad, faCamera } from "@fortawesome/free-solid-svg-icons";
+
 
 
 // Define isMobileDevice function outside of the component
@@ -444,46 +446,17 @@ export default function Loisirs() {
             />
             
 
-            {!isMobile ? (
 
-              <>
-                {/* Aquarium + Masque (Desktop) */}
-                <div className="aquariumWrapper">
-                  <div className="aquariumDiv">
-                    <Image 
-                      src={"/aquarium-cropped.png"}
-                      width={350}
-                      height={350}
-                      className="aquariumPng"
-                      alt={"aquarium"}
-                    />
-                  </div>
+            {/* Diving mask */}
+            <Image 
+              src={"/diving-mask.png"}
+              width={isMobile ? 90 : 230}
+              height={isMobile ? 90 : 230}
+              className="divingMask"
+              alt={"masque de plongée"}
+            />
 
-                  {/* Masque de plongée: */}
-                  <Image 
-                    src={"/diving-mask.png"}
-                    width={230}
-                    height={230}
-                    className="divingMask"
-                    alt={"masque de plongée"}
-                  />
-                </div>
-              </>
 
-            ) : (
-
-              <>
-                  {/* Juste Masque (mobile) */}
-                  <Image 
-                    src={"/diving-mask.png"}
-                    width={90}
-                    height={90}
-                    className="divingMask"
-                    alt={"masque de plongée"}
-                  />
-              </>
-
-            )}
             
 
             <div className="hobbies-main">
@@ -494,12 +467,31 @@ export default function Loisirs() {
               </div>
 
               <div className="hobbies-list">
+
                 <ul>
-                  <li>Plongée sous-marine</li>
-                  <li>Photographie macroscopique</li>
-                  <li>Dessin</li>
-                  <li>Découverte de jeux vidéo</li>
+
+                  <li>
+                    <FontAwesomeIcon icon={faFishFins} className="hobbies-list-icon" />
+                    <span>Plongée sous-marine</span>
+                  </li>
+
+                  <li>
+                    <FontAwesomeIcon icon={faCamera} className="hobbies-list-icon" />
+                    <span>Photographie macroscopique</span>
+                  </li>
+
+                  <li>
+                    <FontAwesomeIcon icon={faPencil} className="hobbies-list-icon" />
+                    <span>Dessin</span>
+                  </li>
+
+                  <li>
+                    <FontAwesomeIcon icon={faGamepad} className="hobbies-list-icon" />
+                    <span>Découverte de jeux vidéo</span>
+                  </li>
+
                 </ul>
+
               </div>
 
             </div>

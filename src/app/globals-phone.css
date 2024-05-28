@@ -655,14 +655,25 @@
         filter: drop-shadow(4px 5px 4px black);
       }
       .hobbies-list ul {
+        display: inline-flex;
+        flex-direction: column;
         width: fit-content;
         margin: 0 auto;
+        padding: 5px 10px !important;
         transform: rotate(2deg);
       }
       .hobbies-list ul li {
         font-size: 1em;
+        margin: 6px 0px;
+        /* padding: 5px 16px !important; */
+        gap: 10px;
+
       }
 
+      .hobbies-list-icon {
+        font-size: 1.7em;
+        width: 50px;
+      }
 
       .aquarium-shape {
         bottom: -2%;

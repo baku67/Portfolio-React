@@ -1713,21 +1713,14 @@ main {
 }
 
 
-.aquariumWrapper {
-  position: absolute;
-  top: 4%;
-  right: 9%;
-  z-index: 9999999;
-}
-
 
 .divingMask {
   z-index: 9999999;
   position: absolute;
   opacity: 0.9;
-  top: 41%;
-  right: -4%;
-  transform: rotate(24deg);
+  top: 2%;
+  right: 2%;
+  transform: rotate(48deg);
   filter: drop-shadow(18px 10px 6px black);
 }
 .aquariumDiv {
@@ -1737,14 +1730,6 @@ main {
   filter: drop-shadow(5px 13px 8px black);
 }
 
-
-.aquarium-shape {
-  color: transparent;
-  position: absolute;
-  bottom: -8%;
-  left: -20%;
-  transform: rotate(55deg);
-}
 
 
 
@@ -1809,21 +1794,35 @@ main {
 
 
 .hobbies-list ul {
+  display: inline-flex;
+  flex-direction: column;
   background-color: var(--secondary-cyan);
-  padding: 15px 40px !important;
+  padding: 15px 28px !important;
   transform: rotate(4deg);
-  list-style-type: square;
+  list-style-type: none;
   top: 12%;
   position: relative;
   filter: drop-shadow(4px 5px 5px black);
 
+  border-radius: 3px;
+
 }
 
 .hobbies-list ul li {
-  font-size: 1.2em;
+  display: inline-flex;
+  align-items: center;
+
+  font-size: 1.35em;
+  gap: 17px;
+  margin: 10px 0px;
 }
 
 
+.hobbies-list-icon {
+  color: var(--primary-cyan);
+  font-size: 1.35em;
+  width: 50px;
+}
 
 
 .iframeContainer {
