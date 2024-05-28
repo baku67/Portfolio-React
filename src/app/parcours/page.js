@@ -5,7 +5,7 @@ import Image from "next/image";
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilePdf, faPersonRunning, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faFilePdf, faPersonRunning, faMagnifyingGlass, faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
 
 import { Shape1 } from "/src/app/Components/Shapes/Shape1";
 import { Shape2 } from "/src/app/Components/Shapes/Shape2";
@@ -65,40 +65,37 @@ export default function Home() {
 
 
 
-  // Click toggle Nav (isNavActive)
+  // Click toggle Nav (isNavActive) croix et oustsideNav
   const [isNavActive, setNavActive] = useState(false);
   const toggleNav = () => setNavActive(prevState => !prevState);
 
+  // Outside click Nav
+  const handleClickOutsideNav = () => {
+      if(isNavActive) {
+        setNavActive(prevState => !prevState);
+      }
+  }
 
 
 
+  
   return (
 
     <>
 
       <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"parcours"} />
 
-    
       <main 
         className="main"
         style={{filter: isNavActive ? "brightness(0.5) blur(1px)" : ""}}
+        onClick={handleClickOutsideNav}
       >
 
         {/* Page 2: Parcours */}
         <section className="section page2" id="home-scroll-skills">
 
 
-
             <div className="scrollMobile">
-
-
-              {/* Background image wood */}
-              {/* <Image 
-                  src="/wood-bg.jpeg"
-                  fill={true}
-                  style={{opacity: "0.7", zIndex:"0"}}
-              /> */}
-
 
 
               {/* Icone Page (top-right) */}
@@ -122,7 +119,6 @@ export default function Home() {
 
                     <ul className="parcours-chronologie-ul">
 
-
                       <li className="parcours-chronologie-li">
 
                         <div className="parcours-chronologie-li-header">
@@ -142,8 +138,6 @@ export default function Home() {
 
                       </li>
 
-
-
                       <li className="parcours-chronologie-li">
 
                         <div className="parcours-chronologie-li-header">
@@ -157,7 +151,7 @@ export default function Home() {
 
                       </li>
 
-                      <li className="parcours-chronologie-li">
+                      <li className="parcours-chronologie-li li-widthMobile-prevLast">
 
                         <div className="parcours-chronologie-li-header">
                           <span>
@@ -170,7 +164,7 @@ export default function Home() {
 
                       </li>
 
-                      <li className="parcours-chronologie-li">
+                      <li className="parcours-chronologie-li li-widthMobile-last">
 
                         <div className="parcours-chronologie-li-header">
                           <span>
@@ -187,6 +181,29 @@ export default function Home() {
                     </ul >
 
 
+                    {/* CV incrusté (mobile) */}
+                    {isMobile && (
+
+                      <div className="cv-pdf-wrapper">
+
+                        <Image 
+                          src="/CV_BasileKuntz.png" 
+                          // width={100} 
+                          // height={250} 
+                          fill={true}
+                          alt="CV de Basile Kuntz"
+                          onClick={downloadPDF} 
+                          className="cv-pdf"
+                        />
+
+                        {/* Download icone: */}
+                        <FontAwesomeIcon icon={faFileArrowDown} className="cv-pdf-dlIcon" />
+
+                      </div>
+                    )}
+
+
+
                   </div>
 
                   <Skills />
@@ -196,7 +213,8 @@ export default function Home() {
 
 
 
-              {/* CV Desktop absolute bottom right*/}
+              {/* CV (desktop) */}
+              {!isMobile && (
 
                 <div className="cv-pdf-wrapper">
 
@@ -211,9 +229,12 @@ export default function Home() {
                   />
 
                   {/* Download icone: */}
-                  <FontAwesomeIcon icon={faFilePdf} className="cv-pdf-dlIcon" />
+                  <FontAwesomeIcon icon={faFileArrowDown} className="cv-pdf-dlIcon" />
 
                 </div>
+              )}
+
+
 
             </div>        
 

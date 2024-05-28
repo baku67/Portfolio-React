@@ -438,6 +438,8 @@ main {
 .homeLinksLi svg {
   font-size: 2em;
   width: 1.7em;
+  transform: rotate(1deg);
+
 }
 .homeLinksLi h2 {
   font-size: 1.4em;
@@ -1147,10 +1149,14 @@ main {
   opacity: 1;
   z-index: 999999999999;
   /* display: block; */
+  
+  filter: drop-shadow(11px -3px 10px black);
+
 }
 
 .navBar-topLine {
   text-align: right;
+  padding: 10px 0px;
 }
 .navBar-topLine-exitBtn {
   cursor: pointer;
@@ -1160,12 +1166,27 @@ main {
 
 .navBar-list-ul {
   margin-top: 30px;
-  padding: 25px !important;
+  padding: 0px !important;
 }
 .navBar-list-ul li {
   cursor: pointer;
-  padding: 11px 20px;
-  font-size: 1.7em;
+  padding: 14px 20px;
+  margin: 2px auto;
+  font-size: 1.9em;
+
+  width: 101%;
+  
+  border-top-right-radius: 1px;
+  border-bottom-right-radius: 1px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+
+}
+
+.navBar-li-fa {
+  width: 1.5em;
 }
 
 .navBar-li-active {
@@ -1198,19 +1219,22 @@ main {
     padding: 15px;
     background-color: var(--secondary-cyan);
     border-radius: 2px;
-    transform: rotate(358deg);
+    transform: rotate(352deg) translate(80px, -5px);
+    
 
     filter: drop-shadow(1px 3px 6px black);
 
     opacity: 0;
-    animation: parcours-chronologie 1s 0.5s ease forwards;
+    animation: parcours-chronologie 1.2s 0.6s ease forwards;
 }
 @keyframes parcours-chronologie {
   from {
     opacity: 0;
+    transform: rotate(352deg) translate(80px, -5px);
   }
   to {
     opacity: 1;
+    transform: rotate(358deg) translate(0px, -0px);
   }
 }
 
@@ -1225,6 +1249,8 @@ main {
 
     border-left: 1px solid var(--primary-cyan);
     padding-left: 11px;
+
+    font-size: 1.2em;
 }
 
 .parcours-chrono-titleIcon {

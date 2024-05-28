@@ -48,19 +48,18 @@
         width: auto;
         padding: 18px 18px;
         border-radius: 2px;
-        transform: rotate(358deg);
         filter: drop-shadow(0px 4px 5px black);
 
-        transform: rotate(3deg) translateX(10%);
+        transform: rotate(-2deg) translateX(10%);
         opacity: 0;
-        animation: contact-section2-wrap 1.3s 1.5s ease forwards;
+        animation: contact-section2-wrap 1.2s 1.3s ease forwards;
     
     }
 
     @keyframes contact-section2-wrap {
         from {
           opacity: 0;
-          transform: rotate(3deg) translateX(10%);
+          transform: rotate(-2deg) translateX(10%);
         }
         to {
           opacity: 1;
@@ -539,22 +538,23 @@
 
     .contactMain {
        flex-direction: column-reverse !important;
-       margin: 5px auto 12px auto;
-       gap: 0;
+       margin: 25px auto 12px auto;
+       gap: 20px;
+       width: 100%;
     }
 
     .contactMain {
-        width: 90%;
+        width: 100%;
         flex-direction: column;
     }
     .contact-section1 {
-        width: 95%;
+        width: 85%;
         padding: 15px 17px 15px 17px;
         margin: 20px auto;
 
         border-radius: 2px;
 
-        transform: rotate(3deg);
+        transform: rotate(0deg);
 
         filter: drop-shadow(1px 3px 6px black);
         /* border-left: 1px solid var(--primary-cyan); */
@@ -571,7 +571,7 @@
         }
         to {
           opacity: 1;
-          transform: rotate(-5deg) translateX(0);
+          transform: rotate(-2deg) translateX(0);
       
         }
       }
@@ -579,7 +579,15 @@
 
       .navBar-list-ul {
         margin-top: 0px;
-        padding: 0px 25px !important;
+        padding: 0px 0px !important;
+      }
+
+      .navBar-list-ul li {
+        padding: 11px 20px;
+        font-size: 1.7em;
+        width: 101%;
+        border-top-right-radius: 1px;
+        border-bottom-right-radius: 1px;
       }
 
 
@@ -587,7 +595,7 @@
         position: absolute;
         z-index: 99999999999999999999999999999;
         background-color: var(--secondary-cyan);
-        width: 70%;
+        width: 75%;
         height: 100%;
       
         transform: translateX(-100%);
@@ -601,6 +609,7 @@
         transform: translateX(-0%);
         opacity: 1;
         /* display: block; */
+        filter: drop-shadow(5px -1px 5px black);
       }
 
 
@@ -652,7 +661,7 @@
         font-size: 1em;
       }
 
-      
+
       .aquarium-shape {
         bottom: -2%;
         left: -45%;
@@ -853,13 +862,13 @@
 
     .cv-pdf-dlIcon {
         position: absolute;
-        bottom: 15px;
-        right: 8%;
-        padding: 11px 38px;
+        bottom: 7px;
+        right: -12%;
+        padding: 11px 17px;
         background-color: var(--primary-cyan);
-        transform: translateX(-8%);
-        filter: drop-shadow(0px 3px 3px black);
-        font-size: 2.7em;
+        transform: translateX(-12%);
+        filter: drop-shadow(2px 2px 1px black);
+        font-size: 2em;
         border-radius: 2px;
         color: var(--secondary-cyan);
       }
@@ -868,25 +877,46 @@
     .cv-pdf-wrapper {
         position: absolute;
         left: auto;
-        right: -65px;
-        bottom: -7px;
-        transform: translateX(0%) rotate(14deg);
-        width: 317px;
-        height: 286px;
+
+        /* right: -65px;
+        bottom: -7px; */
+        right: 6px;
+        bottom: -46px;
+
+        transform: translateX(0%) rotate(12deg);
+
+        /* width: 317px;
+        height: 286px; */
+        width: 100px;
+        height: 137px;
+
         filter: drop-shadow(0px 2px 3px black);
     }
 
 
-    .parcours-chronologie {
+    .li-widthMobile-prevLast {
         width: 85%;
-        margin: 35px auto;
+    }
+    .li-widthMobile-last {
+        width: 70%;
+    }
+
+    .parcours-chronologie {
+        width: 90%;
+        margin: 25px auto;
     
-        padding: 7px 9px;
+        /* padding: 7px 9px; */
+        padding: 7px 9px 7px 2px;
         background-color: var(--secondary-cyan);
         border-radius: 2px;
         transform: rotate(358deg);
     
         filter: drop-shadow(1px 3px 6px black);
+    }
+
+    .parcours-chronologie-li {
+        margin: 5px 5px;
+        font-size: 1em;
     }
 
 

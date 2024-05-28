@@ -79,11 +79,17 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
     };
 
 
+
     // Click toggle Nav (isNavActive)
     const [isNavActive, setNavActive] = useState(false);
     const toggleNav = () => setNavActive(prevState => !prevState);
 
-
+    // Outside click Nav
+    const handleClickOutsideNav = () => {
+        if(isNavActive) {
+        setNavActive(prevState => !prevState);
+        }
+    }
 
 
 
@@ -93,10 +99,10 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
         
             <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"projets"} />
 
-
             <div 
                 className="main scrollMobile" 
                 style={{filter: isNavActive ? "brightness(0.5) blur(1px)" : ""}}
+                onClick={handleClickOutsideNav}
             >
 
                 {/* Icone Page (top-right) */}

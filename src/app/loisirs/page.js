@@ -402,7 +402,12 @@ export default function Loisirs() {
     const [isNavActive, setNavActive] = useState(false);
     const toggleNav = () => setNavActive(prevState => !prevState);
   
-
+    // Outside click Nav
+    const handleClickOutsideNav = () => {
+      if(isNavActive) {
+        setNavActive(prevState => !prevState);
+      }
+    }
 
 
 
@@ -417,6 +422,7 @@ export default function Loisirs() {
       <main 
         className="main"
         style={{filter: isNavActive ? "brightness(0.5) blur(1px)" : ""}}
+        onClick={handleClickOutsideNav}
       >
 
         {/* Page 4: Photographie, animations */}

@@ -59,7 +59,12 @@ export default function Contact() {
   const [isNavActive, setNavActive] = useState(false);
   const toggleNav = () => setNavActive(prevState => !prevState);
 
-
+  // Outside click Nav
+  const handleClickOutsideNav = () => {
+    if(isNavActive) {
+      setNavActive(prevState => !prevState);
+    }
+  }
 
 
 
@@ -73,37 +78,45 @@ export default function Contact() {
       <main 
         className="main"
         style={{filter: isNavActive ? "brightness(0.5) blur(1px)" : ""}}
+        onClick={handleClickOutsideNav}
       >
 
         {/* Page 5: Contact */}
         <section className="section page5" id="home-scroll-contact">
 
 
-          {/* Icone Page (top-right) */}
-          <FontAwesomeIcon icon={faEnvelope} className="pageIcon" />
+          <div className="scrollMobile">
+
+            {/* Icone Page (top-right) */}
+            <FontAwesomeIcon icon={faEnvelope} className="pageIcon" />
 
 
-          {/* Shapes neutres(cyan) */}
-          <Shape1 />
-          <Shape2 />
-
-
-
-          <PageTitleNav 
-            title={"Contact"} 
-            onClickNav={toggleNav}
-          />
+            {/* Shapes neutres(cyan) */}
+            <Shape1 />
+            <Shape2 />
 
 
 
-          <div className="contactMain">
-            <ContactForm />
-            <Socials isMobile={isMobile} />
-          </div>
+            <PageTitleNav 
+              title={"Contact"} 
+              onClickNav={toggleNav}
+            />
 
-          <Footer />
+
+
+            <div className="contactMain">
+              <ContactForm />
+              <Socials isMobile={isMobile} />
+            </div>
+
+            <Footer />
+
+
+            </div>
 
         </section>
+
+
 
 
       </main>
