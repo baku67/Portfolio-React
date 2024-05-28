@@ -410,14 +410,16 @@ export function ProjectPage({isMobile}) {
                             <span style={{margin: "0px 15px"}}>Mes Projets</span>
                         </h2>
 
-                        <ProjectsNav 
-                            nbrProjects={projects.length} 
-                            actualProjectIndex={actualProjectIndex} 
-                            actualProjectColor={projects[actualProjectIndex].primaryColor}
-                            changeActualProject={setActualProjectIndex} 
-                        />
-
                     </div>
+
+
+
+                    <ProjectsNav 
+                        nbrProjects={projects.length} 
+                        actualProjectIndex={actualProjectIndex} 
+                        actualProjectColor={projects[actualProjectIndex].primaryColor}
+                        changeActualProject={setActualProjectIndex} 
+                    />
 
 
 

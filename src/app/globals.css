@@ -1711,6 +1711,14 @@ main {
   display: inline-flex;
   justify-content: center;
   gap: 10px;
+
+  position: absolute;
+    top: 30px;
+    margin-top: 22px;
+
+  opacity: 0;
+  animation: fadeIn 0.7s 0.5s ease forwards;
+
 }
 .projectsNav-list li {
   padding: 3px 11px;
@@ -1856,7 +1864,8 @@ main {
 
 .iframeContainer {
   position: relative;
-  padding: 18px 5px 36px 5px;
+  /* padding: 18px 5px 36px 5px; */
+  padding: 4px 4px 36px 4px;
   background-color: #060606;
   border: 3px solid;
   border-radius: 22px;
@@ -1880,8 +1889,10 @@ main {
 
 .iframe {
   height: 600px;
-  width: 350px;
-  border-radius: 7px;
+  width: 337px;
+  border-radius: 4px;
+  border-top-left-radius: 17px;
+  border-top-right-radius: 17px;
 }
 
 .btnMockup0 {
