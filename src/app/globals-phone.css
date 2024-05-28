@@ -584,8 +584,10 @@
 
       .navBar-list-ul li {
         padding: 11px 20px;
+        margin: 6px auto;
         font-size: 1.7em;
         width: 101%;
+
         border-top-right-radius: 1px;
         border-bottom-right-radius: 1px;
       }
@@ -874,9 +876,33 @@
       }
 
 
+
+      .navBar-li-fa {
+        width: 1.5em;
+      }
+      
+      .navBar-li-active {
+        background-color: var(--primary-cyan);
+        color: var(--secondary-cyan);
+      }
+      
+      .navBar-li-active svg {
+        transform: scale(1.6);
+      }
+      
+    
+
+
+    .parcours-main {
+        width: 100%;
+    }
+
+
+
     .cv-pdf-wrapper {
         position: absolute;
         left: auto;
+
 
         /* right: -65px;
         bottom: -7px; */
@@ -893,6 +919,10 @@
         filter: drop-shadow(0px 2px 3px black);
     }
 
+    .parcours-chrono-titleIcon {
+        font-size: 1.3em;
+    }
+
 
     .li-widthMobile-prevLast {
         width: 85%;
@@ -906,7 +936,7 @@
         margin: 25px auto;
     
         /* padding: 7px 9px; */
-        padding: 7px 9px 7px 2px;
+        padding: 10px 10px 12px 5px;
         background-color: var(--secondary-cyan);
         border-radius: 2px;
         transform: rotate(358deg);

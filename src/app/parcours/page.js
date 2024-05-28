@@ -5,7 +5,7 @@ import Image from "next/image";
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilePdf, faPersonRunning, faMagnifyingGlass, faFileArrowDown } from "@fortawesome/free-solid-svg-icons";
+import { faFilePdf, faPersonRunning, faMagnifyingGlass, faFileArrowDown, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 
 import { Shape1 } from "/src/app/Components/Shapes/Shape1";
 import { Shape2 } from "/src/app/Components/Shapes/Shape2";
@@ -122,11 +122,11 @@ export default function Home() {
                       <li className="parcours-chronologie-li">
 
                         <div className="parcours-chronologie-li-header">
-                        <FontAwesomeIcon icon={faMagnifyingGlass} className="parcours-chrono-titleIcon" />
+
+                          <FontAwesomeIcon icon={faMagnifyingGlass} className="parcours-chrono-titleIcon" />
                           <span>
                             <span className="parcours-chrono-date">2024</span>
                             <span className="parcours-chrono-title">
-                              
                               <span>
                                 Alternance &quot;Concepteur Développeur d&apos;Application&quot;
                               </span>
@@ -140,7 +140,8 @@ export default function Home() {
 
                       <li className="parcours-chronologie-li">
 
-                        <div className="parcours-chronologie-li-header">
+                          <div className="parcours-chronologie-li-header">
+                          <FontAwesomeIcon icon={faGraduationCap} className="parcours-chrono-titleIcon" />
                           <span>
                             <span className="parcours-chrono-date">2023</span>
                             <span className="parcours-chrono-title">Titre RNCP &quot;Développeur web et web mobile&quot;</span>
@@ -153,10 +154,11 @@ export default function Home() {
 
                       <li className="parcours-chronologie-li li-widthMobile-prevLast">
 
-                        <div className="parcours-chronologie-li-header">
+                          <div className="parcours-chronologie-li-header">
+                          <FontAwesomeIcon icon={faGraduationCap} className="parcours-chrono-titleIcon" />
                           <span>
                             <span className="parcours-chrono-date">2020-2022</span>
-                            <span className="parcours-chrono-title">BTS SIO option SLAM</span>
+                            <span className="parcours-chrono-title">BTS option SLAM</span>
                           </span>
                         </div>
 

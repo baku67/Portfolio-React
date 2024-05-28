@@ -8,7 +8,6 @@ export function Skills() {
 
     return (
 
-            // *** FontAwesome (meilleur régularité)
             <div>
 
                 <h3>Compétences</h3>
@@ -40,36 +39,5 @@ export function Skills() {
         </div>
 
 
-        // *** Devicons-react (coloré mais pas régulié)
-
-        // <div>
-
-        //     <h3>Compétences</h3>
-
-        //     <ul className="skills-list">
-        //         <li className="skill-li">
-        //             <Html5Original />
-        //         </li>
-        //         <li className="skill-li">
-        //             <Css3Original />
-        //         </li>
-        //         <li className="skill-li">
-        //             <JavascriptOriginal />
-        //         </li>
-        //         <li className="skill-li">
-        //             <ReactOriginal />
-        //         </li>
-        //         <li className="skill-li">
-        //             <PhpPlain />
-        //         </li>
-        //         <li className="skill-li">
-        //             <SymfonyOriginal style={{filter:"brightness(10) contrast(2)"}} />
-        //         </li>
-        //         <li className="skill-li">
-        //             <MysqlOriginal />
-        //         </li>
-        //     </ul>
-
-        // </div>
     )
 }

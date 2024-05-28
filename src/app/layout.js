@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "./globals-phone.css";
+import "./globals-2k.css";
 import Image from "next/image";
 
 // The following import prevents a Font Awesome icon server-side rendering bug,

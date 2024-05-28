@@ -520,10 +520,13 @@ main {
   cursor: pointer;
   position: absolute;
   z-index: 999;
-  bottom: 0;
-  right: 0;
-  width: 30%;
-  height: 70vh;
+
+  bottom: 5%;
+  right: 5%;
+
+  width: 20%;
+  height: 48vh;
+
   transform: rotate(11deg);
   filter: drop-shadow(0px 5px 6px black);
 
@@ -546,6 +549,8 @@ main {
 .parcours-main {
   position: relative;
   z-index: 99;
+
+  width: 70%;
 }
 
 .cv-pdf {
@@ -1194,6 +1199,9 @@ main {
   color: var(--secondary-cyan);
 }
 
+.navBar-li-active svg {
+  transform: scale(1.6);
+}
 
 
 
@@ -1214,7 +1222,7 @@ main {
 .parcours-chronologie {
     /* width: 80%; */
     width: fit-content;
-    margin: 35px auto;
+    margin: 70px auto;
 
     padding: 15px;
     background-color: var(--secondary-cyan);
@@ -1256,6 +1264,9 @@ main {
 .parcours-chrono-titleIcon {
   color: white;
   margin-right: 10px;
+
+  font-size: 2em;
+  color: var(--primary-cyan);
 }
 
 
@@ -1274,7 +1285,8 @@ main {
 
 
 .parcours-chronologie-li-header {
-
+  align-items: center;
+  display: inline-flex;
 }
 
 
@@ -1282,6 +1294,9 @@ main {
   color: var(--primary-cyan);
   font-weight: bold;
 }
+.spanBlue {
+  color: var(--primary-cyan);
+} 
 
 .parcours-chrono-date {
   margin: 0px 10px 0px 2px;

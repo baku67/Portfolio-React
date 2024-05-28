@@ -1,0 +1,118 @@
+@media only screen and (min-width: 2000px) {
+
+
+    /* HomePage: */
+
+    .homeMain {
+        gap: 140px;
+    }
+
+    
+    .homeMain-header {
+        width: 400px;
+        height: 210px;
+    }
+
+    .accueil-visitCard-shape {
+        width: 139px;
+        height: 85px;
+        background-color: var(--primary-cyan);
+        position: absolute;
+        top: -53px;
+        right: -54px;
+        transform: rotate(26deg);
+    }
+
+    .homeMain-title {
+        font-size: 2.7em;
+        color: rgb(219, 231, 233);
+        text-shadow: 0px 2px 1px black;
+        margin-bottom: 0em;
+        line-height: 1.2em;
+    }
+
+    .homeMain-subtitle {
+        color: #00fff3;
+        font-size: 2em;
+        text-shadow: 0px 2px 3px black;
+    }
+
+
+    .post-it-container {
+        position: absolute;
+        cursor: pointer;
+        z-index: 999999999999999999999999;
+        right: 25%;
+        top: 19%;
+        transform: translate(75%, -15%) rotate(12deg) scale(1.5);
+    }
+
+
+    .portable-div {
+        height: 624px;
+        width: 333px;
+        border-radius: 13px;
+        padding: 6px 4px 23px 4px;
+        background-color: rgb(7 7 7);
+        border: 1px solid var(--primary-cyan);
+        filter: drop-shadow(black 4px 6px 6px);
+        transition: all 0.4s;
+    }
+
+    .portable-contentWrapper {
+        display: inline-flex;
+        width: 200%;
+        height: -webkit-fill-available;
+        background: url(/wallpaper-mobile.jpg);
+        background-position: center;
+        transition: all 0.4s 0.2s;
+    }
+
+
+    .portable-header {
+        display: flex;
+        justify-content: space-between;
+        background-color: #0a232f;
+        font-size: 1.1em;
+        opacity: 0.7;
+        padding: 1px 6px;
+    }
+
+
+    .homeLinksLi h2 {
+        font-size: 3.4em;
+    }
+
+    .portable-app {
+        font-size: 2.7em;
+        padding: 5px 0px;
+    }
+
+
+    .homeLinksLi {
+        /* background-color: var(--secondary-cyan); */
+        background: rgb(27, 187, 218);
+        background: -moz-linear-gradient(90deg, rgba(27, 187, 218, 0) 0%, rgba(12, 46, 62, 1) 50%);
+        background: -webkit-linear-gradient(90deg, rgba(27, 187, 218, 0) 0%, rgba(12, 46, 62, 1) 50%);
+        background: linear-gradient(90deg, rgba(27, 187, 218, 0) 0%, rgba(12, 46, 62, 1) 50%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1bbbda",endColorstr="#0c2e3e",GradientType=1);
+
+        padding: 15px 25px;
+        border-radius: 4px;
+        margin: 10px;
+        filter: drop-shadow(0px 2px 2px black);
+        width: 383px;
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 25px;
+    }
+
+
+    .homeLinksLi svg {
+        font-size: 4em;
+        width: 1.7em;
+        transform: rotate(1deg);
+    }
+
+}
