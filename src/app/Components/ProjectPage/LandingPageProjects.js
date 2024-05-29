@@ -4,7 +4,8 @@ import { useState } from "react"
 import Image from 'next/image'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faChartLine } from "@fortawesome/free-solid-svg-icons";
+import { faPause, faPlay, faCirclePlay, faCirclePause } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faLightbulb } from "@fortawesome/free-regular-svg-icons";
 
 import { Shape1 } from "../Shapes/Shape1";
@@ -34,10 +35,6 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
     const handlePageChange = (pageNumber) => {
         setCurrentPage(pageNumber);
     }
-
-
-
-
 
 
 
@@ -89,6 +86,14 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
         if(isNavActive) {
         setNavActive(prevState => !prevState);
         }
+    }
+
+
+
+    // Btn play/pause
+    const [isPauseToggled, setIsPauseToggled] = useState(false);
+    const handleTogglePlayPause = () => {
+        setIsPauseToggled(!isPauseToggled);
     }
 
 
@@ -159,7 +164,7 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
 
                         {/* <div className="projectCard_trait"></div> */}
 
-                        <ProjectThumbnail project={project} isHovered={hoveredIndex === (startIndex + index) ? true : false} isMobile={isMobile} />
+                        <ProjectThumbnail project={project} isHovered={hoveredIndex === (startIndex + index) ? true : false} isMobile={isMobile} videoState={isPauseToggled} />
                         <ProjectCardInfos project={project} isHovered={hoveredIndex === (startIndex + index) ? true : false} token={token} owner="baku67" repo={project.repo_name} isMobile={isMobile} />
 
                     </li>
@@ -169,15 +174,26 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
 
                 {/* Pagination (ITEMS_PER_PAGE=4) */}
                 <div className="paginationProject">
-                {Array.from({ length: totalPages }, (_, index) => (
-                <button 
-                    key={index + 1} 
-                    onClick={() => handlePageChange(index + 1)} 
-                    className={currentPage === index + 1 ? 'projectsPage-active' : 'projectsPage-NonActive'}
-                >
-                    {index + 1}
-                </button>
-                ))}
+
+                    <div>
+                        {Array.from({ length: totalPages }, (_, index) => (
+                        <button 
+                            key={index + 1} 
+                            onClick={() => handlePageChange(index + 1)} 
+                            className={currentPage === index + 1 ? 'projectsPage-active' : 'projectsPage-NonActive'}
+                        >
+                            {index + 1}
+                        </button>
+                        ))}
+                    </div>
+
+
+                    <FontAwesomeIcon 
+                        icon={isPauseToggled ? faCirclePlay : faCirclePause} 
+                        onClick={handleTogglePlayPause}
+                        className="faIcon-pausePlay"
+                    />
+
                 </div>
 
 
@@ -198,8 +214,9 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
                         }}
                     >
                         <div className="iconAndText githubCalendar-iconAndText" style={{marginBottom: "0.5em"}}>
-                            <FontAwesomeIcon icon={faChartLine} className="faIcon" />
-                            <h3 className="githubCalendarTitle">Activité :</h3>
+                            {/* <FontAwesomeIcon icon={faChartLine} className="faIcon" />
+                            <h3 className="githubCalendarTitle">Activité :</h3> */}
+                            <FontAwesomeIcon icon={faGithub} className="faIcon faIcon-accueilGithub" />
                         </div>
 
                         {/* Props light/dark par exemple: https://grubersjoe.github.io/react-github-calendar/#/?user=baku67 */}

@@ -1,6 +1,6 @@
 "use client";
 
-export function ProjectThumbnail({project, isHovered, isMobile}) {
+export function ProjectThumbnail({project, isHovered, isMobile, videoState}) {
 
 
     const handleSrcImg = () => {
@@ -26,7 +26,7 @@ export function ProjectThumbnail({project, isHovered, isMobile}) {
 
 
     return (
-        <div style={{position:"relative", flex:1, display:"inline-flex", alignItems:"end"}}>
+        <div className="projectCard-thumbnail">
 
             <div style={{width:"fit-content", margin:"0 auto"}}>
 
