@@ -2243,8 +2243,9 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 .projectCard_title {
   font-size: 1.6em;
-
   margin-bottom: 0.1em;
+
+  
 }
 .projectCard_description {
   font-size: 1em;
