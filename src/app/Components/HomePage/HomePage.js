@@ -36,7 +36,7 @@ export function HomePage({isMobile}) {
         setIsFadingOut(true);
         setTimeout(() => {
         router.push(href);
-        }, 500); // Le délai doit correspondre à la durée de l'animation CSS
+        }, 500); 
     }
 
 
@@ -50,14 +50,7 @@ export function HomePage({isMobile}) {
     }
 
 
-    // Projets (hover):
-    // const [isProjetHovered, setIsProjetHovered] = useState(false);
-    // const handleProjetEnter = () => {
-    //     setIsProjetHovered(true);
-    // }
-    // const handleProjetLeave = () => {
-    //     setIsProjetHovered(false);
-    // }
+
 
 
     // Cafe (hover) :
@@ -121,10 +114,6 @@ export function HomePage({isMobile}) {
                     transform: isCafeHovered ? "rotate(301deg) translate(-5px, -5px)" : "rotate(301deg) translate(0px, 0px)",
                 }}
             ></div>
-
-
-
-
 
 
             {/* Post-it "alternance" */}

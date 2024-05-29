@@ -145,7 +145,8 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
                                 className="projectCard_title" 
                                 style={{
                                     fontFamily: project.fontFamily, 
-                                    color: project.primaryColor, 
+                                    color: "var(--secondary-cyan)", 
+                                    backgroundColor: project.primaryColor,
                                     fontWeight: project.title_bold ? "bold" : "normal"
                                 }}
                             >
@@ -155,6 +156,8 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
                             <p className="projectCard_description">{project.description}</p> 
 
                         </div>
+
+                        {/* <div className="projectCard_trait"></div> */}
 
                         <ProjectThumbnail project={project} isHovered={hoveredIndex === (startIndex + index) ? true : false} isMobile={isMobile} />
                         <ProjectCardInfos project={project} isHovered={hoveredIndex === (startIndex + index) ? true : false} token={token} owner="baku67" repo={project.repo_name} isMobile={isMobile} />

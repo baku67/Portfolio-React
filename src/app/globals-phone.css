@@ -105,6 +105,11 @@
 
     .projectCard_title {
         font-size: 1.1em;
+        padding: 4px 0px 2px 0px;
+        margin-bottom: 0.3em;
+
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
 
     .projectPageHeader {
@@ -387,7 +392,7 @@
         display: inline-flex;
         flex-direction: column;
 
-        margin: 8px auto 5px auto;
+        margin: 0px auto 5px auto;
         
 
         flex: 1;
