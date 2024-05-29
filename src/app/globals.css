@@ -1160,14 +1160,34 @@ main {
 }
 
 .navBar-topLine {
-  text-align: right;
-  padding: 10px 0px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 .navBar-topLine-exitBtn {
   cursor: pointer;
   font-size: 2.2em;
     padding: 15px 20px;
 }
+
+.navBar-homeIcon {
+  font-size: 1.8em;
+    padding: 25px;
+}
+
+.navBar-trait {
+  width: 100%;
+  height: 1px;
+
+  background: rgb(0,0,0);
+background: -moz-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(21,197,181,1) 49%, rgba(21,197,181,0) 100%);
+background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(21,197,181,1) 49%, rgba(21,197,181,0) 100%);
+background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(21,197,181,1) 49%, rgba(21,197,181,0) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#15c5b5",GradientType=1);
+
+}
+
 
 .navBar-list-ul {
   margin-top: 30px;
@@ -1176,10 +1196,10 @@ main {
 .navBar-list-ul li {
   cursor: pointer;
   padding: 14px 20px;
-  margin: 2px auto;
+  margin: 11px auto;
   font-size: 1.9em;
 
-  width: 101%;
+  width: 100%;
   
   border-top-right-radius: 1px;
   border-bottom-right-radius: 1px;
@@ -1197,6 +1217,7 @@ main {
 .navBar-li-active {
   background-color: var(--primary-cyan);
   color: var(--secondary-cyan);
+  filter: drop-shadow(2px 4px 6px black);
 }
 
 .navBar-li-active svg {
@@ -1222,7 +1243,7 @@ main {
 .parcours-chronologie {
     /* width: 80%; */
     width: fit-content;
-    margin: 70px auto;
+    margin: 55px auto;
 
     padding: 15px;
     background-color: var(--secondary-cyan);
@@ -1325,6 +1346,15 @@ main {
 .parcours-chronologie-li-header {
   align-items: center;
   display: inline-flex;
+
+  /* background-color: rgba(0, 0, 0, 0.164); */
+
+  background: rgb(0,0,0);
+  background: -moz-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.19791666666666663) 25%, rgba(0,0,0,0) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.19791666666666663) 25%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.19791666666666663) 25%, rgba(0,0,0,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#000000",GradientType=1);
+
 }
 
 
@@ -1343,6 +1373,7 @@ main {
 .parcours-chrono-exp {
   color: rgb(179, 179, 179);
   font-size: 85%;
+  margin-left: 15px;
 }
 
 
@@ -1752,18 +1783,22 @@ main {
   gap: 10px;
 
   position: absolute;
-    top: 30px;
-    margin-top: 22px;
+  top: 30px;
+  margin-top: 22px;
+
+  filter: drop-shadow(0px 2px 4px black);
+
 
   opacity: 0;
   animation: fadeIn 0.7s 0.5s ease forwards;
 
 }
 .projectsNav-list li {
-  padding: 3px 11px;
+  padding: 4px 14px;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s;
+  font-size: 1.4em;
 }
 
 
@@ -1786,8 +1821,9 @@ main {
 
 
 .hobbies-list-trait {
-  height: 2px;
-  width: 100%;
+  height: 1px;
+  width: 70%;
+  margin: 0 auto;
 
   background: rgb(0,0,0);
   background: -moz-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(27,187,218,1) 40%, rgba(27,187,218,1) 60%, rgba(0,0,0,0) 100%);
@@ -1896,8 +1932,23 @@ main {
 
 .hobbies-list-icon {
   color: var(--primary-cyan);
-  font-size: 2.2em;
+  font-size: 2.3em;
   width: 50px;
+
+
+  transform: rotate(9deg);
+  animation: hobbiesListIcons 2.5s 0s linear infinite;
+}
+@keyframes hobbiesListIcons {
+  0% {
+    transform: rotate(9deg);
+  }
+  50% {
+    transform: rotate(-9deg);
+  }
+  100% {
+    transform: rotate(9deg);
+  }
 }
 
 
