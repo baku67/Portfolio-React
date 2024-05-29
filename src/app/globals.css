@@ -1212,18 +1212,29 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 }
 
+
 .navBar-li-fa {
   width: 1.5em;
+  color: var(--primary-cyan);
 }
 
 .navBar-li-active {
   background-color: var(--primary-cyan);
-  color: var(--secondary-cyan);
+  /* color: var(--secondary-cyan); */
   filter: drop-shadow(2px 4px 6px black);
 }
 
 .navBar-li-active svg {
-  transform: scale(1.7);
+  transform: scale(1.7) rotate(354deg);
+  color: var(--secondary-cyan);
+}
+
+.navBar-li-active span {
+  font-weight: bold;
+
+  border-left: 1px solid #0000001f;
+  color: var(--secondary-cyan);
+  padding-left: 11px;
 }
 
 
@@ -1545,7 +1556,36 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   display: inline-flex;
   width: 100%;
   justify-content: flex-start;
-  gap: 15px;
+  gap: 55px;
+}
+
+.galleryDiv-navSpan {
+  padding: 6px 18px;
+  margin-bottom: 35px;
+  font-size: 1.45em;
+  cursor: pointer;
+  background-color: var(--secondary-cyan);
+  border-radius: 2px;
+  filter: drop-shadow(-2px 4px 2px black);
+
+  transition: all 0.4s;
+}
+
+.galleryDiv-navSpan1 {
+  transform: rotate(-2deg);
+}
+.galleryDiv-navSpan2 {
+  transform: rotate(3deg);
+
+  
+}
+
+.galleryDiv-navDiv-active {
+  background-color: var(--primary-cyan);
+  font-weight: bold;
+  color: var(--secondary-cyan);
+  filter: drop-shadow(-2px 6px 8px var(--secondary-cyan));
+
 }
 
 
@@ -1816,6 +1856,17 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   right: 2%;
   transform: rotate(48deg);
   filter: drop-shadow(18px 10px 6px black);
+
+  opacity: 0;
+  animation: divingMask 0.7s 1s ease forwards;
+}
+@keyframes divingMask {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 .aquariumDiv {
 
@@ -1867,8 +1918,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 
 .galleryDiv {
-    width: 37%;
-    filter: drop-shadow(0px 11px 8px black);
+    width: 31%;
+    /* filter: drop-shadow(0px 11px 8px black); */
     position: relative;
 
     opacity: 0;
@@ -1930,14 +1981,14 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   align-items: center;
 
   font-size: 1.35em;
-  gap: 22px;
+  gap: 31px;
   margin: 10px 0px;
 }
 
 
 .hobbies-list-icon {
   color: var(--primary-cyan);
-  font-size: 2.3em;
+  font-size: 1.8em;
   width: 50px;
 
 
@@ -2548,6 +2599,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
   opacity: 1;
   transition: 0.5s;
+}
+
+.image-gallery {
+  filter: drop-shadow(0px 11px 8px black);
 }
 
 

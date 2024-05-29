@@ -392,8 +392,8 @@ const imagesAnims = [
     thumbnailAlt: "anim 3",
   },
   {
-    original: "/gallery-anims/portfolio-anim-lightBulb.webp",
-    thumbnail: "/gallery-anims/portfolio-anim-lightBulb.webp",
+    original: "/gallery-anims/portfolio-anim-lightbulb.webp",
+    thumbnail: "/gallery-anims/portfolio-anim-lightbulb.webp",
     originalAlt: "anim 4",
     thumbnailAlt: "anim 4",
   },
@@ -406,7 +406,8 @@ export default function Loisirs() {
 
   const [isMobile, setIsMobile] = useState(false); // Initialize state with false
 
-  const [switchedGallery, setSwitchedGallery] = useState(false);
+  
+  const [switchedGallery, setSwitchedGallery] = useState(false); // false = photos
   const handleSwitchGallery = () => {
     setSwitchedGallery(!switchedGallery);
   }
@@ -484,8 +485,8 @@ export default function Loisirs() {
             {/* Diving mask */}
             <Image 
               src={"/diving-mask.png"}
-              width={isMobile ? 90 : 230}
-              height={isMobile ? 90 : 230}
+              width={isMobile ? 80 : 210}
+              height={isMobile ? 80 : 210}
               className="divingMask"
               alt={"masque de plongée"}
             />
@@ -498,8 +499,20 @@ export default function Loisirs() {
               <div className="galleryDiv">
 
                 <div className="galleryDiv-navDiv">
-                  <span onClick={handleSwitchGallery}>Photographie</span>
-                  <span onClick={handleSwitchGallery}>Animations CSS</span>
+
+                  <span 
+                    onClick={handleSwitchGallery} 
+                    className={`galleryDiv-navSpan galleryDiv-navSpan1 ${switchedGallery ? "" : "galleryDiv-navDiv-active"}`}
+                  >
+                    Photographie
+                  </span>
+
+                  <span 
+                    onClick={handleSwitchGallery} 
+                    className={`galleryDiv-navSpan galleryDiv-navSpan2 ${switchedGallery ? "galleryDiv-navDiv-active" : ""}`}
+                  >
+                    Animations
+                  </span>
                 </div>
 
                 <ImageGallery 
