@@ -10,11 +10,13 @@ import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 const LiveClock = dynamic(() => import('react-live-clock'), { ssr: false });
 
-
 import Image from 'next/image'
 import Link from 'next/link';
 
 import { useState } from "react";
+
+
+
 
 
 export function HomePage({isMobile}) {
@@ -36,7 +38,7 @@ export function HomePage({isMobile}) {
         event.preventDefault();
         setIsFadingOut(true);
         setTimeout(() => {
-        router.push(href);
+            router.push(href);
         }, 500); 
     }
 
@@ -121,7 +123,7 @@ export function HomePage({isMobile}) {
             {/* Post-it "alternance" */}
             
                 <div 
-                    className="post-it-container"
+                    className={`post-it-container ${isFadingOut ? "fadeOut" : ""}`} 
                     onMouseEnter={handlePostItEnter}
                     onMouseLeave={handlePostItLeave}
                 >
@@ -162,7 +164,7 @@ export function HomePage({isMobile}) {
 
                 {/* Plante */}
                 <div 
-                    className={`plantAccueil-div ${isFadingOut ? "plantAccueil-div-fadeOut" : ""}`} 
+                    className={`plantAccueil-div ${isFadingOut ? "fadeOut" : ""}`} 
                     style={{width:"fit-content"}}
                 >
 
@@ -178,7 +180,7 @@ export function HomePage({isMobile}) {
 
 
                 {/* Test fish bowl (loisirs) */}
-                <div className="fishBowl-div">
+                <div className={`fishBowl-div ${isFadingOut ? "fadeOut" : ""}`}>
                     <Image 
                         src="/fishBowl-rounded2.png" 
                         width={320} 
@@ -195,7 +197,7 @@ export function HomePage({isMobile}) {
 
             {/* Tasse café CSS */}
             <Link href="/contact">
-                <div className="tasseCafe" style={{transform: isCafeHovered ? "translate(-8px, 11px)" : "translate(0px, 0px)"}}>
+                <div className={`tasseCafe`} style={{transform: isCafeHovered ? "translate(-8px, 11px)" : "translate(0px, 0px)"}}>
 
                     {/* https://www.npmjs.com/package/react-curved-text  */}
                     {/* <div 
@@ -225,7 +227,7 @@ export function HomePage({isMobile}) {
                     </div> */}
 
 
-                    <div className="cup">
+                    <div className={`cup ${isFadingOut ? "fadeOut" : ""}`}>
                         <div className="reflect" style={{background: isCafeHovered ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0.09)", top: isCafeHovered ? "14px" : "19px", left: isCafeHovered ? "15px" : "13px"}}></div>
                         <div 
                             className="handle" 
@@ -245,7 +247,7 @@ export function HomePage({isMobile}) {
             {/* Smartphone (desktop) */}
             <Link href="/parcours">
                 <div 
-                    className="portable"
+                    className={`portable ${isFadingOut ? "fadeOut" : ""}`}
                     onMouseEnter={handlePhoneEnter}
                     onMouseLeave={handlePhoneLeave}
                     style={{ 
@@ -338,7 +340,7 @@ export function HomePage({isMobile}) {
             {/* laptop (mobile) */}
             {isMobile && (
 
-                <div className="accueil-mockup" 
+                <div className={`accueil-mockup ${isFadingOut ? "fadeOut" : ""}`} 
                     onMouseEnter={handleMockupDeskEnter}
                     onMouseLeave={handleMockupDeskLeave}
                     onClick={handleMockupDeskClick}
@@ -448,24 +450,30 @@ export function HomePage({isMobile}) {
 
 
 
-            <div className="homeMain">
+            <div className={`homeMain`} >
 
 
                 {/* Carte de visite accueil */}
-                <div className="homeMain-header" onClick={handleVisitCardFlip} >
+                <div className={`${isFadingOut ? "fadeOut" : ""}`}>
+                    <div className={`homeMain-header`} onClick={handleVisitCardFlip} >
 
-                    <div className="accueil-visitCard-shape"></div>
+                    
 
-                    <div className="accueil-visitCard-content">
+                        <div className="accueil-visitCard-shape"></div>
 
-                        <div>
-                            <h1 className="homeMain-title">Basile KUNTZ</h1>
-                            <span className="homeMain-subtitle">Développeur web</span>
-                        </div>
+                        <div className="accueil-visitCard-content">
 
-                        <div className="home-visitCard-linksDiv">
-                            <FontAwesomeIcon icon={faLinkedin} className="home-visitCard-reseauIcon" />
-                            <FontAwesomeIcon icon={faGithub} className="home-visitCard-reseauIcon" />
+                            <div>
+                                <h1 className="homeMain-title">Basile KUNTZ</h1>
+                                <span className="homeMain-subtitle">Développeur web</span>
+                            </div>
+
+                            <div className="home-visitCard-linksDiv">
+                                <FontAwesomeIcon icon={faLinkedin} className="home-visitCard-reseauIcon" />
+                                <FontAwesomeIcon icon={faGithub} className="home-visitCard-reseauIcon" />
+                            </div>
+
+                    
                         </div>
 
                     </div>
@@ -476,9 +484,9 @@ export function HomePage({isMobile}) {
 
 
 
-                {/* Laptop (gif) */}
+                {/* Laptop (desktop) */}
                 {!isMobile && (
-                    <div className="accueil-mockup" 
+                    <div className={`accueil-mockup ${isFadingOut ? "fadeOut" : ""}`}
                         onMouseEnter={handleMockupDeskEnter}
                         onMouseLeave={handleMockupDeskLeave}
                         onClick={handleMockupDeskClick}
@@ -595,7 +603,7 @@ export function HomePage({isMobile}) {
                 {/* Liens internes */}
         
                 <div>
-                    <ul className="homeLinksUl">
+                    <ul className={`homeLinksUl ${isFadingOut ? "fadeOut" : ""}`}>
 
                         <Link onClick={(event) => handleClickLink(event, "/parcours")} href={"/parcours"} >
                             <li className="homeLinksLi">

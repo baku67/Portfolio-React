@@ -208,10 +208,9 @@
 
     .faIcon-pausePlay {
         position: absolute;
-        top: 0px;
-        right: 10px;
-      
-        font-size: 2em; 
+        top: 6px;
+        right: 0px;
+        font-size: 1.5em;
     }
 
     .galleryDiv-navSpan {
@@ -703,7 +702,7 @@
 
       .navBar-list-ul li {
         padding: 14px 20px;
-        font-size: 1.7em;
+        font-size: 1.6em;
         margin: 6px auto;
 
         border-top-right-radius: 1px;
@@ -745,6 +744,14 @@
       }
 
 
+      .navBar-trait {
+        width: 100%;
+        height: 1px;
+
+        margin-top: 9px;
+      
+      }
+
       
     .navBar-bg {
         object-fit: cover;
@@ -752,7 +759,8 @@
         object-position: right;
     
     
-        opacity: 0.63;
+        opacity: 0.7;
+        
         z-index: -9999;
         border-right: 1px solid var(--primary-cyan);
     }
@@ -872,12 +880,12 @@
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
   
-
+    margin-right: 10px;
   }
 
     .githubCalendarDiv {
-        width: 85%;
-        transform: rotate(1deg);
+        width: 80%;
+        transform: rotate(0deg);
 
         padding: 2px 7px 2px 2px;
 
@@ -937,7 +945,7 @@
 
         width: 100%;
         text-align: right;
-        font-size: 1.1em;
+        font-size: 0.9em;
       }
 
 
@@ -948,6 +956,7 @@
       .styles-module_legendColors__kFY2e {
         /* display: none !important; */
         font-size: 0.9em;
+        display: none !important;
       }
 
 
@@ -1382,10 +1391,11 @@
 
     .homeMain {
         height: 100%;
-        justify-content: flex-end;
+        justify-content: flex-start;
         gap: 50px;
         /* bottom: 14vh; */
-        bottom: 8vh;
+        bottom: 0vh;
+        margin-top: 275px;
 
         text-align: left;
     }
@@ -1415,7 +1425,7 @@
     .homeLinksLi {
         background: var(--primary-cyan);
         color: #0a191c;
-        padding: 6px 15px;
+        padding: 5px 15px;
         margin: 9px auto;
         border-radius: 20px;
         display: flex;

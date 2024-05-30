@@ -182,7 +182,7 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
 
 
                     <FontAwesomeIcon 
-                        icon={isPauseToggled ? faCirclePlay : faCirclePause} 
+                        icon={isPauseToggled ? faPlay : faPause} 
                         onClick={handleTogglePlayPause}
                         className="faIcon-pausePlay"
                     />

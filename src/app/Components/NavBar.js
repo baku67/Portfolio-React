@@ -1,6 +1,8 @@
 import Link from 'next/link';
-
 import Image from 'next/image';
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faHouse, faPersonRunning, faLightbulb, faOtter, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
@@ -8,6 +10,18 @@ import { faXmark, faHouse, faPersonRunning, faLightbulb, faOtter, faEnvelopeOpen
 
 
 export function NavBar({isNavActive, toggleNav, currentActive, isMobile}) {
+
+
+    // Délai avant click redirection pour anims fadeOut
+    const [isFadingOut, setIsFadingOut] = useState(false);
+    const router = useRouter();
+    const handleClickLink = (event, href) => {
+        event.preventDefault();
+        setIsFadingOut(true);
+        setTimeout(() => {
+            router.push(href);
+        }, 500); 
+    }
 
 
     return (
@@ -21,6 +35,12 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile}) {
                 <Image src={"/wood-bg.jpeg"} fill={true} className="navBar-bg" />
 
 
+
+                {/* Shape top-left */}
+                {/* <div className="navBar-shape-topLeft"></div> */}
+
+
+                {/* Plant, Home, CloseBtn */}
                 <div className="navBar-topLine">
 
                     <Link href="/">
@@ -34,6 +54,10 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile}) {
                 </div>
 
 
+                {/* Trait */}
+                <div className="navBar-trait"></div>
+
+
 
                 <div className="navBar-list-wrapper">
 
@@ -41,7 +65,7 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile}) {
 
                         {/* <div className="navBar-trait"></div> */}
 
-                        <Link href="/parcours">
+                        <Link onClick={(event) => handleClickLink(event, "/parcours")} href={"/parcours"} >
                             <li className={currentActive === 'parcours' ? "navBar-li-active" : ""}>
                                 <FontAwesomeIcon icon={faPersonRunning} className="navBar-li-fa" />
                                 <span className="navBar-li-span">Parcours</span>
@@ -50,7 +74,7 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile}) {
 
                         {/* <div className="navBar-trait"></div> */}
                         
-                        <Link href="/projets">
+                        <Link onClick={(event) => handleClickLink(event, "/projets")} href={"/projets"} >
                             <li className={currentActive === 'projets' ? "navBar-li-active" : ""}>
                                 <FontAwesomeIcon icon={faLightbulb} className="navBar-li-fa" />
                                 <span className="navBar-li-span">Projets</span>
@@ -59,7 +83,7 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile}) {
 
                         {/* <div className="navBar-trait"></div> */}
 
-                        <Link href="/loisirs">
+                        <Link onClick={(event) => handleClickLink(event, "/loisirs")} href={"/loisirs"} >
                             <li className={currentActive === 'loisirs' ? "navBar-li-active" : ""}>
                                 <FontAwesomeIcon icon={faOtter} className="navBar-li-fa" />
                                 <span className="navBar-li-span">Loisirs</span>
@@ -68,7 +92,7 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile}) {
 
                         {/* <div className="navBar-trait"></div> */}
                         
-                        <Link href="/contact">
+                        <Link onClick={(event) => handleClickLink(event, "/contact")} href={"/contact"} >
                             <li className={currentActive === 'contact' ? "navBar-li-active" : ""}>
                                 <FontAwesomeIcon icon={faEnvelopeOpenText} className="navBar-li-fa" />
                                 <span className="navBar-li-span">Contact</span>

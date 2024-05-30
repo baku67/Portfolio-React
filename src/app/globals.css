@@ -451,6 +451,20 @@ main {
 }
 
 
+.fadeOut {
+  animation: fadeOut 0.5s 0s ease forwards;
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+
+}
+
+
 .accueil-mockup {
   cursor: pointer;
   /* transform: rotate(360deg); */
@@ -466,11 +480,8 @@ main {
   perspective: 1000px; 
 }
 .accueil-mockup-top {
-  /* height: 235px;
-  width: 405px; */
-
-  height: 283px;
-    width: 458px;
+  height: 241px;
+  width: 412px;
 
   border-radius: 5px;
   background-color: var(--primary-cyan);
@@ -483,18 +494,14 @@ main {
   transition: all 0.4s;
 }
 
-/* Pas de perspective sur le clavier comme il est à plat */
 .accueil-mockup-bottom-wrapper {
   position: relative;
-  /* perspective: 800px;  */
 }
 .accueil-mockup-bottom {
-  /* height: 185px;
-  width: 378px;
-  transform: translateX(14px) translateY(-19px); */
-  height: 232px;
-  width: 422px;
-  transform: translateX(16px) translateY(-23px);
+
+  height: 198px;
+  width: 387px;
+  transform: translateX(13px) translateY(-17px);
   border-radius: 9px;
 
   border-right: 1px solid var(--primary-cyan);
@@ -1144,15 +1151,6 @@ main {
   position: absolute;
   z-index: 999999999;
 
-  /* background-color: var(--secondary-cyan); */
-  /* background: -moz-linear-gradient(90deg, rgba(12,46,62,1) 0%, rgba(12,46,62,1) 80%, rgba(12,46,62,0.9570203081232493) 100%);
-  background: -webkit-linear-gradient(90deg, rgba(12,46,62,1) 0%, rgba(12,46,62,1) 80%, rgba(12,46,62,0.9570203081232493) 100%);
-  background: linear-gradient(90deg, rgba(12,46,62,1) 0%, rgba(12,46,62,1) 80%, rgba(12,46,62,0.9570203081232493) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0c2e3e",endColorstr="#0c2e3e",GradientType=1); */
-
-
-  /* background-image: url("/wood-bg.jpeg"), linear-gradient(90deg, rgba(12,46,62,1) 0%, rgba(12,46,62,1) 80%, rgba(12,46,62,0.9570203081232493) 100%); */
-  /* background: rgb(12,46,62); */
   background: #04374b;
 
   background-position: right; /* right ou top */
@@ -1171,9 +1169,19 @@ main {
 .navBar-bg {
   object-fit: cover;
   object-position: right;
-  opacity: 0.63;
+  opacity: 0.7;
   z-index: -9999;
   border-right: 0px solid var(--primary-cyan);
+}
+
+
+.navBar-shape-topLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100px;
+  background-color: var(--primary-cyan);
 }
 
 
@@ -1208,6 +1216,7 @@ main {
 }
 
 .navBar-homeIcon {
+  z-index: 9;
   font-size: 2em;
   padding: 25px;
   filter: drop-shadow(-2px 3px 1px black);
@@ -1215,20 +1224,23 @@ main {
 
 .navBar-trait {
   width: 100%;
-  height: 1px;
+  height: 2px;
 
-  background: rgb(0,0,0);
-background: -moz-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(21,197,181,1) 49%, rgba(21,197,181,0) 100%);
-background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(21,197,181,1) 49%, rgba(21,197,181,0) 100%);
-background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(21,197,181,1) 49%, rgba(21,197,181,0) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#15c5b5",GradientType=1);
+  background: rgb(109 255 242 / 55%);
+  background: -moz-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(109 255 242 / 60%) 50%, rgba(21, 197, 181, 0) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(109 255 242 / 60%) 50%, rgba(21, 197, 181, 0) 100%);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(109 255 242 / 60%) 50%, rgba(21, 197, 181, 0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#15c5b5",GradientType=1);
+
+
+  margin-top: 45px;
 
 }
 
 
 .navBar-plant {
   position: absolute;
-  z-index: -99;
+  z-index: 0;
   top: -39px;
   left: -31px;
   opacity: 0.8;
@@ -1238,7 +1250,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 
 .navBar-list-ul {
-  margin-top: 30px;
+  margin-top: 25px;
   padding: 0px !important;
 }
 .navBar-list-ul li {
@@ -1285,9 +1297,6 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 }
 
 
-.navBar-trait {
-
-}
 
 
 
@@ -2541,10 +2550,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
   transform: scale(0.8);
   background-color: var(--secondary-cyan);
-  padding: 2px 20px 7px 20px;
+  padding: 4px 32px 4px 4px;
   filter: drop-shadow(0px 4px 4px black); 
 
-  width: 85%;
+  width: 100%;
 
   transition: all 0.3s;
 }
@@ -2876,8 +2885,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 }
 
 .faIcon-accueilGithub {
-  font-size: 3em;
+  font-size: 5em;
   z-index: 99999;
+
+  margin: 0 30px;
 
   color: var(--secondary-cyan);
 }
@@ -2926,11 +2937,11 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   justify-content: left;
 
   margin-bottom: 0em !important;
-  margin-right: 15px;
+  margin-right: 25px;
 
   border-radius: 5px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
 
   background-color: var(--primary-cyan);
   color: var(--secondary-cyan);
