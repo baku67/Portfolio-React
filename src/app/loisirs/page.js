@@ -453,7 +453,7 @@ export default function Loisirs() {
 
     <>
 
-      <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"loisirs"} />
+      <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"loisirs"} isMobile={isMobile}  />
 
 
       <main 
@@ -485,8 +485,8 @@ export default function Loisirs() {
             {/* Diving mask */}
             <Image 
               src={"/diving-mask.png"}
-              width={isMobile ? 80 : 210}
-              height={isMobile ? 80 : 210}
+              width={isMobile ? 72 : 210}
+              height={isMobile ? 72 : 210}
               className="divingMask"
               alt={"masque de plongée"}
             />

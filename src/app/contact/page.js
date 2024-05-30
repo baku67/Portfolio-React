@@ -72,7 +72,7 @@ export default function Contact() {
 
     <>
 
-      <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"contact"} />
+      <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"contact"} isMobile={isMobile} />
 
     
       <main 

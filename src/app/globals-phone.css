@@ -227,11 +227,12 @@
         transform: rotate(-2deg);
     }
     .galleryDiv-navSpan2 {
-        transform: rotate(2deg);
+        transform: rotate(0deg);
     }
 
     .galleryDiv-navDiv {
-        gap: 15px;
+        gap: 25px;
+        right: 10px;
     }
 
     .galleryDiv-navDiv-active {
@@ -627,7 +628,7 @@
 
     .contactMain {
        flex-direction: column-reverse !important;
-       margin: 25px auto 12px auto;
+       margin: 20px auto 12px auto;
        gap: 20px;
        width: 100%;
     }
@@ -716,7 +717,7 @@
       .navBar {
         position: absolute;
         z-index: 99999999999999999999999999999;
-        background-color: var(--secondary-cyan);
+        /* background-color: var(--secondary-cyan); */
         width: 75%;
         height: 100%;
       
@@ -726,6 +727,12 @@
       
         transition: all 0.5s;
       }
+
+      .navBar-homeIcon {
+        font-size: 1.9em;
+        padding: 25px;
+        filter: drop-shadow(-2px 3px 1px black);
+      }
       
       .activeNav {
         transform: translateX(-0%);
@@ -733,6 +740,19 @@
         /* display: block; */
         filter: drop-shadow(5px -1px 5px black);
       }
+
+
+      
+    .navBar-bg {
+        object-fit: cover;
+        /* test ? : */
+        object-position: right;
+    
+    
+        opacity: 0.4;
+        z-index: -9999;
+        border-right: 1px solid var(--primary-cyan);
+    }
 
 
       .hobbies-main {
@@ -748,7 +768,7 @@
 
 
       .galleryDiv {
-        margin: 15px auto 0px auto;
+        margin: 2px auto 0px auto;
         width: 80%;
         transform: rotate3d(1, 1, 1, 5deg) translate(-55px, 0px);
         animation: galleryDiv 1.2s 1s ease forwards;
@@ -779,8 +799,8 @@
         flex-direction: column;
         width: fit-content;
         margin: 0 auto 50px auto;
-        padding: 5px 10px !important;
-        transform: rotate(2deg);
+        padding: 5px 15px 5px 6px !important;
+        transform: rotate(1deg);
       }
       .hobbies-list ul li {
         font-size: 1em;
@@ -802,8 +822,8 @@
       }
 
       .divingMask {
-        top: 1%;
-        right: 6%;
+        top: 14px;
+        right: 20px;
         transform: rotate(47deg);
         filter: drop-shadow(7px 5px 6px black);
       }
@@ -1076,16 +1096,14 @@
     }
 
 
-    .li-widthMobile-prevLast {
-        width: 85%;
-    }
     .li-widthMobile-last {
-        width: 70%;
+        /* width: 70%; */
+        width: 100%;
     }
 
     .parcours-chronologie {
         width: 90%;
-        margin: 27px auto 25px auto;
+        margin: 30px auto 25px auto;
     
         /* padding: 7px 9px; */
         padding: 10px 10px 12px 5px;
@@ -1098,6 +1116,17 @@
         position: relative;
         z-index: 999999;
     }
+
+    @keyframes parcours-chronologie {
+        from {
+          opacity: 0;
+          transform: rotate(352deg) translate(80px, -5px);
+        }
+        to {
+          opacity: 1;
+          transform: rotate(359deg) translate(0px, -0px);
+        }
+      }
 
     .parcours-chronologie-li {
         margin: 9px 5px;

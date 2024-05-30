@@ -83,7 +83,7 @@ export default function Home() {
 
     <>
 
-      <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"parcours"} />
+      <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"parcours"} isMobile={isMobile}  />
 
       <main 
         className="main"

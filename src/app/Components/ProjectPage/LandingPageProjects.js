@@ -102,7 +102,7 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
 
         <>
         
-            <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"projets"} />
+            <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"projets"} isMobile={isMobile} />
 
             <div 
                 className="main scrollMobile" 

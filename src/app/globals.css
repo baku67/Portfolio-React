@@ -1140,7 +1140,19 @@ main {
 .navBar {
   position: absolute;
   z-index: 999999999;
-  background-color: var(--secondary-cyan);
+
+  /* background-color: var(--secondary-cyan); */
+  /* background: -moz-linear-gradient(90deg, rgba(12,46,62,1) 0%, rgba(12,46,62,1) 80%, rgba(12,46,62,0.9570203081232493) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(12,46,62,1) 0%, rgba(12,46,62,1) 80%, rgba(12,46,62,0.9570203081232493) 100%);
+  background: linear-gradient(90deg, rgba(12,46,62,1) 0%, rgba(12,46,62,1) 80%, rgba(12,46,62,0.9570203081232493) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0c2e3e",endColorstr="#0c2e3e",GradientType=1); */
+
+
+  /* background-image: url("/wood-bg.jpeg"), linear-gradient(90deg, rgba(12,46,62,1) 0%, rgba(12,46,62,1) 80%, rgba(12,46,62,0.9570203081232493) 100%); */
+  background: rgb(12,46,62);
+
+  background-position: right; /* right ou top */
+
   width: 350px;
   height: 100%;
 
@@ -1150,6 +1162,16 @@ main {
 
   transition: all 0.5s;
 }
+
+
+.navBar-bg {
+  object-fit: cover;
+  object-position: right;
+  opacity: 0.5;
+  z-index: -9999;
+  border-right: 0px solid var(--primary-cyan);
+}
+
 
 .activeNav {
   transform: translateX(-0px);
@@ -1170,12 +1192,13 @@ main {
 .navBar-topLine-exitBtn {
   cursor: pointer;
   font-size: 2.2em;
-    padding: 15px 20px;
+    padding: 15px 27px;
 }
 
 .navBar-homeIcon {
-  font-size: 1.8em;
-    padding: 25px;
+  font-size: 2em;
+  padding: 25px;
+  filter: drop-shadow(-2px 3px 1px black);
 }
 
 .navBar-trait {
@@ -1188,6 +1211,17 @@ background: -webkit-linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(21,197,181,1) 
 background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(21,197,181,1) 49%, rgba(21,197,181,0) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#15c5b5",GradientType=1);
 
+}
+
+
+.navBar-plant {
+  position: absolute;
+  z-index: -99;
+  top: -39px;
+  left: -31px;
+  opacity: 0.75;
+
+  filter: drop-shadow(-1px 4px 7px rgba(0, 0, 0, 0.6));
 }
 
 
@@ -1210,6 +1244,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   align-items: center;
   gap: 25px;
 
+  filter: drop-shadow(3px 4px 6px black);
+
 }
 
 
@@ -1221,7 +1257,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .navBar-li-active {
   background-color: var(--primary-cyan);
   /* color: var(--secondary-cyan); */
-  filter: drop-shadow(2px 4px 6px black);
+  filter: drop-shadow(2px 4px 4px black);
 }
 
 .navBar-li-active svg {
@@ -1232,11 +1268,14 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .navBar-li-active span {
   font-weight: bold;
 
-  border-left: 1px solid #0000001f;
   color: var(--secondary-cyan);
   padding-left: 11px;
 }
 
+
+.navBar-trait {
+
+}
 
 
 
@@ -1302,6 +1341,20 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
   font-size: 2em;
   color: var(--primary-cyan);
+
+  transform: rotate(-4deg);
+  animation: parcours-chrono-titleIcon 2.7s 0s ease-in-out infinite;
+}
+@keyframes parcours-chrono-titleIcon {
+  0% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(4deg);
+  }
+  100% {
+    transform: rotate(-4deg);
+  }
 }
 
 .parcours-chronologie-li-descriptionAlternance {
@@ -1352,6 +1405,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 }
 .skill-Fa-Icon {
   font-size: 4.2em;
+  filter: drop-shadow(0px 5px 4px black);
 }
 
 
@@ -1557,6 +1611,9 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   width: 100%;
   justify-content: flex-start;
   gap: 55px;
+
+  position: relative;
+  right: 20px;
 }
 
 .galleryDiv-navSpan {
@@ -1986,11 +2043,16 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 }
 
 
+.image-gallery-thumbnails-wrapper {
+  margin-top: 5px;
+}
+
+
 .hobbies-list-icon {
   color: var(--primary-cyan);
   font-size: 1.8em;
   width: 50px;
-
+  filter: drop-shadow(2px 4px 4px black);
 
   transform: rotate(9deg);
   animation: hobbiesListIcons 2.5s 0s linear infinite;
@@ -2817,7 +2879,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   top: 15px;
   font-size: 4.5em;
 
-
+  filter: drop-shadow(0px 0px 3px white);
 
   /* color: var(--background-color); */
   color: var(--secondary-cyan);
