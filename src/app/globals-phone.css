@@ -26,6 +26,8 @@
     .faIcon-accueilGithub {
         font-size: 2.7em;
         z-index: 99999;
+
+        margin: 0px 15px;
     }
 
 
@@ -271,7 +273,7 @@
     }
     .projectCard{
         width: 100% !important;
-        padding: 2px 2px 6px 2px;
+        padding: 1px 1px 2px 1px;
         border-bottom-width: 1px;
 
         box-shadow: 0px 0px 5px #000000;
@@ -389,6 +391,7 @@
     .projectCard_primSkills li {
         padding: 1px 7px 0px 7px;
         font-weight: bold;
+        font-size: 0.9em;
     }
 
     .NbrCommits {
@@ -536,7 +539,7 @@
     .projectCard-footer {
         font-size: 75%;
 
-        margin-top: 7px;
+        margin-top: 2px;
 
         display: flex;
         flex-flow: column-reverse;
@@ -628,8 +631,8 @@
 
     .contactMain {
        flex-direction: column-reverse !important;
-       margin: 20px auto 12px auto;
-       gap: 20px;
+       margin: 14px auto 12px auto;
+       gap: 14px;
        width: 100%;
     }
 
@@ -749,7 +752,7 @@
         object-position: right;
     
     
-        opacity: 0.4;
+        opacity: 0.63;
         z-index: -9999;
         border-right: 1px solid var(--primary-cyan);
     }
@@ -861,9 +864,24 @@
         margin-bottom: 0.5rem !important;
     }
 
+
+    
+.githubCalendar-iconAndText {
+
+    border-radius: 5px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+  
+
+  }
+
     .githubCalendarDiv {
-        width: 100%;
+        width: 85%;
         transform: rotate(1deg);
+
+        padding: 2px 7px 2px 2px;
+
+        border-radius: 6px;
     }
 
     .contactForm-sendBtn {
@@ -903,24 +921,33 @@
         overflow: scroll;
         transform: scale(1) !important;
         overflow: hidden;
+
+        gap: 0px;
       }
       .styles-module_calendar__sT1ND {
         width: 100%;
         height: auto;
-        padding: 8px 10px !important;
+        padding: 0px 0px !important;
+        margin-top: 8px;
         border-radius: 5px;
       }
 
       .react-activity-calendar__count {
-        display: none;
+        display: block;
 
         width: 100%;
         text-align: right;
         font-size: 1.1em;
       }
 
+
+      .styles-module_footer__ZQ-Bl {
+        font-size: 0.9em;
+      }
+
       .styles-module_legendColors__kFY2e {
-        display: none !important;
+        /* display: none !important; */
+        font-size: 0.9em;
       }
 
 
@@ -1354,14 +1381,11 @@
     }
 
     .homeMain {
-        /* height: 82%;
-        justify-content: flex-end;
-        gap: 50px; */
-
         height: 100%;
         justify-content: flex-end;
         gap: 50px;
-        bottom: 14vh;
+        /* bottom: 14vh; */
+        bottom: 8vh;
 
         text-align: left;
     }
@@ -1415,6 +1439,8 @@
 
     .homeLinksLi svg {
         font-size: 1.6em;
+
+        transform: rotate(358deg) scale(1.2);
     }
 
 

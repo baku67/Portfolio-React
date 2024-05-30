@@ -1,9 +1,10 @@
 "use client"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faPersonRunning, faLightbulb, faCamera, faEnvelope, faCheck, faBatteryThreeQuarters, faSignal, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faPersonRunning, faLightbulb, faCamera, faEnvelopeOpenText, faBatteryThreeQuarters, faSignal } from "@fortawesome/free-solid-svg-icons";
 import { faHtml5, faCss3Alt, faJs, faPhp, faSymfony, faReact, faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-import ReactCurvedText from 'react-curved-text';
+// import ReactCurvedText from 'react-curved-text';
+import Draggable from 'react-draggable';
 import { useRouter } from 'next/navigation';
 
 import dynamic from 'next/dynamic';
@@ -116,34 +117,43 @@ export function HomePage({isMobile}) {
             ></div>
 
 
+
             {/* Post-it "alternance" */}
-            <div 
-                className="post-it-container"
-                onMouseEnter={handlePostItEnter}
-                onMouseLeave={handlePostItLeave}
-            >
-
-                <Image 
-                    src="/post-it-1-cropped.png"
-                    width={ isMobile ? 195 : 210 }
-                    height={ isMobile ? 195 : 210 }
-                    className="post-it-img"
-                    style={{
-                        transform: isPostItHovered ? "translate(-2px, 5px) rotate(1deg)" : "translate(0px, 0px)",
-                        filter: isPostItHovered ? "drop-shadow(8px 7px 4px black)" : "drop-shadow(8px 12px 6px black)",
-                    }}
-                />
-
-                <div className="post-it-textDiv"
-                    style={{
-                        transform: isPostItHovered ? "translate(-2px, 5px) rotate(1deg)" : "translate(0px, 0px)"
-                    }}
+            
+                <div 
+                    className="post-it-container"
+                    onMouseEnter={handlePostItEnter}
+                    onMouseLeave={handlePostItLeave}
                 >
-                    <FontAwesomeIcon icon={faMagnifyingGlass} className="post-it-textIcon" />
-                    <span className="post-it-textSpan">Alternance <br />&ldquo;Concepteur Développeur d&apos;Applications&ldquo;</span>
+
+                    <Draggable>
+                    <div  className="draggable-transition">
+
+                        <Image 
+                            src="/post-it-1-cropped.png"
+                            width={ isMobile ? 195 : 210 }
+                            height={ isMobile ? 195 : 210 }
+                            className="post-it-img"
+                            style={{
+                                transform: isPostItHovered ? "translate(-2px, 5px) rotate(1deg)" : "translate(0px, 0px)",
+                                filter: isPostItHovered ? "drop-shadow(8px 7px 4px black)" : "drop-shadow(8px 12px 6px black)",
+                            }}
+                        />
+
+                        <div className="post-it-textDiv"
+                            style={{
+                                transform: isPostItHovered ? "translate(-2px, 5px) rotate(1deg)" : "translate(0px, 0px)"
+                            }}
+                        >
+                            <FontAwesomeIcon icon={faMagnifyingGlass} className="post-it-textIcon" />
+                            <span className="post-it-textSpan">Alternance <br />&ldquo;Concepteur Développeur d&apos;Applications&ldquo;</span>
+                        </div>
+
+                    </div>
+                    </Draggable>
+
                 </div>
 
-            </div>
 
 
 
@@ -610,7 +620,7 @@ export function HomePage({isMobile}) {
 
                         <Link onClick={(event) => handleClickLink(event, "/contact")} href={"/contact"} >
                             <li className="homeLinksLi">
-                                <FontAwesomeIcon icon={faEnvelope} />
+                                <FontAwesomeIcon icon={faEnvelopeOpenText} />
                                 <h2>Contact</h2>
                             </li>
                         </Link>

@@ -410,6 +410,9 @@ main {
 .homeLinksUl {
   display: inline-flex;
     flex-direction: column;
+
+  opacity: 0;
+  animation: fadeIn 1s 1.2s ease forwards;
 }
 
 
@@ -1149,7 +1152,8 @@ main {
 
 
   /* background-image: url("/wood-bg.jpeg"), linear-gradient(90deg, rgba(12,46,62,1) 0%, rgba(12,46,62,1) 80%, rgba(12,46,62,0.9570203081232493) 100%); */
-  background: rgb(12,46,62);
+  /* background: rgb(12,46,62); */
+  background: #04374b;
 
   background-position: right; /* right ou top */
 
@@ -1167,10 +1171,16 @@ main {
 .navBar-bg {
   object-fit: cover;
   object-position: right;
-  opacity: 0.5;
+  opacity: 0.63;
   z-index: -9999;
   border-right: 0px solid var(--primary-cyan);
 }
+
+
+.draggable-transition {
+  transition: all 0.04s linear;
+}
+
 
 
 .activeNav {
@@ -1192,7 +1202,9 @@ main {
 .navBar-topLine-exitBtn {
   cursor: pointer;
   font-size: 2.2em;
-    padding: 15px 27px;
+  padding: 15px 27px;
+
+  filter: drop-shadow(4px 3px 3px black);
 }
 
 .navBar-homeIcon {
@@ -1219,9 +1231,9 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   z-index: -99;
   top: -39px;
   left: -31px;
-  opacity: 0.75;
+  opacity: 0.8;
 
-  filter: drop-shadow(-1px 4px 7px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(-1px 4px 7px rgba(0, 0, 0, 0.8));
 }
 
 
@@ -1459,10 +1471,10 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 }
 
 .styles-module_container__GBNxC {
-  transform: scale(0.8);
+  /* transform: scale(0.8);
   background-color: var(--secondary-cyan);
   padding: 2px 20px 7px 20px;
-  filter: drop-shadow(0px 4px 4px black);
+  filter: drop-shadow(0px 4px 4px black); */
 }
 
 .projectPageHeader {
@@ -2519,12 +2531,20 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 
 .githubCalendarDiv {
+  display: inline-flex;
   width: fit-content;
   margin: 0 auto;
   padding: 10px 20px;
   border: 1px solid transparent;
   background-color: transparent;
   border-radius: 15px;
+
+  transform: scale(0.8);
+  background-color: var(--secondary-cyan);
+  padding: 2px 20px 7px 20px;
+  filter: drop-shadow(0px 4px 4px black); 
+
+  width: 85%;
 
   transition: all 0.3s;
 }
@@ -2714,7 +2734,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   transform: rotate(358deg) translateX(-15px);
 
   opacity: 0;
-  animation: homeMain-header 0.8s 1s ease forwards;
+  animation: homeMain-header 0.8s 0.5s ease forwards;
 }
 @keyframes homeMain-header {
   from {
@@ -2858,6 +2878,8 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 .faIcon-accueilGithub {
   font-size: 3em;
   z-index: 99999;
+
+  color: var(--secondary-cyan);
 }
 
 .faSpinner {
@@ -2879,7 +2901,7 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
   top: 15px;
   font-size: 4.5em;
 
-  filter: drop-shadow(0px 0px 3px white);
+  filter: drop-shadow(0px 0px 4px white);
 
   /* color: var(--background-color); */
   color: var(--secondary-cyan);
@@ -2900,8 +2922,18 @@ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endCo
 
 
 .githubCalendar-iconAndText {
-  position: absolute;
+  position: relative;
   justify-content: left;
+
+  margin-bottom: 0em !important;
+  margin-right: 15px;
+
+  border-radius: 5px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+
+  background-color: var(--primary-cyan);
+  color: var(--secondary-cyan);
 }
 
 

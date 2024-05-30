@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react"
 
-import Image from 'next/image'
+import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPause, faPlay, faCirclePlay, faCirclePause } from "@fortawesome/free-solid-svg-icons";
@@ -42,14 +42,7 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
     // API github
     const token = process.env.REACT_APP_GITHUB_TOKEN;
 
-    const [githubCardHovered, setGithubCardHovered] = useState(false);
 
-    const githubCardEnter = () => {
-        setGithubCardHovered(true);
-    }
-    const githubCardLeave = () => {
-        setGithubCardHovered(false);
-    }
 
 
     // Hover Card:
@@ -206,18 +199,12 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
                 >
                     <div 
                         className="githubCalendarDiv"
-                        onMouseEnter={githubCardEnter}
-                        onMouseLeave={githubCardLeave}
-                        style={{
-                            backgroundColor: githubCardHovered ? "var(--secondary-cyan)" : "transparent",
-                            borderColor: githubCardHovered ? "transparent" : "transparent",
-                        }}
                     >
+                        
                         <div className="iconAndText githubCalendar-iconAndText" style={{marginBottom: "0.5em"}}>
-                            {/* <FontAwesomeIcon icon={faChartLine} className="faIcon" />
-                            <h3 className="githubCalendarTitle">Activité :</h3> */}
                             <FontAwesomeIcon icon={faGithub} className="faIcon faIcon-accueilGithub" />
                         </div>
+                        
 
                         {/* Props light/dark par exemple: https://grubersjoe.github.io/react-github-calendar/#/?user=baku67 */}
                         <GitHubCalendar 

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFilePdf, faPersonRunning, faMagnifyingGlass, faFileArrowDown, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
+import { faPersonRunning, faMagnifyingGlass, faFileArrowDown, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 
 import { Shape1 } from "/src/app/Components/Shapes/Shape1";
 import { Shape2 } from "/src/app/Components/Shapes/Shape2";
@@ -13,6 +13,7 @@ import { Skills } from "/src/app/Components/CvPage/Skills";
 import PageTitleNav from "../Components/PageTitleNav";
 import { NavBar } from "../Components/NavBar";
 
+import Draggable from 'react-draggable';
 
 
 // Define isMobileDevice function outside of the component
@@ -222,22 +223,30 @@ export default function Home() {
                     {/* CV incrusté (mobile) */}
                     {isMobile && (
 
-                      <div className="cv-pdf-wrapper">
+                      <Draggable>
 
-                        <Image 
-                          src="/CV_BasileKuntz.png" 
-                          // width={100} 
-                          // height={250} 
-                          fill={true}
-                          alt="CV de Basile Kuntz"
-                          onClick={downloadPDF} 
-                          className="cv-pdf"
-                        />
+                        <div className="draggable-transition">
 
-                        {/* Download icone: */}
-                        <FontAwesomeIcon icon={faFileArrowDown} className="cv-pdf-dlIcon" />
+                          <div className="cv-pdf-wrapper">
 
-                      </div>
+                            <Image 
+                              src="/CV_BasileKuntz.png" 
+                              // width={100} 
+                              // height={250} 
+                              fill={true}
+                              alt="CV de Basile Kuntz"
+                              onClick={downloadPDF} 
+                              className="cv-pdf"
+                            />
+
+                            {/* Download icone: */}
+                            <FontAwesomeIcon icon={faFileArrowDown} className="cv-pdf-dlIcon" />
+
+                          </div>
+
+                          </div>
+                      </Draggable>
+
                     )}
 
 
