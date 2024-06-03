@@ -9,7 +9,7 @@ import { faXmark, faHouse, faPersonRunning, faLightbulb, faOtter, faEnvelopeOpen
 
 
 
-export function NavBar({isNavActive, toggleNav, currentActive, isMobile}) {
+export function NavBar({isNavActive, toggleNav, currentActive, isMobile, toggleNavClickFadeOut}) {
 
 
     // Délai avant click redirection pour anims fadeOut
@@ -18,6 +18,9 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile}) {
     const handleClickLink = (event, href) => {
         event.preventDefault();
         setIsFadingOut(true);
+
+        toggleNavClickFadeOut();
+        
         setTimeout(() => {
             router.push(href);
         }, 500); 

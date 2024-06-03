@@ -164,14 +164,14 @@ export function HomePage({isMobile}) {
 
                 {/* Plante */}
                 <div 
-                    className={`plantAccueil-div ${isFadingOut ? "fadeOut" : ""}`} 
+                    className={`plantAccueil-div`} 
                     style={{width:"fit-content"}}
                 >
 
                     {/* <Image src="/plant-2.png" width={450} height={450} /> */}
-                    <Image src="/plant-1-min.png" width={450} height={450} className="plantAccueil" />
+                    <Image src="/plant-1-min.png" width={450} height={450} className={`plantAccueil ${isFadingOut ? "fadeOut" : ""}`} />
 
-                    <div className="bocal-exterieur">
+                    <div className={`bocal-exterieur ${isFadingOut ? "fadeOut" : ""}`}>
                         <div className="bocal-ouverture"></div>
                         <div className="bocal-landscape"></div>
                     </div>
@@ -180,13 +180,13 @@ export function HomePage({isMobile}) {
 
 
                 {/* Test fish bowl (loisirs) */}
-                <div className={`fishBowl-div ${isFadingOut ? "fadeOut" : ""}`}>
+                <div className={`fishBowl-div`}>
                     <Image 
                         src="/fishBowl-rounded2.png" 
                         width={320} 
                         height={320} 
                         style={{transform: "rotate(182deg)", filter:"hue-rotate(334deg)"}}
-                        className="fishBowl-img"
+                        className={`fishBowl-img ${isFadingOut ? "fadeOut" : ""}`}
                     />
                 </div>
 

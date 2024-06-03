@@ -24,6 +24,23 @@
 }
 
 
+/* MAX 1440p */
+body {
+  max-width: 1600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.woodBg-layout {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.navBar {
+  overflow: hidden;
+}
+
+
 
 
 .isDesktop {

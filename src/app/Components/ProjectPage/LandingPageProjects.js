@@ -90,15 +90,22 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
     }
 
 
+    // Anims fadeOut (du main pour l'instant) lors des clicks sur liens NavBar
+    const [navClickFadeOut, setNavClickFadeOut] = useState(false);
+    const toggleNavClickFadeOut = () => {
+        setNavClickFadeOut(!navClickFadeOut);
+    }
+
+
 
     return (
 
         <>
         
-            <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"projets"} isMobile={isMobile} />
+            <NavBar isNavActive={isNavActive} toggleNav={toggleNav} currentActive={"projets"} isMobile={isMobile} toggleNavClickFadeOut={toggleNavClickFadeOut} />
 
             <div 
-                className="main scrollMobile" 
+                className={`main scrollMobile ${navClickFadeOut ? "fadeOut" : ""}`} 
                 style={{filter: isNavActive ? "brightness(0.5) blur(1px)" : ""}}
                 onClick={handleClickOutsideNav}
             >
