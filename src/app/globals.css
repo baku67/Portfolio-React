@@ -584,6 +584,7 @@ main {
 
 .cv-pdf {
   object-fit: contain;
+  transition: all 0.4s;
 }
 
 
@@ -1339,6 +1340,17 @@ main {
   font-size: 4.2em;
   border-radius: 1px;
   color: var(--secondary-cyan);
+}
+
+.cv-pdf-dlIcon-desktop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 5em;
+  opacity: 0;
+  transition: all 0.4s;
 }
 
 .parcours-chronologie {
