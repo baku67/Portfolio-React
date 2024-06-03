@@ -1220,12 +1220,13 @@
     
     .accueil-mockup {
         position: absolute;
-
         width: fit-content;
         transform: rotate(348deg) translate(1px, 57px);
+        top: 0% !important;
+        left: 0px !important;
 
-        top: 0;
-        left: 0;
+        /* opacity: 0; */
+        /* animation: fadeIn 0.8s 1.5s ease forwards; */
     }
     .accueil-mockup-top {
         margin: 0 auto;
