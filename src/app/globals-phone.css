@@ -253,6 +253,8 @@
         right: 13px;
         top: 14px;
         font-size: 2em;
+
+        filter: none;
     }
     .projectCardsList {
         flex-direction: column !important;

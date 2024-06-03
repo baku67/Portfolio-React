@@ -19,13 +19,17 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile, toggleN
         event.preventDefault();
         setIsFadingOut(true);
 
-        toggleNavClickFadeOut();
+        // Lors du click Links on toggleNav false
+        toggleNav();
         
+        toggleNavClickFadeOut();
+
         setTimeout(() => {
             router.push(href);
         }, 500); 
     }
 
+    
 
     return (
         <>
