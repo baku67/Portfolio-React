@@ -101,7 +101,7 @@ a {
     flex-direction: column;
     justify-content: center;
 
-    gap: 80px;
+    gap: 140px;
 
 }
 
@@ -511,7 +511,8 @@ main {
   transform: rotateX(330deg); 
 
   border: 1px solid var(--primary-cyan);
-    border-width: 4px 1px 1px 1px;
+  border-color: var(--primary-cyan) var(--primary-cyan) #0a0a0a #0a0a0a;
+  border-width: 5px 1px 1px 3px;
 
   transition: all 0.4s;
 }
@@ -604,6 +605,8 @@ main {
 }
 
 .amt-imgWrapper {
+  position: absolute;
+  overflow: hidden;
   height: 100%;
   width: 100%;
 }
@@ -632,9 +635,41 @@ main {
 }
 
 
+.phoneReflection {
+  position: absolute;
+  z-index: 99;
+  width: 76%;
+  height: 133%;
+  backdrop-filter: brightness(1.2);
+  background-color: #ffffff1a;
+  transform: rotate(24deg) translate(48px, -42px);
+
+}
 
 
+.laptop-reflect {
+  position: absolute;
+  z-index: 99;
+  width: 120%;
+  height: 133%;
+  /* backdrop-filter: brightness(1.2);  */
 
+  /* background-color: #ffffff24;
+  transform: rotate(338deg) translate(-27px, -196px); */
+
+  background-color: #ffffff0f;
+  transform: rotate(292deg) translate(-27px, 131px);
+
+}
+
+
+.ombreLaptop {
+  position: absolute;
+  width: 120%;
+  height: 133%;
+  backdrop-filter: brightness(0.6);
+  transform: rotate(338deg) translate(-27px, -196px);
+}
 
 
 
@@ -652,6 +687,7 @@ main {
 }
 
 .mockup-pad {
+  z-index: -9;
   background-color: #0d506f;
   border: 1px solid var(--secondary-cyan);
   border-radius: 5px;
@@ -1096,10 +1132,10 @@ main {
 
 /* Attention height synchro : .smartphone-cv  */
 .portable-div {
-  height: 365px;
-  width: 205px;
+  height: 340px;
+  width: 180px;
   border-radius: 13px;
-  padding: 6px 4px 23px 4px;
+  padding: 6px 4px 12px 4px;
   background-color: rgb(7 7 7);
   border: 1px solid var(--primary-cyan);
 
@@ -1109,6 +1145,8 @@ main {
 }
 
 .portable-screen {
+  position: relative;
+  overflow: hidden;
   width: 100%;
   height: 100%;
   border-radius: 9px;
