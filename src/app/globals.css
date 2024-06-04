@@ -977,11 +977,17 @@ main {
 .youtubeWidget-titleWrapper {
   overflow: hidden;
   width: 70%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .youtubeWidget-title {
   font-size: 0.7em;
   white-space: nowrap;
+}
+.youtubeWidget-author {
+  font-size: 0.6em;
 }
 
 
