@@ -624,20 +624,20 @@ main {
   right: 0;
   /* transform: rotate(45deg) translate(34px, -87px); */
   z-index: 999;
-  filter: drop-shadow(30px 17px 6px black);
+  filter: drop-shadow(39px 17px 9px black);
 
   opacity: 0;
-  transform: rotate(15deg) translate(177px, -3px);
+  transform: rotate(15deg) translate(381px, 41px);
   animation: homePageHeadphones 0.7s 1.35s ease forwards;
 }
 @keyframes homePageHeadphones {
   from {
     opacity: 0;
-    transform: rotate(15deg) translate(177px, -3px);
+    transform: rotate(15deg) translate(381px, 41px);
   }
   to {
     opacity: 1;
-    transform: rotate(39deg) translate(7px, 43px);
+    transform: rotate(39deg) translate(211px, 43px);;
   }
 }
 

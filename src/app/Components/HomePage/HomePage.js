@@ -96,6 +96,33 @@ export function HomePage({isMobile}) {
 
 
 
+    // accueil-mockup style (le bug farme quand on rallume vient pas d'ici mais des CSS anims)
+    const handleAccueilMockupStyle = () => {
+        // if (isMockupDeskClicked) {
+        //     if (isMobile) {
+        //         return "transform: rotate(348deg); translate(1px, 57px);";
+        //     }
+        //     else {
+        //         return "transform: rotate(342deg); filter: drop-shadow(0px 0px 7px var(--primary-cyan));";
+        //     }
+        // }
+        // else {
+        //     if (isMockupDeskHovered) {
+        //         if(!isMobile) {
+        //             return "transform: rotate(322deg); filter: drop-shadow(0px 0px 7px var(--primary-cyan));";
+        //         }
+        //     }
+        //     else {
+        //         return "";
+        //     }
+        // }
+
+    }
+
+
+
+
+
 
 
 
@@ -312,6 +339,8 @@ export function HomePage({isMobile}) {
 
 
 
+    // *** Ref SVG path cable
+    const pathRef = useRef(null);
 
 
     // ** Loading {isMobile} (pour bug affichage desktop du laptop sur mobile) et video-laptop et font-postIt
@@ -337,11 +366,29 @@ export function HomePage({isMobile}) {
         if ((typeof isMobile !== 'undefined') || (!videoLoading) || (!fontLoading) ) {
             setLoading(false);
         }
+
+        // Dessin drawing du cable
+        if (pathRef.current) {
+            const pathElement = pathRef.current;
+            const length = pathElement.getTotalLength();
+            pathElement.style.transition = pathElement.style.WebkitTransition = 'none';
+            pathElement.style.strokeDasharray = `${length} ${length}`;
+            pathElement.style.strokeDashoffset = length;
+            pathElement.getBoundingClientRect();
+            pathElement.style.transition = pathElement.style.WebkitTransition =
+                'stroke-dashoffset 1.5s 0.5s ease';
+            pathElement.style.strokeDashoffset = '0';
+        }
+
     }, [isMobile, videoLoading, fontLoading]);
 
     if (loading) {
         return <></>;
     }
+
+
+
+
 
 
 
@@ -458,33 +505,6 @@ export function HomePage({isMobile}) {
 
             {/* Tasse café CSS */}
             <div className={`tasseCafe`} style={{transform: isCafeHovered ? "translate(-8px, 11px)" : "translate(0px, 0px)"}}>
-
-                {/* https://www.npmjs.com/package/react-curved-text  */}
-                {/* <div 
-                    className="tasseCafe-text" 
-                    onMouseEnter={handleCafeEnter} 
-                    onMouseLeave={handleCafeLeave}
-                    style={{}} 
-                >
-                    {!isMobile && (
-                        <ReactCurvedText
-                            width={250}
-                            height={115}
-                            cx={150}
-                            cy={0}
-                            rx={100}
-                            ry={100}
-                            startOffset={30}
-                            reversed={false}
-                            text="Contact"
-                            textProps={{ style: { fontSize: 32 } }}
-                            textPathProps={{style : { fill : "white"} }}
-                            tspanProps={{"dy": isCafeHovered ? "28" : "25"}}
-                            ellipseProps={null}
-                            svgProps={null}
-                        />
-                    )}
-                </div> */}
 
 
                 <div className={`cup ${isFadingOut ? "fadeOut" : ""}`}>
@@ -625,15 +645,16 @@ export function HomePage({isMobile}) {
 
 
 
-            {/* Headphones (desktop) */}
+            {/* Headphones casque (desktop) */}
             {!isMobile && (
                 <Image 
                     src={"/headphones.png"}
-                    width={300}
-                    height={300}
+                    width={450}
+                    height={450}
                     className="homePageHeadphones"
                 />
             )}
+
 
 
 
@@ -645,7 +666,7 @@ export function HomePage({isMobile}) {
                 onMouseEnter={handleMockupDeskEnter}
                 onMouseLeave={handleMockupDeskLeave}
                 onClick={handleMockupDeskClick}
-                style={{transform: isMockupDeskHovered ? "rotate(342deg)" : "", filter : isMockupDeskHovered ? "drop-shadow(0px 0px 7px var(--primary-cyan))" : ""}}
+                style={{handleAccueilMockupStyle}}
             >
 
                 {/* perspective écran */}
@@ -675,11 +696,13 @@ export function HomePage({isMobile}) {
                 {/* Pas de perspective sur le clavier comme il est à plat  */}
                 <div className="accueil-mockup-bottom-wrapper">
 
-                    {/* cable mockup desktop */}
+                    {/* Câble laptop */}
                     <svg className="cableSvg" >
                         <g>
-                            {/* <path d="M 0 0 C 15 145 121 22 176 119 C 206 171 323 132 263 52 C 211 -9 114 39 124 122 C 132 187 234 240 359 166 C 451 101 454 150 560 104"/> */}
-                            <path d="M 155 6 C 128 39 116 63 124 122 C 134 188 234 240 359 166 C 451 101 454 150 560 104"/>
+                            <path 
+                                ref={pathRef} 
+                                d="M 155 6 C 128 39 116 63 124 122 C 134 188 234 240 359 166 C 451 101 454 150 560 104" 
+                            />
                         </g>
                     </svg>
 
