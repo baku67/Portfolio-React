@@ -1210,6 +1210,9 @@
     .post-it-textDiv {
         font-size: 0.8em;
         margin-top: 0px;
+        top: 15px;
+        left: 29px;
+        width: 150px;
     }
 
     .handle {

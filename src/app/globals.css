@@ -107,7 +107,7 @@ a {
 
 .homeMain-title {
 
-    font-size: 1.7em;
+    font-size: 1.8em;
     color: rgb(219, 231, 233);
     text-shadow: 0px 2px 1px black;
     margin-bottom: 0em;
@@ -208,8 +208,8 @@ a {
 
 .post-it-textDiv {
   position: absolute;
-  top: 15px;
-  left: 25px;
+  top: 18px;
+  left: 38px;
   font-size: 0.8em;
   margin-top: 3px;
   width: 175px;
@@ -2851,8 +2851,8 @@ main {
 .homeMain-header {
   /* width: 254px;
   height: 125px; */
-  width: 300px;
-    height: 155px;
+  width: 290px;
+    height: 147px;
   background-color: var(--secondary-cyan);
 
   padding: 12px 18px;
@@ -2878,7 +2878,7 @@ main {
 }
 
 .home-visitCard-reseauIcon {
-  font-size: 2.4em;
+  font-size: 2.15em;
   color: var(--primary-cyan);
 }
 

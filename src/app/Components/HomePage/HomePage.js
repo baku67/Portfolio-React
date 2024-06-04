@@ -343,24 +343,12 @@ export function HomePage({isMobile}) {
                                 <div className="portable-skillGrid2">
 
 
-                                        {/* <h3 className="portable-skillGrid2-title">Formations</h3>
-                                        <ul>
-                                            <li className="portable-skillGrid2-li">Titre RNCP &quot;Développeur web et web mobile&quot;</li>
-                                            <li className="portable-skillGrid2-li">BTS SIO option SLAM</li>
-                                        </ul>
-                                        <h3 className="portable-skillGrid2-title">Expériences</h3>
-                                        <ul>
-                                            <li className="portable-skillGrid2-li">Stage chez Hoplunch</li>
-                                            <li className="portable-skillGrid2-li">Alternance BTS (2ans) </li>
-                                        </ul> */}
-                                        
-
-                                        <Image 
-                                            src="/CV_BasileKuntz.png" 
-                                            fill={true}
-                                            alt="CV de Basile Kuntz"
-                                            className="smartphone-cv"
-                                        />
+                                    <Image 
+                                        src="/CV_BasileKuntz.png" 
+                                        fill={true}
+                                        alt="CV de Basile Kuntz"
+                                        className="smartphone-cv"
+                                    />
 
                                 </div>
 
