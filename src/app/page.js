@@ -27,10 +27,11 @@ export default function Home() {
 
     // Fonts:
     // Dynamic import for webfontloader (fix pb SSR)
+    // Karla, Incosolata, Barlow: time smartphone tests
     import('webfontloader').then((WebFontLoader) => {
       WebFontLoader.load({
         google: {
-          families: ['Julius Sans One', 'Nunito', 'Kavoon', 'Montserrat Alternates', 'Righteous', 'Kalam']
+          families: ['Julius Sans One', 'Nunito', 'Kavoon', 'Montserrat Alternates', 'Righteous', 'Kalam', 'Karla:200', 'Inconsolata:200,300', 'Barlow:100']
         }
       });
     });

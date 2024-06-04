@@ -637,6 +637,7 @@ main {
 
 .phoneReflection {
   position: absolute;
+  pointer-events: none; /* Pour probleme de zIndex avec les buttons controls  */
   z-index: 99;
   width: 76%;
   height: 133%;
@@ -903,13 +904,85 @@ main {
 .portable-header {
   display: flex;
     justify-content: space-between;
-  background-color: #0a232f;
+  /* background-color: #0a232f; */
   font-size: 0.6em;
-  opacity: 0.65;
+  opacity: 1;
   padding: 1px 6px;
+
+  position: absolute;
+    width: 100%;
+}
+
+.youtubeWidget-div {
+  display: inline-flex;
+  flex-direction: column;
+  width: 95%;
+  position: relative;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 75px;
+  /* background-color: var(--secondary-cyan); */
+  /* background-color: #632c00; */
+  background: rgb(99,44,0);
+  background: -moz-linear-gradient(180deg, rgba(99,44,0,1) 10%, rgba(140,62,0,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(99,44,0,1) 10%, rgba(140,62,0,1) 100%);
+  background: linear-gradient(180deg, rgba(99,44,0,1) 10%, rgba(140,62,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#632c00",endColorstr="#8c3e00",GradientType=1);
+  border-radius: 10px;
+}
+
+.youtubeWidget-top {
+  display: inline-flex;
+}
+
+.youtubeWidget-bottomControls {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  gap: 16px;
+  font-size: 0.8em;
 }
 
 
+.youtubeWidget-bottomControls-btn {
+  padding: 5px;
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+.youtubeWidget-bottomControls-btn:hover {
+  transform: scale(1.4);
+  color: var(--primary-cyan);
+}
+
+.youtubeWidget-imgWrapper {
+  /* height: 100%; */
+  /* display: flex;
+  align-items: center;
+  margin: 0 5px; */
+
+  margin: 0 7px;
+
+  height: fit-content;
+}
+
+.youtubeWidget-img {
+  margin-top: 6px;
+  border-radius: 4px;
+  filter: saturate(1.5) brightness(0.9);
+}
+
+
+.youtubeWidget-titleWrapper {
+  overflow: hidden;
+  width: 70%;
+}
+
+.youtubeWidget-title {
+  font-size: 0.7em;
+  white-space: nowrap;
+}
 
 
 
@@ -1089,7 +1162,7 @@ main {
 
 
 .portable {
-  cursor: pointer;
+  cursor: default;
   position: absolute;
   z-index: 99;
 
@@ -1158,13 +1231,36 @@ main {
 
 .portable-contentWrapper {
   display: inline-flex;
-  width: 200%;
+  /* width: 200%; */
+  width: 100%;
+  height: 100%;
 
   background: url('/wallpaper-mobile.jpg');
   background-position: center;
 
   /* Ptit délai 2 temps */
   transition: all 0.4s 0.2s;
+}
+
+
+.portable-lockedScreen {
+  width: 100%;
+}
+
+.portable-time {
+  font-size: 3.5em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px auto 10px auto;
+
+  display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.portable-time-date {
+  font-size: 0.2em;
 }
 
 
@@ -2880,8 +2976,18 @@ main {
 .home-visitCard-reseauIcon {
   font-size: 2.15em;
   color: var(--primary-cyan);
+  transition: all 0.3s;
 }
-
+.home-visitCard-reseauIconLink {
+  transition: all 0.3s;
+}
+.home-visitCard-reseauIconLink:hover {
+  transform: scale(1.1) rotate(2deg);
+  color: white;
+}
+.home-visitCard-reseauIconLink:hover .home-visitCard-reseauIcon {
+  color: white;
+}
 
 .accueil-visitCard-content {
   display: inline-flex;
