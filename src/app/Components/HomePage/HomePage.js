@@ -10,10 +10,12 @@ import { useRouter } from 'next/navigation';
 import dynamic from 'next/dynamic';
 const LiveClock = dynamic(() => import('react-live-clock'), { ssr: false });
 
+import FontFaceObserver from 'fontfaceobserver';
+
 import Image from 'next/image'
 import Link from 'next/link';
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 
 
@@ -102,6 +104,39 @@ export function HomePage({isMobile}) {
     const handleVisitCardFlip = () => {
         setVisitCardFlipped(!visitCardFlipped);
     };
+
+
+
+
+    // ** Loading {isMobile} (pour bug affichage desktop du laptop sur mobile) et video-laptop et font-postIt
+    const [loading, setLoading] = useState(true);
+
+    const [videoLoading, setVideoLoading] = useState(true);
+    const handleVideoLoaded = () => {
+        setVideoLoading(false);
+    };
+    const [fontLoading, setFontLoading] = useState(true);
+
+    useEffect(() => {
+        const font = new FontFaceObserver('Kalam'); // Remplacez par le nom de votre police
+        font.load().then(() => {
+            setFontLoading(false);
+        }).catch(() => {
+            console.error('La police de caractères n\'a pas pu être chargée.');
+            setFontLoading(false);
+        });
+    }, []);
+
+    useEffect(() => {
+        if ((typeof isMobile !== 'undefined') || (!videoLoading) || (!fontLoading) ) {
+            setLoading(false);
+        }
+    }, [isMobile, videoLoading, fontLoading]);
+
+    if (loading) {
+        return <></>;
+    }
+
 
 
 
@@ -358,6 +393,7 @@ export function HomePage({isMobile}) {
                                     src={"/demo_short.gif"}
                                     fill={true} 
                                     alt="Portfolio demo" 
+                                    onLoadingComplete={handleVideoLoaded}
                                 />
                                 {/* Gif demo home avec nav des projets */}
                             </div>
@@ -505,6 +541,7 @@ export function HomePage({isMobile}) {
                                         fill={true} 
                                         alt="Portfolio demo" 
                                         unoptimized={true}
+                                        onLoadingComplete={handleVideoLoaded}
                                     />
                                     {/* Gif demo home avec nav des projets */}
                                 </div>
