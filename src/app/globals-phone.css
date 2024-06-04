@@ -1258,7 +1258,7 @@
         height: 100px;
         width: 160px;
 
-        background-color: var(--secondary-cyan);
+        background-color: #030b16;
         border: 1px solid var(--primary-cyan);
         border-width: 2px 1px 1px 1px;
         border-color: var(--primary-cyan) var(--primary-cyan) #0a0a0a #0a0a0a;
@@ -1394,7 +1394,7 @@
         width: 2%;
         align-self: center;
 
-        animation: amt-imgWrapper-img 0.9s 0.3s ease forwards;
+        animation: amt-imgWrapper-img 0.9s 0.4s ease forwards;
     }
     @keyframes amt-imgWrapper-img {
         0% {

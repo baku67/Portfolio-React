@@ -416,12 +416,12 @@ export function HomePage({isMobile}) {
 
 
             {/* Plante + fishBowl */}
-            <Link href="/loisirs">
 
                 {/* Plante */}
                 <div 
                     className={`plantAccueil-div`} 
                     style={{width:"fit-content"}}
+                    onClick={handleMockupDeskClick}
                 >
 
                     <Image 
@@ -452,7 +452,6 @@ export function HomePage({isMobile}) {
                     />
                 </div>
 
-            </Link>
 
 
 
@@ -641,17 +640,18 @@ export function HomePage({isMobile}) {
 
 
 
-            {/* laptop (mobile) */}
+            {/* laptop */}
             <div className={`accueil-mockup ${isFadingOut ? "fadeOut" : ""}`} 
                 onMouseEnter={handleMockupDeskEnter}
                 onMouseLeave={handleMockupDeskLeave}
                 onClick={handleMockupDeskClick}
+                style={{transform: isMockupDeskHovered ? "rotate(342deg)" : "", filter : isMockupDeskHovered ? "drop-shadow(0px 0px 7px var(--primary-cyan))" : ""}}
             >
 
                 {/* perspective écran */}
                 <div className="accueil-mockup-top-wrapper">
                     <div 
-                        className={`accueil-mockup-top ${isMockupDeskClicked ? "accueil-mockup-top-clicked" : ""}`}
+                        className={`accueil-mockup-top`}
                     >
                         {/* screen */}
                         <div className="amt-imgWrapper">
@@ -664,6 +664,7 @@ export function HomePage({isMobile}) {
                                 fill={true} 
                                 alt="Portfolio demo" 
                                 onLoadingComplete={handleVideoLoaded}
+                                className={`${isMockupDeskClicked ? "amt-imgWrapperImg-fadeOut" : "amt-imgWrapperImg-fadeIn"}`}
                                 unoptimized
                             />
 
