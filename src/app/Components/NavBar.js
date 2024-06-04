@@ -21,7 +21,7 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile, toggleN
 
         // Lors du click Links on toggleNav false
         toggleNav();
-        
+
         toggleNavClickFadeOut();
 
         setTimeout(() => {
@@ -29,7 +29,22 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile, toggleN
         }, 500); 
     }
 
-    
+
+
+    // Hovers HomeIcon = plant mvmt (Desktop)
+    const [isHomeIconHovered, setIsHomeIconHovered] = useState(false);
+    const homeIconEnter = () => {
+        if (!isMobile) {
+            setIsHomeIconHovered(true);
+        }
+    }    
+    const homeIconLeave = () => {
+        if (!isMobile) {
+            setIsHomeIconHovered(false);
+        }
+    }   
+
+
 
     return (
         <>
@@ -50,8 +65,8 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile, toggleN
                 {/* Plant, Home, CloseBtn */}
                 <div className="navBar-topLine">
 
-                    <Link href="/">
-                        <Image src={"/plant-1-min.png"} width={isMobile ? 130 : 160} height={isMobile ? 130 : 160} className="navBar-plant" />
+                    <Link onClick={(event) => handleClickLink(event, "/")} href={"/"} onMouseEnter={homeIconEnter} onMouseLeave={homeIconLeave}>
+                        <Image src={"/plant-1-min.png"} width={isMobile ? 130 : 160} height={isMobile ? 130 : 160} className="navBar-plant" style={{transform: isHomeIconHovered ? "scale(1.05)" :"" }} />
                         <FontAwesomeIcon icon={faHouse} className="navBar-homeIcon" />
                     </Link>
 

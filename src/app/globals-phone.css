@@ -1431,18 +1431,20 @@
         padding: 5px 15px;
         margin: 9px auto;
         border-radius: 20px;
+        
         display: flex;
         justify-content: center;
         align-items: center;
 
         flex-direction: row;
 
-        filter: drop-shadow(0px 4px 6px black);
 
         min-width: 150px;
         width: 170px;
         display: inline-flex;
         justify-content: space-around;
+
+        filter: drop-shadow(0px 4px 6px black);
     }
     .homeLinksLi h2 {
         margin-bottom: 0;
