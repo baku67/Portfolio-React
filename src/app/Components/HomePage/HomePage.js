@@ -281,11 +281,33 @@ export function HomePage({isMobile}) {
     };
 
 
-    // Infos track onClick Titre/Author:
+    // toggle Infos track onClick Titre/Author "Notif":
+    const [isTrackInfoActive, setIsMusicInfoActive] = useState(false);
     const handleClickTrackInfos = () => {
-
+        setIsMusicInfoActive(!isTrackInfoActive);
     }
 
+
+
+    // Progression music track
+    const [progress, setProgress] = useState(0);
+    useEffect(() => {
+        const audio = audioRef.current;
+        if (!audio) return;
+    
+        // Met à jour la progression chaque seconde
+        const updateProgress = () => {
+          setProgress((audio.currentTime / audio.duration) * 100);
+        };
+    
+        // Ajouter des écouteurs d'événements
+        audio.addEventListener('timeupdate', updateProgress);
+    
+        // Nettoyer les écouteurs d'événements
+        return () => {
+          audio.removeEventListener('timeupdate', updateProgress);
+        };
+      }, [audioRef]);
 
 
 
@@ -355,40 +377,40 @@ export function HomePage({isMobile}) {
 
             {/* Post-it "alternance" */}
             
-                <div 
-                    className={`post-it-container ${isFadingOut ? "fadeOut" : ""}`} 
-                    onMouseEnter={handlePostItEnter}
-                    onMouseLeave={handlePostItLeave}
-                >
+            <div 
+                className={`post-it-container ${isFadingOut ? "fadeOut" : ""}`} 
+                onMouseEnter={handlePostItEnter}
+                onMouseLeave={handlePostItLeave}
+            >
 
-                    <Draggable>
-                    <div  className="draggable-transition">
+                <Draggable>
+                <div  className="draggable-transition">
 
-                        <Image 
-                            src="/post-it-1-cropped.png"
-                            width={ isMobile ? 195 : 210 }
-                            height={ isMobile ? 195 : 210 }
-                            className="post-it-img"
-                            style={{
-                                transform: isPostItHovered ? "translate(-2px, 5px) rotate(1deg)" : "translate(0px, 0px)",
-                                filter: isPostItHovered ? "drop-shadow(6px 5px 5px black)" : "drop-shadow(6px 5px 5px black)",
-                            }}
-                            alt={"post-it"}
-                        />
+                    <Image 
+                        src="/post-it-1-cropped.png"
+                        width={ isMobile ? 195 : 210 }
+                        height={ isMobile ? 195 : 210 }
+                        className="post-it-img"
+                        style={{
+                            transform: isPostItHovered ? "translate(-2px, 5px) rotate(1deg)" : "translate(0px, 0px)",
+                            filter: isPostItHovered ? "drop-shadow(6px 5px 5px black)" : "drop-shadow(6px 5px 5px black)",
+                        }}
+                        alt={"post-it"}
+                    />
 
-                        <div className="post-it-textDiv"
-                            style={{
-                                transform: isPostItHovered ? "translate(-2px, 5px) rotate(1deg)" : "translate(0px, 0px)"
-                            }}
-                        >
-                            <FontAwesomeIcon icon={faMagnifyingGlass} className="post-it-textIcon" />
-                            <span className="post-it-textSpan">Alternance <br />&ldquo;Concepteur Développeur d&apos;Applications&ldquo;</span>
-                        </div>
-
+                    <div className="post-it-textDiv"
+                        style={{
+                            transform: isPostItHovered ? "translate(-2px, 5px) rotate(1deg)" : "translate(0px, 0px)"
+                        }}
+                    >
+                        <FontAwesomeIcon icon={faMagnifyingGlass} className="post-it-textIcon" />
+                        <span className="post-it-textSpan">Alternance <br />&ldquo;Concepteur Développeur d&apos;Applications&ldquo;</span>
                     </div>
-                    </Draggable>
 
                 </div>
+                </Draggable>
+
+            </div>
 
 
 
@@ -436,318 +458,304 @@ export function HomePage({isMobile}) {
 
 
             {/* Tasse café CSS */}
-            <Link href="/contact">
-                <div className={`tasseCafe`} style={{transform: isCafeHovered ? "translate(-8px, 11px)" : "translate(0px, 0px)"}}>
+            <div className={`tasseCafe`} style={{transform: isCafeHovered ? "translate(-8px, 11px)" : "translate(0px, 0px)"}}>
 
-                    {/* https://www.npmjs.com/package/react-curved-text  */}
-                    {/* <div 
-                        className="tasseCafe-text" 
-                        onMouseEnter={handleCafeEnter} 
-                        onMouseLeave={handleCafeLeave}
-                        style={{}} 
-                    >
-                        {!isMobile && (
-                            <ReactCurvedText
-                                width={250}
-                                height={115}
-                                cx={150}
-                                cy={0}
-                                rx={100}
-                                ry={100}
-                                startOffset={30}
-                                reversed={false}
-                                text="Contact"
-                                textProps={{ style: { fontSize: 32 } }}
-                                textPathProps={{style : { fill : "white"} }}
-                                tspanProps={{"dy": isCafeHovered ? "28" : "25"}}
-                                ellipseProps={null}
-                                svgProps={null}
-                            />
-                        )}
-                    </div> */}
+                {/* https://www.npmjs.com/package/react-curved-text  */}
+                {/* <div 
+                    className="tasseCafe-text" 
+                    onMouseEnter={handleCafeEnter} 
+                    onMouseLeave={handleCafeLeave}
+                    style={{}} 
+                >
+                    {!isMobile && (
+                        <ReactCurvedText
+                            width={250}
+                            height={115}
+                            cx={150}
+                            cy={0}
+                            rx={100}
+                            ry={100}
+                            startOffset={30}
+                            reversed={false}
+                            text="Contact"
+                            textProps={{ style: { fontSize: 32 } }}
+                            textPathProps={{style : { fill : "white"} }}
+                            tspanProps={{"dy": isCafeHovered ? "28" : "25"}}
+                            ellipseProps={null}
+                            svgProps={null}
+                        />
+                    )}
+                </div> */}
 
 
-                    <div className={`cup ${isFadingOut ? "fadeOut" : ""}`}>
-                        <div className="reflect" style={{background: isCafeHovered ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0.09)", top: isCafeHovered ? "14px" : "19px", left: isCafeHovered ? "15px" : "13px"}}></div>
-                        <div 
-                            className="handle" 
-                            style={{
-                                transform: isCafeHovered ? "rotate(266deg)" : "rotate(254deg)",
-                                top: isCafeHovered ? "103%" : "100%",
-                                left: isCafeHovered ? "50px" : "72px",
-                            }}
-                        ></div>
-                        <div className="plate" style={{boxShadow: isCafeHovered ? "0px 0px 40px -20px white" : "0px 0px 0px 0px white"}}></div>
-                    </div>
+                <div className={`cup ${isFadingOut ? "fadeOut" : ""}`}>
+                    <div className="reflect" style={{background: isCafeHovered ? "rgba(255, 255, 255, 0.15)" : "rgba(255, 255, 255, 0.09)", top: isCafeHovered ? "14px" : "19px", left: isCafeHovered ? "15px" : "13px"}}></div>
+                    <div 
+                        className="handle" 
+                        style={{
+                            transform: isCafeHovered ? "rotate(266deg)" : "rotate(254deg)",
+                            top: isCafeHovered ? "103%" : "100%",
+                            left: isCafeHovered ? "50px" : "72px",
+                        }}
+                    ></div>
+                    <div className="plate" style={{boxShadow: isCafeHovered ? "0px 0px 40px -20px white" : "0px 0px 0px 0px white"}}></div>
                 </div>
-            </Link>
+            </div>
 
 
 
             {/* Smartphone (desktop) */}
-            {/* <Link href="/parcours"> */}
-                <div 
-                    className={`portable`}
-                    onMouseEnter={handlePhoneEnter}
-                    onMouseLeave={handlePhoneLeave}
-                    style={{ 
-                        transform: isPhoneHovered ? "translate(-20px, 0px) rotate(11deg) scale(1.05)" : "rotate(13deg)"
-                    }}
-                >
+            <div 
+                className={`portable`}
+                onMouseEnter={handlePhoneEnter}
+                onMouseLeave={handlePhoneLeave}
+                style={{ 
+                    transform: isPhoneHovered ? "translate(-20px, 0px) rotate(11deg) scale(1.05)" : "rotate(13deg)"
+                }}
+            >
+                
+                {/* portable */}
+                <div className={`portable-div ${isFadingOut ? "fadeOut" : ""}`}  style={{boxShadow: isPhoneHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white"}}>
 
-                    {/* <span className="portable-text" style={{letterSpacing: isPhoneHovered ? "4px" : "1px"}}>Compétences</span> */}
-                    
-                    <div className={`portable-div ${isFadingOut ? "fadeOut" : ""}`}  style={{boxShadow: isPhoneHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white"}}>
+                    {/* Bouton mockup */}
+                    <div className="portable-btnMockup1"></div>
+                    <div className="portable-btnMockup2"></div>
 
-                        {/* Bouton mockup */}
-                        <div className="portable-btnMockup1"></div>
-                        <div className="portable-btnMockup2"></div>
+                    <div className="portable-screen" style={{backgroundColor: isPhoneHovered ? "#154d68" : "var(--secondary-cyan)"}}>
 
-                        <div className="portable-screen" style={{backgroundColor: isPhoneHovered ? "#154d68" : "var(--secondary-cyan)"}}>
+                        {/* Reflection */}
+                        <div className="phoneReflection"></div>
 
-                            {/* Reflection */}
-                            <div className="phoneReflection"></div>
+                        <div className="portable-header">
 
-                            <div className="portable-header">
+                            <span>
+                                {/* <LiveClock format={'HH:mm'} ticking={true} /> */}
+                            </span>
 
-                                <span>
-                                    {/* <LiveClock format={'HH:mm'} ticking={true} /> */}
+                            <span><FontAwesomeIcon icon={faSignal} /> 82% <FontAwesomeIcon icon={faBatteryThreeQuarters} /></span>
+
+                        </div>
+
+                        <div className="portable-contentWrapper" >
+
+                            <div className="portable-lockedScreen">
+                                <span className="portable-time">
+                                    <LiveClock format={'HH:mm'} ticking style={{fontFamily: 'Karla', lineHeight: "0.8em"}}/>
+                                    <span className="portable-time-date">{formattedDate}</span>
                                 </span>
 
-                                <span><FontAwesomeIcon icon={faSignal} /> 82% <FontAwesomeIcon icon={faBatteryThreeQuarters} /></span>
+                                <div className="youtubeWidget-div">
 
-                            </div>
+                                    {/* <audio/> HTML elem caché */}
+                                    <audio ref={audioRef} src={musicTracks[currentMusicTrackIndex].src} />
 
-                            <div 
-                                className="portable-contentWrapper" 
-                                // style={{transform: isPhoneHovered ? "translateX(-50%)" : "translateX(0)"}}
-                            >
+                                    {/* Webp lofiGirl */}
+                                    <div className="youtubeWidget-top">
+                                        <div className="youtubeWidget-imgWrapper">
+                                            <Image 
+                                                src={"/lofiGirl.gif"}
+                                                width={55}
+                                                height={55}
+                                                className="youtubeWidget-img"
+                                                unoptimized
+                                                alt={"music player thumbnail lofiGirl"}
+                                            />
+                                        </div>
 
+                                        {/* infos (titre deroulant, logo widget) TODO: scroll overflow*/}
+                                        <div className="youtubeWidget-titleWrapper" onClick={handleClickTrackInfos} >
+                                            <span className="youtubeWidget-title">{musicTracks[currentMusicTrackIndex].title}</span>
+                                            <span className="youtubeWidget-author">{musicTracks[currentMusicTrackIndex].author}</span>
+                                        </div>
 
-                                <div className="portable-lockedScreen">
-                                    <span className="portable-time">
-                                        <LiveClock format={'HH:mm'} ticking style={{fontFamily: 'Karla', lineHeight: "0.8em"}}/>
-                                        <span className="portable-time-date">{formattedDate}</span>
-                                    </span>
+                                    </div>
 
+                                    {/* Bottom controls */}
+                                    <div className="youtubeWidget-bottom">
 
-                                    <div className="youtubeWidget-div">
-
-                                        {/* <audio/> HTML elem caché */}
-                                        <audio ref={audioRef} src={musicTracks[currentMusicTrackIndex].src} />
-
-                                        {/* Webp lofiGirl */}
-                                        <div className="youtubeWidget-top">
-                                            <div className="youtubeWidget-imgWrapper">
-                                                <Image 
-                                                    src={"/lofiGirl.gif"}
-                                                    width={55}
-                                                    height={55}
-                                                    className="youtubeWidget-img"
-                                                    unoptimized
-                                                    alt={"music player thumbnail lofiGirl"}
+                                        <div className="youtubeWidget-bottomControls">
+                                            <span>
+                                                <FontAwesomeIcon icon={faBackward} className="youtubeWidget-bottomControls-btn" onClick={handlePrevMusicClick} />
+                                            </span>
+                                            <span>
+                                                <FontAwesomeIcon 
+                                                    icon={isMusicPlaying ? faPause : faPlay} 
+                                                    className="youtubeWidget-bottomControls-btn" 
+                                                    onClick={handlePlayPauseClick}
+                                                    style={{width: "17px"}} /* Parce que taille differente play/pause Icone */
                                                 />
-                                            </div>
-
-                                            {/* infos (titre deroulant, logo widget) TODO: scroll overflow*/}
-                                            <div className="youtubeWidget-titleWrapper" onClick={handleClickTrackInfos} >
-                                                <span className="youtubeWidget-title">{musicTracks[currentMusicTrackIndex].title}</span>
-                                                <span className="youtubeWidget-author">{musicTracks[currentMusicTrackIndex].author}</span>
-                                            </div>
-
+                                            </span>
+                                            <span>
+                                                <FontAwesomeIcon icon={faForward} className="youtubeWidget-bottomControls-btn" onClick={handleNextMusicClick} />
+                                            </span>
                                         </div>
 
-                                        {/* Bottom controls */}
-                                        <div className="youtubeWidget-bottom">
-
-                                            <div className="youtubeWidget-bottomControls">
-                                                <span>
-                                                    <FontAwesomeIcon icon={faBackward} className="youtubeWidget-bottomControls-btn" onClick={handlePrevMusicClick} />
-                                                </span>
-                                                <span>
-                                                    <FontAwesomeIcon 
-                                                        icon={isMusicPlaying ? faPause : faPlay} 
-                                                        className="youtubeWidget-bottomControls-btn" 
-                                                        onClick={handlePlayPauseClick}
-                                                        style={{width: "17px"}} /* Parce que taille differente play/pause Icone */
-                                                    />
-                                                </span>
-                                                <span>
-                                                    <FontAwesomeIcon icon={faForward} className="youtubeWidget-bottomControls-btn" onClick={handleNextMusicClick} />
-                                                </span>
-                                            </div>
-
-                                            {/* Barre d'avancement */}
-                                        </div>
-
+                                    
                                     </div>
 
-                                    <div className="musicTrack-infoNotif">
-                                        <span dangerouslySetInnerHTML={{__html: musicTracks[currentMusicTrackIndex].credits}}></span>
-                                    </div>
+
+                                    {/* Barre d'avancement */}
+                                    {/* <div>Progression : {progress.toFixed(2)}%</div> */}
+
+
                                 </div>
 
-                                {/* Div grid skills page 1 */}
-                                {/* <div className="portable-skillGrid">
-                                    <div><FontAwesomeIcon icon={faHtml5} className="portable-app app-html" /></div>
-                                    <div><FontAwesomeIcon icon={faCss3Alt} className="portable-app app-css" /></div>
-                                    <div><FontAwesomeIcon icon={faPhp} className="portable-app app-php" /></div>
-                                    <div><FontAwesomeIcon icon={faSymfony} className="portable-app app-sf" /></div>
-                                    <div><FontAwesomeIcon icon={faJs} className="portable-app app-js" /></div>
-                                    <div><FontAwesomeIcon icon={faReact} className="portable-app app-react" /></div>
-                                    <div className="portable-app-void"></div>
-                                    <div className="portable-app-void"></div>
-                                    <div className="portable-app-void"></div>
-                                    <div className="portable-app-void"></div>
-                                    <div className="portable-app-void"></div>
-                                    <div className="portable-app-void"></div>
-                                    <div className="portable-app-void"></div>
-                                    <div className="portable-app-void"></div>
-                                    <div>
-                                        <svg fill="#f1b16b" width="36px" height="36px" viewBox="0 0 32 32">
-                                            <path d="M30.865 3.448l-6.583-3.167c-0.766-0.37-1.677-0.214-2.276 0.385l-12.609 11.505-5.495-4.167c-0.51-0.391-1.229-0.359-1.703 0.073l-1.76 1.604c-0.583 0.526-0.583 1.443-0.005 1.969l4.766 4.349-4.766 4.349c-0.578 0.526-0.578 1.443 0.005 1.969l1.76 1.604c0.479 0.432 1.193 0.464 1.703 0.073l5.495-4.172 12.615 11.51c0.594 0.599 1.505 0.755 2.271 0.385l6.589-3.172c0.693-0.333 1.13-1.031 1.13-1.802v-21.495c0-0.766-0.443-1.469-1.135-1.802zM24.005 23.266l-9.573-7.266 9.573-7.266z"/>
-                                        </svg>
-                                    </div>
-                                    <div><FontAwesomeIcon icon={faGithub} className="portable-app" /></div>
-                                </div> */}
-
-                                {/* Div Page 2 */}
-                                {/* <div className="portable-skillGrid2">
-                                    <Image 
-                                        src="/CV_BasileKuntz.png" 
-                                        fill={true}
-                                        alt="CV de Basile Kuntz"
-                                        className="smartphone-cv"
-                                    />
-                                </div> */}
-
-
+                                {/* Notifs infos track */}
+                                <div className={`musicTrack-infoNotif ${isTrackInfoActive ? "musicTrack-infoNotif-active" : ""}`}>
+                                    <span dangerouslySetInnerHTML={{__html: musicTracks[currentMusicTrackIndex].credits}}></span>
+                                </div>
                             </div>
-                            
+
                         </div>
+                        
                     </div>
-                    
                 </div>
-            {/* </Link> */}
+
+
+                {/* Cable portable desktop */}
+                {/* <svg className="cablePortableSvg" >
+                    <g>
+                        <path d="M 33 261 C 49.5 114.75 94.5 92.25 94 12"/>
+                    </g>
+                </svg> */}
+    
+            </div>
+
+
+
+
+
+
+            {/* Headphones (desktop) */}
+            {!isMobile && (
+                <Image 
+                    src={"/headphones.png"}
+                    width={300}
+                    height={300}
+                    className="homePageHeadphones"
+                />
+            )}
+
+
+
 
 
 
             {/* laptop (mobile) */}
+            <div className={`accueil-mockup ${isFadingOut ? "fadeOut" : ""}`} 
+                onMouseEnter={handleMockupDeskEnter}
+                onMouseLeave={handleMockupDeskLeave}
+                onClick={handleMockupDeskClick}
+            >
 
-                <div className={`accueil-mockup ${isFadingOut ? "fadeOut" : ""}`} 
-                    onMouseEnter={handleMockupDeskEnter}
-                    onMouseLeave={handleMockupDeskLeave}
-                    onClick={handleMockupDeskClick}
-                >
+                {/* perspective écran */}
+                <div className="accueil-mockup-top-wrapper">
+                    <div 
+                        className={`accueil-mockup-top ${isMockupDeskClicked ? "accueil-mockup-top-clicked" : ""}`}
+                    >
+                        {/* screen */}
+                        <div className="amt-imgWrapper">
 
-                    {/* perspective écran */}
-                    <div className="accueil-mockup-top-wrapper">
-                        <div 
-                            className={`accueil-mockup-top ${isMockupDeskClicked ? "accueil-mockup-top-clicked" : ""}`}
-                        >
-                            {/* screen */}
-                            <div className="amt-imgWrapper">
+                            {/* Reflet */}
+                            <div className="laptop-reflect"></div>
 
-                                {/* Reflet */}
-                                <div className="laptop-reflect"></div>
-
-                                <Image 
-                                    src={"/demo_short.gif"}
-                                    fill={true} 
-                                    alt="Portfolio demo" 
-                                    onLoadingComplete={handleVideoLoaded}
-                                    unoptimized
-                                />
-
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Pas de perspective sur le clavier comme il est à plat  */}
-                    <div className="accueil-mockup-bottom-wrapper">
-
-                        {/* cable mockup desktop */}
-                        <svg className="cableSvg" >
-                            <g>
-                                {/* <path d="M 0 0 C 15 145 121 22 176 119 C 206 171 323 132 263 52 C 211 -9 114 39 124 122 C 132 187 234 240 359 166 C 451 101 454 150 560 104"/> */}
-                                <path d="M 155 6 C 128 39 116 63 124 122 C 134 188 234 240 359 166 C 451 101 454 150 560 104"/>
-                            </g>
-                        </svg>
-
-
-                        <div className="accueil-mockup-bottom">
-
-                            {/* Ombre */}
-                            <div className="ombreLaptop"></div>
-
-                            {/* Clavier */}
-                            <div className="keyboard">
-                                <div className="key">Esc</div>
-                                <div className="key">1</div>
-                                <div className="key">2</div>
-                                <div className="key">3</div>
-                                <div className="key">4</div>
-                                <div className="key">5</div>
-                                <div className="key">6</div>
-                                <div className="key">9</div>
-                                <div className="key">0</div>
-                                <div className="key">Tab</div>
-                                <div className="key">Q</div>
-                                <div className="key">W</div>
-                                <div className="key backspace">backspace</div>
-                                
-                                <div className="key">E</div>
-                                <div className="key">R</div>
-                                <div className="key">T</div>
-                                <div className="key">Y</div>
-                                <div className="key">U</div>
-                                <div className="key">I</div>
-                                <div className="key">O</div>
-                                <div className="key">P</div>
-                                <div className="key">[</div>
-                                <div className="key">]</div>
-                                <div className="key">\</div>
-                                
-                                <div className="key">Caps Lock</div>
-                                <div className="key">A</div>
-                                <div className="key">S</div>
-                                <div className="key">D</div>
-                                <div className="key">F</div>
-                                <div className="key">G</div>
-                                <div className="key">H</div>
-                                <div className="key">J</div>
-                                <div className="key">K</div>
-                                <div className="key">L</div>
-                                <div className="key">;</div>
-                                <div className="key">&apos;</div>
-                                <div className="key">Enter</div>
-                                
-                                <div className="key">Shift</div>
-                                <div className="key">Z</div>
-                                <div className="key">X</div>
-                                <div className="key">C</div>
-                                <div className="key">V</div>
-                                <div className="key">B</div>
-                                <div className="key">N</div>
-                                <div className="key">M</div>
-                                <div className="key">,</div>
-                                <div className="key">.</div>
-                                <div className="key">Shift</div>
-                                
-                                <div className="key space">Space</div>
-                                <div className="key">Alt</div>
-                                <div className="key">Fn</div>
-                                <div className="key">Ctrl</div>
-                            </div>
-
-                            {/* Pad */}
-                            <div className="mockup-pad"></div>
+                            <Image 
+                                src={"/demo_short.gif"}
+                                fill={true} 
+                                alt="Portfolio demo" 
+                                onLoadingComplete={handleVideoLoaded}
+                                unoptimized
+                            />
 
                         </div>
-
-
                     </div>
                 </div>
+
+                {/* Pas de perspective sur le clavier comme il est à plat  */}
+                <div className="accueil-mockup-bottom-wrapper">
+
+                    {/* cable mockup desktop */}
+                    <svg className="cableSvg" >
+                        <g>
+                            {/* <path d="M 0 0 C 15 145 121 22 176 119 C 206 171 323 132 263 52 C 211 -9 114 39 124 122 C 132 187 234 240 359 166 C 451 101 454 150 560 104"/> */}
+                            <path d="M 155 6 C 128 39 116 63 124 122 C 134 188 234 240 359 166 C 451 101 454 150 560 104"/>
+                        </g>
+                    </svg>
+
+
+                    <div className="accueil-mockup-bottom">
+
+                        {/* Ombre */}
+                        <div className="ombreLaptop"></div>
+
+                        {/* Clavier */}
+                        <div className="keyboard">
+                            <div className="key">Esc</div>
+                            <div className="key">1</div>
+                            <div className="key">2</div>
+                            <div className="key">3</div>
+                            <div className="key">4</div>
+                            <div className="key">5</div>
+                            <div className="key">6</div>
+                            <div className="key">9</div>
+                            <div className="key">0</div>
+                            <div className="key">Tab</div>
+                            <div className="key">Q</div>
+                            <div className="key">W</div>
+                            <div className="key backspace">backspace</div>
+                            
+                            <div className="key">E</div>
+                            <div className="key">R</div>
+                            <div className="key">T</div>
+                            <div className="key">Y</div>
+                            <div className="key">U</div>
+                            <div className="key">I</div>
+                            <div className="key">O</div>
+                            <div className="key">P</div>
+                            <div className="key">[</div>
+                            <div className="key">]</div>
+                            <div className="key">\</div>
+                            
+                            <div className="key">Caps Lock</div>
+                            <div className="key">A</div>
+                            <div className="key">S</div>
+                            <div className="key">D</div>
+                            <div className="key">F</div>
+                            <div className="key">G</div>
+                            <div className="key">H</div>
+                            <div className="key">J</div>
+                            <div className="key">K</div>
+                            <div className="key">L</div>
+                            <div className="key">;</div>
+                            <div className="key">&apos;</div>
+                            <div className="key">Enter</div>
+                            
+                            <div className="key">Shift</div>
+                            <div className="key">Z</div>
+                            <div className="key">X</div>
+                            <div className="key">C</div>
+                            <div className="key">V</div>
+                            <div className="key">B</div>
+                            <div className="key">N</div>
+                            <div className="key">M</div>
+                            <div className="key">,</div>
+                            <div className="key">.</div>
+                            <div className="key">Shift</div>
+                            
+                            <div className="key space">Space</div>
+                            <div className="key">Alt</div>
+                            <div className="key">Fn</div>
+                            <div className="key">Ctrl</div>
+                        </div>
+
+                        {/* Pad */}
+                        <div className="mockup-pad"></div>
+
+                    </div>
+
+
+                </div>
+            </div>
 
 
 

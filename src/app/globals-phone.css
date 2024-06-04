@@ -1226,9 +1226,9 @@
         z-index: 99;
         width: 120%;
         height: 133%;
-        backdrop-filter: brightness(1.2);
+        backdrop-filter: brightness(2.2);
         background-color: #ffffff1a;
-        transform: rotate(292deg) translate(13px, 41px);
+        transform: rotate(290deg) translate(11px, -5px);
     }
 
     .ombreLaptop {

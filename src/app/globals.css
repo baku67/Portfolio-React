@@ -604,6 +604,38 @@ main {
     height: 225px;
 }
 
+.cablePortableSvg {
+  fill: none;
+  stroke: var(--primary-cyan);
+  stroke-width: 2px;
+  position: absolute;
+
+}
+
+
+.homePageHeadphones {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  /* transform: rotate(45deg) translate(34px, -87px); */
+  z-index: 999;
+  filter: drop-shadow(30px 17px 6px black);
+
+  opacity: 0;
+  transform: rotate(15deg) translate(177px, -3px);
+  animation: homePageHeadphones 0.7s 1.35s ease forwards;
+}
+@keyframes homePageHeadphones {
+  from {
+    opacity: 0;
+    transform: rotate(15deg) translate(177px, -3px);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(39deg) translate(7px, 43px);
+  }
+}
+
 .amt-imgWrapper {
   position: absolute;
   overflow: hidden;
@@ -611,15 +643,13 @@ main {
   width: 100%;
 }
 .amt-imgWrapper img {
-  /* padding: 3px 1px 7px; */
   padding: 7px 4px 15px;
   background-color: var(--secondary-cyan);
   border-radius: 5px;
-
   height: 100%;
   width: 100%;
+  filter: brightness(0.5);
 
-  /* box-shadow: 0px 0px 100px -20px #85fffe; */
   animation: boxShadow-amt 3s 0s linear infinite;
 }
 @keyframes boxShadow-amt {
@@ -649,18 +679,20 @@ main {
 
 
 .laptop-reflect {
-  position: absolute;
+  /* position: absolute;
   z-index: 99;
   width: 120%;
   height: 133%;
-  /* backdrop-filter: brightness(1.2);  */
-
-  /* background-color: #ffffff24;
-  transform: rotate(338deg) translate(-27px, -196px); */
-
   background-color: #ffffff0f;
-  transform: rotate(292deg) translate(-27px, 131px);
+  transform: rotate(292deg) translate(-27px, 131px); */
 
+    position: absolute;
+    z-index: 99;
+    width: 120%;
+    height: 133%;
+    background-color: #ffffff0f;
+    transform: rotate(301deg) translate(-21px, -7px);
+    backdrop-filter: brightness(2.5);
 }
 
 
@@ -914,6 +946,7 @@ main {
 }
 
 .youtubeWidget-div {
+  z-index: 2;
   display: inline-flex;
   flex-direction: column;
   width: 95%;
@@ -933,13 +966,13 @@ main {
 }
 
 .musicTrack-infoNotif {
+  z-index: 1;
   display: inline-flex;
   flex-direction: column;
   width: 95%;
   position: relative;
   margin: 0 auto;
   left: 50%;
-  transform: translateX(-50%);
   height: 57px;
   /* background-color: var(--secondary-cyan); */
   /* background-color: #632c00; */
@@ -954,7 +987,13 @@ main {
   padding: 9px;
   margin-top: 5px;
 
-  transition: all 0.3s;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-70px);
+  transition: all 0.4s;
+}
+.musicTrack-infoNotif-active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-0px);
 }
 
 
@@ -1258,14 +1297,14 @@ main {
 
 /* Attention height synchro : .smartphone-cv  */
 .portable-div {
-  height: 340px;
-  width: 180px;
+  height: 350px;
+  width: 185px;
   border-radius: 13px;
   padding: 6px 4px 12px 4px;
   background-color: rgb(7 7 7);
   border: 1px solid var(--primary-cyan);
 
-  filter: drop-shadow(black 4px 6px 6px);
+  filter: drop-shadow(black 9px 8px 4px);
 
   transition: all 0.4s;
 }
