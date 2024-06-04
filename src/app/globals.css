@@ -932,6 +932,43 @@ main {
   border-radius: 10px;
 }
 
+.musicTrack-infoNotif {
+  display: inline-flex;
+  flex-direction: column;
+  width: 95%;
+  position: relative;
+  margin: 0 auto;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 57px;
+  /* background-color: var(--secondary-cyan); */
+  /* background-color: #632c00; */
+  background: rgb(99,44,0);
+  background: -moz-linear-gradient(180deg, rgba(99,44,0,1) 10%, rgba(140,62,0,1) 100%);
+  background: -webkit-linear-gradient(180deg, rgba(99,44,0,1) 10%, rgba(140,62,0,1) 100%);
+  background: linear-gradient(180deg, rgb(0, 3, 20) 10%, rgb(0, 34, 66) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#632c00",endColorstr="#8c3e00",GradientType=1);
+  border-radius: 10px;
+
+  font-size: 0.8em;
+  padding: 9px;
+  margin-top: 5px;
+
+  transition: all 0.3s;
+}
+
+
+.trackAuthorLink {
+  font-weight: bold;
+  text-decoration: underline;
+
+  transition: all 0.3s;
+}
+.trackAuthorLink:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
 .youtubeWidget-top {
   display: inline-flex;
 }
@@ -962,7 +999,7 @@ main {
   align-items: center;
   margin: 0 5px; */
 
-  margin: 0 7px;
+  margin: 0 4px 0 7px;
 
   height: fit-content;
 }
@@ -975,11 +1012,21 @@ main {
 
 
 .youtubeWidget-titleWrapper {
+  cursor: pointer;
   overflow: hidden;
   width: 70%;
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 4px;
+  margin-right: 4px;
+  padding-left: 4px;
+  border-radius: 5px;
+
+  transition: all 0.3s;
+}
+.youtubeWidget-titleWrapper:hover {
+  background-color: rgba(255, 255, 255, 0.11);
 }
 
 .youtubeWidget-title {

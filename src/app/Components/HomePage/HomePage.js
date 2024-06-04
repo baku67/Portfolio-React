@@ -112,140 +112,140 @@ export function HomePage({isMobile}) {
             title: "Once In Paris",
             author: "Pumpupthemind",
             src: "/music/tracks/once-in-paris-168895.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/pumpupthemind-19969411/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=168895'>Ivan Ohanezov</a> from <a href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=168895'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/pumpupthemind-19969411/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=168895'>Ivan Ohanezov</a> from <a target='_blank' href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=168895'>Pixabay</a>",
         },
         {
             index: 1,
             title: "Coverless book",
             author: "AmbiantAUDIOVISION",
             src: "/music/tracks/coverless-book-lofi-186307.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/ambientaudiovision-25188255/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=186307'>Amir Firouzfard</a> from <a href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=186307'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/ambientaudiovision-25188255/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=186307'>Amir Firouzfard</a> from <a href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=186307'>Pixabay</a>",
         },
         {
             index: 2,
             title: "LoFi Orchestra",
             author: "xethrocc",
             src: "/music/tracks/lofi-orchestra-162306.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=162306'>Patrick A.</a> from <a href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=162306'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=162306'>Patrick A.</a> from <a target='_blank' href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=162306'>Pixabay</a>",
         },
         {
             index: 3,
             title: "Wraps (174,gm)",
             author: "tobylane",
             src: "/music/tracks/wraps-174gm-203739.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/tobylane-15168815/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=203739'>Toby Smith</a> from <a href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=203739'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/tobylane-15168815/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=203739'>Toby Smith</a> from <a target='_blank' href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=203739'>Pixabay</a>",
         },
         {
             index: 4,
             title: "deep - lofi vibes",
             author: "xethrocc",
             src: "/music/tracks/deep-lofi-vibes-205062.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=205062'>Patrick A.</a> from <a href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=205062'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=205062'>Patrick A.</a> from <a target='_blank' href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=205062'>Pixabay</a>",
         },
         {
             index: 5,
             title: "Lofi Relax - Travel",
             author: "Lofium",
             src: "/music/tracks/lofi-relax-travel-by-lofium-123560.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/lofium-30660321/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=123560'>Lofium</a> from <a href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=123560'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/lofium-30660321/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=123560'>Lofium</a> from <a target='_blank' href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=123560'>Pixabay</a>",
         },
         {
             index: 6,
             title: "Lofi Girl Dreams",
             author: "chillmore",
             src: "/music/tracks/lofi-girl-dreams-113883.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/chillmore-25283030/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113883'>Chillmore</a> from <a href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113883'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/chillmore-25283030/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113883'>Chillmore</a> from <a target='_blank' href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113883'>Pixabay</a>",
         },
         {
             index: 7,
             title: "Lofi Study",
             author: "FASSounds",
             src: "/music/tracks/lofi-study-112191.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/fassounds-3433550/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=112191'>FASSounds</a> from <a href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=112191'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/fassounds-3433550/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=112191'>FASSounds</a> from <a target='_blank' href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=112191'>Pixabay</a>",
         },
         {
             index: 8,
             title: "Good Night",
             author: "FASSounds",
             src: "/music/tracks/good-night-160166.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/fassounds-3433550/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160166'>FASSounds</a> from <a href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160166'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/fassounds-3433550/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160166'>FASSounds</a> from <a target='_blank' href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160166'>Pixabay</a>",
         },
         {
             index: 9,
             title: "Lofi Vibes",
             author: "chillmore",
             src: "/music/tracks/lofi-vibes-113884.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/chillmore-25283030/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113884'>Chillmore</a> from <a href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113884'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/chillmore-25283030/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113884'>Chillmore</a> from <a target='_blank' href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=113884'>Pixabay</a>",
         },
         {
             index: 10,
             title: "Avenue",
             author: "xethrocc",
             src: "/music/tracks/avenue-lofi-154343.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154343'>Patrick A.</a> from <a href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154343'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154343'>Patrick A.</a> from <a target='_blank' href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154343'>Pixabay</a>",
         },
         {
             index: 11,
             title: "Spirit Blossom",
             author: "RomanBelov",
             src: "/music/tracks/spirit-blossom-15285.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/romanbelov-25347333/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=15285'>Roman Belov</a> from <a href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=15285'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/romanbelov-25347333/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=15285'>Roman Belov</a> from <a target='_blank' href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=15285'>Pixabay</a>",
         },
         {
             index: 12,
             title: "drive - lofi vibes",
             author: "xethrocc",
             src: "/music/tracks/drive-lofi-vibes-205061.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=205061'>Patrick A.</a> from <a href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=205061'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=205061'>Patrick A.</a> from <a target='_blank' href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=205061'>Pixabay</a>",
         },
         {
             index: 13,
             title: "Lofi Chill",
             author: "FASSounds",
             src: "/music/tracks/lofi-chill-140858.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/fassounds-3433550/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=140858'>FASSounds</a> from <a href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=140858'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/fassounds-3433550/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=140858'>FASSounds</a> from <a target='_blank' href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=140858'>Pixabay</a>",
         },
         {
             index: 14,
             title: "Summer Sunset LoFi - slow mix",
             author: "xethrocc",
             src: "/music/tracks/summer-sunset-lofi-slow-mix-154447.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154447'>Patrick A.</a> from <a href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154447'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154447'>Patrick A.</a> from <a target='_blank' href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154447'>Pixabay</a>",
         },
         {
             index: 15,
             title: "Lofi Type Beat - Evening Stroll",
             author: "Nikoo1",
             src: "/music/tracks/free-lofi-type-beat-evening-stroll-209514.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154447'>Patrick A.</a> from <a href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154447'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154447'>Patrick A.</a> from <a target='_blank' href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=154447'>Pixabay</a>",
         },
         {
             index: 16,
             title: "Chill LoFi",
             author: "SoulProdMusic",
             src: "/music/tracks/chill-lofi-160893.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/soulprodmusic-30064790/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160893'>Oleg Fedak</a> from <a href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160893'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/soulprodmusic-30064790/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160893'>Oleg Fedak</a> from <a target='_blank' href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160893'>Pixabay</a>",
         },
         {
             index: 17,
             title: "Playa del Sol - latin lofi",
             author: "xethrocc",
             src: "/music/tracks/playa-del-sol-latin-lofi-160149.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160149'>Patrick A.</a> from <a href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160149'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160149'>Patrick A.</a> from <a target='_blank' href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160149'>Pixabay</a>",
         },
         {
             index: 18,
             title: "Lost Ambiant Lofi 60s",
             author: "Lesfm",
             src: "/music/tracks/lost-ambient-lofi-60s-10821.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/lesfm-22579021/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=10821'>Oleksii Kaplunskyi</a> from <a href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=10821'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/lesfm-22579021/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=10821'>Oleksii Kaplunskyi</a> from <a target='_blank' href='https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=10821'>Pixabay</a>",
         },
         {
             index: 19,
             title: "Garden Vibes lofi",
             author: "xethrocc",
             src: "/music/tracks/garden-vibes-lofi-160144.mp3",
-            credits: "Music by <a href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160144'>Patrick A.</a> from <a href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160144'>Pixabay</a>",
+            credits: "Music by <a class='trackAuthorLink' target='_blank' href='https://pixabay.com/users/xethrocc-12734491/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160144'>Patrick A.</a> from <a target='_blank' href='https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=160144'>Pixabay</a>",
         },
     ]
 
@@ -260,8 +260,6 @@ export function HomePage({isMobile}) {
             setIsMusicPlaying(!isMusicPlaying); // Toggle state
         }
     }
-
-
 
     useEffect(() => {
         if (isMusicPlaying) {
@@ -281,6 +279,12 @@ export function HomePage({isMobile}) {
         const nextIndex = currentMusicTrackIndex === musicTracks.length - 1 ? 0 : currentMusicTrackIndex + 1;
         setCurrentMusicTrackIndex(nextIndex);
     };
+
+
+    // Infos track onClick Titre/Author:
+    const handleClickTrackInfos = () => {
+
+    }
 
 
 
@@ -522,7 +526,7 @@ export function HomePage({isMobile}) {
 
                                 <div className="portable-lockedScreen">
                                     <span className="portable-time">
-                                        <LiveClock format={'HH:mm'} style={{fontFamily: 'Karla', lineHeight: "0.8em"}}/>
+                                        <LiveClock format={'HH:mm'} ticking style={{fontFamily: 'Karla', lineHeight: "0.8em"}}/>
                                         <span className="portable-time-date">{formattedDate}</span>
                                     </span>
 
@@ -546,7 +550,7 @@ export function HomePage({isMobile}) {
                                             </div>
 
                                             {/* infos (titre deroulant, logo widget) TODO: scroll overflow*/}
-                                            <div className="youtubeWidget-titleWrapper">
+                                            <div className="youtubeWidget-titleWrapper" onClick={handleClickTrackInfos} >
                                                 <span className="youtubeWidget-title">{musicTracks[currentMusicTrackIndex].title}</span>
                                                 <span className="youtubeWidget-author">{musicTracks[currentMusicTrackIndex].author}</span>
                                             </div>
@@ -576,6 +580,10 @@ export function HomePage({isMobile}) {
                                             {/* Barre d'avancement */}
                                         </div>
 
+                                    </div>
+
+                                    <div className="musicTrack-infoNotif">
+                                        <span dangerouslySetInnerHTML={{__html: musicTracks[currentMusicTrackIndex].credits}}></span>
                                     </div>
                                 </div>
 
