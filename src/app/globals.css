@@ -1954,10 +1954,10 @@ main {
 .parcours-chronologie-li {
     display: inline-flex;
     flex-direction: column;
-    margin: 15px 9px;
+    margin: 9px 9px;
     font-size: 1.2em;
 
-    background-color: #ffffff14;
+    /* background-color: #ffffff14; */
     padding: 12px 12px 12px 18px;
     border-radius: 5px;
 }
@@ -1986,14 +1986,14 @@ main {
 
 .parcours-chronologie-li-descriptionAlternance {
   font-size: 0.8em;
-  margin: 17px 16px;
+  margin: 9px 3px;
   padding-left: 20px;
   border-left: 1px solid var(--primary-cyan);
   color: rgb(241, 245, 244);
 }
 .parcours-chronologie-li-description {
   font-size: 0.8em;
-  margin: 17px 16px;
+  margin: 9px 3px;
   padding-left: 20px;
   border-left: 1px solid var(--primary-cyan);
   color: rgb(241, 245, 244);
