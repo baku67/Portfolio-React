@@ -1922,6 +1922,7 @@ main {
 .parcours-chronologie {
     /* width: 80%; */
     width: fit-content;
+    max-width: 70%;
     margin: 55px auto;
 
     padding: 15px 15px 15px 44px;
@@ -1953,12 +1954,12 @@ main {
 .parcours-chronologie-li {
     display: inline-flex;
     flex-direction: column;
-    margin: 15px 5px;
-
-    /* border-left: 1px solid var(--primary-cyan); */
-    padding-left: 11px;
-
+    margin: 15px 9px;
     font-size: 1.2em;
+
+    background-color: #ffffff14;
+    padding: 12px 12px 12px 18px;
+    border-radius: 5px;
 }
 
 .parcours-chrono-titleIcon {
@@ -2034,7 +2035,7 @@ main {
   filter: drop-shadow(0px 5px 4px black);
 }
 .skill-Fa-Icon-cube {
-  font-size: 1.7em;
+  font-size: 1.6em;
 }
 
 
@@ -2069,7 +2070,7 @@ main {
 .parcours-chrono-exp {
   color: rgb(179, 179, 179);
   font-size: 85%;
-  margin-left: 15px;
+  margin-left: 0px;
 }
 
 
@@ -2270,7 +2271,7 @@ main {
   background-color: var(--primary-cyan);
   font-weight: bold;
   color: var(--secondary-cyan);
-  filter: drop-shadow(-2px 6px 8px var(--secondary-cyan));
+  filter: drop-shadow(-2px 6px 8px black);
 
 }
 
@@ -3736,8 +3737,9 @@ main {
   height: 100%;
   width: 100%;
 
-  width: 78px !important;
-  transform: translateX(-28px) !important;
+  width: 83px !important;
+  transform: translateX(-32px) !important;
+  filter: brightness(0.6) !important;
 
 
 }
@@ -3902,7 +3904,7 @@ main {
   width: 75px;
   height: 75px;
   background: var(--secondary-cyan);
-  border: 2px solid var(--primary-cyan);
+  border: 3px solid var(--primary-cyan);
   position: absolute;
   opacity: 1;
   display: flex;

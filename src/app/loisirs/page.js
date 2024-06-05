@@ -465,7 +465,7 @@ const [isMobile, setIsMobile] = useState(false); // Initialize state with false
       // Petite friction en plus avec le timeOut
       setTimeout(() => {
         setIsLoaded(true);
-      }, 1000)
+      }, 200)
       
     });
   }, []);
@@ -519,20 +519,21 @@ const [isMobile, setIsMobile] = useState(false); // Initialize state with false
       >
 
 
-        {/* Matos de plongée */}
-        <Image 
-          src={"/scuba-1.png"}
-          width={isMobile ? 72 : 210}
-          height={isMobile ? 72 : 210}
-          className={`scuba-1`}
-          alt={"matériel de plongée décoration"}
-        />
-
 
         {/* Page 4: Photographie, animations */}
         <section className="section page4" id="home-scroll-hobbies">
 
           <div className="loisirs-div scrollMobile">
+
+
+            {/* Matos de plongée */}
+            <Image 
+              src={"/scuba-1.png"}
+              width={isMobile ? 72 : 210}
+              height={isMobile ? 72 : 210}
+              className={`scuba-1`}
+              alt={"matériel de plongée décoration"}
+            />
 
             {/* Icone Page (top-right) */}
             <FontAwesomeIcon icon={faOtter} className="pageIcon" />

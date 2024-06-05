@@ -245,7 +245,16 @@
     font-weight: bold;
     color: var(--secondary-cyan);
 
+    border: 1px solid var(--secondary-cyan);
+
+    filter: drop-shadow(-2px 5px 4px black);
+
     /* transform: rotate(358deg); */
+    }
+
+
+    .navBar-plant {
+        filter : drop-shadow(-1px 4px 2px rgba(0, 0, 0, 1));
     }
       
     
@@ -640,13 +649,14 @@
     .parcours-chronologie-li-descriptionAlternance {
         font-size: 0.75em;
         padding-left: 12px;
-        margin: 5px auto 8px auto;
+        margin: 5px auto 1px auto;
         color: rgb(241, 245, 244);
     }
     .parcours-chronologie-li-description {
         font-size: 0.75em;
         padding-left: 12px;
         margin: 5px auto 8px auto;
+        margin-left: 1px;
         color: rgb(241, 245, 244);
     }
 
@@ -654,7 +664,7 @@
     .parcours-chrono-exp {
         color: rgb(179, 179, 179);
         font-size: 85%;
-        margin-left: 7px;
+        margin-left: 1px;
     }
 
     .parcours-chrono-exp-strong {
@@ -1157,14 +1167,30 @@
 
         width: 120px;
         height: 170px;
-        box-shadow: 0px 0px 8px var(--primary-cyan);
+        box-shadow: 0px 0px 4px var(--primary-cyan);
         border-radius: 3px;
 
         filter: drop-shadow(0px 2px 3px black);
     }
 
+    .parcours-chrono-title {
+        font-size: 0.85em;
+    }
+
     .parcours-chrono-titleIcon {
         font-size: 1.9em;
+    }
+
+
+    .calepin-decoImg {
+        /* En fait non, surcharge la page */
+        display: none;
+
+        width: 54px !important;
+        height: 97% !important;
+        top: 50% !important;
+        transform: translate(-21px, -50%) !important;
+        filter: brightness(0.6) !important;
     }
 
 
@@ -1174,16 +1200,17 @@
     }
 
     .parcours-chronologie {
-        width: 90%;
+        width: 92%;
+        max-width: 100%;
         margin: 30px auto 25px auto;
     
         /* padding: 7px 9px; */
-        padding: 10px 10px 12px 5px;
+        padding: 3px 0px 3px 5px;
         background-color: var(--secondary-cyan);
         border-radius: 2px;
         transform: rotate(358deg);
     
-        filter: drop-shadow(1px 3px 6px black);
+        filter: drop-shadow(1px 6px 4px black);
 
         position: relative;
         z-index: 999999;
@@ -1200,11 +1227,19 @@
         }
       }
 
-    .parcours-chronologie-li {
-        margin: 9px 5px;
-        font-size: 1em;
-        padding-left: 7px;
+    .parcours-chronologie-ul {
+        /* padding-left: 18px !important; */
+        padding-left: 0px !important;
     }
+    .parcours-chronologie-li {
+        margin: 3px 5px;
+        font-size: 1em;
+        padding: 6px 6px 6px 6px;
+
+        background-color: rgba(255, 255, 255, 0);
+    }
+
+
 
 
     .skills-div {
@@ -1618,5 +1653,194 @@
         width: 66%;
         transform: rotate(325deg);
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .skill-Fa-Icon-cube  {
+        font-size: 1.2em;
+    }
+
+
+
+    .containerCube {
+        position: absolute;
+        cursor: pointer;
+        z-index: 999;
+        filter: drop-shadow(-2px 12px 3px black);
+        
+        width: 50px;
+        height: 50px;
+        perspective: 500px;
+        margin: 50px;
+      
+        opacity: 0;
+        animation: fadeIn 0.7s ease forwards;
+      
+        transition: all 0.5s;
+      }
+      .containerCube:hover {
+        transform: translate(10px, -10px) scale(1.1) rotate(-14deg);
+        filter: drop-shadow(-10px 17px 7px black);
+      }
+      
+      /* Positions spécifiques: */
+      .containerCube-html {
+        top: auto;
+        bottom: 0px;
+        right: 0px;
+        animation-delay: 0.4s;
+      }
+      .containerCube-css {
+        top: auto;
+        bottom: -11px;
+        right: 105px;
+        animation-delay: 0.6s;
+      }
+      
+      .containerCube-js {
+        z-index: 99999999;
+        top: auto;
+        bottom: -19px;
+        right: auto;
+        left: 2px;
+        animation-delay: 0.8s;
+      }
+      .containerCube-react {
+        top: auto;
+        bottom: 87px;
+        right: auto;
+        left: -13px;
+        animation-delay: 1s;
+      }
+      
+      .containerCube-php {
+        top: auto;
+        bottom: 74px;
+        right: auto;
+        left: 68px;
+        animation-delay: 1.2s;
+      }
+      .containerCube-sf {
+        top: auto;
+        bottom: 77px;
+        right: 44px;
+        animation-delay: 1.4s;
+      }
+      
+      
+      
+      .cube {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        transform-style: preserve-3d;
+        transform: rotate3d(1, 1, 0, 45deg);
+      }
+      /* Perspectives spécifiques: */
+      .cube-html {
+        transform: rotate3d(1, 1, 0, 31deg) rotate(348deg);
+      }
+      .cube-css {
+        transform: rotate3d(1, 1, 0, 21deg) rotate(11deg);
+      }
+      
+      .cube-js {
+        transform: rotate3d(1, 1, 0, 23deg) rotate(353deg);
+      }
+      .cube-react {
+        transform: rotate3d(1, 1, 0, 23deg) rotate(7deg);
+      }
+      
+      .cube-php {
+        transform: rotate3d(1, 1, 0, 23deg) rotate(358deg);
+      }
+      .cube-sf {
+        transform: rotate3d(1, 1, 0, 20deg) rotate(8deg);
+      }
+      
+      
+      
+      .face {
+        width: 50px;
+        height: 50px;
+        background: var(--secondary-cyan);
+        border: 2px solid var(--primary-cyan);
+        position: absolute;
+        opacity: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: Arial, sans-serif;
+        font-size: 2rem;
+        border-radius: 7px;
+      }
+      
+      .front {
+        transform: translateZ(25px);
+      }
+      .back {
+        transform: translateZ(-25px) rotateY(180deg);
+      }
+      
+      .left {
+        transform: translateX(-25px) rotateY(-90deg);
+
+        filter: brightness(0.6);
+      }
+      .right {
+        transform: translateX(25px) rotateY(90deg);
+      }
+      
+      .top {
+        transform: translateY(-25px) rotateX(90deg);
+      }
+      .bottom {
+        transform: translateY(25px) rotateX(-90deg);
+      
+        filter: brightness(0.2);
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

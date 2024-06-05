@@ -344,6 +344,14 @@ export default function Home() {
                           style={{transform: isPdfHovered ? "rotate(13deg)" : "rotate(11deg)"}}
                         >
 
+                          <Image
+                            src="/bulle-photoCv.png"
+                            width={100}
+                            height={100}
+                            className="bullePhotoCv"
+                            alt="bulle photo CV"
+                          />
+
                           <Image 
                             src="/CV_BasileKuntz_noPhoto.png" 
                             fill={true}
