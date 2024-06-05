@@ -8,6 +8,9 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 import Image from "next/image";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Spinner from 'react-bootstrap/Spinner';
+
 import { Shape1 } from "../Components/Shapes/Shape1";
 import { Shape2 } from "../Components/Shapes/Shape2";
 import PageTitleNav from "../Components/PageTitleNav";
@@ -402,22 +405,46 @@ const imagesAnims = [
 
 
 
+  // Preloads et isLoaded
+  const preLoadImages = (images, callback) => {
+    let loadedCount = 0;
+    const totalImages = images.length;
+  
+    images.forEach((image) => {
+      const img = new window.Image();
+      img.src = image.original;
+      img.onload = () => {
+        loadedCount += 1;
+        if (loadedCount === totalImages) {
+          callback();
+        }
+      };
+      img.onerror = () => {
+        loadedCount += 1;
+        if (loadedCount === totalImages) {
+          callback();
+        }
+      };
+    });
+  };
+
+
+
+
+
+
+
 export default function Loisirs() {
 
-  const [isMobile, setIsMobile] = useState(false); // Initialize state with false
 
-  
+const [isMobile, setIsMobile] = useState(false); // Initialize state with false
   const [switchedGallery, setSwitchedGallery] = useState(false); // false = photos
-  const handleSwitchGallery = () => {
-    setSwitchedGallery(!switchedGallery);
-  }
-
-
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isNavActive, setNavActive] = useState(false);
+  const [navClickFadeOut, setNavClickFadeOut] = useState(false);
 
   useEffect(() => {
-
     setIsMobile(isMobileDevice()); // Set initial state when component mounts
-
 
     // Fonts:
     // Dynamic import for webfontloader (fix pb SSR)
@@ -429,29 +456,47 @@ export default function Loisirs() {
       });
     });
 
+    preLoadImages(imagesPhotos, () => {
+      // Petite friction en plus avec le timeOut
+      setTimeout(() => {
+        setIsLoaded(true);
+      }, 700)
+      
+    });
+  }, []);
 
-  }, []); 
+  const handleSwitchGallery = () => {
+    setSwitchedGallery(!switchedGallery);
+  };
 
-
-
-
-    // Click toggle Nav (isNavActive)
-    const [isNavActive, setNavActive] = useState(false);
-    const toggleNav = () => setNavActive(prevState => !prevState);
-  
-    // Outside click Nav
-    const handleClickOutsideNav = () => {
-      if(isNavActive) {
-        setNavActive(prevState => !prevState);
-      }
+  const toggleNav = () => setNavActive((prevState) => !prevState);
+  const handleClickOutsideNav = () => {
+    if (isNavActive) {
+      setNavActive(false);
     }
+  };
+  const toggleNavClickFadeOut = () => {
+    setNavClickFadeOut((prevState) => !prevState);
+  };
+
+  if (!isLoaded) {
+    return (
+      <div className="loadingSpinner">            
+        <div className="fishLoader-wrapper">
+          <Image 
+              src={"/fish1_v2.png"}
+              width={100}
+              height={100}
+              className="loisirs-fish1-img-loading"
+              alt="poisson"
+          />
+        </div>
+        <span>Loading...</span>
+      </div>
+    )
+  }
 
 
-    // Anims fadeOut (du main pour l'instant) lors des clicks sur liens NavBar
-    const [navClickFadeOut, setNavClickFadeOut] = useState(false);
-    const toggleNavClickFadeOut = () => {
-      setNavClickFadeOut(!navClickFadeOut);
-    }
 
 
 
