@@ -535,7 +535,7 @@ export function HomePage({isMobile}) {
                         src={"/fish1_v2.png"}
                         width={90}
                         height={90}
-                        className="fish1-img"
+                        className={`fish1-img ${isFadingOut ? "fadeOut" : ""}`}
                         alt="poisson"
                     />
                 </div>
@@ -546,7 +546,7 @@ export function HomePage({isMobile}) {
                         src={"/fish2.png"}
                         width={90}
                         height={90}
-                        className="fish2-img"
+                        className={`fish2-img ${isFadingOut ? "fadeOut" : ""}`}
                         alt="poisson"
                     />
                 </div>
@@ -711,10 +711,11 @@ export function HomePage({isMobile}) {
                     src={"/headphones.png"}
                     width={450}
                     height={450}
-                    className="homePageHeadphones"
+                    className={`homePageHeadphones`} 
                     onMouseEnter={handleHeadphonesEnter}
                     onMouseLeave={handleHeadphonesLeave}
                 />
+
             )}
 
 
@@ -901,6 +902,7 @@ export function HomePage({isMobile}) {
                     <ul className={`homeLinksUl ${isFadingOut ? "fadeOut" : ""}`}>
 
                         <Link onClick={(event) => handleClickLink(event, "/parcours")} href={"/parcours"} onMouseEnter={handleParcoursLinkEnter} onMouseLeave={handleParcoursLinkLeave} >
+                            {/* Hover css li */}
                             <li className="homeLinksLi">
                                 <FontAwesomeIcon icon={faPersonRunning} className="homePageNavIcons" style={{transform: isParcoursLinkHovered ? "scale(1.2) rotate(8deg)" : ""}} />
                                 <h2>Parcours</h2>
@@ -908,6 +910,7 @@ export function HomePage({isMobile}) {
                         </Link>
 
                         <Link onClick={(event) => handleClickLink(event, "/projets")} href={"/projets"} onMouseEnter={handleProjetsLinkEnter} onMouseLeave={handleProjetsLinkLeave} >
+                            {/* Hover css li */}
                             <li className="homeLinksLi">
                                 <FontAwesomeIcon icon={faLightbulb} className="homePageNavIcons" style={{transform: isProjetsLinkHovered ? "scale(1.2) rotate(8deg)" : ""}} />
                                 <h2>Projets</h2>
@@ -915,14 +918,16 @@ export function HomePage({isMobile}) {
                         </Link>
 
                         <Link onClick={(event) => handleClickLink(event, "/loisirs")} href={"/loisirs"} onMouseEnter={handleLoisirsLinkEnter} onMouseLeave={handleLoisirsLinkLeave} >
-                        <li className="homeLinksLi">
-                            <div className={`flashLoisirsIcon ${isLoisirsLinkHovered ? "flashLoisirsIconProc" : ""}`}></div>
-                            <FontAwesomeIcon icon={faCamera} className="homePageNavIcons" style={{transform: isLoisirsLinkHovered ? "scale(1.2) rotate(8deg)" : ""}} />
-                            <h2>Loisirs</h2>
-                        </li>
+                            {/* Hover css li */}
+                            <li className="homeLinksLi">
+                                <div className={`flashLoisirsIcon ${isLoisirsLinkHovered ? "flashLoisirsIconProc" : ""}`}></div>
+                                <FontAwesomeIcon icon={faCamera} className="homePageNavIcons" style={{transform: isLoisirsLinkHovered ? "scale(1.2) rotate(8deg)" : ""}} />
+                                <h2>Loisirs</h2>
+                            </li>
                         </Link>
 
                         <Link onClick={(event) => handleClickLink(event, "/contact")} href={"/contact"} onMouseEnter={handleContactLinkEnter} onMouseLeave={handleContactLinkLeave} >
+                            {/* Hover css li */}
                             <li className="homeLinksLi">
                                 <FontAwesomeIcon icon={isContactLinkHovered ? faEnvelopeOpenText : faEnvelope} className="homePageNavIcons" style={{transform: isContactLinkHovered ? "scale(1.2) rotate(8deg)" : ""}} />
                                 <h2>Contact</h2>

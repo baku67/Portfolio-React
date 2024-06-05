@@ -1097,7 +1097,7 @@
       }
       
       .navBar-li-active svg {
-        transform: scale(1.65) rotate(354deg);
+        /* transform: scale(1.65) rotate(354deg); */
       }
       
     

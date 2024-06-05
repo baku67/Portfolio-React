@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faXmark, faHouse, faPersonRunning, faLightbulb, faOtter, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
+import { faXmark, faHouse, faPersonRunning, faLightbulb, faOtter, faEnvelope, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -43,6 +43,48 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile, toggleN
             setIsHomeIconHovered(false);
         }
     }   
+
+
+
+
+
+    // Hovers Nav links:
+    const [isParcoursNavHovered, setIsParcoursNavHovered] = useState(false);
+    const handleParcoursNavEnter = () => {
+        setIsParcoursNavHovered(true)
+    }
+    const handleParcoursNavLeave = () => {
+        setIsParcoursNavHovered(false)
+    }
+
+    const [isProjetsNavHovered, setIsProjetsNavHovered] = useState(false);
+    const handleProjetsNavEnter = () => {
+        setIsProjetsNavHovered(true)
+    }
+    const handleProjetsNavLeave = () => {
+        setIsProjetsNavHovered(false)
+    }
+
+    const [isLoisirsNavHovered, setIsLoisirsNavHovered] = useState(false);
+    const handleLoisirsNavEnter = () => {
+        setIsLoisirsNavHovered(true)
+    }
+    const handleLoisirsNavLeave = () => {
+        setIsLoisirsNavHovered(false)
+    }
+
+    const [isContactNavHovered, setIsContactNavHovered] = useState(false);
+    const handleContactNavEnter = () => {
+        setIsContactNavHovered(true)
+    }
+    const handleContactNavLeave = () => {
+        setIsContactNavHovered(false)
+    }
+
+
+    const navIconStyleHover = () => {
+
+    }
 
 
 
@@ -87,36 +129,82 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile, toggleN
 
                         {/* <div className="navBar-trait"></div> */}
 
-                        <Link onClick={(event) => handleClickLink(event, "/parcours")} href={"/parcours"} >
+                        <Link onClick={(event) => handleClickLink(event, "/parcours")} href={"/parcours"} onMouseEnter={handleParcoursNavEnter} onMouseLeave={handleParcoursNavLeave}>
                             <li className={currentActive === 'parcours' ? "navBar-li-active" : ""}>
-                                <FontAwesomeIcon icon={faPersonRunning} className="navBar-li-fa" />
+                                <FontAwesomeIcon 
+                                    icon={faPersonRunning} 
+                                    className="navBar-li-fa" 
+                                    style={{
+                                        transform: isParcoursNavHovered 
+                                        ? (currentActive === 'parcours' 
+                                            // Hover si active
+                                            ? "scale(1.9) rotate(348deg)" 
+                                            : "scale(1.3) rotate(-8deg)"
+                                            ) 
+                                            : ""
+                                    }} 
+                                />
                                 <span className="navBar-li-span">Parcours</span>
                             </li>
                         </Link>
 
                         {/* <div className="navBar-trait"></div> */}
                         
-                        <Link onClick={(event) => handleClickLink(event, "/projets")} href={"/projets"} >
+                        <Link onClick={(event) => handleClickLink(event, "/projets")} href={"/projets"} onMouseEnter={handleProjetsNavEnter} onMouseLeave={handleProjetsNavLeave}>
                             <li className={currentActive === 'projets' ? "navBar-li-active" : ""}>
-                                <FontAwesomeIcon icon={faLightbulb} className="navBar-li-fa" />
+                                <FontAwesomeIcon 
+                                    icon={faLightbulb} 
+                                    className="navBar-li-fa" 
+                                    style={{
+                                        transform: isProjetsNavHovered 
+                                        ? (currentActive === 'projets' 
+                                            // Hover si active
+                                            ? "scale(1.9) rotate(348deg)" 
+                                            : "scale(1.3) rotate(-8deg)"
+                                            ) 
+                                            : ""
+                                    }} 
+                                />
                                 <span className="navBar-li-span">Projets</span>
                             </li>
                         </Link>
 
                         {/* <div className="navBar-trait"></div> */}
 
-                        <Link onClick={(event) => handleClickLink(event, "/loisirs")} href={"/loisirs"} >
+                        <Link onClick={(event) => handleClickLink(event, "/loisirs")} href={"/loisirs"} onMouseEnter={handleLoisirsNavEnter} onMouseLeave={handleLoisirsNavLeave}>
                             <li className={currentActive === 'loisirs' ? "navBar-li-active" : ""}>
-                                <FontAwesomeIcon icon={faOtter} className="navBar-li-fa" />
+                                <FontAwesomeIcon 
+                                    icon={faOtter} 
+                                    className="navBar-li-fa" 
+                                    style={{
+                                        transform: isLoisirsNavHovered 
+                                        ? (currentActive === 'loisirs' 
+                                            // Hover si active
+                                            ? "scale(1.9) rotate(348deg)" 
+                                            : "scale(1.3) rotate(-8deg)"
+                                            ) 
+                                            : ""
+                                    }}                                 />
                                 <span className="navBar-li-span">Loisirs</span>
                             </li>
                         </Link>
 
                         {/* <div className="navBar-trait"></div> */}
                         
-                        <Link onClick={(event) => handleClickLink(event, "/contact")} href={"/contact"} >
+                        <Link onClick={(event) => handleClickLink(event, "/contact")} href={"/contact"} onMouseEnter={handleContactNavEnter} onMouseLeave={handleContactNavLeave}>
                             <li className={currentActive === 'contact' ? "navBar-li-active" : ""}>
-                                <FontAwesomeIcon icon={faEnvelopeOpenText} className="navBar-li-fa" />
+                                <FontAwesomeIcon 
+                                    icon={faEnvelopeOpenText} 
+                                    className="navBar-li-fa" 
+                                    style={{
+                                        transform: isContactNavHovered 
+                                        ? (currentActive === 'contact' 
+                                            // Hover si active
+                                            ? "scale(1.9) rotate(348deg)" 
+                                            : "scale(1.3) rotate(-8deg)"
+                                            ) 
+                                            : ""
+                                    }}                                  />
                                 <span className="navBar-li-span">Contact</span>
                             </li>
                         </Link>

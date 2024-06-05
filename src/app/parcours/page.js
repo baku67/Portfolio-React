@@ -7,6 +7,7 @@ import Image from "next/image";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPersonRunning, faMagnifyingGlass, faFileArrowDown, faGraduationCap, faEye } from "@fortawesome/free-solid-svg-icons";
 
+
 import { Shape1 } from "/src/app/Components/Shapes/Shape1";
 import { Shape2 } from "/src/app/Components/Shapes/Shape2";
 import { Skills } from "/src/app/Components/CvPage/Skills";
@@ -134,6 +135,8 @@ export default function Home() {
                 onClickNav={toggleNav}
               />
 
+
+              {/* <LogoCube/> */}
 
 
               <div className="parcours-main">
