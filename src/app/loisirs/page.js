@@ -9,7 +9,6 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import Image from "next/image";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Spinner from 'react-bootstrap/Spinner';
 
 import { Shape1 } from "../Components/Shapes/Shape1";
 import { Shape2 } from "../Components/Shapes/Shape2";
@@ -395,10 +394,16 @@ const imagesAnims = [
     thumbnailAlt: "anim 3",
   },
   {
-    original: "/gallery-anims/portfolio-anim-lightbulb.webp",
-    thumbnail: "/gallery-anims/portfolio-anim-lightbulb.webp",
+    original: "/gallery-anims/portfolio-anim-lightbulb-2.webp",
+    thumbnail: "/gallery-anims/portfolio-anim-lightbulb-2.webp",
     originalAlt: "anim 4",
     thumbnailAlt: "anim 4",
+  },
+  {
+    original: "/gallery-anims/nuageDeMots-anim.webp",
+    thumbnail: "/gallery-anims/nuageDeMots-anim.webp",
+    originalAlt: "anim 5",
+    thumbnailAlt: "anim 5",
   },
 ]
 
@@ -460,7 +465,7 @@ const [isMobile, setIsMobile] = useState(false); // Initialize state with false
       // Petite friction en plus avec le timeOut
       setTimeout(() => {
         setIsLoaded(true);
-      }, 700)
+      }, 1000)
       
     });
   }, []);
@@ -513,6 +518,17 @@ const [isMobile, setIsMobile] = useState(false); // Initialize state with false
         onClick={handleClickOutsideNav}
       >
 
+
+        {/* Matos de plongée */}
+        <Image 
+          src={"/scuba-1.png"}
+          width={isMobile ? 72 : 210}
+          height={isMobile ? 72 : 210}
+          className={`scuba-1`}
+          alt={"matériel de plongée décoration"}
+        />
+
+
         {/* Page 4: Photographie, animations */}
         <section className="section page4" id="home-scroll-hobbies">
 
@@ -548,8 +564,8 @@ const [isMobile, setIsMobile] = useState(false); // Initialize state with false
             <div className="loisirs-fish1">
               <Image 
                   src={"/fish1_v2.png"}
-                  width={isMobile ? 70: 100}
-                  height={isMobile ? 70 : 100}
+                  width={isMobile ? 50: 100}
+                  height={isMobile ? 50 : 100}
                   className="loisirs-fish1-img"
                   alt="poisson"
               />

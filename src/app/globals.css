@@ -66,6 +66,19 @@ body {
 
 
 
+.scuba-1 {
+  position: absolute;
+  top: -223px;
+  z-index: 9999;
+  right: 198px;
+  transform: rotate(74deg);
+  filter: drop-shadow(16px -8px 6px black);
+
+  opacity: 0;
+  animation: fadeIn 0.5s 0.7s ease forwards;
+}
+
+
 
 .isDesktop {
   display: block;
@@ -2514,7 +2527,7 @@ main {
   /* Animation trajet; */
   opacity: 0;
   /* filter: hue-rotate(0deg); */
-  offset-path: path("M 405 71 C 192 87 120 103 18 84 C -103 61 -233 113 -354 13");
+  offset-path: path("M 438 175 C 123 151 111 138 28 116 C -64 92 -96 37 -104 -9 C -111 -47 -116 -73 -119 -116");
   animation: loisirs-fish1 12000ms 1000ms linear infinite;
 }
 @keyframes loisirs-fish1 {
@@ -2563,7 +2576,20 @@ main {
 
 
 .loisirs-fish1-img {
-  transform: rotate(112deg);
+  transform: rotate(90deg) rotateY(180deg);
+
+  /* animation: loisirs-fish1-img 2s linear infinite; */
+}
+@keyframes loisirs-fish1-img {
+  0% {
+    transform: rotate(90deg) rotateY(180deg);
+  }
+  50% {
+    transform: rotate(98deg) rotateY(180deg);
+  }
+  100% {
+    transform: rotate(90deg) rotateY(180deg);
+  }
 }
 
 

@@ -1099,8 +1099,42 @@
       .navBar-li-active svg {
         /* transform: scale(1.65) rotate(354deg); */
       }
+
+
+
+      .scuba-1 {
+        position: absolute;
+        top: -61px;
+        z-index: 9999;
+        right: 38px;
+        transform: rotate(74deg);
+        filter: drop-shadow(6px -3px 2px black);
+      }
       
+
+
+      .fishLoader-wrapper {
+        width: 120px;
+        height: 120px;
+      
+        opacity: 0;
+        transform: rotate(0deg);
+        animation: fadeIn 0.5s 0s ease forwards, rotateSpinner 2.7s 0s linear infinite;
+      }
+      @keyframes rotateSpinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     
+
+      .loisirs-fish1-img-loading {
+        width: 65px;
+        height: 65px;
+      }
 
 
     .parcours-main {
