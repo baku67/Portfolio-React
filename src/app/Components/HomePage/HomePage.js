@@ -1,10 +1,8 @@
 "use client"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faPersonRunning, faLightbulb, faCamera, faEnvelopeOpenText, faBatteryThreeQuarters, faSignal, faBackward, faPlay, faPause, faForward } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faPersonRunning, faLightbulb, faCamera, faEnvelope, faEnvelopeOpenText, faBatteryThreeQuarters, faSignal, faBackward, faPlay, faPause, faForward, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
-// import ReactCurvedText from 'react-curved-text';
-import Draggable from 'react-draggable';
 import { useRouter } from 'next/navigation';
 
 import dynamic from 'next/dynamic';
@@ -36,13 +34,22 @@ export function HomePage({isMobile}) {
     }
 
 
-    // Phone (skills) hover:
+    // Smartphone/portable hover:
     const [isPhoneHovered, setIsPhoneHovered] = useState(false);
     const handlePhoneEnter = () => {
         setIsPhoneHovered(true);
     }
     const handlePhoneLeave = () => {
         setIsPhoneHovered(false);
+    }
+
+    // Headphone/Casque hover: 
+    const [isHeadphonesHovered, setIsHeadphonesHovered] = useState(false);
+    const handleHeadphonesEnter = () => {
+        setIsHeadphonesHovered(true);
+    }
+    const handleHeadphonesLeave = () => {
+        setIsHeadphonesHovered(false);
     }
 
 
@@ -81,44 +88,39 @@ export function HomePage({isMobile}) {
 
 
 
-    // flip Carte de visite: (mobile?)
-    const [visitCardFlipped, setVisitCardFlipped] = useState(false);
-    // const { transform, opacity } = useSpring({
-    //     opacity: visitCardFlipped ? 1 : 0,
-    //     transform: `perspective(600px) rotateY(${visitCardFlipped ? 180 : 0}deg)`,
-    //     config: { mass: 5, tension: 500, friction: 80, duration: 500 },
-    // });
 
-    const handleVisitCardFlip = () => {
-        setVisitCardFlipped(!visitCardFlipped);
-    };
-
-
-
-
-    // accueil-mockup style (le bug farme quand on rallume vient pas d'ici mais des CSS anims)
-    const handleAccueilMockupStyle = () => {
-        // if (isMockupDeskClicked) {
-        //     if (isMobile) {
-        //         return "transform: rotate(348deg); translate(1px, 57px);";
-        //     }
-        //     else {
-        //         return "transform: rotate(342deg); filter: drop-shadow(0px 0px 7px var(--primary-cyan));";
-        //     }
-        // }
-        // else {
-        //     if (isMockupDeskHovered) {
-        //         if(!isMobile) {
-        //             return "transform: rotate(322deg); filter: drop-shadow(0px 0px 7px var(--primary-cyan));";
-        //         }
-        //     }
-        //     else {
-        //         return "";
-        //     }
-        // }
-
+    // Hover boutons nav:
+    const [isParcoursLinkHovered, setIsParoursLinkHovered] = useState(false);
+    const handleParcoursLinkEnter = () => {
+        setIsParoursLinkHovered(true);
+    }
+    const handleParcoursLinkLeave = () => {
+        setIsParoursLinkHovered(false);
     }
 
+    const [isProjetsLinkHovered, setIsProjetsLinkHovered] = useState(false);
+    const handleProjetsLinkEnter = () => {
+        setIsProjetsLinkHovered(true);
+    }
+    const handleProjetsLinkLeave = () => {
+        setIsProjetsLinkHovered(false);
+    }
+
+    const [isLoisirsLinkHovered, setIsLoisirsLinkHovered] = useState(false);
+    const handleLoisirsLinkEnter = () => {
+        setIsLoisirsLinkHovered(true);
+    }
+    const handleLoisirsLinkLeave = () => {
+        setIsLoisirsLinkHovered(false);
+    }
+
+    const [isContactLinkHovered, setIsContactLinkHovered] = useState(false);
+    const handleContactLinkEnter = () => {
+        setIsContactLinkHovered(true);
+    }
+    const handleContactLinkLeave = () => {
+        setIsContactLinkHovered(false);
+    }
 
 
 
@@ -423,15 +425,13 @@ export function HomePage({isMobile}) {
 
 
             {/* Post-it "alternance" */}
-            
             <div 
                 className={`post-it-container ${isFadingOut ? "fadeOut" : ""}`} 
                 onMouseEnter={handlePostItEnter}
                 onMouseLeave={handlePostItLeave}
             >
 
-                <Draggable>
-                <div  className="draggable-transition">
+                <div className="postIt1">
 
                     <Image 
                         src="/post-it-1-cropped.png"
@@ -455,7 +455,34 @@ export function HomePage({isMobile}) {
                     </div>
 
                 </div>
-                </Draggable>
+
+
+                
+                <div className="postIt2">
+
+                    <Image 
+                        src="/post-it-1-cropped.png"
+                        width={ isMobile ? 195 : 210 }
+                        height={ isMobile ? 195 : 210 }
+                        className="post-it-img"
+                        style={{
+                            transform: isPostItHovered ? "translate(-2px, 5px) rotate(1deg)" : "translate(0px, 0px)",
+                            filter: isPostItHovered ? "drop-shadow(6px 5px 5px black)" : "drop-shadow(6px 5px 5px black)",
+                        }}
+                        alt={"post-it"}
+                    />
+
+                    <div className="post-it-textDiv"
+                        style={{
+                            transform: isPostItHovered ? "translate(-2px, 5px) rotate(1deg)" : "translate(0px, 0px)"
+                        }}
+                    >
+                        <FontAwesomeIcon icon={faLocationDot} className="post-it-textIcon" />
+                        <span className="post-it-textSpan">Strasbourg <br />&ldquo;Concepteur Développeur d&apos;Applications&ldquo;</span>
+                    </div>
+
+                </div>
+
 
             </div>
 
@@ -561,7 +588,7 @@ export function HomePage({isMobile}) {
             >
                 
                 {/* portable */}
-                <div className={`portable-div ${isFadingOut ? "fadeOut" : ""}`}  style={{boxShadow: isPhoneHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white"}}>
+                <div className={`portable-div ${isFadingOut ? "fadeOut" : ""}`}  style={{boxShadow: isPhoneHovered || isHeadphonesHovered ? "0px 0px 50px -23px white" : "0px 0px 0px 0px white"}}>
 
                     {/* Bouton mockup */}
                     <div className="portable-btnMockup1"></div>
@@ -590,7 +617,10 @@ export function HomePage({isMobile}) {
                                     <span className="portable-time-date">{formattedDate}</span>
                                 </span>
 
-                                <div className="youtubeWidget-div">
+                                <div 
+                                    className="youtubeWidget-div"
+                                    style={{filter: isPhoneHovered || isHeadphonesHovered ? "drop-shadow(0px 0px 9px var(--primary-cyan))" : ""}}
+                                >
 
                                     {/* <audio/> HTML elem caché */}
                                     <audio ref={audioRef} src={musicTracks[currentMusicTrackIndex].src} />
@@ -628,7 +658,10 @@ export function HomePage({isMobile}) {
                                                     icon={isMusicPlaying ? faPause : faPlay} 
                                                     className="youtubeWidget-bottomControls-btn" 
                                                     onClick={handlePlayPauseClick}
-                                                    style={{width: "17px"}} /* Parce que taille differente play/pause Icone */
+                                                    style={{
+                                                        width: "17px", /* Parce que taille differente play/pause Icone */
+                                                        transform: isHeadphonesHovered ? "scale(1.5)" : "", 
+                                                    }} 
                                                 />
                                             </span>
                                             <span>
@@ -679,6 +712,8 @@ export function HomePage({isMobile}) {
                     width={450}
                     height={450}
                     className="homePageHeadphones"
+                    onMouseEnter={handleHeadphonesEnter}
+                    onMouseLeave={handleHeadphonesLeave}
                 />
             )}
 
@@ -693,7 +728,6 @@ export function HomePage({isMobile}) {
                 onMouseEnter={handleMockupDeskEnter}
                 onMouseLeave={handleMockupDeskLeave}
                 onClick={handleMockupDeskClick}
-                style={{handleAccueilMockupStyle}}
             >
 
                 {/* perspective écran */}
@@ -819,7 +853,7 @@ export function HomePage({isMobile}) {
 
                 {/* Carte de visite accueil */}
                 <div className={`${isFadingOut ? "fadeOut" : ""}`}>
-                    <div className={`homeMain-header`} onClick={handleVisitCardFlip} >
+                    <div className={`homeMain-header`} >
 
                     
 
@@ -866,30 +900,31 @@ export function HomePage({isMobile}) {
                 <div>
                     <ul className={`homeLinksUl ${isFadingOut ? "fadeOut" : ""}`}>
 
-                        <Link onClick={(event) => handleClickLink(event, "/parcours")} href={"/parcours"} >
+                        <Link onClick={(event) => handleClickLink(event, "/parcours")} href={"/parcours"} onMouseEnter={handleParcoursLinkEnter} onMouseLeave={handleParcoursLinkLeave} >
                             <li className="homeLinksLi">
-                                <FontAwesomeIcon icon={faPersonRunning} />
+                                <FontAwesomeIcon icon={faPersonRunning} className="homePageNavIcons" style={{transform: isParcoursLinkHovered ? "scale(1.2) rotate(8deg)" : ""}} />
                                 <h2>Parcours</h2>
                             </li>
                         </Link>
 
-                        <Link onClick={(event) => handleClickLink(event, "/projets")} href={"/projets"} >
+                        <Link onClick={(event) => handleClickLink(event, "/projets")} href={"/projets"} onMouseEnter={handleProjetsLinkEnter} onMouseLeave={handleProjetsLinkLeave} >
                             <li className="homeLinksLi">
-                                <FontAwesomeIcon icon={faLightbulb} />
+                                <FontAwesomeIcon icon={faLightbulb} className="homePageNavIcons" style={{transform: isProjetsLinkHovered ? "scale(1.2) rotate(8deg)" : ""}} />
                                 <h2>Projets</h2>
                             </li>
                         </Link>
 
-                        <Link onClick={(event) => handleClickLink(event, "/loisirs")} href={"/loisirs"} >
+                        <Link onClick={(event) => handleClickLink(event, "/loisirs")} href={"/loisirs"} onMouseEnter={handleLoisirsLinkEnter} onMouseLeave={handleLoisirsLinkLeave} >
                         <li className="homeLinksLi">
-                            <FontAwesomeIcon icon={faCamera} />
+                            <div className={`flashLoisirsIcon ${isLoisirsLinkHovered ? "flashLoisirsIconProc" : ""}`}></div>
+                            <FontAwesomeIcon icon={faCamera} className="homePageNavIcons" style={{transform: isLoisirsLinkHovered ? "scale(1.2) rotate(8deg)" : ""}} />
                             <h2>Loisirs</h2>
                         </li>
                         </Link>
 
-                        <Link onClick={(event) => handleClickLink(event, "/contact")} href={"/contact"} >
+                        <Link onClick={(event) => handleClickLink(event, "/contact")} href={"/contact"} onMouseEnter={handleContactLinkEnter} onMouseLeave={handleContactLinkLeave} >
                             <li className="homeLinksLi">
-                                <FontAwesomeIcon icon={faEnvelopeOpenText} />
+                                <FontAwesomeIcon icon={isContactLinkHovered ? faEnvelopeOpenText : faEnvelope} className="homePageNavIcons" style={{transform: isContactLinkHovered ? "scale(1.2) rotate(8deg)" : ""}} />
                                 <h2>Contact</h2>
                             </li>
                         </Link>

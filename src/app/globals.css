@@ -450,7 +450,7 @@ main {
   border-radius: 40px;
 
   display: inline-flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 
   flex-direction: row;
@@ -459,16 +459,77 @@ main {
   
   gap: 15px;
 
+  border: 1px solid var(--secondary-cyan);
+
   filter: drop-shadow(0px 2px 2px black);
+
+  transition: all 0.30s;
 }
+.homeLinksLi:hover {
+  background: var(--secondary-cyan);
+  color: var(--primary-cyan);
+  border: 1px solid var(--primary-cyan);
+}
+
+
 .homeLinksLi svg {
   font-size: 2em;
-  width: 1.7em;
+  width: 40px;
   transform: rotate(1deg);
 
 }
 .homeLinksLi h2 {
   font-size: 1.55em;
+}
+
+
+.homePageNavIcons {
+  transition: transform 0.35s , color 0.15s;
+}
+
+
+.flashLoisirsIcon {
+  position: absolute;
+  z-index: 99;
+  width: 50px;
+  height: 50px;
+  top: -2px;
+  left: 32px;
+
+  background: rgb(255,255,255);
+  background: -moz-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+  background: -webkit-radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+  background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+
+  opacity: 0;
+  /* transition: all 0.15s 0.2s; */
+}
+.flashLoisirsIconProc {
+  animation: flashLoisirsIconProc 1.5s 0.3s ease infinite;
+}
+@keyframes flashLoisirsIconProc {
+  0% {
+    opacity: 0;
+  }
+  /* 3% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+  } */
+  25% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 
@@ -600,6 +661,7 @@ main {
 
 
 .cableSvg {
+    pointer-events: none !important;
     left: -100%;
     fill: none;
     stroke: var(--primary-cyan);
@@ -1083,6 +1145,8 @@ main {
   background: linear-gradient(180deg, rgba(99,44,0,1) 10%, rgba(140,62,0,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#632c00",endColorstr="#8c3e00",GradientType=1);
   border-radius: 10px;
+
+  transition: all 0.3s;
 }
 
 .musicTrack-infoNotif {
@@ -1571,8 +1635,16 @@ main {
 }
 
 
-.draggable-transition {
-  transition: all 0.04s linear;
+.postIt1 {
+  position: relative;
+  z-index: 9999
+}
+
+.postIt2 {
+  position: absolute;
+  z-index: 99;
+    top: -50%;
+    transform: translateY(50%);
 }
 
 
@@ -2379,6 +2451,70 @@ main {
 }
 .aquariumPng {
   filter: drop-shadow(5px 13px 8px black);
+}
+
+
+.loisirs-fish1 {
+  position: absolute;
+  top: 0px;
+  right: -50px;
+
+  z-index: 999999999999999;
+  filter: drop-shadow(-4px -12px 6px black);
+
+  /* Animation trajet; */
+  opacity: 0;
+  /* filter: hue-rotate(0deg); */
+  offset-path: path("M 405 71 C 192 87 120 103 18 84 C -103 61 -233 113 -354 13");
+  animation: loisirs-fish1 12000ms 1000ms linear infinite;
+}
+@keyframes loisirs-fish1 {
+  0% {
+      /* transform: rotateZ(9deg) rotateX(180deg); */
+      offset-distance: 0%;
+      opacity: 0;
+      /* filter: hue-rotate(0deg); */
+  }
+  10% {
+      opacity: 1;
+  }
+  /*
+  22% {
+      opacity: 0.3;
+  }
+  33% {
+      transform: rotateZ(9deg) rotateX(125deg);
+
+      opacity: 0.3;
+  }
+  44% {
+      opacity: 0.3;
+  }
+  55% {
+      opacity: 0.3;
+  }
+  66% {
+      opacity: 0.3;
+  }
+  77% {
+      transform: rotateZ(9deg) rotateX(115deg);
+      opacity: 0.3;
+  }
+   */
+  90% {
+      opacity: 1;
+  }
+  100% {
+      /* transform: rotateZ(9deg) rotateX(110deg); */
+      opacity: 0;
+      offset-distance: 100%;
+      /* filter: hue-rotate(160deg); */
+  }
+}
+
+
+.loisirs-fish1-img {
+  transform: rotate(112deg);
 }
 
 

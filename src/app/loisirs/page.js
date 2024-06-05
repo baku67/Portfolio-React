@@ -498,6 +498,19 @@ export default function Loisirs() {
             />
 
 
+
+            {/* Poisson 1 */}
+            <div className="loisirs-fish1">
+              <Image 
+                  src={"/fish1_v2.png"}
+                  width={isMobile ? 70: 100}
+                  height={isMobile ? 70 : 100}
+                  className="loisirs-fish1-img"
+                  alt="poisson"
+              />
+            </div>
+
+
             
 
             <div className="hobbies-main">
