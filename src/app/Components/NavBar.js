@@ -100,6 +100,13 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile, toggleN
 
 
 
+                
+                {/* Smartphone (mobile?) */}
+
+                
+
+
+
                 {/* Shape top-left */}
                 {/* <div className="navBar-shape-topLeft"></div> */}
 

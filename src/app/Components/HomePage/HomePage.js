@@ -318,27 +318,6 @@ export function HomePage({isMobile}) {
 
 
 
-    // Progression music track
-    const [progress, setProgress] = useState(0);
-    useEffect(() => {
-        const audio = audioRef.current;
-        if (!audio) return;
-    
-        // Met à jour la progression chaque seconde
-        const updateProgress = () => {
-          setProgress((audio.currentTime / audio.duration) * 100);
-        };
-    
-        // Ajouter des écouteurs d'événements
-        audio.addEventListener('timeupdate', updateProgress);
-    
-        // Nettoyer les écouteurs d'événements
-        return () => {
-          audio.removeEventListener('timeupdate', updateProgress);
-        };
-      }, [audioRef]);
-
-
 
 
     // *** Ref SVG path cable
@@ -711,7 +690,7 @@ export function HomePage({isMobile}) {
                     src={"/headphones.png"}
                     width={450}
                     height={450}
-                    className={`homePageHeadphones`} 
+                    className={`homePageHeadphones ${isFadingOut ? "fadeOutHeadPhones" : ""}`} 
                     onMouseEnter={handleHeadphonesEnter}
                     onMouseLeave={handleHeadphonesLeave}
                 />

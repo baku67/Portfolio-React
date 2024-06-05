@@ -5,7 +5,9 @@ import Image from "next/image";
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPersonRunning, faMagnifyingGlass, faFileArrowDown, faGraduationCap, faEye } from "@fortawesome/free-solid-svg-icons";
+import { faPersonRunning, faMagnifyingGlass, faGraduationCap, faEye } from "@fortawesome/free-solid-svg-icons";
+
+import { faHtml5, faCss3, faJs, faReact, faPhp, faSymfony } from "@fortawesome/free-brands-svg-icons";
 
 
 import { Shape1 } from "/src/app/Components/Shapes/Shape1";
@@ -28,8 +30,8 @@ const isMobileDevice = () => {
 // TODO: modifier pour lecteur pdf ou ouverture nouvel onglet 
 const openPdf = () => {
   const link = document.createElement('a');
-  link.href = '/CV_BasileKuntz.pdf'; 
-  // link.download = 'CV_BasileKuntz.pdf'; 
+  link.href = '/CV_BasileKuntz_2.pdf'; 
+  // link.download = 'CV_BasileKuntz_2.pdf'; 
   link.target = '_blank';
 
   document.body.appendChild(link);
@@ -115,6 +117,84 @@ export default function Home() {
         onClick={handleClickOutsideNav}
       >
 
+
+
+
+        {/* Cube html*/}
+        <div class="containerCube containerCube-html">
+          <div class="cube cube-html">
+            <div class="face top"><FontAwesomeIcon icon={faHtml5} className="skill-Fa-Icon-cube" style={{color: "#ef6a32"}} /></div>
+            <div class="face bottom"><FontAwesomeIcon icon={faHtml5} className="skill-Fa-Icon-cube" style={{color: "#ef6a32"}} /></div>
+            <div class="face left"><FontAwesomeIcon icon={faHtml5} className="skill-Fa-Icon-cube" style={{color: "#ef6a32"}} /></div>
+            <div class="face right"><FontAwesomeIcon icon={faHtml5} className="skill-Fa-Icon-cube" style={{color: "#ef6a32"}} /></div>
+            <div class="face front"><FontAwesomeIcon icon={faHtml5} className="skill-Fa-Icon-cube" style={{color: "#ef6a32"}} /></div>
+            <div class="face back"><FontAwesomeIcon icon={faHtml5} className="skill-Fa-Icon-cube" style={{color: "#ef6a32"}} /></div>
+          </div>
+        </div>
+
+        {/* Cube CSS */}
+        <div class="containerCube containerCube-css">
+          <div class="cube cube-css">
+            <div class="face top"><FontAwesomeIcon icon={faCss3} className="skill-Fa-Icon-cube" style={{color: "#3bacdd"}} /></div>
+            <div class="face bottom"><FontAwesomeIcon icon={faCss3} className="skill-Fa-Icon-cube" style={{color: "#3bacdd"}} /></div>
+            <div class="face left"><FontAwesomeIcon icon={faCss3} className="skill-Fa-Icon-cube" style={{color: "#3bacdd"}} /></div>
+            <div class="face right"><FontAwesomeIcon icon={faCss3} className="skill-Fa-Icon-cube" style={{color: "#3bacdd"}} /></div>
+            <div class="face front"><FontAwesomeIcon icon={faCss3} className="skill-Fa-Icon-cube" style={{color: "#3bacdd"}} /></div>
+            <div class="face back"><FontAwesomeIcon icon={faCss3} className="skill-Fa-Icon-cube" style={{color: "#3bacdd"}} /></div>
+          </div>
+        </div>
+
+        {/* Cube JS */}
+        <div class="containerCube containerCube-js">
+          <div class="cube cube-js">
+            <div class="face top"><FontAwesomeIcon icon={faJs} className="skill-Fa-Icon-cube" style={{color: "#f7e02a"}} /></div>
+            <div class="face bottom"><FontAwesomeIcon icon={faJs} className="skill-Fa-Icon-cube" style={{color: "#f7e02a"}} /></div>
+            <div class="face left"><FontAwesomeIcon icon={faJs} className="skill-Fa-Icon-cube" style={{color: "#f7e02a"}} /></div>
+            <div class="face right"><FontAwesomeIcon icon={faJs} className="skill-Fa-Icon-cube" style={{color: "#f7e02a"}} /></div>
+            <div class="face front"><FontAwesomeIcon icon={faJs} className="skill-Fa-Icon-cube" style={{color: "#f7e02a"}} /></div>
+            <div class="face back"><FontAwesomeIcon icon={faJs} className="skill-Fa-Icon-cube" style={{color: "#f7e02a"}} /></div>
+          </div>
+        </div>
+
+        {/* Cube React */}
+        <div class="containerCube containerCube-react">
+          <div class="cube cube-react">
+            <div class="face top"><FontAwesomeIcon icon={faReact} className="skill-Fa-Icon-cube" style={{color: "#21ddff"}} /></div>
+            <div class="face bottom"><FontAwesomeIcon icon={faReact} className="skill-Fa-Icon-cube" style={{color: "#21ddff"}} /></div>
+            <div class="face left"><FontAwesomeIcon icon={faReact} className="skill-Fa-Icon-cube" style={{color: "#21ddff"}} /></div>
+            <div class="face right"><FontAwesomeIcon icon={faReact} className="skill-Fa-Icon-cube" style={{color: "#21ddff"}} /></div>
+            <div class="face front"><FontAwesomeIcon icon={faReact} className="skill-Fa-Icon-cube" style={{color: "#21ddff"}} /></div>
+            <div class="face back"><FontAwesomeIcon icon={faReact} className="skill-Fa-Icon-cube" style={{color: "#21ddff"}} /></div>
+          </div>
+        </div>
+
+        {/* Cube PHP */}
+        <div class="containerCube containerCube-php">
+          <div class="cube cube-php">
+            <div class="face top"><FontAwesomeIcon icon={faPhp} className="skill-Fa-Icon-cube" style={{color: "#7b7fb6"}} /></div>
+            <div class="face bottom"><FontAwesomeIcon icon={faPhp} className="skill-Fa-Icon-cube" style={{color: "#7b7fb6"}} /></div>
+            <div class="face left"><FontAwesomeIcon icon={faPhp} className="skill-Fa-Icon-cube" style={{color: "#7b7fb6"}} /></div>
+            <div class="face right"><FontAwesomeIcon icon={faPhp} className="skill-Fa-Icon-cube" style={{color: "#7b7fb6"}} /></div>
+            <div class="face front"><FontAwesomeIcon icon={faPhp} className="skill-Fa-Icon-cube" style={{color: "#7b7fb6"}} /></div>
+            <div class="face back"><FontAwesomeIcon icon={faPhp} className="skill-Fa-Icon-cube" style={{color: "#7b7fb6"}} /></div>
+          </div>
+        </div>
+
+        {/* Cube Symfony */}
+        <div class="containerCube containerCube-sf">
+          <div class="cube cube-sf">
+            <div class="face top"><FontAwesomeIcon icon={faSymfony} className="skill-Fa-Icon-cube" style={{color: "#ffffff"}} /></div>
+            <div class="face bottom"><FontAwesomeIcon icon={faSymfony} className="skill-Fa-Icon-cube" style={{color: "#ffffff"}} /></div>
+            <div class="face left"><FontAwesomeIcon icon={faSymfony} className="skill-Fa-Icon-cube" style={{color: "#ffffff"}} /></div>
+            <div class="face right"><FontAwesomeIcon icon={faSymfony} className="skill-Fa-Icon-cube" style={{color: "#ffffff"}} /></div>
+            <div class="face front"><FontAwesomeIcon icon={faSymfony} className="skill-Fa-Icon-cube" style={{color: "#ffffff"}} /></div>
+            <div class="face back"><FontAwesomeIcon icon={faSymfony} className="skill-Fa-Icon-cube" style={{color: "#ffffff"}} /></div>
+          </div>
+        </div>
+
+
+
+
         {/* Page 2: Parcours */}
         <section className="section page2" id="home-scroll-skills">
 
@@ -142,6 +222,14 @@ export default function Home() {
               <div className="parcours-main">
 
                   <div className="parcours-chronologie">
+
+
+                    <Image
+                      src="/calepin-arceaux.png"
+                      fill={true}
+                      className="calepin-decoImg"
+                      alt="calepin decoration"
+                    />
 
                     <ul className="parcours-chronologie-ul">
 
@@ -257,7 +345,7 @@ export default function Home() {
                         >
 
                           <Image 
-                            src="/CV_BasileKuntz.png" 
+                            src="/CV_BasileKuntz_noPhoto.png" 
                             fill={true}
                             alt="CV de Basile Kuntz"
                             onClick={openPdf} 
@@ -276,7 +364,7 @@ export default function Home() {
                   </div>
 
                       
-                  <Skills />
+                  {/* <Skills /> */}
 
               </div>
 
@@ -293,8 +381,16 @@ export default function Home() {
                   style={{transform: isPdfHovered ? "rotate(12deg)" : "rotate(11deg)"}} 
                 >
 
+                  <Image
+                    src="/bulle-photoCv.png"
+                    width={100}
+                    height={100}
+                    className="bullePhotoCv"
+                    alt="bulle photo CV"
+                  />
+
                   <Image 
-                    src="/CV_BasileKuntz.png" 
+                    src="/CV_BasileKuntz_noPhoto.png" 
                     fill={true}
                     alt="CV de Basile Kuntz"
                     onClick={openPdf} 
