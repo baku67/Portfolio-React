@@ -462,42 +462,69 @@ export function HomePage({isMobile}) {
 
 
 
-            {/* Plante + fishBowl */}
 
-                {/* Plante */}
-                <div 
-                    className={`plantAccueil-div`} 
-                    style={{width:"fit-content"}}
-                    onClick={handleMockupDeskClick}
-                >
+            {/* Plante */}
+            <div 
+                className={`plantAccueil-div`} 
+                style={{width:"fit-content"}}
+                onClick={handleMockupDeskClick}
+            >
 
-                    <Image 
-                        src="/plant-1-min.png" 
-                        width={isMobile ? 450 : 520} 
-                        height={isMobile ? 450 : 520} 
-                        className={`plantAccueil ${isFadingOut ? "fadeOut" : ""}`} 
-                        alt={"decoration plant"} 
-                    />
+                <Image 
+                    src="/plant-1-min.png" 
+                    width={isMobile ? 450 : 520} 
+                    height={isMobile ? 450 : 520} 
+                    className={`plantAccueil ${isFadingOut ? "fadeOut" : ""}`} 
+                    alt={"decoration plant"} 
+                />
 
-                    <div className={`bocal-exterieur ${isFadingOut ? "fadeOut" : ""}`}>
-                        <div className="bocal-ouverture"></div>
-                        <div className="bocal-landscape"></div>
-                    </div>
-
+                <div className={`bocal-exterieur ${isFadingOut ? "fadeOut" : ""}`}>
+                    <div className="bocal-ouverture"></div>
+                    <div className="bocal-landscape"></div>
                 </div>
 
+            </div>
 
-                {/* Test fish bowl (loisirs) */}
-                <div className={`fishBowl-div`}>
+
+
+
+            {/* fish bowl */}
+            <div className={`fishBowl-div`}>
+
+                {/* Bocal vide */}
+                <Image 
+                    // src="/fishBowl-rounded2.png" 
+                    src="/fishBowl-rounded2-withoutFish.png"
+                    width={320} 
+                    height={320} 
+                    style={{transform: "rotate(182deg)", filter:"hue-rotate(334deg)"}}
+                    className={`fishBowl-img ${isFadingOut ? "fadeOut" : ""}`}
+                    alt={"fish bowl decoration"}
+                />
+
+                {/* Poisson 1 */}
+                <div className="fish1">
                     <Image 
-                        src="/fishBowl-rounded2.png" 
-                        width={320} 
-                        height={320} 
-                        style={{transform: "rotate(182deg)", filter:"hue-rotate(334deg)"}}
-                        className={`fishBowl-img ${isFadingOut ? "fadeOut" : ""}`}
-                        alt={"fish bowl decoration"}
+                        src={"/fish1_v2.png"}
+                        width={90}
+                        height={90}
+                        className="fish1-img"
+                        alt="poisson"
                     />
                 </div>
+
+                {/* Poisson 2 */}
+                <div className="fish2">
+                    <Image 
+                        src={"/fish2.png"}
+                        width={90}
+                        height={90}
+                        className="fish2-img"
+                        alt="poisson"
+                    />
+                </div>
+                        
+            </div>
 
 
 

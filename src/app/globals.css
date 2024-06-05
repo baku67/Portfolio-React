@@ -618,6 +618,94 @@ main {
 }
 
 
+.fish1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999999;
+  pointer-events: none;
+
+  opacity: 0;
+  transform: rotate(173deg) translate(32px, 111px);
+  animation: fish1-fadeIn 3s 0.8s ease forwards;
+}
+@keyframes fish1-fadeIn {
+  from {
+    opacity: 0;
+    transform: rotate(173deg) translate(32px, 111px);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(173deg) translate(22px, 29px);
+  }
+}
+
+.fish1-img {
+  transform: rotate(0deg) translate(0px, 0px);
+  animation: fish1-img-wiggle 12s 0s ease-in-out infinite;
+} 
+@keyframes fish1-img-wiggle {
+  0% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  25% {
+    transform: rotate(5deg) translate(-5px, 5px);
+  }
+  50% {
+    transform: rotate(10deg) translate(0px, 0px);
+  }
+  75% {
+    transform: rotate(5deg) translate(-5px, 5px);
+  }
+  100% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+}
+
+.fish2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999999;
+  pointer-events: none;
+
+  opacity: 0;
+  transform: rotate(323deg) translate(-55px, -63px);
+  animation: fish2-fadeIn 3s 0.8s ease forwards;
+}
+@keyframes fish2-fadeIn {
+  from {
+    opacity: 0;
+    transform: rotate(323deg) translate(-55px, -63px);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(323deg) translate(-55px, -63px);
+  }
+}
+
+.fish2-img {
+  transform: rotate(0deg) translate(0px, 0px);
+  animation: fish1-img-wiggle 13s 0s ease-in-out infinite;
+} 
+@keyframes fish2-img-wiggle {
+  0% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+  25% {
+    transform: rotate(2deg) translate(-10px, 10px);
+  }
+  50% {
+    transform: rotate(12deg) translate(0px, 0px);
+  }
+  75% {
+    transform: rotate(2deg) translate(-10px, 10px);
+  }
+  100% {
+    transform: rotate(0deg) translate(0px, 0px);
+  }
+}
+
 .homePageHeadphones {
   position: absolute;
   bottom: 0;
