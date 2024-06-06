@@ -106,6 +106,7 @@ export default function Contact() {
             <PageTitleNav 
               title={"Contact"} 
               onClickNav={toggleNav}
+              isMobile={isMobile}
             />
 
 

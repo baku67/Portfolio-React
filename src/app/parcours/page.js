@@ -213,6 +213,7 @@ export default function Home() {
               <PageTitleNav 
                 title={"Parcours"} 
                 onClickNav={toggleNav}
+                isMobile={isMobile}
               />
 
 

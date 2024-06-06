@@ -121,6 +121,7 @@ export function LandingPageProjects({projects, selectProject, isMobile}) {
                 <PageTitleNav 
                     title={"Projets"} 
                     onClickNav={toggleNav}
+                    isMobile={isMobile}
                 />
 
 

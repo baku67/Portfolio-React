@@ -546,6 +546,7 @@ const [isMobile, setIsMobile] = useState(false); // Initialize state with false
             <PageTitleNav 
               title={"Loisirs"} 
               onClickNav={toggleNav}
+              isMobile={isMobile}
             />
             
 

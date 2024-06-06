@@ -1947,6 +1947,25 @@ main {
   }
 }
 
+
+.navBarsContainer {
+  width: 46px;
+  height: 46px;
+
+  position: relative;
+  bottom: 6px; 
+}
+.navBars {
+  position: relative;
+  width: 46px;
+  height: 6px;
+  background-color: var(--primary-cyan);
+  margin: 10px auto;
+  border-radius: 4px;
+
+  transition: all 0.3s;
+}
+
 .parcours-chronologie-ul {
   display: inline-flex;
     flex-direction: column;
@@ -2096,9 +2115,10 @@ main {
 }
 
 .projectPageHeader {
+  cursor: pointer;
   opacity: 0;
   transform: translateY(-100px);
-  margin-top: 22px;
+  padding-top: 22px;
   filter: drop-shadow(2px 4px 6px black);
   width: fit-content;
 
@@ -2117,6 +2137,13 @@ main {
     opacity: 1;
     transform: translateY(0px);
   }
+}
+
+
+.pageHeader-title {
+  margin: 0px 15px;
+
+  transition: all 0.3s;
 }
 
 .pPH-resp {
