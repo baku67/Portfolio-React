@@ -796,11 +796,20 @@
       .hobbies-main {
         flex-direction: column;
         top: 14%;
-        gap: 52px;
+        gap: 42px;
       }
       .aquariumWrapper {
         top: 7%;
         right: 14%;
+      }
+
+      .image-gallery-thumbnail .image-gallery-thumbnail-image {
+        border: 2px solid white;
+        border-bottom: 7px solid white;
+      }
+
+      .image-gallery-right-nav, .image-gallery-left-nav {
+        transform: scale(1.5);      
       }
 
 
@@ -828,6 +837,7 @@
 
       .image-gallery-image {
         border:7px solid #f0f9f9;
+        border-bottom: 35px solid #f0f9f9;
       }
       .aquariumPng {
         filter: drop-shadow(4px 5px 4px black);

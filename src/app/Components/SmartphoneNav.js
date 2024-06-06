@@ -239,7 +239,7 @@ export function SmartphoneNav({isMobile, isFadingOut}) {
 
             {/* Smartphone (desktop) */}
             <div 
-                className={`portableNav`}
+                className={`portableNav ${isPhoneHovered ? 'portableNav-active' : ''}`}
                 onMouseEnter={handlePhoneEnter}
                 onMouseLeave={handlePhoneLeave}
                 style={{ 
