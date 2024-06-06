@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark, faHouse, faPersonRunning, faLightbulb, faOtter, faEnvelope, faEnvelopeOpenText } from '@fortawesome/free-solid-svg-icons';
+import { SmartphoneNav } from './SmartphoneNav';
 
 
 
@@ -85,6 +86,18 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile, toggleN
     const navIconStyleHover = () => {
 
     }
+
+
+    useEffect(() => {
+        import('webfontloader').then((WebFontLoader) => {
+            WebFontLoader.load({
+            google: {
+                families: ['Karla:200']
+            }
+            });
+        });
+    });
+  
 
 
 
@@ -218,6 +231,13 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile, toggleN
 
                     </ul>
                 </div>
+
+
+
+                <SmartphoneNav isMobile={isMobile} isFadingOut={isFadingOut} />
+
+
+
 
             </div>
 

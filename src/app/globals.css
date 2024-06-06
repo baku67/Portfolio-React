@@ -1571,6 +1571,35 @@ main {
   }
 }
 
+.portableNav {
+  cursor: default;
+  position: absolute;
+  z-index: 99;
+
+  transition: all 0.4s;
+
+  transform: rotate(3deg);
+  right: 58px;
+  bottom: 0px;
+  opacity: 1;
+  /* animation: fadeIn-portable 0.7s 1s ease forwards; */
+}
+@keyframes fadeIn-portable {
+  from {
+    transform: rotate(3deg);
+    right: 58px;
+    bottom: 0px;
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: rotate(13deg);
+    right: 185px;
+    bottom: 120px;
+  }
+}
+
+
 .portable-text {
     font-size: 1.8em;
     /* color: rgb(226, 237, 237); */

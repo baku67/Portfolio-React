@@ -1833,6 +1833,130 @@
 
 
 
+      
+      .portableNav {
+        cursor: default;
+        position: absolute;
+        z-index: 99;
+        transition: all 0.4s;
+        transform: rotate(15deg);
+        right: auto;
+        left: -20px;
+        bottom: -114px;
+        opacity: 1;
+        /* animation: fadeIn-portable 0.7s 1s ease forwards; */
+      }
+      @keyframes fadeIn-portable {
+        from {
+          transform: rotate(3deg);
+          right: 58px;
+          bottom: 0px;
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+          transform: rotate(13deg);
+          right: 185px;
+          bottom: 120px;
+        }
+      }
+      
+      
+      .portable-text {
+          font-size: 1.8em;
+          /* color: rgb(226, 237, 237); */
+          color: var(--primary-cyan);
+          position: relative;
+          bottom: 5px;
+      
+          width: 100%;
+          display: block;
+          text-align: center;
+      
+          transition: all 0.4s;
+      }
+      
+      /* Attention height synchro : .smartphone-cv  */
+      .portable-div {
+        height: 350px;
+        width: 185px;
+        border-radius: 13px;
+        padding: 6px 4px 12px 4px;
+        background-color: rgb(7 7 7);
+        border: 1px solid var(--primary-cyan);
+      
+        filter: drop-shadow(black 9px 8px 4px);
+      
+        transition: all 0.4s;
+      }
+      
+      .portable-screen {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        border-radius: 9px;
+        background-color: var(--secondary-cyan);
+        overflow: hidden;
+      
+        transition: all 0.4s;
+      }
+      
+      .portable-contentWrapper {
+        display: inline-flex;
+        /* width: 200%; */
+        width: 100%;
+        height: 100%;
+      
+        background: url('/wallpaper-mobile.jpg');
+        background-position: center;
+      
+        /* Ptit délai 2 temps */
+        transition: all 0.4s 0.2s;
+      }
+      
+      
+      .portable-lockedScreen {
+        width: 100%;
+      }
+      
+      .portable-time {
+        font-size: 3.5em;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 30px auto 10px auto;
+      
+        display: inline-flex;
+          flex-direction: column;
+          align-items: center;
+      }
+      
+      .portable-time-date {
+        font-size: 0.2em;
+      }
+      
+      
+      .portable-btnMockup1 {
+        position: absolute;
+        right: -3px;
+        top: 50px;
+        height: 72px;
+        width: 2px;
+        background-color: var(--primary-cyan);
+      }
+      .portable-btnMockup2 {
+        position: absolute;
+        right: -3px;
+        top: 143px;
+        height: 35px;
+        width: 2px;
+        background-color: var(--primary-cyan);
+      }
+      
+      
+
+
 
 
 
