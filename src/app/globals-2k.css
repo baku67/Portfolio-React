@@ -1,6 +1,8 @@
 @media only screen and (min-width: 2000px) {
 
-
+    body {
+        margin: 0 auto;
+    }
 
     .homeMain {
         gap: 140px;

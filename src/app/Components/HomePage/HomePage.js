@@ -1,6 +1,6 @@
 "use client"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faPersonRunning, faLightbulb, faCamera, faEnvelope, faEnvelopeOpenText, faBatteryThreeQuarters, faSignal, faBackward, faPlay, faPause, faForward, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { faPowerOff, faMagnifyingGlass, faPersonRunning, faLightbulb, faCamera, faEnvelope, faEnvelopeOpenText, faBatteryThreeQuarters, faSignal, faBackward, faPlay, faPause, faForward, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import { useRouter } from 'next/navigation';
@@ -715,8 +715,27 @@ export function HomePage({isMobile}) {
                     <div 
                         className={`accueil-mockup-top`}
                     >
+
+
+                        {/* Icone FA On/Off onHover laptop (desktop) */}
+                        <div 
+                            className="laptopHoverIconPower"
+                            style={{
+                                opacity: isMockupDeskHovered ? "1" : "0",
+                            }}
+                        >
+                            <FontAwesomeIcon icon={faPowerOff} />
+                        </div>
+
+
+
                         {/* screen */}
-                        <div className="amt-imgWrapper">
+                        <div 
+                            className="amt-imgWrapper"
+                            style={{
+                                opacity: isMockupDeskHovered ? "0.2" : "1",
+                            }}
+                        >
 
                             {/* Reflet */}
                             <div className="laptop-reflect"></div>

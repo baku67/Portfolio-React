@@ -27,7 +27,7 @@
 /* MAX 2000p */
 body {
   max-width: 2000px;
-  margin: 0 auto;
+  margin: 0 auto !important;
   overflow: hidden;
 }
 
@@ -902,6 +902,8 @@ main {
   overflow: hidden;
   height: 100%;
   width: 100%;
+
+  transition: all 0.4s;
 }
 .amt-imgWrapper img {
   padding: 7px 4px 8px;
@@ -928,6 +930,38 @@ main {
   }
 }
 
+.amt-imgWrapperImg-fadeIn {
+  width: 0%;
+  height: 2px;
+  animation: amt-imgWrapperImg-fadeIn 0.7s 0s ease forwards !important;
+}
+@keyframes amt-imgWrapperImg-fadeIn {
+  0% {
+    width: 0%;
+    height: 2px;
+  }
+  30% {
+      width: 100%;
+  }
+  100% {
+      height: 100%
+  }
+}
+
+
+.laptopHoverIconPower {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 999;
+    font-size: 4em;
+
+    opacity: 0;
+    transition: all 0.4s;
+}
+
+
 
 .amt-imgWrapperImg-fadeOut {
   animation: amt-imgWrapperImg-fadeOut 0.7s 0s ease forwards !important;
@@ -945,10 +979,13 @@ main {
     height: 2px;
     padding: 0;
   }
-  100% {
+  99% {
     width: 0%;
     height: 2px;
     padding: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -1629,6 +1666,7 @@ main {
   padding: 6px 4px 12px 4px;
   background-color: rgb(7 7 7);
   border: 1px solid var(--primary-cyan);
+  border-bottom-width: 3px;
 
   filter: drop-shadow(black 9px 8px 4px);
 
