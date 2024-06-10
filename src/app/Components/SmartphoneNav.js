@@ -271,12 +271,18 @@ export function SmartphoneNav({isMobile, isFadingOut}) {
 
                         <div className="portable-contentWrapper" >
 
+
+
+                        
+
                             <div className="portable-lockedScreen">
                                 <span className="portable-time">
                                     <LiveClock format={'HH:mm'} ticking style={{fontFamily: 'Karla', lineHeight: "0.8em"}}/>
                                     <span className="portable-time-date">{formattedDate}</span>
                                 </span>
 
+
+                                
                                 <div 
                                     className="youtubeWidget-div"
                                     style={{filter: isPhoneHovered ? "drop-shadow(0px 0px 9px var(--primary-cyan))" : ""}}

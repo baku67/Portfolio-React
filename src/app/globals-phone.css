@@ -786,7 +786,10 @@
         object-position: right;
     
     
-        opacity: 0.7;
+        /* opacity: 0.7; */
+
+        opacity: 0.5;
+        filter: grayscale(1);
         
         z-index: -9999;
         border-right: 1px solid var(--primary-cyan);
@@ -1849,11 +1852,14 @@
         position: absolute;
         z-index: 99;
         transition: all 0.4s;
-        transform: rotate(15deg);
-        right: auto;
-        left: -20px;
-        bottom: -114px;
         opacity: 1;
+        right: auto;
+        left: -5px;
+        top: 73%;
+        bottom: auto;
+        transform: rotate3d(1, 1, 1, 14deg);
+      
+
         /* animation: fadeIn-portable 0.7s 1s ease forwards; */
       }
       @keyframes fadeIn-portable {
@@ -1888,8 +1894,10 @@
       
       /* Attention height synchro : .smartphone-cv  */
       .portable-div {
-        height: 350px;
-        width: 185px;
+        /* height: 350px;
+        width: 185px; */
+        height: 266px;
+        width: 142px;
         border-radius: 13px;
         padding: 6px 4px 12px 4px;
         background-color: rgb(7 7 7);
@@ -1931,7 +1939,8 @@
       }
       
       .portable-time {
-        font-size: 3.5em;
+        font-size: 2.8em;
+        gap: 5px;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -1941,6 +1950,15 @@
           flex-direction: column;
           align-items: center;
       }
+
+
+      .youtubeWidget-div {
+        height: 68px;
+
+        border-radius: 5px;
+
+        background: -webkit-linear-gradient(180deg, #003b35 10%, #009384 100%);
+      }
       
       .portable-time-date {
         font-size: 0.2em;
@@ -1949,7 +1967,7 @@
       
       .portable-btnMockup1 {
         position: absolute;
-        right: -3px;
+        right: -2px;
         top: 50px;
         height: 72px;
         width: 2px;
@@ -1957,7 +1975,7 @@
       }
       .portable-btnMockup2 {
         position: absolute;
-        right: -3px;
+        right: -2px;
         top: 143px;
         height: 35px;
         width: 2px;

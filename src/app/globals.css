@@ -1134,9 +1134,6 @@ main {
   z-index: 9999;
     position: absolute;
 
-    /* top: -24px; */
-
-    /* A droite, sur le bleu */
     top: -22px;
     right: -16px;
 
@@ -1144,6 +1141,9 @@ main {
 
     opacity: 0;
     transform: translate(50px, -20px) rotate(25deg);
+    filter: drop-shadow(5px 7px 6px black);
+
+
     animation: tasseCafe 1s 1s ease forwards;
 }
 
@@ -1165,7 +1165,6 @@ main {
   height: 150px;
   background: #c69c6d;
   border-radius: 50%;
-  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -1250,7 +1249,7 @@ main {
     border-left: none;
     border-radius: 19%;
     background-color: #c69c6d;
-    /* border-top: 1px solid #e3c29c; */
+    
     transform: rotate(254deg);
 
     transition: all 0.4s;
@@ -1781,7 +1780,8 @@ main {
   position: absolute;
   z-index: 999999999;
 
-  background: #04374b;
+  background: #114c59;
+  /* background: #04374b; */
 
   background-position: right; /* right ou top */
 
@@ -1799,9 +1799,24 @@ main {
 .navBar-bg {
   object-fit: cover;
   object-position: right;
-  opacity: 0.7;
+
+  /* opacity: 0.7; */
+  opacity: 0.5;
+  filter: grayscale(1);
+
   z-index: -9999;
   border-right: 1px solid var(--primary-cyan);
+}
+
+.navBottomShape {
+  position: absolute;
+  bottom: -112px;
+  left: -263px;
+  width: 200%;
+  height: 250px;
+  background-color: var(--primary-cyan);
+  transform: rotate(25deg);
+
 }
 
 

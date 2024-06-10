@@ -469,10 +469,13 @@ export function HomePage({isMobile}) {
 
 
 
+
             {/* Plante */}
             <div 
                 className={`plantAccueil-div`} 
                 style={{width:"fit-content"}}
+                onMouseEnter={handleMockupDeskEnter}
+                onMouseLeave={handleMockupDeskLeave}
                 onClick={handleMockupDeskClick}
             >
 
@@ -596,6 +599,7 @@ export function HomePage({isMobile}) {
                                     <span className="portable-time-date">{formattedDate}</span>
                                 </span>
 
+
                                 <div 
                                     className="youtubeWidget-div"
                                     style={{filter: isPhoneHovered || isHeadphonesHovered ? "drop-shadow(0px 0px 9px var(--primary-cyan))" : ""}}
@@ -718,14 +722,17 @@ export function HomePage({isMobile}) {
 
 
                         {/* Icone FA On/Off onHover laptop (desktop) */}
-                        <div 
+                        {!isMobile && (
+                            <div 
                             className="laptopHoverIconPower"
                             style={{
                                 opacity: isMockupDeskHovered ? "1" : "0",
                             }}
-                        >
-                            <FontAwesomeIcon icon={faPowerOff} />
-                        </div>
+                            >
+                                <FontAwesomeIcon icon={faPowerOff} />
+                            </div>
+                        )}
+
 
 
 
@@ -733,7 +740,8 @@ export function HomePage({isMobile}) {
                         <div 
                             className="amt-imgWrapper"
                             style={{
-                                opacity: isMockupDeskHovered ? "0.2" : "1",
+                                // opacity: isMockupDeskHovered ? "0.2" : "1",
+                                opacity: isMockupDeskHovered ? (!isMobile ? "0.4" : "1") : (isMobile ? "1" : "1"),
                             }}
                         >
 
@@ -746,12 +754,14 @@ export function HomePage({isMobile}) {
                                 alt="Portfolio demo" 
                                 onLoadingComplete={handleVideoLoaded}
                                 className={`${isMockupDeskClicked ? "amt-imgWrapperImg-fadeOut" : "amt-imgWrapperImg-fadeIn"}`}
+                                // className={`${isMobile ? (isMockupDeskClicked ? "" : "") : (isMockupDeskClicked ? "amt-imgWrapperImg-fadeOut" : "amt-imgWrapperImg-fadeIn")}`}
                                 unoptimized
                             />
 
                         </div>
                     </div>
                 </div>
+
 
                 {/* Pas de perspective sur le clavier comme il est à plat  */}
                 <div className="accueil-mockup-bottom-wrapper">

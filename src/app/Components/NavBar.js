@@ -234,6 +234,10 @@ export function NavBar({isNavActive, toggleNav, currentActive, isMobile, toggleN
 
 
 
+
+                {/* Shape bottom */}
+                <div className="navBottomShape"></div>
+
                 <SmartphoneNav isMobile={isMobile} isFadingOut={isFadingOut} />
 
 
